@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="&nbsp; &nbsp; Racket is fairly great:), though the setting up procedure is kind of twisted. There is a .dmg installation file in the official &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/page/2/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog">Blog</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/blog/archives/">Archive</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/19/set-up-racket-for-vim-and-mac-terminal/">Set Up Racket for Vim and Mac Terminal</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-19T00:00:00-05:00" pubdate data-updated="true">Feb 19<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+&nbsp; &nbsp; <br />Racket is fairly great:), though the setting up procedure is kind of twisted. There is a .dmg installation file in the official website, which makes it quite straightforward to install in the Application folder. And, of course, the DrRacket app is awesome when I accidentally put mouse in one of the variables in the code, and then all its dependencies reveal via arrows.<br /><br />But I am still used to writing code in vim and testing it in a parallel split window of iterm. I googled the solution, but cannot find a comprehensive one. So, I just list my solution here, which come from either stackoverflow or other persons&#8217; blogs.<br /><br />1) vim syntax and highlight are <a href="https://github.com/wlangstroth/vim-racket">out there</a> ready for use.<br /><br />2) Adding one command line to ~/.vimrc<br /><code>&nbsp;au BufRead,BufNewFile *.rkt set filetype=racket</code><br />3) Adding the path of executable racket to ~/.bach_profile.<br /><code> export PATH=$PATH:/Applications/Racket\ v5.3.3/bin/</code><br />4) If using the existing file, one should delete the first line of code &#8220;#lang racket&#8221; if existed.<br /><br />5) Optional. Installing rlwrap to make the repl more user friendly.<br /><br />That is much of it.<br /><br /><br />cheers,</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/14/1st-update-in-2013/">1st Update in 2013</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-14T00:00:00-05:00" pubdate data-updated="true">Feb 14<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+&nbsp; &nbsp; <br />The issue came from <a href="http://stackoverflow.com/questions/14828945/python-several-callings-of-function-containing-recursions-cause-runtimeerror">my question in stackoverflow</a>. Basically, it was a misplaced question, because the reason why my program would hit the &#8221;<span class="typ" style="border: 0px; color: #2b91af; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; font-size: 14px; line-height: 18px; margin: 0px; padding: 0px; vertical-align: baseline;">RuntimeError</span><span class="pun" style="border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; font-size: 14px; line-height: 18px; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="pln" style="border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; font-size: 14px; line-height: 18px; margin: 0px; padding: 0px; vertical-align: baseline;"> maximum recursion depth exceeded</span>&#8221; was that I just passed the sorted array by the first scenario to the second scenario. This caused the second one hit the &#8220;worse case&#8221; and exceed the &#8220;maximum recursion depth&#8221;. Well&#8230; it was embarrassing to admit that I forgot dereferencing the variable&#8230;<br /><br />But, anyway, the question concerning recursion in Python has been in my head for a while, even since I started learning Scheme. This time, the kind answer below my question shed lights on how to solve this kind of problem. Then I dug a little deeper and find more about tail recursion in Python.<br /><br />The following is an example with problematic way to implement a recursion&nbsp;function:<br /><br /><pre class="default prettyprint prettyprinted" style="background-color: #eeeeee; border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; margin: 0px; padding: 0px; vertical-align: baseline;"><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">def</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> fac</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">n</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">):</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br />    </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">return</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="background-color: transparent; border: 0px; color: maroon; margin: 0px; padding: 0px; vertical-align: baseline;">1</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">if</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> n </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">&lt;</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="background-color: transparent; border: 0px; color: maroon; margin: 0px; padding: 0px; vertical-align: baseline;">2</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">else</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> n </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">*</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> fac</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">n </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">-</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="background-color: transparent; border: 0px; color: maroon; margin: 0px; padding: 0px; vertical-align: baseline;">1</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">)</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br /><br /></span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">&gt;</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> fac</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="lit" style="background-color: transparent; border: 0px; color: maroon; margin: 0px; padding: 0px; vertical-align: baseline;">3000</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">)</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br /></span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">&gt;</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="typ" style="background-color: transparent; border: 0px; color: #2b91af; margin: 0px; padding: 0px; vertical-align: baseline;">RuntimeError</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> maximum recursion depth exceeded</span></code></pre><br />The right way to do this is to make a local helper function &#8220;tail recursive&#8221; with the help from anonymous function.<br /><br /><pre class="default prettyprint prettyprinted" style="background-color: #eeeeee; border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; margin: 0px; padding: 0px; vertical-align: baseline;"><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">def</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> fac</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">n</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">):</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br />    </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">def</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> f</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">n</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">,</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> acc</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">):</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br />        </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">return</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> acc </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">if</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> n </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">&lt;</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="background-color: transparent; border: 0px; color: maroon; margin: 0px; padding: 0px; vertical-align: baseline;">2</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">else</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">lambda</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> f</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">n </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">-</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="background-color: transparent; border: 0px; color: maroon; margin: 0px; padding: 0px; vertical-align: baseline;">1</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">,</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> acc </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">*</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> n</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">)</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br /><br />    t </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">=</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> f</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">n</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">,</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="background-color: transparent; border: 0px; color: maroon; margin: 0px; padding: 0px; vertical-align: baseline;">1</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">)</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br />    </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">while</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> callable</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">t</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">):</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br />        t </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">=</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> t</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">()</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br />    </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">return</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> t</span></code></pre><br />And an even elegant&nbsp;way is to use built-in function &#8220;reduce&#8221;:<br /><br /><pre class="default prettyprint prettyprinted" style="background-color: #eeeeee; border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; margin: 0px; padding: 0px; vertical-align: baseline;"><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">def</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> fac3</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">n</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">):</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br />    </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">return</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> reduce(lambda x,y:x*y, xrange(1,n))</span></code></pre>The latter two could deal with any input number. Tada~<br /><br />A little extended reading about this topic:<br /><a href="http://python-history.blogspot.com/2009/04/origins-of-pythons-functional-features.html">Origins of Python&#8217;s &#8220;Functional&#8221; Features</a><br /><a href="http://neopythonic.blogspot.com/2009/04/tail-recursion-elimination.html">Tail Recursion Elimination</a><br /><a href="http://metapython.blogspot.com/2010/11/tail-recursion-elimination-in-python.html">Tail Recursion Elimination in Python</a><br /><br /><div>Besides, studying Standard ML does give me much much more insights into both programming itself and programming in Python. Except the attractive tail recursion, Python has quite a few amazing features of functional programming. &nbsp;In retrospect, now I appreciate more about what was listed in the &#8221;<a href="http://stackoverflow.com/questions/2573135/python-progression-path-from-apprentice-to-guru">progression path</a>&#8221;, and of course, cannot wait to progress to Haskell.</div><br /><br /><br /><br /><br />cheers,</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/04/install-opencv-in-mac-osx/">Install Opencv in Mac Osx</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-04T00:00:00-04:00" pubdate data-updated="true">Oct 4<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+The most straightforward way is via homebrew.<br /><code>brew update <br />sudo brew install opencv</code><br />Then, all of the dependencies will be install with opencv. The reason to use &#8220;sodu&#8221; is because there will be twice &#8220;brew link&#8221; used in the process which could not link certain libraries without permission.<br /><br />Finally, the brew gave a wrong file to update. Instead of updating .profile, the correct destination should be .bash_profile. Add this line:<br /><code>export PYTHONPATH=/usr/local/lib/python2.7/site-packages/:$PYTHONPATH&lt;\code&gt;</code><br /><br />That is it.<br /><br /><br />cheers,</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/17/missing-you_17/">Missing You</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-17T00:00:00-04:00" pubdate data-updated="true">Sep 17<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<br />小葛儿转眼安排好纽约面试就登飞机了。因为GPS的缘故，在机场周围转了好几圈，结果弄的再见都匆匆忙忙。送完她回到寝室——是的，没有了她，这里还是叫寝室合适——空荡荡的，安安静静。一分钟都不想多停留，背着书包就去了实验室。<br /><br />晚上也不想回去，因为想到又是空空的房间就不自在。<br /><br />一个人在这里。忽然一下安静了。多出了好多时间来想你，似乎一切记忆瞬间无比清晰，触手可及。你的肩膀软软的，抱在怀里的时候，还要告诉自己小心别把你弄疼了。你哭的时候，撅着嘴，鼻子里些许呜哝呜哝的声音，眼泪扑簌扑簌就落下来了。你笑的时候，眼睛眉毛嘴角都弯弯的，咯咯咯的，清脆悦耳。每到这个样的时候，我都在反问自己，为什么要和你吵架啊，有什么气好生呢。<br /><br />可无论怎么吵架，我都还是爱你的，比每一次吵架前还要爱你，比每一次生气之前还要更想和你在一起。有时候会想，也许我太把你说的每句话当回事儿了，才会又好多的弄巧成拙。但翻回头来，我仍就欠你好多在一起的时光。<br /><br />小葛儿啊。你的一举一动，一颦一笑，我都记在心里呢。欠你的那些时光，我也一定要都好好还你。快回来吧。有你在的地方，我就认为是家了。<br /><br />我想你。<br /></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/14/my-august-and-new-beginning/">My August and a New Beginning</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-14T00:00:00-04:00" pubdate data-updated="true">Sep 14<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<br />八月份，是个开始的月份，来到了一个小屯子里，没有公交，没有市集，只是明晃晃的阳光，会照的人发晕。当真是个修行的地方。有关这里，想法都有关不要虚度光阴，要快些离开这里。<br /><br />月中，和大瀾、乌龟、聪哥、温总一起去了黄石，西雅图，以及波特兰。这次旅行，如同酿酒发酵一般，越到后来越是留恋。<br /><br />刚到Bozman的时候，大瀾看着大山都激动的手舞足蹈。然后进入黄石以后，各种臭泉以及异常干燥的气候弄的大家都越发烦躁起来。大瀾背着手，像居委会大妈一样视察颜色异常的泉水；也会二劲儿大发，摘下花来给每个人带上，拍个大头贴。大乌龟在走trail时候，被路上唯一的一个钉子扎破了后背。甩着舌头奔跑的牦牛，成群在树林里休息的大鹿，elk or moose。在大峡谷的晚上，八月间，大家竟然都被冻醒了，我迷迷糊糊间，看着大瀾给我盖被子，感动了好久。<br /><br />三日后的大提顿满是惊喜。前一天晚上大瀾肚子疼的没吃好晚饭，扶她回房间后，我连吃饭的心思都没有了，更不要说后一天的提顿之旅。第二天早晨，大家也是有懒床的，有睡回笼觉的。只有唯一想去的温总，一肚子郁闷说不出口。而且刚启程，就发现没带门票，又折回。我开着车都能想到留守的聪哥似笑非笑的的得意样子。最终正午才进入大提顿，就遇见了满眼惊喜。厚厚的草甸，飘满小花的湖泊。大瀾拄着两人多长的树枝照相。在Jackson Lake租船的时候，旁边的小孩儿们兴奋的举着水瓶，炫耀捉住的水蛭。大瀾在船上，看不出任何身体异样，兴奋的拍水，尝试各种怪异的划船方法，几次都殃及到了坐在后面的我。但不管怎样，我俩划起船来，左右开工，还喊着号子，小船乘风破浪的指那儿打哪儿，相比而言，乌龟和温总的另一艘船大多就是在原地打转了。上岸之后，我们还在岸边的饭馆儿吃了进黄石以来最丰盛的一顿饭。在Jenny Lake，看着一湖清水，我和温总都脱到只剩内裤，跳进去玩水，结果上岸时候悲剧了，小石子们就像是锥子一样，走向岸边每一步都钻心的疼。。。大瀾在岸边，一边叹息着想游泳啊想游泳，一边带着乌龟和温总的俩单反，不断练习摄影技术。傍晚看日落，所有的山峰都一览无余，感慨自然壮丽。然后在把车开到山间处，再看一遍日落，再感慨一遍。晚上回程，看到了过马路的小狐狸，也许是被车灯照迷糊了，久久不离去，真想把它抱回来养。<br /><br />晚上回到酒店，又出门，和大瀾并排躺在码头上，我第一次清楚看到了银河，像棉絮一样一团一团的，还看到了流星。拉着大瀾的手，看着奇妙的景色，时间就静止了。<br /><br />到西雅图的第一天晚上，还有更多的惊喜。从倾斜的街道看到大海，身旁小酒馆门庭若市。城市真好。也是在这个时候，我们发现Yelp的预算对我们不适用。$的我们可以吃成$$$，$$的我们能吃成$$$$的。几个难民坐在日式料理最靠窗的桌子，烤肉、寿司、炒饭、拌面&#8230;，我们狼吞虎咽的样子，就是这家店最好的活体广告了。酒馆、小肥羊、牛逼的图书馆、大麻公园、面海公寓、满是鲜花的阳台，这就是我对西雅图的印象。<br /><br />去波特兰是因为Grimm。精致的block，友好的大瀾校友，以及玫瑰花园。我们在市区停留只有半日。然后就是一个小时的公车，从二十几街坐到了245街。。作为这座庄园里唯一一队乘坐公车前来的客人，我们受到了主人的热情接待，安排我们住宿在一个墙上画着这个庄园某位109岁员工的房间里。庄园的晚饭不错，温总一时兴起喝了六七杯或者十来杯红酒，结果把大乌龟给喝醉了，嚷嚷着要脱衣服去游泳，又把聪哥紧张的如同被非礼了一样。。晚饭后我们还视察了庄园的绿化状况，并亲切会见了酒馆里的各种奇怪大叔大妈。<br /><br />转眼相聚就要分离，回家的回家，旅行的继续上路，确实舍不得另外三位。昨天在豆瓣上读到马克吐温的一句话，“好友、好书，不轻易判断是非，这就是理想生活”。一路上颠簸，没读什么书，这生活却以足以让我留恋了。<br /><br />在这里，开始学习工作快满一月了。老板人不错，几次问他有关研究的问题，他都很耐心的回答，给的方法也足够有操作性。今天一个师兄作报告被骂，也从另一个侧面证明老板足够聪明，不能唬弄。组里大家关系也很融洽，实验室、图书馆，资源也算充裕。新车也用的顺手。还是开始时的那个想法，不要浪费时间，早些离开这里。</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/12/valve-recruiting-sidenotes/">Valve Recruiting Sidenotes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-12T00:00:00-04:00" pubdate data-updated="true">Jun 12<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+&nbsp; &nbsp;&nbsp; <br />• Would I want this person to be my boss?<br />• Would I learn a significant amount from him or her? <br />• What if this person went to work for our competition? <br /><br />Across the board, we value highly collaborative people. That means people who are skilled in all the things that are integral to high-bandwidth collaboration—people who can deconstruct problems on the fly, and talk to others as they do so, simultaneously being inventive, iterative, creative, talkative, and reactive. These things actually matter far more than deep domain-specific knowledge or highly developed skills in narrow areas. This is why we’ll often pass on candidates who, narrowly defined, are the “best” at their chosen discipline.<br /><br />We value “T-shaped” people. That is, people who are both generalists (highly skilled at a broad set of valuable things—the top of the T) and also experts (among the best in their field within a narrow discipline—the vertical leg of the T).<br /><br />This recipe is important for success at Valve. We often have to pass on people who are very strong generalists without expertise, or vice versa. An expert who is too narrow has difficulty collaborating. A generalist who doesn’t go deep enough in a single area ends up on the margins, not really contributing as an individual.<br /><br />reference: <a href="http://www.valvesoftware.com/company/Valve_Handbook_LowRes.pdf">Valve handbook</a><br /><br /></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/04/general-posts-about-lisp/">General Posts About Lisp</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-04T00:00:00-04:00" pubdate data-updated="true">Jun 4<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+&nbsp; &nbsp;&nbsp; <br />Paul Graham: <a href="http://lib.store.yahoo.net/lib/paulgraham/jmc.ps">The Roots of Lisp (ps)</a>, <a href="http://www.paulgraham.com/diff.html">What Made Lisp Different</a> (<a href="http://www.ruanyifeng.com/blog/2010/10/why_lisp_is_superior.html">Chinese translation</a>), and his <a href="http://www.paulgraham.com/lisp.html">collection</a>.<br /><a href="http://www.winestockwebdesign.com/Essays/Lisp_Curse.html">The Lisp Curse</a> by Rudolf Winestock <br /><a href="http://lists.warhead.org.uk/pipermail/iwe/2005-July/000130.html">Why Lisp macros are cool, a Perl perspective </a><br /><a href="http://www.defmacro.org/ramblings/lisp.html">The Nature of Lisp</a><br /><a href="http://www.dreamsongs.com/Files/LispGoodNewsBadNews.pdf">Lisp: Good News, Bad News, How to Win Big (pdf)</a><br /><a href="http://www.lambdassociates.org/blog/bipolar.htm%20">The Bipolar Lisp Programmer</a><br /><a href="http://www.informatics.sussex.ac.uk/research/groups/nlp/gazdar/nlp-in-lisp/index.html%20">Natural Language Processing in Lisp (book)</a><br /><a href="http://www.cs.rpi.edu/academics/courses/fall05/ai/scheme/tips.html">Tips for using Scheme and debugging your code</a><br /><a href="http://coolshell.cn/articles/7526.html">Lisp的永恒之道</a> (Chinese)<br /><br /><br />A <a href="http://itasoftware.com/careers/work-at-ita/ita-engineering.html?catid=#">great explanation</a> from ITA Software about why and how to use different languages, including Lisp (CL), Python, Java, and C/C++. <br /><blockquote class="tr_bq">Lisp is a programmable programming language, and one of the few languages that can be used for a wide range of applications. At ITA we have projects with vastly different focus, and it&#8217;s precisely Lisp&#8217;s versatility that makes it so useful to us. Lisp allows us to define a wide variety of abstractions to manage the complexity, and at the same time we get the speed we want - and our customers demand.<br /><br />While most of ITA&#8217;s algorithm-intensive code is implemented in high-level languages like Lisp, we use C/C++ to provide system support to our Lisp-based applications where the Common Lisp runtime support is inadequate. For instance, we represent large static datasets as densely packed arrays stored in files. We use C++ to make the mmap() calls and fetch pointers into these mappings for Lisp to access.<br /><br />Once in a while, we have had a hard time fooling the Lisp compiler into generating sufficiently fast machine code for a given function. When that happens, we can usually just rewrite the function in C++ and call it from Lisp.</blockquote>and&#8230; <a href="http://www.paulgraham.com/carl.html">quote from an email</a> of Carl de Marcken from Paul: <br /><blockquote class="tr_bq">A lot of our Lisp is designed to compile into very efficient assembly. We make a lot of use of Lisp&#8217;s macro capabilities, but shy away from many other Lisp features like closures, generic functions, complex sequence functions and garbage collection. We&#8217;re doing an incredible amount of computation - getting 10 seconds on a modern machine is an incredible gift - but if we&#8217;re sloppy at all 10 seconds can turn into ten minutes, not adequate for a travel agent or web site. We disassemble most every Lisp function looking for inefficiencies and have had both CMUCL and Franz enhanced to compile our code better.<br /><br />We&#8217;ve had very little trouble getting non-Lisp programmers to read and understand and extend our Lisp code. The only real problem is that the training most programmers have in Lisp has taught them to code very inefficiently, without paying any attention to the compiler. Of course, with things like STL and Java, I think programmers of other languages are also becoming pretty ignorant.</blockquote><br /><br /><br /></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/16/hd-and-sicp/">HD and SICP</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-16T00:00:00-04:00" pubdate data-updated="true">May 16<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+&nbsp; &nbsp;&nbsp; <br />Humming Identification. <br /><br />已然经历了两次较大的重建，现在的中段程序应该算是稳定了，前段程序接近黔驴技穷了，后段程序最后一次大修改后还在服务器里面跑着。出结果之后再用一两天时间整理，然后再看看清唱部分的阈值应该如何处理。不出意外的话，这就接近世界先进水平了:)<br /><br />现在回头看来，其实真正值得研究的部分还是在最初的参数提取。SIFT里面对于图像的各种锥形不变、边框加深、棱角过滤，对于音频信号都是不适用的。而语音信号的频谱重复或者音乐信号的长时重复在哼唱识别中又是不适用的。所以现在只能使用较为原始的 local maximum cascade filtering。若是频谱图能如图像般的直观，有些经验总结的东西在里面，就好了。<br /><br /><br />SICP<br /><br />思考过一段时间的结果，<a href="http://coolshell.cn/articles/6639.html">因为有了电据就少用到电钻</a>，于是熟练了Py也就先放放ruby了。转过身来硬着头皮读这本书。而第一天读过前言，我就知道这决不会是个令我后悔的决定。无数人的推荐，自然是有其中道理的。而把读过的几本经典书籍横向比较，会发现它们都会刻意避开很多fancy的概念，着力强调着那些在设计程序过程中永恒不变的东西。K&amp;R把C的很多基本库函数都重建了一遍，而SICP更是从加减乘除开始重构。<br /><br />开始读书之前，我也刻意找了一下CL和Scheme的对比。记得有个人说，如果想用Lisp做项目，CL更合适；想体会编程的乐趣，Scheme更合适，只是，它的核实在是太简单了。几个月看下来，其对于Scheme的评价当真实字字珠玑。这是一个无比强大的语言，data abstraction &amp; procedure abstraction，之后再抹去两者的差别，都只是当作object处理。看到这里，我会有错觉，认为自己都可以来设计Clojure了，这简直就是顺理成章的事情！tail recursion，比循环更加直观易懂，而更牛逼的是这竟然不会按照stack的模式迭代后增加内存的占用。至于enclosure和lambda calculus，在Python里面也有借鉴，但是我是直到这里才真正学会了如何使用它们⋯⋯当然，我很清楚这些词汇推砌起来的仍然仅仅是些皮毛。里面很多在程序设计时的考虑，才是更需要我好好体会的。<br /><br /><br />BTW, 今天的时间累计到2800了~<br /><br />cheers, <br /><br /></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/10/install-mitscheme-with-vim/">Install MIT/Scheme With Vim</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-10T00:00:00-04:00" pubdate data-updated="true">Apr 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+&nbsp; &nbsp;&nbsp; <br />After wondering around for a while, I finally found this was quite foolproof&#8230; <br /><br />It could be divided into five steps:<br />1. $ <i>brew install mit-scheme</i>. (Its version is usually a little bit older than the latest <a href="http://www.gnu.org/software/mit-scheme/">MIT/GNU Scheme</a>)<br />2. Install <a href="http://www.gnu.org/software/screen/">GNU screen</a> if it was not installed before.<br />3. Install <a href="http://www.vim.org/scripts/script.php?script_id=2711">Screen Vim plug-in</a> according the steps in that webpage.<br />4. $ <i>vim ~/.vimrc</i><br /><code>"For screen.vim send block<br />"to SendScreen function<br />"(eg Scheme interpreter)<br />vmap <c-c><c-c> :ScreenSend<cr><br />nmap <c-c><c-c> vip<c-c><c-c></c-c></c-c></c-c></c-c></cr></c-c></c-c></code><br />5. Launch Vim and write &#8220;:ScreenShell mit-scheme&#8221;. It is all set for the fun:)<br /><br />References: <a href="http://www.ktaylor.name/vim/">[1]</a>, <a href="http://www.uponmyshoulder.com/blog/2011/so-you-want-to-do-the-sicp/">[2]</a><br /><br />cheers,</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/16/reading-digest-031612/">Reading Digest 03/16/12</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-16T00:00:00-04:00" pubdate data-updated="true">Mar 16<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<b>Smart and Gets things done</b><br />What should you look for during the open-ended questions?<br />One: look for passion. Smart people are passionate about the projects they work on. They get very excited talking about the subject. They talk quickly and get animated. There are far too many people around who can work on something and not really care one way or the other. It’s hard to get people like this motivated about anything.<br />Two: good candidates are careful to explain things well, at whatever level. You don’t want to hire some one, basically, because he is not smart enough to comprehend what it takes to make other people understand their ideas.<br /><br /><b>No Designer&#8217;s Design Book</b><br />When several items are in close proximity to each other, they become one visual unit rather than several separate units. As in life, the proximity, or the closeness, implies a relationship.<br />By grouping similar elements into one unit, several things instantly happen: The page becomes more organized. You understand where to begin reading the message, and you know when you are finished. And the “white space” (the space around the letters) automatically becomes more organized as well.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/3/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/15/more-freedom-in-doing-things/">More freedom in doing things</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/10/reading-note-of-sicp-4/">Reading note of SICP (4)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/08/reading-note-of-sicp-3/">Reading note of SICP (3)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/reading-note-of-sicp-2/">Reading note of SICP (2)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/06/reading-digest-sicp/">Reading note of SICP</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2013 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>some advices about low-level programming - Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="see also &lt;Back to Basic&gt;reference &lt;Advice for Computer Science College Students&gt;Learn how to writeThe difference between a tolerable &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/2011/03/02/some-advices/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog">Blog</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/blog/archives/">Archive</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <article>
+  <header>
+    
+      <h1 class="entry-title">Some Advices About Low-level Programming</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-02T00:00:00-05:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+see also &lt;<a href="http://www.joelonsoftware.com/articles/fog0000000319.html">Back to Basic</a>&gt;<br />reference &lt;<a href="http://www.joelonsoftware.com/articles/CollegeAdvice.html">Advice for Computer Science College Students</a>&gt;<br /><br /><br />Learn how to write<br /><br />The difference between a tolerable programmer and a great programmer is not how many programming languages they know, and it&#8217;s not whether they prefer Python or Java. It&#8217;s whether they can communicate their ideas. By persuading other people, they get leverage. By writing clear comments and technical specs, they let other programmers understand their code, which means other programmers can use and work with their code instead of rewriting it. Absent this, their code is worthless. By writing clear technical documentation for end users, they allow people to figure out what their code is supposed to do, which is the only way those users can see the value in their code. There&#8217;s a lot of wonderful, useful code buried on sourceforge somewhere that nobody uses because it was created by programmers who don&#8217;t write very well (or don&#8217;t write at all), and so nobody knows what they&#8217;ve done and their brilliant code languishes.<br /><br />If you can write, wherever you get hired, you&#8217;ll soon find that you&#8217;re getting asked to write the specifications and that means you&#8217;re already leveraging your influence and getting noticed by management. Start a journal or weblog. The more you write, the easier it will be, and the easier it is to write, the more you&#8217;ll write, in a virtuous circle.<br /><br />Learn C<br /><br />C. Notice I didn&#8217;t say C++. Although C is becoming increasingly rare, it is still the lingua franca of working programmers. It is the language they use to communicate with one another, and, more importantly, it is much closer to the machine than &#8220;modern&#8221; languages that you&#8217;ll be taught in college like ML, Java, Python, whatever trendy junk they teach these days. You need to spend at least a semester getting close to the machine or you&#8217;ll never be able to create efficient code in higher level languages. You&#8217;ll never be able to work on compilers and operating systems, which are some of the best programming jobs around. You&#8217;ll never be trusted to create architectures for large scale projects. I don&#8217;t care how much you know about continuations and closures and exception handling: if you can&#8217;t explain why &#8220;while (*s++ = *t++);&#8221; copies a string, or if that isn&#8217;t the most natural thing in the world to you, well, you&#8217;re programming based on superstition, as far as I&#8217;m concerned: a medical doctor who doesn&#8217;t know basic anatomy, passing out prescriptions based on what the pharma sales babe said would work.<br /><br />some special cases to indicate this point<br />char bigString[1000];&nbsp;&nbsp;&nbsp;&nbsp; /* I never know how much to allocate&#8230; */ <br />bigString[0] = &#8216;\0&#8217;;<br />strcat(bigString,&#8221;John, &#8220;);<br />strcat(bigString,&#8221;Paul, &#8220;); <br />strcat(bigString,&#8221;George, &#8220;); <br />strcat(bigString,&#8221;Joel &#8220;);<br /><br />The time consumption will increase as the n^2, where n indicates the number of characters that have already in the char array, for the reason that every time the strcat will begin to search at the beginning of the array. To reduce the runtime decrease as linear as input number of values:<br />char* mystrcat( char* dest, char* src ) <br />{<br />&nbsp;&nbsp;&nbsp;&nbsp; while (*dest) dest++; <br />&nbsp;&nbsp;&nbsp;&nbsp; while (*dest++ = *src++);<br />&nbsp;&nbsp;&nbsp;&nbsp; return &#8211;dest;<br />}<br />char bigString[1000];&nbsp;&nbsp;&nbsp;&nbsp; /* I never know how much to allocate&#8230; */<br />char *p = bigString; <br />bigString[0] = &#8216;\0&#8217;; <br />p = mystrcat(p,&#8221;John, &#8220;);<br />p = mystrcat(p,&#8221;Paul, &#8220;); <br />p = mystrcat(p,&#8221;George, &#8220;);<br />p = mystrcat(p,&#8221;Joel &#8220;);<br /><br />The designers of Pascal were aware of this problem and &#8220;fixed&#8221; it by storing a byte count in the first byte of the string. These are called Pascal Strings. They can contain zeros and are not null terminated. Because a byte can only store numbers between 0 and 255, Pascal strings are limited to 255 bytes in length, but because they are not null terminated they occupy the same amount of memory as ASCIZ strings. The great thing about Pascal strings is that you never have to have a loop just to figure out the length of your string. Finding the length of a string in Pascal is one assembly instruction instead of a whole loop. It is monumentally faster.<br /><br />The old Macintosh operating system used Pascal strings everywhere. Many C programmers on other platforms used Pascal strings for speed. Excel uses Pascal strings internally which is why strings in many places in Excel are limited to 255 bytes, and it&#8217;s also one reason Excel is blazingly fast.<br /><br />For a long time, if you wanted to put a Pascal string literal in your C code, you had to write:<br /><br />char* str = &#8220;\006Hello!&#8221;;<br /><br />Yep, you had to count the bytes by hand, yourself, and hardcode it into the first byte of your string. Lazy programmers would do this, and have slow programs:<br /><br />char* str = &#8220;*Hello!&#8221;;<br />str[0] = strlen(str) - 1;<br /><br />Notice in this case you&#8217;ve got a string that is null terminated (the compiler did that) as well as a Pascal string. I used to call these fucked strings because it&#8217;s easier than calling them null terminated pascal strings but this is a rated-G channel so you will have use the longer name.<br /><br />Well, since we&#8217;re looking at the bits today I shouldn&#8217;t have ignored this. I should have done this correctly: figured out how many bytes I needed and allocated the right amount of memory. Shouldn&#8217;t I have?<br /><br />Because otherwise, you see, a clever hacker will read my code and notice that I&#8217;m only allocating 1000 bytes and hoping it will be enough, and they&#8217;ll find some clever way to trick me into strcatting a 1100 byte string into my 1000 bytes of memory, thus overwriting the stack frame and changing the return address so that when this function returns, it executes some code which the hacker himself wrote. This is what they&#8217;re talking about when they say that a particular program has a buffer overflow susceptibility. It was the number one cause of hacks and worms in the olden days before Microsoft Outlook made hacking easy enough for teenagers to do.<br /><br />(bold malloc&#8230;)How does the malloc work? The nature of malloc is that it has a long linked list of available blocks of memory called the free chain. When you call malloc, it walks the linked list looking for a block of memory that is big enough for your request. Then it cuts that block into two blocks &#8211; one the size you asked for, the other with the extra bytes, and gives you the block you asked for, and puts the leftover block (if any) back into the linked list. When you call free, it adds the block you freed onto the free chain. Eventually, the free chain gets chopped up into little pieces and you ask for a big piece and there are no big pieces available the size you want. So malloc calls a timeout and starts rummaging around the free chain, sorting things out, and merging adjacent small free blocks into larger blocks. This takes 3 1/2 days. The end result of all this mess is that the performance characteristic of malloc is that it&#8217;s never very fast (it always walks the free chain), and sometimes, unpredictably, it&#8217;s shockingly slow while it cleans up. (This is, incidentally, the same performance characteristic of garbage collected systems, surprise surprise, so all the claims people make about how garbage collection imposes a performance penalty are not entirely true, since typical malloc implementations had the same kind of performance penalty, albeit milder.)<br /><br />Smart programmers minimize the potential distruption of malloc by always allocating blocks of memory that are powers of 2 in size. You know, 4 bytes, 8 bytes, 16 bytes, 18446744073709551616 bytes, etc. For reasons that should be intuitive to anyone who plays with Lego, this minimizes the amount of weird fragmentation that goes on in the free chain. Although it may seem like this wastes space, it is also easy to see how it never wastes more than 50% of the space. So your program uses no more than twice as much memory as it needs to, which is not that big a deal. Furthermore, when you call realloc, you should always double the size of memory that was previously allocated. That means that you never have to call realloc more than lg n times, which has decent performance characteristics even for huge strings, and you never waste more than 50% of your memory.</div>
+</div>
+
+</article>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2013 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

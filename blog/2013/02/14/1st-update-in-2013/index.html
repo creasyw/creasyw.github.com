@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>1st update in 2013 - Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="&nbsp; &nbsp; The issue came from my question in stackoverflow. Basically, it was a misplaced question, because the reason why my program would hit &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/2013/02/14/1st-update-in-2013/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog">Blog</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/blog/archives/">Archive</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <article>
+  <header>
+    
+      <h1 class="entry-title">1st Update in 2013</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-14T00:00:00-05:00" pubdate data-updated="true">Feb 14<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+&nbsp; &nbsp; <br />The issue came from <a href="http://stackoverflow.com/questions/14828945/python-several-callings-of-function-containing-recursions-cause-runtimeerror">my question in stackoverflow</a>. Basically, it was a misplaced question, because the reason why my program would hit the &#8221;<span class="typ" style="border: 0px; color: #2b91af; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; font-size: 14px; line-height: 18px; margin: 0px; padding: 0px; vertical-align: baseline;">RuntimeError</span><span class="pun" style="border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; font-size: 14px; line-height: 18px; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="pln" style="border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; font-size: 14px; line-height: 18px; margin: 0px; padding: 0px; vertical-align: baseline;"> maximum recursion depth exceeded</span>&#8221; was that I just passed the sorted array by the first scenario to the second scenario. This caused the second one hit the &#8220;worse case&#8221; and exceed the &#8220;maximum recursion depth&#8221;. Well&#8230; it was embarrassing to admit that I forgot dereferencing the variable&#8230;<br /><br />But, anyway, the question concerning recursion in Python has been in my head for a while, even since I started learning Scheme. This time, the kind answer below my question shed lights on how to solve this kind of problem. Then I dug a little deeper and find more about tail recursion in Python.<br /><br />The following is an example with problematic way to implement a recursion&nbsp;function:<br /><br /><pre class="default prettyprint prettyprinted" style="background-color: #eeeeee; border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; margin: 0px; padding: 0px; vertical-align: baseline;"><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">def</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> fac</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">n</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">):</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br />    </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">return</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="background-color: transparent; border: 0px; color: maroon; margin: 0px; padding: 0px; vertical-align: baseline;">1</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">if</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> n </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">&lt;</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="background-color: transparent; border: 0px; color: maroon; margin: 0px; padding: 0px; vertical-align: baseline;">2</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">else</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> n </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">*</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> fac</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">n </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">-</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="background-color: transparent; border: 0px; color: maroon; margin: 0px; padding: 0px; vertical-align: baseline;">1</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">)</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br /><br /></span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">&gt;</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> fac</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="lit" style="background-color: transparent; border: 0px; color: maroon; margin: 0px; padding: 0px; vertical-align: baseline;">3000</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">)</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br /></span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">&gt;</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="typ" style="background-color: transparent; border: 0px; color: #2b91af; margin: 0px; padding: 0px; vertical-align: baseline;">RuntimeError</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> maximum recursion depth exceeded</span></code></pre><br />The right way to do this is to make a local helper function &#8220;tail recursive&#8221; with the help from anonymous function.<br /><br /><pre class="default prettyprint prettyprinted" style="background-color: #eeeeee; border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; margin: 0px; padding: 0px; vertical-align: baseline;"><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">def</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> fac</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">n</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">):</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br />    </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">def</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> f</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">n</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">,</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> acc</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">):</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br />        </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">return</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> acc </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">if</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> n </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">&lt;</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="background-color: transparent; border: 0px; color: maroon; margin: 0px; padding: 0px; vertical-align: baseline;">2</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">else</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">lambda</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">:</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> f</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">n </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">-</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="background-color: transparent; border: 0px; color: maroon; margin: 0px; padding: 0px; vertical-align: baseline;">1</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">,</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> acc </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">*</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> n</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">)</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br /><br />    t </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">=</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> f</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">n</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">,</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> </span><span class="lit" style="background-color: transparent; border: 0px; color: maroon; margin: 0px; padding: 0px; vertical-align: baseline;">1</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">)</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br />    </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">while</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> callable</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">t</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">):</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br />        t </span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">=</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> t</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">()</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br />    </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">return</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> t</span></code></pre><br />And an even elegant&nbsp;way is to use built-in function &#8220;reduce&#8221;:<br /><br /><pre class="default prettyprint prettyprinted" style="background-color: #eeeeee; border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; margin: 0px; padding: 0px; vertical-align: baseline;"><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">def</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> fac3</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">(</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">n</span><span class="pun" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">):</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><br />    </span><span class="kwd" style="background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;">return</span><span class="pln" style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"> reduce(lambda x,y:x*y, xrange(1,n))</span></code></pre>The latter two could deal with any input number. Tada~<br /><br />A little extended reading about this topic:<br /><a href="http://python-history.blogspot.com/2009/04/origins-of-pythons-functional-features.html">Origins of Python&#8217;s &#8220;Functional&#8221; Features</a><br /><a href="http://neopythonic.blogspot.com/2009/04/tail-recursion-elimination.html">Tail Recursion Elimination</a><br /><a href="http://metapython.blogspot.com/2010/11/tail-recursion-elimination-in-python.html">Tail Recursion Elimination in Python</a><br /><br /><div>Besides, studying Standard ML does give me much much more insights into both programming itself and programming in Python. Except the attractive tail recursion, Python has quite a few amazing features of functional programming. &nbsp;In retrospect, now I appreciate more about what was listed in the &#8221;<a href="http://stackoverflow.com/questions/2573135/python-progression-path-from-apprentice-to-guru">progression path</a>&#8221;, and of course, cannot wait to progress to Haskell.</div><br /><br /><br /><br /><br />cheers,</div>
+</div>
+
+</article>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2013 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

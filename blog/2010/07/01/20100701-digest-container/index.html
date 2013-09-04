@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Digest: container - Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="将一个容器复制给另一个容器时，类型必须匹配：容器类型和元素类型都必须一致。迭代器first和last如果满足以下两点，则可以形成一个迭代器范围：1、它们指向同一个容器中的元素或超出末端的下一个位置；如果两个迭代器不相等，则对first反复应用自增加运算必须能够到达last，即， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/2010/07/01/20100701-digest-container/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog">Blog</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/blog/archives/">Archive</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <article>
+  <header>
+    
+      <h1 class="entry-title">Digest: Container</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-01T00:00:00-04:00" pubdate data-updated="true">Jul 1<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+将一个容器复制给另一个容器时，类型必须匹配：容器类型和元素类型都必须一致。<br /><br />迭代器first和last如果满足以下两点，则可以形成一个迭代器范围：1、它们指向同一个容器中的元素或超出末端的下一个位置；如果两个迭代器不相等，则对first反复应用自增加运算必须能够到达last，即，务必在使用前检查last绝对不能位于first之前。<br /><br />使用迭代器时，通常可以编写程序使得要求迭代器有效的代码范围较短。然后，在该范围内，严格检查每一条语句，判断是否有元素增加或者删除，从而相应的调整迭代器的值。此外，任何insert、push、assign操作都会导致原迭代器失效。当编写循环将元素插入到vector或deque容器中时，程序必须确保迭代器在每次循环后都得到更新。<br />vector&#8221;int&#8221;<int>::iterator first = v.begin(); //cache begin iterator<br />//safer: recalaulate end on each trip whenever the loop adds/erases elements<br />while (first != v.end()) { &nbsp;//do some processing in block&#8230;<br />&nbsp;&nbsp; &nbsp; //insert new value, meanwhile update the first iterator<br />&nbsp;&nbsp; &nbsp; first = v.insert(first, 42);<br />&nbsp;&nbsp; &nbsp; ++first; &nbsp; &nbsp;//advance first just past the element added just now<br />&nbsp;&nbsp; &nbsp; } &nbsp; &nbsp;//example ends<br />&nbsp;&nbsp; <br />在调用front或back函数之前，或者在对begin或end返回的迭代器进行解引用运算之前，必须保证容器非空。例如，进行 if(!ilist.empty()){&#8230;}的检查，否则，上述四个语句的操作都是没有定义的。</int><br /><br /><int></int>如果程序要求随机访问元素，则应使用vector或deque容器；如果程序必须在容器中间位置插入或者删除元素，则应采用list容器。如果无法确定某种应用应当采取哪种容器，则编写代码时应尝试只使用vector和list容器都提供的操作：使用迭代器，而不是下表，并且避免随机访问元素。这样编写代码，在必要的时候，可以很方便将程序从使用vector修改为使用list容器。</div>
+</div>
+
+</article>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2013 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

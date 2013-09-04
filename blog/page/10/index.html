@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="from comp.lang.c (click)======1st paste:steve wrote:&gt; Hey guys,&gt; I have a delemna which I can&#8217;t figure out.&gt; This is regarding &#8220 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/page/10/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog">Blog</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/blog/archives/">Archive</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/05/void-pointers/">Void Pointers</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-05T00:00:00-04:00" pubdate data-updated="true">Oct 5<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+from comp.lang.c (<a href="http://groups.google.com/group/comp.lang.c/browse_thread/thread/8f42cce6ecd8d85a?hl=en">click</a>)<br />======<br /><br />1st paste:<br /><br />steve wrote:<br />&gt; Hey guys,<br />&gt; I have a delemna which I can&#8217;t figure out.<br />&gt; This is regarding &#8220;void pointers&#8221; and I confess, I really don&#8217;t<br />&gt; understand them nearly enough to even understand what the problem is.<br /><br />A void pointer is an address of a region of memory (which may or may not<br />be occupied).&nbsp; It is an error to attempt to use a void value in an<br />expression, hence why compilers will often warn you if you dereference a<br />void pointer.<br />(Note to the regulars: I&#8217;m probably not being perfectly accurate here,<br />but I don&#8217;t think c.l.c pedantry is what steve needs)<br />(Note to steve: the correct spelling is dilemma)<br /><br />&gt;&nbsp;&nbsp; void * params[5];<br /><br />This creates an array of 5 pointers to void.&nbsp; It does not create an<br />array of &#8220;void&#8221; (as you seem to think).<br />&gt;&nbsp;&nbsp; int int_param_values[5] = {1,2,3,4,5};<br /><br />&gt;&nbsp;&nbsp; char **str_param_values;<br /><br />&gt;&nbsp;&nbsp; str_param_values = malloc(5 * sizeof(char *));<br />&gt;&nbsp;&nbsp; str_param_values[0] = malloc(10 * sizeof(char));<br />&gt;&nbsp;&nbsp; strcpy(str_param_values[0], &#8220;hello&#8221;);<br /><br />&gt;&nbsp;&nbsp; double dbl_param_values[5] = {1.1, 2.2, 3.3};<br /><br />This creates an array of int, an array of char *, and an array of<br />double, and initialises them in various ways.<br />Note two things: firstly, it would probably make more sense for<br />str_param_values to be an array of 5 char *, and allocated on the stack,<br />with<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *str_param_values[5];<br />There is no obvious need for it to be on the heap.<br />Secondly, you have not tested the return value of malloc() in either of<br />these calls; I realise this is only example code (incidentally, you will<br />get more informative answers if you post actual code; then we know what<br />you&#8217;re trying to achieve!) but nonetheless it bears pointing out.<br /><br />&gt; I can then assign my data values, to the array,<br />&gt; like so:<br />&gt;&nbsp;&nbsp; params[indx] = (void*)int_param_values[ndx];<br /><br />This is casting an int to a void *.&nbsp; This is generally incorrect as an<br />int is not a pointer type.&nbsp; It just so happens that you are, IIRC,<br />allowed to do this by a special provision to allow the use of integer<br />expressions as pointers.&nbsp; In this case this is clearly not what you are<br />doing as, for instance, params[0] is now (void *)1; this is now a<br />pointer to the memory with address 1, which probably isn&#8217;t even mapped<br />in your program&#8217;s address space (if you&#8217;re on a memory managed<br />architecture.&nbsp; On, say, an embedded system you might want to do this).<br /><br />&gt;&nbsp;&nbsp; params[indx] = (void*)str_param_values[ndx];<br /><br />This is casting a char * to a void *.&nbsp; This is allowed because both are<br />pointer types.&nbsp; params[indx] now points to the first character of<br />str_param_values[ndx].<br /><br />&gt; These two methods compile just fine and work as expected.<br />&gt; However, this statement will not compile:<br />&gt;&nbsp;&nbsp; params[indx] = (void*)dbl_param_values[ndx];<br /><br />This is casting a double to a void *.&nbsp; This is not allowed; a double is<br />not the same size as, nor anything like, a void *.&nbsp; Unlike an int it<br />cannot even reasonably be interpreted as an address; what location in<br />memory would (void *)0.5 point to?&nbsp; It&#8217;s just silly really!<br /><br />&gt; and generates this compiler error:<br /><br />&gt; &#8220;&#8230;cast from &#8216;double&#8217; to &#8216;pointer to void&#8217; is illegal&#8221;<br /><br />Quite right too.<br /><br />&gt; When it&#8217;s all said and done, the idea is to pass the data referred to<br />&gt; in the array as function parameters,<br />&gt; like so:<br /><br />&gt;&nbsp;&nbsp; MyFunction(params[0], params[1], etc.);<br /><br />There are two appropriate methods I can think of.&nbsp; One is to use<br />varargs; if the function&#8217;s first argument gives it some way of deducing<br />the types of the remaining arguments, it can do so.&nbsp; This is for<br />instance how the *printf() family of functions work.<br /><br />The other is to use void *, but populate it not with the data themselves<br />but with pointers to them; for instance your doubles would become<br />something like:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; params[indx] = (void *)&amp;dbl_param_values[ndx];<br />where we assign the /address/ of the double to the pointer; we are now<br />casting a double * to a void *, which makes much more sense as both are<br />pointer types.<br /><br />One question I do have: given your function prototype as you have it,<br />where the only arguments are the params[] elements, how does the<br />function know to what the pointers refer (i.e., whether you have used an<br />int, a double, a char *, or whatever).<br />If, of course, it is simply, say, printing their addresses, it need not<br />know; but if it is using their values, it will have to be told, since<br />not only does it not know their true types, it doesn&#8217;t even know their<br />sizes, and a pointer without size information is not much use.<br /><br />Note also that you cannot make an array of void and store the values<br />(ints, doubles etc.) in that, because void has no storage size.<br /><br />Perhaps the real solution to your problems, however, is to use a struct<br />or union.<br /><br />I can&#8217;t really give any more specific advice without some information as<br />to what you&#8217;re trying to achieve.<br /><br />-Edward<br />==========<br /><br />2nd paste:<br /><br />Hey Ed,<br />thanks for your indepth reply.<br />Very helpful.<br /><br />&gt; (Note to steve: the correct spelling is dilemma)<br /><br />Sorry for that.<br />I&#8217;m one of those people prone to typos and misspelling.<br />I should have run spell check, I usually do.<br /><br /><snip><br />&gt; &gt;&nbsp;&nbsp; void * params[5];<br /><br />&gt; This creates an array of 5 pointers to void.&nbsp; It does not create an<br />&gt; array of &#8220;void&#8221; (as you seem to think).&gt;&nbsp;&nbsp; int int_param_values[5] = {1,2,3,4,5};<br /></snip><br /><br />No, I get that.<br />My understanding was that it was creating an &#8220;array of 5 pointers to<br />void&#8221;.<br />Which I then intended to populate with the addresses of the variables.<br /><br /><snip><br />&gt; Note two things: firstly, it would probably make more sense for<br />&gt; str_param_values to be an array of 5 char *, and allocated on the stack,<br />&gt; with<br />&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *str_param_values[5];<br /></snip><br /><br />Actually, I did try that.<br />It did not produce the result I was hoping for.<br /><br /><snip><br /><br />&gt; This is casting a double to a void *.&nbsp; This is not allowed; a double is<br />&gt; not the same size as, nor anything like, a void *.&nbsp; Unlike an int it<br />&gt; cannot even reasonably be interpreted as an address; what location in<br />&gt; memory would (void *)0.5 point to?&nbsp; It&#8217;s just silly really!<br /><br />Clearly I&#8217;m wrong here, but, I was making the &#8216;assumption&#8217; that a<br />&#8220;pointer to void&#8221; was just that,<br />a pointer to the address of a variable of an undertermined type.<br />Regardless of the size of the variable.<br />On a given system, are not addresses the same size ?<br /><br />What I&#8217;m after here, is a &#8220;generic&#8221; mechanism for holding addresses of<br />mixed variable types.<br />i.e.: an array of addresses.<br />Be they of type int, or char, or double, etc.<br /><br />What I&#8217;m (really) after here is to construct a &#8216;generic mechanism&#8217; for<br />calling functions within DLLs at RunTime.<br />These DLLs, their Functions and Parameters passed are not known at<br />compile time.<br /><br />Research indicated that void pointers was the way to do this.<br /><br />Suggestions ?<br /><br />Steve&nbsp;</snip><br />==========<br /><br />3rd paste:<br /><br />steve wrote:<br />&gt;&gt; Note two things: firstly, it would probably make more sense for<br />&gt;&gt; str_param_values to be an array of 5 char *, and allocated on the stack,<br />&gt;&gt; with<br />&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *str_param_values[5];<br />&gt; <br /><br />&gt; Actually, I did try that.<br />&gt; It did not produce the result I was hoping for.<br /><br />Curious.&nbsp; It certainly should have.<br /><br />&gt;&gt; This is casting a double to a void *.&nbsp; This is not allowed; a double is<br />&gt;&gt; not the same size as, nor anything like, a void *.&nbsp; Unlike an int it<br />&gt;&gt; cannot even reasonably be interpreted as an address; what location in<br />&gt;&gt; memory would (void *)0.5 point to?&nbsp; It&#8217;s just silly really!<br /><br />&gt; Clearly I&#8217;m wrong here, but, I was making the &#8216;assumption&#8217; that a<br />&gt; &#8220;pointer to void&#8221; was just that,<br />&gt; a pointer to the address of a variable of an undertermined type.<br />&gt; Regardless of the size of the variable.<br />&gt; On a given system, are not addresses the same size ?<br /><br />Your assumption is valid; the problem is that you weren&#8217;t putting a<br />pointer to the double into the void *, you were trying to put the double<br />itself into the void *.&nbsp; As mentioned elsewhere in the thread, the &#8216;&amp;&#8217;<br />operator is what you&#8217;re looking for.<br /><br />&gt; What I&#8217;m after here, is a &#8220;generic&#8221; mechanism for holding addresses of<br />&gt; mixed variable types.<br />&gt; i.e.: an array of addresses.<br />&gt; Be they of type int, or char, or double, etc.<br /><br />&gt; What I&#8217;m (really) after here is to construct a &#8216;generic mechanism&#8217; for<br />&gt; calling functions within DLLs at RunTime.<br />&gt; These DLLs, their Functions and Parameters passed are not known at<br />&gt; compile time.<br /><br />&gt; Research indicated that void pointers was the way to do this.<br /><br />Firstly, I can&#8217;t think of a good reason why you would want to do this.<br />It sounds as though you&#8217;ve come up with some idea for a &#8216;generic<br />mechanism&#8217; without actually having any use cases in mind.<br />Besides, linking against ill-defined interfaces is a bad idea.&nbsp; If<br />you&#8217;re trying to define functionality at runtime, an embedded scripting<br />language is the way to go.<br />But if you /really/ want this, void pointers will do it - but you have<br />to remember that what you assign to the void pointer has to, itself, be<br />a pointer too (hence why your double to void * cast wasn&#8217;t valid).&nbsp; Also<br />remember that if you pass a pointer, the callee can modify the<br />referenced object.&nbsp; This may not be what you want.<br />What it /really/ sounds like is that you want function overloading<br />and/or dynamic types - in other words, you&#8217;re trying to make C more like<br />C++ or Java.&nbsp; From my perspective that seems like a silly thing to do:<br />why would you want C++ in the first place - and if you do, you know<br />where to find it ;)<br /><br /><br />-Edward<br />==========<br /><br />&nbsp;BTW, the <a href="http://dev-null.chu.cam.ac.uk/">website</a> of Edward is worth viewing.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/03/visualize-resume/">Visualize Resume</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-03T00:00:00-04:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+两篇讲美化简历的日志，从第一篇阮一峰的<a href="http://www.ruanyifeng.com/blog/2010/09/infographic_resume.html">日志</a>可以链接到第二篇(<a href="http://www.vizualresume.com/10-free-resume-templates-257.html">click</a>)。乍一看心里还在想，若要使能这么做简历简直太炫了。直到看到英文那篇日志最后的评论，才算是豁然开朗。转贴到这里。<br /><br /><br /><b>All of them suck.</b> It’s nice eyecandy, but as a recruiter I wouldn’t want to waste my time to read them. My eyes would be hopping around without focus and I would be confused where to read next.<br /><br />Evalotta Lamm&#8217;s one would be the best of them if she had used only one column and a classic list from top to bottom. All the others that use two or more columns or completely defy any resumé standard are crap.<br /><br />Imagine what Albert Lo&#8217;s, Luc Pestille&#8217;s and Sarah Parmenter&#8217;s example looks like if the recruiter has to copy/print the resumé in black and white…<br /><br />Also never ever make your name stand out in a huge text size, come down from your high horse. No boss cares about someone that proudly displays his name, but has little experience or bad works. Even with a succesful career, you don’t need to show your name in an egoistical, arrogant way.<br /><br /><b>Playing around with a resumé design is only for people who can&#8217;t come up with a convincing portfolio. Be creative in your works, keep your resumé simple and boring.</b></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/24/some-helpful-webpages/">Some Helpful Webpages</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-24T00:00:00-04:00" pubdate data-updated="true">Sep 24<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Good Sites for Researchers and Students (<a href="http://www.cs.ucr.edu/%7Emichalis/techwriting.html">click</a>)<br /><br />Especially, there are something really worth reading:<br />Graduate School Survival Guide (<a href="http://faculty.washington.edu/wpratt/advice.htm">click</a>)<br />Writing Technical Articles (<a href="http://www.cs.columbia.edu/%7Ehgs/etc/writing-style.html">cllick</a>)<br />Networking on the Network: A Guide to Professional Skills for PhD Student (<a href="http://www.cs.uwyo.edu/%7Ejlc/courses/5000/networking_Agre.pdf">click</a>)<br />Useful Things to Know About Ph. D. Thesis Research (<a href="http://www.eecs.harvard.edu/%7Ehtk/thesis.htm">click</a>)<br />Resources for Ph.D. Students (<a href="http://enl.usc.edu/%7Ecs694/research_resources.html">click</a>)<br />Sources of good advice (<a href="http://www.cs.bu.edu/fac/byers/advice.html">click</a>)<br />So long, and thanks for the Ph.D. (for cs major) (<a href="http://www.cs.unc.edu/%7Eazuma/hitch4.html">click</a>)</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/24/setup-monitor-mode-and-disable-crc/">Setup “monitor” Mode and Disable CRC Checking</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-24T00:00:00-04:00" pubdate data-updated="true">Sep 24<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+1. Live Monitoring and Writing Raw 802.11 Packets — From madwifi README<br /><br />The driver can be used in a live “monitor” mode, by creating a monitor<br />VAP and sending packets to it. All packets sent to a monitor mode VAP<br />will bypass any state machine.<br /><br />To create a monitor VAP, use:<br /><br />wlanconfig ath1 create wlandev wifi0 wlanmode monitor<br />ifconfig ath1 up<br /><br />Finally, you can choose to receive packets on ath1 in several different<br />packet formats:<br /><br />echo ’801′ &gt; /proc/sys/net/ath1/dev_type # only 802.11 headers<br />echo ’802′ &gt; /proc/sys/net/ath1/dev_type # prism2 headers<br />echo ’803′ &gt; /proc/sys/net/ath1/dev_type # radiotap headers<br />echo ’804′ &gt; /proc/sys/net/ath1/dev_type # atheros descriptors<br /><br />2. Disable CRC and PHY error checking<br /><br />Allows monitor VAPs to process frames that have been marked<br />as errors by the hardware. Two new sysctl entries are created,<br />“monitor_crc_errors” and “monitor_phy_errors”. When these are set<br />to 1, the monitor mode interface will pass through frames that have<br />been marked with HAL_RXERR_CRC and HAL_RXERR_PHY respectively.<br />Default is to maintain current behaviour – no rx errors are passed<br />through.<br /><br />echo ’1′ &gt; /proc/sys/net/ath1/monitor_crc_errors # Disable CRC error checking<br /><br />echo ’1′ &gt; /proc/sys/net/ath1/monitor_phy_errors # Disable PHY error checking</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/20/todays-word-tweak/">Today&#8217;s Word: Tweak</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-20T00:00:00-04:00" pubdate data-updated="true">Sep 20<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<ul><li class="dct-em"> <div class="dct-em"> <span class="dct-tt">Twist or pull (something) sharply</span> </div><ul><li class="dct-ee"> <div class="dct-ee"> <span class="dct-tt">he <em>tweaked</em> the boy&#8217;s ear</span> </div></li></ul></li><li class="dct-em"> <div class="dct-em"> <span class="dct-tt">Improve (a mechanism or system) by making fine adjustments to it</span> </div><ul><li class="dct-ee"> <div class="dct-ee"> <span class="dct-tt">engineers <em>tweak</em> the car&#8217;s operating systems during the race</span> </div></li></ul></li></ul></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/17/eclipse-for-java-and-python/">Eclipse, X64 or X86?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-17T00:00:00-04:00" pubdate data-updated="true">Sep 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+64位的系统，才知道自己的浏览器是32位的……谢谢国家，谢谢oracle，谢谢java installer。折腾了半天的64位eclipse，修了这个错修那个错，就如同这个帖子一样（<a href="http://www.satya-weblog.com/2010/07/eclipse-error-failed-to-load-the-jni-shared-library-cprogram-files-x86javajre6binclientjvm-dll.html">here</a>）。是下面的一个回复帮了我～<br /><br />Nietvoordekat: &#8220;I have a 64 bit Windows 7, didn&#8217;t check if I had the 32 or 64 bit Java installed. Easy and fast check to do, is whether or not your Java folder is in Program Files or Program Files(x86). If you&#8217;ve got both of these maps and it&#8217;s in the x86 one, you&#8217;ll need the 32 bit download. You might wanna move that tip up from the bottom to the top, it shouldn&#8217;t take more then 10 secs to check.&#8221;</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/14/20100914/">20100914</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-14T00:00:00-04:00" pubdate data-updated="true">Sep 14<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+strcat<br />save<br />dlmwrite<br />some basic sorting algorthms<br /><br />TODO: ghost and tcpdump.<br />where the CSI is in the sourcecode.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/09/todays-update/">Today&#8217;s Update</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-09T00:00:00-04:00" pubdate data-updated="true">Sep 9<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+今天学到的东西<br />rm<br />scp<br />mkdir<br />mv<br />&#8230;<br />data quota exceeded<br />some basic perl rules<br /><br />待学的东西<br />vim<br />tcpdump<br /><br />实验室工作今儿到此为止。开始写作业了～</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/08/setup-wireless-lan-among-ubuntu-linux/">Setup Wireless LAN Among Ubuntu Linux OS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-08T00:00:00-04:00" pubdate data-updated="true">Sep 8<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Fix Wireless Ad-Hoc in GUI [<a href="http://www.ubuntugeek.com/creating-an-adhoc-host-with-ubuntu.html">click</a>]<br /><br /><br />Wireless Extensions CLI tools<br />This process is often used as the fall back position if the gui tools fail to work. The following example uses eth1 for the wifi interface though this may be wlan0, ath0 or something else in your case.<br /><br />Preparation:<br />Ensure that network manager has been stopped and then bring the interface down.<br /><b>sudo service network-manager stop</b><br /><b>sudo ifconfig eth1 down</b><br /><b>iwconfig (or ifconfig)</b> //look up if there is anything abnormal<br /><b>sudo dhclient eth1</b> &nbsp;////Bring the interface back up<br /><br />Configuration:<br /><b>sudo iwconfig eth1 mode ad-hoc</b> &nbsp;//Switch the card into ad hoc mode<br /><b>*sudo iwconfig eth1 channel 4</b> &nbsp;//Set the channel/frequency that you want to use.<br /><b>sudo iwconfig eth1 essid &#8216;name&#8217;</b> &nbsp;//Add the name (ssid) for the network you want to create/join. Use single quotes if there is a space in the name.<br /><b>*sudo iwconfig eth1 key 1234567890</b> &nbsp;//Add a WEP encryption key<br /><b>*sudo dhclient eth1</b> &nbsp;//Start dhclient to get an address<br /><b>sudo ifconfig eth1 169.254.34.2 </b>&nbsp;//If you want to do it manually, you will have to make up an IP address.<br /><br />You should now be connected to the ad hoc network. Use the iwconfig command to view the cell being used. This must match the same cell on the other PCs that you want to connect to.<br /><br />Testing:<br /><b>ping 169.254.34.2</b> &nbsp;//Once you have two or more computers connected to the ad hoc network, all of them showing the same cell number and having different IP addresses, then try pinging one from the others. If that doesn&#8217;t work then try specifying the interface name along with the address.<br /><b>ping -I eth1 169.254.34.2</b> &nbsp;//If you have more than one interface with link-local addresses there can be some routing confusion, so I recommend that you bring down these unused interfaces while connected to non-DHCP networks. If the other interfaces are all on DHCP networks, such as in the case of InternetConnectionSharing this is not necessary.<br />sudo ifdown eth0<br /><br />Example Interfaces File:<br />Currently Network Manager does not support static address settings and Network-Admin does not support ad hoc networks. So instead we can configure the network in the /etc/network/interfaces file. The following is an example.<br /><br />auto lo<br />iface lo inet loopback<br /><br />auto eth1<br />iface eth1 inet static<br />wireless-mode ad-hoc<br />wireless-channel 4<br />wireless-essid &#8216;name&#8217;<br />wireless-key 1234567890<br />address 192.168.0.2<br />netmask 255.255.255.0<br />gateway 192.168.0.1<br /><br /><br /><br />ps. some useful command:<br />ifconfig [<a href="http://www.faqs.org/docs/linux_network/x-087-2-iface.ifconfig.html">click</a>] &nbsp;iwconfig [<a href="http://gd.tuwien.ac.at/linuxcommand.org/man_pages/iwconfig8.html">click</a>]<br />wlanconfig [<a href="http://linux.die.net/man/8/wlanconfig">click</a>] &nbsp;tcpdump [<a href="http://www.tcpdump.org/tcpdump_man.html">click</a>]</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/08/rssi-and-snr/">Rssi and Snr</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-08T00:00:00-04:00" pubdate data-updated="true">Sep 8<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+In telecommunications, received signal strength indicator (RSSI) is a measurement of the power present in a received radio signal. RSSI is generic radio receiver technology metric, which is usually invisible to the user of device containing the receiver, but is directly known to users of wireless networking of IEEE 802.11 protocol family. RSSI is often done in the intermediate frequency (IF) stage before the IF amplifier. In zero-IF systems, it is done in the baseband signal chain, before the baseband amplifier. RSSI output is often a DC analog level. It can also be sampled by an internal ADC and the resulting codes available directly or via peripheral or internal processor bus.<br /><br />&#8220;RSSI&#8221; values have unspecified unit, ie. their meaning depends on manufacturer. Some report as dBm, some as a percent, some even in milliwatts. There is no standard. Also, the proper way to find SNR *is* to subtract dB values, as dB are logarithmic and hence the difference of logs is the same as a ratio without log. In other words, if a signal has amplitude 1 and noise is 0.5, the SNR is (1/0.5) = 2, but if the signal is measured as being at (say) -12 dB and noise floor is -16 dB, the SNR is (-12-(-16)) = 4 dB.<br /><br />Moreover, link quality depends on many other factors and the signal-to-noise ratio (computed from rssi and noise floor) is only one such factor.<br /><br />And finally, finding SNR of a wifi signal by subtracting noise floor from the rssi is of course only applicable if both values are reported in a log/dB scale. Otherwise if they are linear you&#8217;d need to use ratio (as you said) and if they are some other sort of scale then who knows what needs to be used!</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/11/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/9/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/15/more-freedom-in-doing-things/">More freedom in doing things</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/10/reading-note-of-sicp-4/">Reading note of SICP (4)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/08/reading-note-of-sicp-3/">Reading note of SICP (3)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/07/reading-note-of-sicp-2/">Reading note of SICP (2)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/06/reading-digest-sicp/">Reading note of SICP</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2013 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

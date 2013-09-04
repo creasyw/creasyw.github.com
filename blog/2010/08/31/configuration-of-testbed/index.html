@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>configuration of the testbed - Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="# all the machines should be upgraded to ubuntu 10.04 #PRE INSTALLATION&#8212;&#8212;&#8212;&#8212;&#8212;-- note down the ip address of the eth0 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/2010/08/31/configuration-of-testbed/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog">Blog</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/blog/archives/">Archive</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <article>
+  <header>
+    
+      <h1 class="entry-title">Configuration of the Testbed</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-31T00:00:00-04:00" pubdate data-updated="true">Aug 31<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+# all the machines should be upgraded to ubuntu 10.04 #<br /><br />PRE INSTALLATION<br />&#8212;&#8212;&#8212;&#8212;&#8212;-<br />- note down the ip address of the eth0 interface<br /><br />INSTALLING UBUNTU<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />- use the 10.04 ISO image from the CD<br />- make sure the Fedora 4 partition is formatted and wiped out<br />- use the username: lili, password: interference-<machine-name><br />&nbsp;&nbsp;&nbsp; - for instance, if m/c name: ut-mesh-d-14.csres.utexas.edu; then password: interference-d14<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if m/c name: ut-mesh-14.csres.utexas.edu; then password: interference-14<br /><br /><br />POST INSTALLATION<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />A. Configuring the network interfaces<br />- /etc/resolv.conf: create this file if it doesn&#8217;t exist and use the following entries<br />search public.utexas.edu<br />nameserver 128.83.139.9<br /><br />- /etc/network/interfaces: add the entry<br /><br />auto eth0<br />iface eth0 inet static<br />address <ip_address here=""><br />gateway 128.83.141.1<br />netmask 255.255.255.0<br />network 128.83.141.0<br />broadcast 128.83.141.255<br /><br />- sudo service network-manager stop (kills the network manager service, we don&#8217;t need it)<br /><br />- sudo /etc/init.d/networking restart<br />&nbsp; - try connecting to the internet, should work!<br /><br />INSTALLING VIM, SSH and WIRESHARK<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />- open the Administration-&gt;Synaptic Packet Manager. Click Reload. (updates the package manager). Close the package manager.<br />- sudo apt-get install ssh<br />- sudo apt-get install vim<br />- sudo apt-get install wireshark<br /><br />ADD RSA key of the host machine to this remote machine<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />- generate rsa key on the host machine using <br />&nbsp;&nbsp;&nbsp; ssh-keygen -t rsa1 <br />- cat ~/.ssh/<rsa dump="" file=""> &gt;&gt; ~/.ssh/authorized_keys@remote_machine<br />- chmod 600 ~/.ssh/authorized_keys@remote_machine<br /><br />Update the SUDOERS file<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />- sudo visudo<br />- <begins><br />User_Alias FULLTIMERS=lili<br />lili&nbsp;&nbsp;&nbsp; ALL=NOPASSWD:ALL<br />FULLTIMERS ALL = NOPASSWD: ALL<br />&nbsp; <ends><br /><br />Remove ath5k and install madwifi<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />http://art.ubuntuforums.org/showthread.php?t=1163380<br /><br />IMPORTANT<br />&#8212;&#8212;&#8211;<br />Driver Bug: Do not try to perform channel switch in the master mode; causes a hard freeze (Ref: http://madwifi-project.org/ticket/1903)<br /></ends></begins></rsa></ip_address></machine-name></div>
+</div>
+
+</article>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2013 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

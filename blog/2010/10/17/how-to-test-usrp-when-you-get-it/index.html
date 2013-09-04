@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How to test USRP when you get it - Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="prerequisites:1. install Linux: need to select a OS here2. install GNU Radio:&nbsp;&nbsp;&nbsp; &#8211;http://gnuradio.org/trac/wiki3. (optional) &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/2010/10/17/how-to-test-usrp-when-you-get-it/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog">Blog</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/blog/archives/">Archive</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <article>
+  <header>
+    
+      <h1 class="entry-title">How to Test USRP When You Get It</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-17T00:00:00-04:00" pubdate data-updated="true">Oct 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+<span style="font-family: Arial;"><b>prerequisites:</b><br />1. install Linux: need to select a OS <a href="http://gnuradio.org/trac/wiki/GettingStarted">here</a></span><br /><span style="font-family: Arial;">2. install GNU Radio:&nbsp;&nbsp;&nbsp; &#8211;<a href="http://gnuradio.org/trac/wiki">http://gnuradio.org/trac/wiki</a></span><br /><span style="font-family: Arial;">3. (optional) read the hardware documents:&nbsp;&nbsp;&nbsp; &#8211;<a href="http://gnuradio.org/trac/wiki/USRP">http://gnuradio.org/trac/wiki/USRP</a> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; user guide/install guide:&nbsp;&nbsp;&nbsp; &#8211;<a href="http://www.comsec.com/wiki?UsrpInstall">http://www.comsec.com/wiki?UsrpInstall</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; All the datasheets can be downloaded <a href="http://www.wu.ece.ufl.edu/projects/wirelessVideo/project/GNU_Radio_USRP/datasheet.zip"> here</a></span><br /><span style="font-family: Arial;">4. (optional) read driver source code <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the source codes related to USRP:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /usrp<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  firmware: for 8051 in USB controller, mostly writen as .c and .a51<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  FPGA: for FPGA, mostly writen as .v (it seems fpga only has SRAM inside, so it  need to download software for fpga every time)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  host: for PC, mostly writen as .cc<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /gr-usrp<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  driver for dauther board: mostly writen as .py and .cc<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /gnuradio-example/python/usrp<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  example for single usrp board: all writen in .py<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /gnuradio-example/python/multi-usrp<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  example for multi usrp boards: all writen in .py</span><br /><span style="font-family: Arial;"> <br /><b>begin to test:</b><br />1. How to power on and start test:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; step1. before plug in USB cable, open  two terminal.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; step2. to see a real time display of  all log messages: tail -f /var/log/messages (to check the usb driver is  correctly installed)<br />&nbsp;&nbsp;&nbsp; How to stop and power off:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; step1. stop the program.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; step2. disconnect USB connection and  power off</span><br /><span style="font-family: Arial;">2. test a script for usrp first without daughter board, which file I need to  test? <br />&#8211;<a href="http://www.comsec.com/wiki?UsrpInstall">http://www.comsec.com/wiki?UsrpInstall</a><br />gnuradio\gnuradio-examples\python\usrp\usrp_siggen.py &amp; usrp_fft.py<br /><br />3. how to test the transmitter and receiver for daughter board?<br />The antenna should be connect by Tx/Rx SMA but NOT Rx2! there is a switch for  Rx2 and the switch is off in default!<br />The Tx and Rx can NOT be connected directly by cable! need a attenuator about  40-50 dB!!<br />&nbsp;&nbsp;&nbsp; 1) /gnuradio-examples/python/usrp/usrp_siggen.py and usrp_fft.py to observe  signal<br />&nbsp;&nbsp;&nbsp; 2) /gnuradio-examples/python/digital/benchmark_tx.py and benchmark_rx.py to test  data transmission.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The boards need to be at least 3m  apart. &#8211;/home/james/gnuradio/gnuradio-examples/python/digital/README<br />&nbsp;&nbsp;&nbsp; 3) use tx_voice.py and rx_voice.py to test voice transmission. <br />&nbsp;&nbsp;&nbsp; 4) some also said to test /gnuradio-examples/python/usrp/usrp_nbfm_ptt.py to  test full duplex voice call, but I can&#8217;t make it works.<br /><br /><b>test voice:</b><br />1. gnuradio-examples\python\audio\dial_tone.py as tutorial<br />2. gnuradio-examples\python\audio\audio_copy.py<br />&nbsp;&nbsp;&nbsp; gnuradio-examples\python\audio\audio_to_file.py<br />&nbsp;&nbsp;&nbsp; gnuradio-examples\python\audio\audio_play.py<br />3. gnuradio-examples\python\digital_voice\encdec.py to test by one USRP<br />4.  gnuradio-examples\python\digital\tx_voice.py<br />&nbsp;&nbsp;&nbsp; gnuradio-examples\python\digital\rx_voice.py to test by two  USRP<br /><br /><b>test data:</b><br />1.  gnuradio-examples\python\digital\benchmark_tx.py<br />&nbsp;&nbsp;&nbsp; gnuradio-examples\python\digital\benchmark_rx.py to test by  two USRP<br /><br /><b>suggested by others:</b><br />1. <a href="http://www.nabble.com/High-packet-error-and-reception-problems-with-RFX-2400-t3522095.html"> http://www.nabble.com/High-packet-error-and-reception-problems-with-RFX-2400-t3522095.html</a><br />./benchmark_tx.py -f 2412M &#8211;bitrate 500k -v &#8211;tx-amplitude=30000<br />usrp_siggen.py and usrp_oscope.py<br />./benchmark_rx.py -f 2412M &#8211;bitrate 100k -v &#8211;rx-gain=75<br />&#8211;in digital folder<br /><br />2. <a href="http://staff.washington.edu/jon/gr-osx/gr-osx-usrp.html#using"> http://staff.washington.edu/jon/gr-osx/gr-osx-usrp.html#using</a><br />benchmark_usb.py Estimate throughput of USB<br />usrp_siggen.py Signal generator<br />usrp_oscope.py Oscilloscope (screenshot)<br />usrp_fft.py Spectrum analyzer (screenshot)</span></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+:]</div>
+</div>
+</div>
+</div>
+
+</article>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2013 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

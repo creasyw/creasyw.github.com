@@ -4,7 +4,7 @@
   <title><![CDATA[Category: LISP | Qiong Wu]]></title>
   <link href="http://creasyw.github.io/blog/categories/lisp/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2013-09-04T21:45:54-04:00</updated>
+  <updated>2013-09-06T15:52:57-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Reading note of SICP (4)]]></title>
     <link href="http://creasyw.github.io/blog/2013/08/10/reading-note-of-sicp-4/"/>
-    <updated>2013-08-10T00:00:00-04:00</updated>
+    <updated>2013-08-10T00:00:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/08/10/reading-note-of-sicp-4</id>
     <content type="html"><![CDATA[<div class='post'>
   Aug. 10th. Complete the 1st chapter of sicp.<br/><br/>
@@ -31,7 +31,7 @@
   <entry>
     <title type="html"><![CDATA[Reading note of SICP (3)]]></title>
     <link href="http://creasyw.github.io/blog/2013/08/08/reading-note-of-sicp-3/"/>
-    <updated>2013-08-08T00:00:00-04:00</updated>
+    <updated>2013-08-08T00:00:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/08/08/reading-note-of-sicp-3</id>
     <content type="html"><![CDATA[<div class='post'>
 &nbsp;<br />At the end of the 1st chapter, it enumerates the basic reason for the powerful lisp: first-order procedure.<br /><br />The major "privileges" of the first-order elements are:<br />1) They may be named by variables.<br />2) They may be passed as arguments to procedures.<br />3) They may be returned as the results of procedures.<br />4) They may be included in data structures.<br />They can be crucial abstraction mechanism permitting to express the general methods of computing as explicit elements in programming language, so that they can be handled just like other computational elements. The expression power is enormous.<br /><br />I have already been used to use the first two kinds of procedures, but the last two actually make the program even more expressive and powerful. Those are also the attractive properties sharing among functional programming languages.</div>
@@ -42,7 +42,7 @@
   <entry>
     <title type="html"><![CDATA[Reading note of SICP (2)]]></title>
     <link href="http://creasyw.github.io/blog/2013/08/07/reading-note-of-sicp-2/"/>
-    <updated>2013-08-07T00:00:00-04:00</updated>
+    <updated>2013-08-07T00:00:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/08/07/reading-note-of-sicp-2</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />While I am reading, I always try to distinguish which part of thoughts I used to learn from here when I read it for the first time, and which part I learned from Dan's course. And, surprisingly enough, I learned almost all basic factors from Dan, though I always felt I learned a lot of things last year when I began to read it.<br /><br />The name of this book is perfect for the content -- Structure and Interpretation of Computer Programs. It does not teach about how to program, nor a specific programming language. Of course it is a legacy book. But it seems to me that I cannot get enough from this book unless I have mastered quite a few programming languages. After Dan taught me everything about basic aspects of programming languages and I played with Ruby and Racket for a long time, even after I leaned all those "nontrivial" trivial things about C++, when I read it now, I am able to distinguish which part is the essence and which part is written just for the ease of learning, and I can fully focus on how to put different abstractions into different layers-- in other words, learning the structure and interpretation of computer programs.<br /><br />I read a comment, saying that Chapter 4 and 5 are the essence of the book. Hopefully, I can finish reading it before September, and leave enough time for Design Patterns.</div>
@@ -53,7 +53,7 @@
   <entry>
     <title type="html"><![CDATA[Reading note of SICP]]></title>
     <link href="http://creasyw.github.io/blog/2013/08/06/reading-digest-sicp/"/>
-    <updated>2013-08-06T00:00:00-04:00</updated>
+    <updated>2013-08-06T00:00:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/08/06/reading-digest-sicp</id>
     <content type="html"><![CDATA[<div class='post'>
 P59. I still don't think it is necessary to use "square" instead of (* x x) everywhere we perform this operation, but I appreciate the idea of "abstraction". It is really a good idea (and practice) to abstract concepts in different levels and use them accordingly.<br /><br />Most of the examples I read are in a top-down design manner: firstly use the abstract concepts, and then implement it in a lower level. The concerns for specific lower-level modules is similar to the way I did using unit test. But I am a little bit confuse how to perform the unit test in this manner. Especially for the closure using in LISP--implementing local helper functions right after building major function-- how can I make sure the helper functions are right before I run the program as a whole? If I separate a helper function as an independent one, it seems that quite a little redundant work has to perform when I move it back to the major function.<br /><br />Anyway, SICP just makes me love Racket even more =D<br /><br />cheers,</div>
@@ -64,7 +64,7 @@ P59. I still don't think it is necessary to use "square" instead of (* x x) ever
   <entry>
     <title type="html"><![CDATA[Setup emacs in Mac OS]]></title>
     <link href="http://creasyw.github.io/blog/2013/07/01/setup-emacs-in-mac-os/"/>
-    <updated>2013-07-01T00:00:00-04:00</updated>
+    <updated>2013-07-01T00:00:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/07/01/setup-emacs-in-mac-os</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />The setup is much harder than I thought...<br /><br />1) using homebrew installs the emacs and guile. Then, I also need to add path in the .bash_profile to launch the up-to-date emacs rather than the original version 22.1 shipped with the os.<br /><code>export PATH=/usr/local/Cellar/emacs/24.3/bin:$PATH</code><br />2) Enable the <a href="http://stackoverflow.com/questions/162896/emacs-on-mac-os-x-leopard-key-bindings">Meta key in terminal</a>, or similar position for iterm2.<br /><br />After these two steps, the following is more&nbsp;straightforward.<br /><br />3) I accidentally found this "<a href="https://github.com/technomancy/emacs-starter-kit">emacs-starter-kit</a>", which had 2300+ stared and really saved my day. Just follow the instruction and everything will be fine.<br /><br />In current state, I feel emacs kind of like vim+tmux. Anyway, learning new knowledge is always a pleasure, especially about this kind of "legacy" stuff.<br /><br /><br />cheers,<br /><br />[UPDATE: after changed the loading sequence of bash in <code>/etc/paths/</code> the first step seems unnecessary... actually, that was something I should do as soon as I used homebrew to port packages.&nbsp;<a href="http://bit.ly/IUVl9a">http://bit.ly/IUVl9a</a></div>

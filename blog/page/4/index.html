@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="It took me some time to find useful tools comparing hex file in mac. I had tried DiffMerge, kdiff3, HexEditor, and several other apps whose names I &hellip;">
+  <meta name="description" content="&#8220;MIT approach&#8221; with CLOS and Scheme:1) Simplicity-the design must be simple, both in implementation and interface. It is more important &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,43 +79,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/07/25/editing-hex-file-via-vim/">Editing Hex File via Vim</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-25T00:00:00-05:00" pubdate data-updated="true">Jul 25<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-It took me some time to find useful tools comparing hex file in mac. I had tried DiffMerge, kdiff3, HexEditor, and several other apps whose names I could not recall. At last, the most viable way is still using the vim editor. But the problem was still there: it was painful to look at hex code in that editor.<br /><br />Solution:<br />Adding some configuration in the ~/.vimrc will make everything peace and clean:)<br /><br /><code><br />" vim -b : edit binary using xxd-format!<br />augroup Binary<br />au!<br />au BufReadPre  *.bin let &amp;bin=1<br />au BufReadPost *.bin if &amp;bin | %!xxd<br />au BufReadPost *.bin set ft=xxd | endif<br />au BufWritePre *.bin if &amp;bin | %!xxd -r<br />au BufWritePre *.bin endif<br />au BufWritePost *.bin if &amp;bin | %!xxd<br />au BufWritePost *.bin set nomod | endif<br />augroup END<br /><code></code></code><br /><br />Note that this configuration only works with the file with .bin extension, which is already enough for me to hack into the targeting files:) Check the reference #1 for further reading of more general hex file editing.<br /><br />cheers:)<br /><br />References:<br />1) <a href="http://vim.wikia.com/wiki/Improved_hex_editing">Improve hex editing</a><br />2) <a href="http://www.tuxfiles.org/linuxhelp/vimcheat.html">Vim commands cheat sheet</a></div>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -443,6 +406,43 @@ Basic commands and references:<br /><a href="http://cprogramminglanguage.net/">C
 
   <div class="entry-content"><div class='post'>
 B.E.&nbsp;&nbsp; &nbsp;100*2+50=250&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;(two exam plus one course)<br />M.E.&nbsp;&nbsp; &nbsp;300+300+50=650&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;(three years)<br />MSc&nbsp;&nbsp; &nbsp;100+600+50+200=950&nbsp;&nbsp; &nbsp;(lab and homework)<br />=1850hr</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/16/programming-craftsmanship/">Programming Craftsmanship</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-16T00:00:00-05:00" pubdate data-updated="true">Apr 16<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+&nbsp;The article below is a digest from &#8221;<a href="http://dannorth.net/2011/01/11/programming-is-not-a-craft/">Programming is not a craft</a>&#8221; (courtesy to the author Dan North.)<br /><br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; <br />Software Craftsmanship risks putting the software at the center rather than the benefit the software is supposed to deliver, mostly because we are romantics with big egos. Programming is about automating work like crunching data, processing and presenting information, or controlling and automating machines.<br /><br />They understand software development is a skill, in fact a whole portfolio of skills: understanding and modeling a problem domain, understanding programming languages, libraries, paradigms and idioms, choosing which to apply in a given situation, learning and understanding algorithms, mastering the &#8220;path to production&#8221; (build, deployment, release), monitoring and availability, process automation, Lean theories of supply, production and product development, utility and cloud computing, concurrency and parallelism, and so on.<br /><br />The oft-quoted figures of tenfold increase in productivity of expert versus novice programmers are wrong by orders of magnitude in my experience. A really great programmer (and I&#8217;ve been lucky enough to work with a handful over the years) can out-perform a doing-it-for-the-money programmer by orders of literally hundreds, delivering in hours or days what would take an average developer weeks or months.<br /><br />It seems to me the most successful programmers I&#8217;ve encountered don&#8217;t craft software; they write software in order to move information around, in order to get something done. Information is the real deal – the software just defines the space that it moves around in. For those programmers, success is about getting information from point A where it&#8217;s currently languishing to point B where it&#8217;s going to actually be useful, as quickly and effectively as they can. Success in a UI is about rendering or capturing exactly the information that will be useful – no less and certainly no more – in a succinct, obvious way. The software is incidental, a detail, hidden away in the wings, and it is ultimately entirely disposable.</div>
 </div>
   
   

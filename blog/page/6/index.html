@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="These days, I did lots of parallel programming. Although sometimes this activity does suffer from low efficiency, it do help me a lot for further &hellip;">
+  <meta name="description" content="Reading the articles written by Joel sometimes feels frustrated. But, anyway, they are also illustrated. Here is another post about how to write &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,43 +79,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/08/these-days-i-did-lots-of-parallel/">Some Reflections</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-08T00:00:00-06:00" pubdate data-updated="true">Mar 8<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-These days, I did lots of parallel programming. Although sometimes this activity does suffer from low efficiency, it do help me a lot  for further preparing and studying of coding. Like other routine work,  the more both of us prepared, the more efficient work we will have.  Besides, there are several points worth mentioning in retrospect:<br /><br />1) Format matters. Tab is a much better choice than several blanks. <br />2) Comments also matter. It will help others know why I wrote in this manner and what the underlying idea for some blocks of code.<br />3) Multiple screens are necessary: put severl UI in one screen, references in one, and debug windows in one. Cross referring among different dialogs and different screens is one way to improve efficiency. <br />4) As long as employ oneself in the subject, it will be more  straightforward to achieve goals. After all, coding is only  time-consuming in one aspect.<br />5) The use of short-cuts in vim definitely will improve the efficiency, and also seems like more professional:)<br />6) People will only accept suggestions when they know nothing about it. So, at most of the time, the better choice is just keeping quite and getting your own work done. <br />7) Reading more, practice more, improve faster.<br /><br />Update:<br /><br />Below is something I read from a <a href="http://jacquesmattheij.com/The+need+to+code">programmer&#8217;s blog</a>.<br /><br /><br />At the time I was a fanatic chess player and my &#8216;dream&#8217; was to  build a  chess program. Of course that was a fairly advanced thing to  do, in the  end my knowledge of computer programming, and my theoretical  knowledge  of chess, the memory of the computer, and the available  time, they all  limited me to writing a program that could do one of two  end games (KQ  vs K and KR vs K). <br />Looking back over all those  years (I&#8217;m 45 now), I don&#8217;t think there  ever was a time when I wasn&#8217;t  programming or thinking about programming  in some way or another since I  gained that first little bit of insight  into what makes a computer  tick.<br /><br />It&#8217;s like a drug. I&#8217;m still fascinated by it, even almost 30  years to  the day later I still read about languages, new ways to solve  old  problems, all kinds of developments in software and hardware, as  though  it is the first time that I hear about these things. It is a  fascinating  world, the world of software. <br />It has changed  tremendously over that time, our &#8216;small&#8217; computers of  today are more  powerful than the biggest &#8216;big iron&#8217; that you could buy  when I was a  kid. Your average cell phone has more storage, computing  power, and  bandwidth available to it than a mainframe of 30 years ago.  Programming  itself has changed, from &#8216;batch&#8217; programming to more and  more  interactive code, &#8216;web&#8217; development and so on. But it has also - in   essence - remained the same, small building blocks are piled on top of   each other to create more complex constructs, which in turn can be used   to create yet more complex constructs, and so on.<br /><br />That process, the act of programming, is something that I <i>need</i>   to do. Whether to make a living or to be fooling around with some  idea,  the bug is in my system and I highly doubt that it will ever  leave me  permanently. I can see myself taking a break, but I can&#8217;t see  myself  ever stopping. All I&#8217;ll end up doing then is to change my mode  from work  to play and eventually that will lead back to some form of  work.<br /><br />If you can&#8217;t program yet, or if you think that it is  &#8216;complex&#8217;, rest  assured, there is nothing that can&#8217;t be learned.  Programming is not like  playing a musical instrument, and it is not  something that you have to  have a genetic disposition for. The pay-off  is in how much time you  spend plugging away at it. Over time you&#8217;ll get  better, and at some  point it will click. It may take a while (it took  me more than a year to  learn &#8216;BASIC&#8217;, which is a very simple language)  and I gave up several  times only to go back to it once more.  Eventually, I got it, and I&#8217;m  sure that everybody that can do basic  arithmetic and that is able to put  together a precise list of  instructions on how to make coffee or a  pizza can learn how to program.<br /><br />Maybe you won&#8217;t be the next Donald Knuth, but that&#8217;s not what it   takes, all you need to be is a little bit better than you were  yesterday  and to keep doing that for a long time.<br /><br />Beware of that bug though, once it bites you, you&#8217;ll be hooked for life.</div>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -443,6 +406,43 @@ see also &lt;<a href="http://www.joelonsoftware.com/articles/fog0000000319.html"
 
   <div class="entry-content"><div class='post'>
 说到Unix为我们所带来的软件开发的哲学，我必需要说一说。Unix遵循的原则是KISS（Keep it simple, stupid）。在http://en.wikipedia.org/wiki/Unix_philosophy 上有很多的基本上大同小异的Unix哲学，都是很经典的。<br /><br />Doug McIlroy 是认为UNIX的哲学是这样的：三条哲学，简明扼要，就是这三条哲学贯穿着整个Unix世界。尤其是第一条“do one thing and do it well”真是相当精彩！<br /><br />&nbsp;&nbsp;&nbsp; * Write programs that do one thing and do it well.<br />&nbsp;&nbsp;&nbsp; * Write programs to work together.<br />&nbsp;&nbsp;&nbsp; * Write programs to handle text streams, because that is a universal interface.<br /><br />只要是Unix的程序员，他们会比别的程序员在任何时候都会不停地强调着这三条哲学。<br /><br />而《The Art of Unix Programming》总结了下面这些哲学，都是至理名言啊。<br /><br />&nbsp;&nbsp;&nbsp; * Rule of Modularity: Write simple parts connected by clean interfaces.<br />&nbsp;&nbsp;&nbsp; * Rule of Clarity: Clarity is better than cleverness.<br />&nbsp;&nbsp;&nbsp; * Rule of Composition: Design programs to be connected to other programs.<br />&nbsp;&nbsp;&nbsp; * Rule of Separation: Separate policy from mechanism; separate interfaces from engines.<br />&nbsp;&nbsp;&nbsp; * Rule of Simplicity: Design for simplicity; add complexity only where you must.<br />&nbsp;&nbsp;&nbsp; * Rule of Parsimony: Write a big program only when it is clear by demonstration that nothing else will do.<br />&nbsp;&nbsp;&nbsp; * Rule of Transparency: Design for visibility to make inspection and debugging easier.<br />&nbsp;&nbsp;&nbsp; * Rule of Robustness: Robustness is the child of transparency and simplicity.<br />&nbsp;&nbsp;&nbsp; * Rule of Representation: Fold knowledge into data so program logic can be stupid and robust.<br />&nbsp;&nbsp;&nbsp; * Rule of Least Surprise: In interface design, always do the least surprising thing.<br />&nbsp;&nbsp;&nbsp; * Rule of Silence: When a program has nothing surprising to say, it should say nothing.<br />&nbsp;&nbsp;&nbsp; * Rule of Repair: When you must fail, fail noisily and as soon as possible.<br />&nbsp;&nbsp;&nbsp; * Rule of Economy: Programmer time is expensive; conserve it in preference to machine time.<br />&nbsp;&nbsp;&nbsp; * Rule of Generation: Avoid hand-hacking; write programs to write programs when you can.<br />&nbsp;&nbsp;&nbsp; * Rule of Optimization: Prototype before polishing. Get it working before you optimize it.<br />&nbsp;&nbsp;&nbsp; * Rule of Diversity: Distrust all claims for “one true way”.<br />&nbsp;&nbsp;&nbsp; * Rule of Extensibility: Design for the future, because it will be here sooner than you think.<br /><br />X Windows 的设计者 Mike Gancarz 给出了下面九条哲学思想<br /><br />&nbsp;&nbsp; 1. Small is beautiful.<br />&nbsp;&nbsp; 2. Make each program do one thing well.<br />&nbsp;&nbsp; 3. Build a prototype as soon as possible.<br />&nbsp;&nbsp; 4. Choose portability over efficiency.<br />&nbsp;&nbsp; 5. Store data in flat text files.<br />&nbsp;&nbsp; 6. Use software leverage to your advantage.<br />&nbsp;&nbsp; 7. Use shell scripts to increase leverage and portability.<br />&nbsp;&nbsp; 8. Avoid captive user interfaces.<br />&nbsp;&nbsp; 9. Make every program a filter.<br /><br /><br />十条不错的编程观点<br />1） The only “best practice” you should be using all the time is “Use Your Brain”, rather than some so-called &#8220;famous&#8221; frameworks, methods, classes, or prototypes.<br />2）Programmers who don’t code in their spare time for fun will never become as good as those that do.<br />3）Most comments in code are in fact a pernicious form of code duplication, which should explain &#8220;why&#8221;, rather than &#8220;how&#8221; and &#8220;what&#8221;.<br />4）XML is highly overrated<br />5）Not all programmers are created equal<br />6）”Googling it” is okay!<br />7）If you only know one language, no matter how well you know it, you’re not a great programmer.<br />8）Your job is to put yourself out of work. Or, saying, if you can’t be replaced then you can’t be promoted!<br />9）Design patterns are hurting good design more than they’re helping it.<br />10）Unit Testing won’t help you write good code</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/01/08/job-hunting/">Job Hunting</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-08T00:00:00-06:00" pubdate data-updated="true">Jan 8<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+need to read:<br />thinking in Java<br />coding interviews<br />thinking in C++<br />CLRS and K&amp;R, again&#8230;<br /><br />in one month?.. ok, i will try.</div>
 </div>
   
   

@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="将一个容器复制给另一个容器时，类型必须匹配：容器类型和元素类型都必须一致。迭代器first和last如果满足以下两点，则可以形成一个迭代器范围：1、它们指向同一个容器中的元素或超出末端的下一个位置；如果两个迭代器不相等，则对first反复应用自增加运算必须能够到达last，即， &hellip;">
+  <meta name="description" content="Q: I&#8217;m trying to define a few simple little function-like macros such as #define square(x) x * xbut they&#8217;re not always working.&#8212;&# &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,43 +79,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/07/01/20100701-digest-container/">Digest: Container</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-01T00:00:00-05:00" pubdate data-updated="true">Jul 1<span>st</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-将一个容器复制给另一个容器时，类型必须匹配：容器类型和元素类型都必须一致。<br /><br />迭代器first和last如果满足以下两点，则可以形成一个迭代器范围：1、它们指向同一个容器中的元素或超出末端的下一个位置；如果两个迭代器不相等，则对first反复应用自增加运算必须能够到达last，即，务必在使用前检查last绝对不能位于first之前。<br /><br />使用迭代器时，通常可以编写程序使得要求迭代器有效的代码范围较短。然后，在该范围内，严格检查每一条语句，判断是否有元素增加或者删除，从而相应的调整迭代器的值。此外，任何insert、push、assign操作都会导致原迭代器失效。当编写循环将元素插入到vector或deque容器中时，程序必须确保迭代器在每次循环后都得到更新。<br />vector&#8221;int&#8221;<int>::iterator first = v.begin(); //cache begin iterator<br />//safer: recalaulate end on each trip whenever the loop adds/erases elements<br />while (first != v.end()) { &nbsp;//do some processing in block&#8230;<br />&nbsp;&nbsp; &nbsp; //insert new value, meanwhile update the first iterator<br />&nbsp;&nbsp; &nbsp; first = v.insert(first, 42);<br />&nbsp;&nbsp; &nbsp; ++first; &nbsp; &nbsp;//advance first just past the element added just now<br />&nbsp;&nbsp; &nbsp; } &nbsp; &nbsp;//example ends<br />&nbsp;&nbsp; <br />在调用front或back函数之前，或者在对begin或end返回的迭代器进行解引用运算之前，必须保证容器非空。例如，进行 if(!ilist.empty()){&#8230;}的检查，否则，上述四个语句的操作都是没有定义的。</int><br /><br /><int></int>如果程序要求随机访问元素，则应使用vector或deque容器；如果程序必须在容器中间位置插入或者删除元素，则应采用list容器。如果无法确定某种应用应当采取哪种容器，则编写代码时应尝试只使用vector和list容器都提供的操作：使用迭代器，而不是下表，并且避免随机访问元素。这样编写代码，在必要的时候，可以很方便将程序从使用vector修改为使用list容器。</div>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -443,6 +406,43 @@ Cherubic cutie, you will be alright. I will bless for you all day long&#8230;</d
 
   <div class="entry-content"><div class='post'>
 austin的雨水总是很迷人。身处一个古香古色的自习室里，又是独自一人占据这个大屋子。桌子、百叶窗、窗掾的暗红色木质感配合淡黄色的灯光，让人感觉安逸。雨水就这样一阵阵间断而急促的敲打着玻璃。之前下雨时在宿舍，总会感慨，有个屋檐可以躲避雨水而安然入睡，真好。现在的感慨是，有个屋檐，可以静听雨声，读读书写写字，真好。总之，真好。<br /><br />6月12日老师才会从外地抵达学校。自己的研究方向最终的确定，也需要等到那会儿。然后，又是一个多月后，才能回国，才能见到lan。又是一个漫长的等待。我所能做的，就是按时做好自己份内的事情。然后每日掰着手指数上一遍。想念是很玄的东西，无论如何形容，都无法尽情展述。</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/05/23/starbucks/">@ Starbucks</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-23T00:00:00-05:00" pubdate data-updated="true">May 23<span>rd</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+昨天舍友对我说，你甭去学校看书了。<br />我问为啥？<br />他说，你这么努力我压力太大了。<br />我只是笑，然后补充一句，这样充实着挺好的。<br />他皱着眉头来回踱着步子，然后抬起头来对我说，你怎么从三四月份的时候开始，好像变了一个人似的，以前你还会偶尔比我起的晚的，现在我起床时候是完全看不见你了。<br /><br />事物是普遍联系的:)我生活中的基本改变都他晓得，但他显然还没有把所有这些联系到一起。<br /><br />初中物理有一个这样的实验。一个U型铁安静的架在桌子上，老师又拿来另外一个相同的U型铁，轻敲其中一个，两个家伙都发出了动听的声音，彼此呼应。我想，这可以作为解释。我印象中的自己，原本就应该是这个样子。安静的思考，安静的读书，安静的把所有份内的事情做好。她让我在浮躁或是压力四溢的时候，也能够记得自己本来的样子。我们很像。尽管她是个晚辈，还是可以彼此倾诉彼此思念，真好。<br /><br />now i am in a starbucks shop. when i entered here, i asked the waiter, i dont wanna buy coffee or tea, but the library wont open till noon, can i stay here? he smiled and replied, sure. so nice a person:)</div>
 </div>
   
   

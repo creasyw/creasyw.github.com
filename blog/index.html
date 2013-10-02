@@ -159,13 +159,14 @@
         bucket[i] = {start:arr[start][i]}
     
     <span class="keyword">for</span> i <span class="keyword">in</span> <span class="predefined">range</span>(<span class="integer">1</span>, size):
-        <span class="comment"># use set() to make sure the start points in the next round are unique</span>
+        <span class="comment"># use set() to make sure start points in the next round are unique</span>
         candidate = <span class="predefined">set</span>()
         previous = count ^ <span class="integer">1</span>
         data[count] = data[previous]
         <span class="keyword">for</span> v <span class="keyword">in</span> bucket:
-            data[count, v] = <span class="predefined">min</span>(data[previous, v], data[previous, bucket[v].keys()[<span class="integer">0</span>]]\
-                                                    +bucket[v].values()[<span class="integer">0</span>])
+            data[count, v] = <span class="predefined">min</span>(data[previous, v], \
+                data[previous, bucket[v].keys()[<span class="integer">0</span>]] \
+                +bucket[v].values()[<span class="integer">0</span>])
             candidate.add(v)
         <span class="comment"># stop early</span>
         <span class="keyword">if</span> (data[count]==data[previous]).all():
@@ -173,8 +174,9 @@
         bucket = {}
         <span class="keyword">for</span> j <span class="keyword">in</span> candidate:
             <span class="keyword">for</span> k <span class="keyword">in</span> arr[j]:
-                <span class="keyword">if</span> (k <span class="keyword">in</span> bucket <span class="keyword">and</span> data[count,j]+arr[j][k] &lt; data[count, bucket[k].keys()[<span class="integer">0</span>]]\
-                      +bucket[k].values()[<span class="integer">0</span>]) <span class="keyword">or</span> k <span class="keyword">not</span> <span class="keyword">in</span> bucket:
+                <span class="keyword">if</span> (k <span class="keyword">in</span> bucket <span class="keyword">and</span> data[count,j]+arr[j][k] &lt; \
+                      data[count, bucket[k].keys()[<span class="integer">0</span>]] + \
+                      bucket[k].values()[<span class="integer">0</span>]) <span class="keyword">or</span> k <span class="keyword">not</span> <span class="keyword">in</span> bucket:
                     bucket[k] = {}
                     bucket[k][j] = arr[j][k]
         <span class="keyword">if</span> <span class="keyword">not</span> bucket:
@@ -185,7 +187,8 @@
     previous = count ^ <span class="integer">1</span>
     data[count] = data[previous]
     <span class="keyword">for</span> v <span class="keyword">in</span> bucket:
-        data[count, v] = <span class="predefined">min</span>(data[previous, v], data[previous, bucket[v].keys()[<span class="integer">0</span>]]+bucket[v].values()[<span class="integer">0</span>])
+        data[count, v] = <span class="predefined">min</span>(data[previous,v], \
+                data[previous, bucket[v].keys()[<span class="integer">0</span>]]+bucket[v].values()[<span class="integer">0</span>])
     <span class="keyword">if</span> (data[count]== data[previous]).all():
         <span class="keyword">return</span> data[count]
     <span class="keyword">else</span>:
@@ -215,14 +218,14 @@
         <span class="keyword">for</span> i <span class="keyword">in</span> data:
             <span class="keyword">for</span> k <span class="keyword">in</span> data[i]:
                 data[i][k] = data[i][k]+reweight[i]-reweight[k]
-    result = []
     
-    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="predefined">range</span>(<span class="integer">1</span>, vertex+<span class="integer">1</span>):
-        result.append(<span class="predefined">min</span>(reconvert(reweight, vertex, dijkstras(data, i), i)))
-    <span class="keyword">return</span> <span class="predefined">min</span>(result)
+    <span class="keyword">return</span> [<span class="predefined">min</span>(reconvert(reweight,vertex,dijkstras(data,i),i)))\
+            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="predefined">range</span>(<span class="integer">1</span>,vertex+<span class="integer">1</span>)]
 </pre></div>
 </div>
  </figure></notextile></div>
+
+<p>p.s. The vistualization of code block is optimized from the original Octopress style to Github-style based on the <a href="http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-coderay/">tutorial</a>.</p>
 
 </div>
   

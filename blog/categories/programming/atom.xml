@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Qiong Wu]]></title>
   <link href="http://creasyw.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2013-09-15T21:45:46-05:00</updated>
+  <updated>2013-10-02T09:05:41-04:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -16,59 +16,54 @@
   <entry>
     <title type="html"><![CDATA[Reading note of SICP (4)]]></title>
     <link href="http://creasyw.github.io/blog/2013/08/10/reading-note-of-sicp-4/"/>
-    <updated>2013-08-10T00:00:00-05:00</updated>
+    <updated>2013-08-10T00:00:00-04:00</updated>
     <id>http://creasyw.github.io/blog/2013/08/10/reading-note-of-sicp-4</id>
-    <content type="html"><![CDATA[<div class='post'>
-  Aug. 10th. Complete the 1st chapter of sicp.<br/><br/>
+    <content type="html"><![CDATA[<div class="post">
+  Aug. 10th. Complete the 1st chapter of sicp.<br /><br />
   
   I really appreciate the exercises within each subsections, because I can feel that they are well designed. I used to have the same feeling when I did the homework from Dan's course of programming languages. The exercises make the general concepts concrete and doable.
-  <br/><br/>
+  <br /><br />
   The abstraction is far from merely making the code more structured and readable. It is a design choice. Sometimes, it takes experience to find out where should be abstracted. And sometimes, it takes much more endeavors than simply mix everything together. But once the choice of abstraction is right, the program becomes clearer, and it increases many degrees of freedom for the design afterwards.</div>
-
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Reading note of SICP (3)]]></title>
     <link href="http://creasyw.github.io/blog/2013/08/08/reading-note-of-sicp-3/"/>
-    <updated>2013-08-08T00:00:00-05:00</updated>
+    <updated>2013-08-08T00:00:00-04:00</updated>
     <id>http://creasyw.github.io/blog/2013/08/08/reading-note-of-sicp-3</id>
-    <content type="html"><![CDATA[<div class='post'>
+    <content type="html"><![CDATA[<div class="post">
 &nbsp;<br />At the end of the 1st chapter, it enumerates the basic reason for the powerful lisp: first-order procedure.<br /><br />The major "privileges" of the first-order elements are:<br />1) They may be named by variables.<br />2) They may be passed as arguments to procedures.<br />3) They may be returned as the results of procedures.<br />4) They may be included in data structures.<br />They can be crucial abstraction mechanism permitting to express the general methods of computing as explicit elements in programming language, so that they can be handled just like other computational elements. The expression power is enormous.<br /><br />I have already been used to use the first two kinds of procedures, but the last two actually make the program even more expressive and powerful. Those are also the attractive properties sharing among functional programming languages.</div>
-
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Reading note of SICP (2)]]></title>
     <link href="http://creasyw.github.io/blog/2013/08/07/reading-note-of-sicp-2/"/>
-    <updated>2013-08-07T00:00:00-05:00</updated>
+    <updated>2013-08-07T00:00:00-04:00</updated>
     <id>http://creasyw.github.io/blog/2013/08/07/reading-note-of-sicp-2</id>
-    <content type="html"><![CDATA[<div class='post'>
+    <content type="html"><![CDATA[<div class="post">
 <br />While I am reading, I always try to distinguish which part of thoughts I used to learn from here when I read it for the first time, and which part I learned from Dan's course. And, surprisingly enough, I learned almost all basic factors from Dan, though I always felt I learned a lot of things last year when I began to read it.<br /><br />The name of this book is perfect for the content -- Structure and Interpretation of Computer Programs. It does not teach about how to program, nor a specific programming language. Of course it is a legacy book. But it seems to me that I cannot get enough from this book unless I have mastered quite a few programming languages. After Dan taught me everything about basic aspects of programming languages and I played with Ruby and Racket for a long time, even after I leaned all those "nontrivial" trivial things about C++, when I read it now, I am able to distinguish which part is the essence and which part is written just for the ease of learning, and I can fully focus on how to put different abstractions into different layers-- in other words, learning the structure and interpretation of computer programs.<br /><br />I read a comment, saying that Chapter 4 and 5 are the essence of the book. Hopefully, I can finish reading it before September, and leave enough time for Design Patterns.</div>
-
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Reading note of SICP]]></title>
     <link href="http://creasyw.github.io/blog/2013/08/06/reading-digest-sicp/"/>
-    <updated>2013-08-06T00:00:00-05:00</updated>
+    <updated>2013-08-06T00:00:00-04:00</updated>
     <id>http://creasyw.github.io/blog/2013/08/06/reading-digest-sicp</id>
-    <content type="html"><![CDATA[<div class='post'>
+    <content type="html"><![CDATA[<div class="post">
 P59. I still don't think it is necessary to use "square" instead of (* x x) everywhere we perform this operation, but I appreciate the idea of "abstraction". It is really a good idea (and practice) to abstract concepts in different levels and use them accordingly.<br /><br />Most of the examples I read are in a top-down design manner: firstly use the abstract concepts, and then implement it in a lower level. The concerns for specific lower-level modules is similar to the way I did using unit test. But I am a little bit confuse how to perform the unit test in this manner. Especially for the closure using in LISP--implementing local helper functions right after building major function-- how can I make sure the helper functions are right before I run the program as a whole? If I separate a helper function as an independent one, it seems that quite a little redundant work has to perform when I move it back to the major function.<br /><br />Anyway, SICP just makes me love Racket even more =D<br /><br />cheers,</div>
-
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Python/Numpy version collisions]]></title>
     <link href="http://creasyw.github.io/blog/2013/07/23/pythonnumpy-version-collisions/"/>
-    <updated>2013-07-23T00:00:00-05:00</updated>
+    <updated>2013-07-23T00:00:00-04:00</updated>
     <id>http://creasyw.github.io/blog/2013/07/23/pythonnumpy-version-collisions</id>
-    <content type="html"><![CDATA[<div class='post'>
+    <content type="html"><![CDATA[<div class="post">
 &nbsp; &nbsp; <br />Before this accident, I did not even know there were so many places relevant with a single program... I opened the pandora's box beginning with using <code>brew doctor</code> &nbsp;which told me to move directory /usr/local/bin/ prior to /usr/bin/ so that all the homebrewed packages could be found automatically. After I did this, if I executed matplotlib, I would have this runtime error <code>RuntimeError: module compiled against API version 8 but this version of numpy is 6</code>&nbsp;which was somewhat correct by the way. Because I used superpack installed the latest version of numpy(1.8), scipy(0.13), and matplotlib(1.4), but if I printed out the "numpy.__version__" in a script, it showed 1.6.1.<br /><br />1) delete all of the outdated versions of numpy<br />2) make sure I explicitly add PYTHONPATH in the bash_profile.<br />3) I even uninstalled and reinstalled the numpy<br />But the problem was still there.<br /><br />After an exhausted search, I found that numpy-1.6.1 in "/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/" WTF! I still don't know why it search into 2.6 given there is another 2.7 in the same level of directory. Deleting both 2.6 and 2.7 directories (only delete the 2.6 could not work either...) finally solved the problem. ahooooo....<br /><br /></div>
-
 ]]></content>
   </entry>
   

@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="&nbsp; &nbsp; Racket is fairly great:), though the setting up procedure is kind of twisted. There is a .dmg installation file in the official &hellip;">
+  <meta name="description" content="&nbsp; &nbsp; Cpp is like some stubborn old man, who always says &#8220;i have lots of obscure habits, dealing with it&#8221;&#8230;&#8230;Lesson 4 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +85,43 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/06/04/excerpt-from-effective-c/">Excerpt From Effective C++</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-04T00:00:00-04:00" pubdate data-updated="true">Jun 4<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+&nbsp; &nbsp; <br />Cpp is like some stubborn old man, who always says &#8220;i have lots of obscure habits, dealing with it&#8221;&#8230;&#8230;<br /><br /><b>Lesson 4:</b> the initialization is different from assignment, as well as their representations respectively. It is better to write the constructor as the form of initialization, named &#8220;initialization list&#8221;, rather than just simply give the variables first assignment.<br /><br />To avoid using objects before they&#8217;re initialized, then, you need to do only three things. First, manually initialize non-member objects of built-in types. Second, use member initialization lists to initialize all parts of an object. Finally, design around the initialization order uncertainty that afflicts non-local static objects defined in separate translation units.<br /><br /><b>Lesson 7</b>: declare destructors virtual in polymorphic base classes. C++ specifies that when a derived class object is deleted through a pointer to a base class with a non-virtual destructor, results are undefined. What typically happens at runtime is that the derived part of the object is never destroyed. Eliminating the problem is simple: give the base class a virtual destructor. Then deleting a derived class object will do exactly what you want. It will destroy the entire object, including all its derived class parts.<br /><br />The purpose of virtual functions is to allow customization of derived class implementations. Any class with virtual functions should almost certainly have a virtual destructor. The implementation of virtual functions requires that objects carry information that can be used at runtime to determine which virtual functions should be invoked on the object. On the other hand, if a class does not contain virtual functions, that often indicates it is not meant to be used as a base class. When a class is not intended to be a base class, making the destructor virtual is usually a bad idea.<br /><br /><b>Lesson 9</b>: Never call virtual functions during construction or destruction. Because during base class construction of a derived class object, the type of the object is that of the base class. Not only do virtual functions resolve to the base class, but the parts of the language using runtime type information (e.g., dynamic_cast (see Item 27) and typeid) treat the object as a base class type.<br /><br />The same reasoning applies during destruction. Once a derived class destructor has run, the object&#8217;s derived class data members assume undefined values, so C++ treats them as if they no longer exist. Upon entry to the base class destructor, the object becomes a base class object, and all parts of C++ treat it that way.<br /><br />Since you can&#8217;t use virtual functions to call down from base classes during construction, you can compensate by having derived classes pass necessary construction information up to base class constructors instead.<br /><br /></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/02/19/set-up-racket-for-vim-and-mac-terminal/">Set Up Racket for Vim and Mac Terminal</a></h1>
     
     
@@ -101,7 +138,7 @@
   
 
 
-<time datetime="2013-02-19T00:00:00-06:00" pubdate data-updated="true">Feb 19<span>th</span>, 2013</time>
+<time datetime="2013-02-19T00:00:00-05:00" pubdate data-updated="true">Feb 19<span>th</span>, 2013</time>
         
       </p>
     
@@ -138,7 +175,7 @@
   
 
 
-<time datetime="2013-02-14T00:00:00-06:00" pubdate data-updated="true">Feb 14<span>th</span>, 2013</time>
+<time datetime="2013-02-14T00:00:00-05:00" pubdate data-updated="true">Feb 14<span>th</span>, 2013</time>
         
       </p>
     
@@ -175,7 +212,7 @@
   
 
 
-<time datetime="2012-10-04T00:00:00-05:00" pubdate data-updated="true">Oct 4<span>th</span>, 2012</time>
+<time datetime="2012-10-04T00:00:00-04:00" pubdate data-updated="true">Oct 4<span>th</span>, 2012</time>
         
       </p>
     
@@ -212,7 +249,7 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
   
 
 
-<time datetime="2012-09-17T00:00:00-05:00" pubdate data-updated="true">Sep 17<span>th</span>, 2012</time>
+<time datetime="2012-09-17T00:00:00-04:00" pubdate data-updated="true">Sep 17<span>th</span>, 2012</time>
         
       </p>
     
@@ -249,7 +286,7 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
   
 
 
-<time datetime="2012-09-14T00:00:00-05:00" pubdate data-updated="true">Sep 14<span>th</span>, 2012</time>
+<time datetime="2012-09-14T00:00:00-04:00" pubdate data-updated="true">Sep 14<span>th</span>, 2012</time>
         
       </p>
     
@@ -286,7 +323,7 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
   
 
 
-<time datetime="2012-06-12T00:00:00-05:00" pubdate data-updated="true">Jun 12<span>th</span>, 2012</time>
+<time datetime="2012-06-12T00:00:00-04:00" pubdate data-updated="true">Jun 12<span>th</span>, 2012</time>
         
       </p>
     
@@ -323,7 +360,7 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
   
 
 
-<time datetime="2012-06-04T00:00:00-05:00" pubdate data-updated="true">Jun 4<span>th</span>, 2012</time>
+<time datetime="2012-06-04T00:00:00-04:00" pubdate data-updated="true">Jun 4<span>th</span>, 2012</time>
         
       </p>
     
@@ -360,7 +397,7 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
   
 
 
-<time datetime="2012-05-16T00:00:00-05:00" pubdate data-updated="true">May 16<span>th</span>, 2012</time>
+<time datetime="2012-05-16T00:00:00-04:00" pubdate data-updated="true">May 16<span>th</span>, 2012</time>
         
       </p>
     
@@ -397,7 +434,7 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
   
 
 
-<time datetime="2012-04-10T00:00:00-05:00" pubdate data-updated="true">Apr 10<span>th</span>, 2012</time>
+<time datetime="2012-04-10T00:00:00-04:00" pubdate data-updated="true">Apr 10<span>th</span>, 2012</time>
         
       </p>
     
@@ -406,43 +443,6 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
 
   <div class="entry-content"><div class='post'>
 &nbsp; &nbsp;&nbsp; <br />After wondering around for a while, I finally found this was quite foolproof&#8230; <br /><br />It could be divided into five steps:<br />1. $ <i>brew install mit-scheme</i>. (Its version is usually a little bit older than the latest <a href="http://www.gnu.org/software/mit-scheme/">MIT/GNU Scheme</a>)<br />2. Install <a href="http://www.gnu.org/software/screen/">GNU screen</a> if it was not installed before.<br />3. Install <a href="http://www.vim.org/scripts/script.php?script_id=2711">Screen Vim plug-in</a> according the steps in that webpage.<br />4. $ <i>vim ~/.vimrc</i><br /><code>"For screen.vim send block<br />"to SendScreen function<br />"(eg Scheme interpreter)<br />vmap <c-c><c-c> :ScreenSend<cr><br />nmap <c-c><c-c> vip<c-c><c-c></c-c></c-c></c-c></c-c></cr></c-c></c-c></code><br />5. Launch Vim and write &#8220;:ScreenShell mit-scheme&#8221;. It is all set for the fun:)<br /><br />References: <a href="http://www.ktaylor.name/vim/">[1]</a>, <a href="http://www.uponmyshoulder.com/blog/2011/so-you-want-to-do-the-sicp/">[2]</a><br /><br />cheers,</div>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/03/16/reading-digest-031612/">Reading Digest 03/16/12</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-16T00:00:00-05:00" pubdate data-updated="true">Mar 16<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<b>Smart and Gets things done</b><br />What should you look for during the open-ended questions?<br />One: look for passion. Smart people are passionate about the projects they work on. They get very excited talking about the subject. They talk quickly and get animated. There are far too many people around who can work on something and not really care one way or the other. It’s hard to get people like this motivated about anything.<br />Two: good candidates are careful to explain things well, at whatever level. You don’t want to hire some one, basically, because he is not smart enough to comprehend what it takes to make other people understand their ideas.<br /><br /><b>No Designer&#8217;s Design Book</b><br />When several items are in close proximity to each other, they become one visual unit rather than several separate units. As in life, the proximity, or the closeness, implies a relationship.<br />By grouping similar elements into one unit, several things instantly happen: The page becomes more organized. You understand where to begin reading the message, and you know when you are finished. And the “white space” (the space around the letters) automatically becomes more organized as well.</div>
 </div>
   
   
@@ -467,6 +467,10 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/30/johnsons-algorithm/">Johnson&#8217;s Algorithm</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/15/more-freedom-in-doing-things/">More freedom in doing things</a>
       </li>
     
@@ -480,10 +484,6 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
     
       <li class="post">
         <a href="/blog/2013/08/07/reading-note-of-sicp-2/">Reading note of SICP (2)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/06/reading-digest-sicp/">Reading note of SICP</a>
       </li>
     
   </ul>

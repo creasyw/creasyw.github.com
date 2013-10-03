@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2013-10-03T02:13:20-05:00</updated>
+  <updated>2013-10-03T18:14:30-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -55,7 +55,7 @@
 </div>
  </figure></notextile></div>
 
-<p>The Bellman-Ford algorithm is more expensive compared with Dijkstra’s algirhtm if the graph is densily connected, but it deals with negative edge cost. This is also the one that helps me fully appreciate the dynamic programming.The implementation is intuitive and straightforward. For every vertex, the brutal force search performs to find the current optimal solution based on the previous knowledge. The optimization for space complexity is to only store the most recent result–keep an 2*N array and use a pointer filp-flop in every iteration is more effecient than keeping two 1*N array, discarding the older one and reclaiming a new one in every iteration. Aother optimization I make is to store the “about-to explore” nodes in a bucket, just as what Dijkstra’s does, which eliminates plenty of unnecessary calculation. But its trick aspect is that because this algorithm is computing “distributed”, if several “exploring” vertices point to a same “about-to explore” vertex, only the optimal cost should be kept.</p>
+<p>The Bellman-Ford algorithm is more expensive compared with Dijkstra’s algirhtm if the graph is densily connected, but it deals with negative edge cost. This is also the one that helps me fully appreciate the dynamic programming.The implementation is intuitive and straightforward. For every vertex, the brutal force search performs to find the current optimal solution based on the previous knowledge. The optimization for space complexity is to only store the most recent result–keep an 2*N array and use a pointer filp-flop in every iteration is more effecient than keeping two 1*N array, discarding the older one and reclaiming a new one in every iteration. Aother optimization I make is to store the “about-to explore” nodes in a bucket, just as what Dijkstra’s does, which eliminates plenty of unnecessary calculation. But its tricky aspect is that because this algorithm is computing “distributed”, different from the “centralized” spanning of Dijkstra’s, if several “exploring” vertices point to a same “about-to explore” vertex, only the optimal cost should be kept.</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>Bellman-Ford Algorithm</span><a href="https://github.com/creasyw/learning/blob/master/courses/algo_analysis_II/hw4/bellman_ford.py">link</a></figcaption> <div class="CodeRay">
   <div class="code"><pre>
@@ -82,9 +82,10 @@
                 data[previous, bucket[v].keys()[<span class="integer">0</span>]] \
                 +bucket[v].values()[<span class="integer">0</span>])
             candidate.add(v)
-        <span class="comment"># stop early</span>
+        <span class="comment"># stop early if there is no place to span</span>
         <span class="keyword">if</span> (data[count]==data[previous]).all():
             <span class="keyword">break</span>
+        <span class="comment"># update the bucket</span>
         bucket = {}
         <span class="keyword">for</span> j <span class="keyword">in</span> candidate:
             <span class="keyword">for</span> k <span class="keyword">in</span> arr[j]:

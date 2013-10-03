@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="test for python code Dijkstra&#8217;s Algorithmlink def dijkstras(graph, start): # keep a record of the distance of the nodes from the start vertex &hellip;">
+  <meta name="description" content="The question comes from the online course Algorithm Design and Analysis (Part II) in coursera. It is an all-pairs shortest path problem. As mentioned &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,7 +85,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/09/30/johnsons-algorithm/">Johnson&#8217;s Algorithm</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/09/30/johnsons-algorithm/">All-pairs Shortest Path</a></h1>
     
     
       <p class="meta">
@@ -101,14 +101,16 @@
   
 
 
-<time datetime="2013-09-30T23:49:00-04:00" pubdate data-updated="true">Sep 30<span>th</span>, 2013</time>
+<time datetime="2013-09-30T23:49:00-05:00" pubdate data-updated="true">Sep 30<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>test for python code</p>
+  <div class="entry-content"><p>The question comes from the online course <em>Algorithm Design and Analysis (Part II)</em> in coursera. It is an <a href="http://en.wikipedia.org/wiki/Shortest_path_problem#All-pairs_shortest_paths">all-pairs shortest path problem</a>. As mentioned in the wikipedia, a more straightforward solution with Floyd–Warshall algorithm takes O(N^3) complexity, and the more computational efficient approach is to use a combination of Dijkstra’s algorithm, Bellman-Ford algorithm, and Johnson’s algorithm, which chould decrease the complexity to O(N^2logN). I implement the latter one for more interesting and challenging. There are several obstacles make the implementation a little bit trickier than I thought.</p>
+
+<p>I have tried two or three different versions of Dijkstra’s algorithm while solving other math puzzles, and this time I use the built-in heapq function in Python. Keeping the “about-to explore” nodes in order and extracting the smallest/largest cost one in every iteration are the essense of this algorithm. But the cost to every node has to be updated when a node moves from “about-to explore” to “fully explored” category. At first, I just remove the original value and push the updated one into the heap. Because the heapq has no updated or remove methods, I can only use the remove mehtod of the list. This works fine for small amount of nodes (200) but the heap cannot keep right struture when the data becomes just a little bigger (500). Then I have to <em>heapify</em> it every time I update a “about-to explore” node.</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>Dijkstra&#8217;s Algorithm</span><a href="https://github.com/creasyw/learning/blob/master/courses/algo_analysis_II/hw4/dijkstras.py">link</a></figcaption> <div class="CodeRay">
   <div class="code"><pre>
@@ -142,6 +144,8 @@
 </pre></div>
 </div>
  </figure></notextile></div>
+
+<p>The Bellman-Ford algorithm is more expensive compared with Dijkstra’s algirhtm if the graph is densily connected, but it deals with negative edge cost. This is also the one that helps me fully appreciate the dynamic programming.The implementation is intuitive and straightforward. For every vertex, the brutal force search performs to find the current optimal solution based on the previous knowledge. The optimization for space complexity is to only store the most recent result–keep an 2*N array and use a pointer filp-flop in every iteration is more effecient than keeping two 1*N array, discarding the older one and reclaiming a new one in every iteration. Aother optimization I make is to store the “about-to explore” nodes in a bucket, just as what Dijkstra’s does, which eliminates plenty of unnecessary calculation. But its trick aspect is that because this algorithm is computing “distributed”, if several “exploring” vertices point to a same “about-to explore” vertex, only the optimal cost should be kept.</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>Bellman-Ford Algorithm</span><a href="https://github.com/creasyw/learning/blob/master/courses/algo_analysis_II/hw4/bellman_ford.py">link</a></figcaption> <div class="CodeRay">
   <div class="code"><pre>
@@ -197,7 +201,7 @@
 </div>
  </figure></notextile></div>
 
-<p>The solution is solved using Johonson’s algorithm, which on one hand using the Dijkstra’s algorithm, on the other hand get rid of the shortcoming of this algorithm that it cannot solving the edge with negative cost.</p>
+<p>Finally, the two algorithms above are connected by the Johnson’s algorithm. Dijkstra’s algorithm cannot deal with negative edge costs, but much more fast than Bellman-Ford especially in the case of “all-pairs”. Furthermore, the negative costs cannot be got rid of by adding uniformly for every edge. Johnson’s algorithm neatly solves it by adding pseudo-node to find weights of vertices and changing values of edges concerning their connected vertices. There is no hidden obstacle in the implementation. Only the special care should be taken for manipulating the nodes. It reminds me coding in C…</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption class="code-header" style="margin-bottom:-5px;"><span>Johnson&#8217;s Algorithm</span><a href="https://github.com/creasyw/learning/blob/master/courses/algo_analysis_II/hw4/johnsons.py">link</a></figcaption> <div class="CodeRay">
   <div class="code"><pre>
@@ -224,6 +228,8 @@
 </pre></div>
 </div>
  </figure></notextile></div>
+
+<p>The overall algorithm solves the question and runs kind of standard. Still, I do not satisfy with the update procedure of heap. I will write a new version of this data structure in the near future and see if it can provide significant boost for the performance.</p>
 
 <p>p.s. The vistualization of code block is optimized from the original Octopress style to Github-style based on the <a href="http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-coderay/">tutorial</a>.</p>
 
@@ -255,7 +261,7 @@
   
 
 
-<time datetime="2013-08-15T00:15:00-04:00" pubdate data-updated="true">Aug 15<span>th</span>, 2013</time>
+<time datetime="2013-08-15T00:15:00-05:00" pubdate data-updated="true">Aug 15<span>th</span>, 2013</time>
         
       </p>
     
@@ -308,7 +314,7 @@
   
 
 
-<time datetime="2013-08-10T00:00:00-04:00" pubdate data-updated="true">Aug 10<span>th</span>, 2013</time>
+<time datetime="2013-08-10T00:00:00-05:00" pubdate data-updated="true">Aug 10<span>th</span>, 2013</time>
         
       </p>
     
@@ -349,7 +355,7 @@
   
 
 
-<time datetime="2013-08-08T00:00:00-04:00" pubdate data-updated="true">Aug 8<span>th</span>, 2013</time>
+<time datetime="2013-08-08T00:00:00-05:00" pubdate data-updated="true">Aug 8<span>th</span>, 2013</time>
         
       </p>
     
@@ -386,7 +392,7 @@
   
 
 
-<time datetime="2013-08-07T00:00:00-04:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
+<time datetime="2013-08-07T00:00:00-05:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
         
       </p>
     
@@ -423,7 +429,7 @@
   
 
 
-<time datetime="2013-08-06T00:00:00-04:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
+<time datetime="2013-08-06T00:00:00-05:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
         
       </p>
     
@@ -460,7 +466,7 @@ P59. I still don&#8217;t think it is necessary to use &#8220;square&#8221; inste
   
 
 
-<time datetime="2013-07-23T00:00:00-04:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
+<time datetime="2013-07-23T00:00:00-05:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
         
       </p>
     
@@ -497,7 +503,7 @@ P59. I still don&#8217;t think it is necessary to use &#8220;square&#8221; inste
   
 
 
-<time datetime="2013-07-01T00:00:00-04:00" pubdate data-updated="true">Jul 1<span>st</span>, 2013</time>
+<time datetime="2013-07-01T00:00:00-05:00" pubdate data-updated="true">Jul 1<span>st</span>, 2013</time>
         
       </p>
     
@@ -534,7 +540,7 @@ P59. I still don&#8217;t think it is necessary to use &#8220;square&#8221; inste
   
 
 
-<time datetime="2013-06-05T00:00:00-04:00" pubdate data-updated="true">Jun 5<span>th</span>, 2013</time>
+<time datetime="2013-06-05T00:00:00-05:00" pubdate data-updated="true">Jun 5<span>th</span>, 2013</time>
         
       </p>
     
@@ -571,7 +577,7 @@ P59. I still don&#8217;t think it is necessary to use &#8220;square&#8221; inste
   
 
 
-<time datetime="2013-06-05T00:00:00-04:00" pubdate data-updated="true">Jun 5<span>th</span>, 2013</time>
+<time datetime="2013-06-05T00:00:00-05:00" pubdate data-updated="true">Jun 5<span>th</span>, 2013</time>
         
       </p>
     

@@ -23,6 +23,8 @@
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
+  <!-- add Mathjex.js by qiong -->
+  <script src="http://kramdown.rubyforge.org/MathJax/MathJax.js" type="text/javascript"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
   
@@ -108,7 +110,7 @@
   </header>
 
 
-  <div class="entry-content"><p>The question comes from the online course <em>Algorithm Design and Analysis (Part II)</em> in coursera. It is an <a href="http://en.wikipedia.org/wiki/Shortest_path_problem#All-pairs_shortest_paths">all-pairs shortest path problem</a>. As mentioned in the wikipedia, a more straightforward solution with Floyd–Warshall algorithm takes O(N^3) complexity, and the more computational efficient approach is to use a combination of Dijkstra’s algorithm, Bellman-Ford algorithm, and Johnson’s algorithm, which chould decrease the complexity to O(N^2logN). I implement the latter one for more interesting and challenging. There are several obstacles make the implementation a little bit trickier than I thought.</p>
+  <div class="entry-content"><p>The question comes from the online course <em>Algorithm Design and Analysis (Part II)</em> in coursera. It is an <a href="http://en.wikipedia.org/wiki/Shortest_path_problem#All-pairs_shortest_paths">all-pairs shortest path problem</a>. As mentioned in the wikipedia, a more straightforward solution with Floyd–Warshall algorithm takes \(O(N^3)\) complexity, and the more computational efficient approach is to use a combination of Dijkstra’s algorithm, Bellman-Ford algorithm, and Johnson’s algorithm, which chould decrease the complexity to \(O(N^2logN)\). I implement the latter one for more interesting and challenging. There are several obstacles make the implementation a little bit trickier than I thought.</p>
 
 <p>I have tried two or three different versions of Dijkstra’s algorithm while solving other math puzzles, and this time I use the built-in heapq function in Python. Keeping the “about-to explore” nodes in order and extracting the smallest/largest cost one in every iteration are the essense of this algorithm. But the cost to every node has to be updated when a node moves from “about-to explore” to “fully explored” category. At first, I just remove the original value and push the updated one into the heap. Because the heapq has no updated or remove methods, I can only use the remove mehtod of the list. This works fine for small amount of nodes (200) but the heap cannot keep right struture when the data becomes just a little bigger (500). Then I have to <em>heapify</em> it every time I update a “about-to explore” node.</p>
 

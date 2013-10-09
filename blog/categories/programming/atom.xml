@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Qiong Wu]]></title>
   <link href="http://creasyw.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2013-10-09T18:36:17-05:00</updated>
+  <updated>2013-10-09T18:44:16-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -142,7 +142,7 @@ data[count] = data[previous]
 
 <p>The overall algorithm solves the question and runs kind of standard. Still, I do not satisfy with the update procedure of heap. I will write a new version of this data structure in the near future and see if it can provide significant boost for the performance.</p>
 
-<p>p.s. The vistualization of code block is optimized from the original Octopress style to Github-style based on the <a href="http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-coderay/">tutorial</a>.
+<p>p.s. The vistualization of code block is optimized from the original Octopress style to Github-style based on the <a href="http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-coderay/">tutorial</a>.<br />
 p.p.s. The inline latex-style formula comes with Kramdown, MathJax and <a href="http://yoyzhou.github.io/blog/2012/08/05/add-latex-support-for-octopress/">this tutorial</a>. Besides, there is <a href="http://brianbuccola.github.io/blog/2012-11-28-latex-math-in-octopress.html">another minor bug to deal with</a>.</p>
 ]]></content>
   </entry>

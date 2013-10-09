@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="The Computer Sciences Department Rules to Live ByNovember 2, 2008The Computer Sciences Department is a community of scholars and students. Each of &hellip;">
+  <meta name="description" content="In telecommunications, received signal strength indicator (RSSI) is a measurement of the power present in a received radio signal. RSSI is generic &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/08/rssi-and-snr/">Rssi and Snr</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-08T00:00:00-05:00" pubdate data-updated="true">Sep 8<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+In telecommunications, received signal strength indicator (RSSI) is a measurement of the power present in a received radio signal. RSSI is generic radio receiver technology metric, which is usually invisible to the user of device containing the receiver, but is directly known to users of wireless networking of IEEE 802.11 protocol family. RSSI is often done in the intermediate frequency (IF) stage before the IF amplifier. In zero-IF systems, it is done in the baseband signal chain, before the baseband amplifier. RSSI output is often a DC analog level. It can also be sampled by an internal ADC and the resulting codes available directly or via peripheral or internal processor bus.<br /><br />&#8220;RSSI&#8221; values have unspecified unit, ie. their meaning depends on manufacturer. Some report as dBm, some as a percent, some even in milliwatts. There is no standard. Also, the proper way to find SNR *is* to subtract dB values, as dB are logarithmic and hence the difference of logs is the same as a ratio without log. In other words, if a signal has amplitude 1 and noise is 0.5, the SNR is (1/0.5) = 2, but if the signal is measured as being at (say) -12 dB and noise floor is -16 dB, the SNR is (-12-(-16)) = 4 dB.<br /><br />Moreover, link quality depends on many other factors and the signal-to-noise ratio (computed from rssi and noise floor) is only one such factor.<br /><br />And finally, finding SNR of a wifi signal by subtracting noise floor from the rssi is of course only applicable if both values are reported in a log/dB scale. Otherwise if they are linear you&#8217;d need to use ratio (as you said) and if they are some other sort of scale then who knows what needs to be used!</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -428,43 +465,6 @@ When I install the madwifi driver from madwifi.org, the problem appears:<br /><b
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/07/02/install-rt2870-usb-wireless-adapter-in/">Install RT2870 Usb Wireless Adapter in Ubuntu 10</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-02T00:00:00-05:00" pubdate data-updated="true">Jul 2<span>nd</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-Step 0 : At terminal, aaa@ubuntu:~$ sudo gedit /etc/modprobe.d/blacklist.conf. Add “blacklist rt2870usb” without quote at the end of the file, then save it.<br /><br />Step 1 : Download the latest rt2870 driver (<a href="http://www.ralinktech.com/support.php?s=2">here</a>) from Ralink.<br /><br />Step 2 : Untar the file and save to your home folder, and name it. (eg. the folder name is rt2870)<br /><br />Step 2.51 : According to the instruction I found in the internet, there should be another three steps done with the dongle: firstly, without plug your wireless usb at this moment, at terminal aaa@ubuntu:~$ type lsusb.<br /><br />Step 2.52 : Then plug in the wireless usb to the computer, type lsusb again, the&nbsp;wireless usb ID (8 digits)&nbsp;will be found. Write it down.<br /><br />Step 2.53 : Check it at aaa@ubuntu:~/rt2870/os/linux$, sudo gedit usb_main_dev.c. If the usb device is not included, add the wireless usb ID. Save the file. For example, the additional two lines are:<br />{USB_DEVICE(0x0B05,0x1761)}, /* Asus */<br />{USB_DEVICE(0x1761,0x0B05)}, /* Asus */<br /><br />Step 3 :&nbsp;In Makefile,&nbsp;set the &#8220;MODE = STA&#8221; in Makefile and chose the TARGET to Linux by set &#8220;TARGET = LINUX&#8221;. Then, change the directory of RT28XX_DIR in line 7 by &#8220;aaa@ubuntu:~$&nbsp;shell pwd&#8221;. Finally, via the command &#8220;aaa@ubuntu:~$&nbsp;shell uname -r&#8221;,&nbsp;define the linux kernel source include file path LINUX_SRC&nbsp;modify to meet your need.<br /><br />Step 4 : At same terminal , sudo gedit config.mk, and change two settings.<br /># Support Wpa_Supplicant<br />HAS_WPA_SUPPLICANT=n → y<br /># Support Native WpaSupplicant for Network Maganger<br />HAS_NATIVE_WPA_SUPPLICANT_SUPPORT=n → y<br /><br />Step 5 : At aaa@ubuntu:~/rt2870$, sudo gedit Makefile, check the folllowing at the top of the file:<br />RT28xx_MODE = STA<br />TARGET = LINUX<br />CHIPSET = 2870<br />If ok, close the file. If not, change the setting as above.<br /><br />Step 6: rt2870 2.2.00 version do not support kernel 2.6.31-14-generic, so you have to do a patch. The download link is <a href="http://launchpadlibrarian.net/35348337/rt2870-2.6.31.patch">here</a>, and the patch is via &#8220;patch -p1 &lt; rt2870-2.6.31.patch&#8221;.If you get a message of unable to patch, then download and install Patch_2.5.9-5_amd64.deb.<br /><br />Step 7 : At aaa@ubuntu:~/rt2870$, do the compilation.<br />sudo make uninstall<br />sudo make clean<br />sudo make<br />sudo make install<br /><br />Step 8 : At aaa@ubuntu:~$ sudo modprobe rt2870sta<br /><br />Step 9 : At aaa@ubuntu”~$ sudo gedit /etc/rc.local, add following two lines prior to exit0.<br />ifconfig ra0 up<br />pkill NetworkManager<br />save it, then at same terminal, sudo gedit /etc/modules, add rt2870sta, then save the file.<br /><br />Step 10 :At aaa@ubuntu:~$ ifconfig or iwconfig, you will see your wireless is up as ra0 or wlan0.<br /><br />Step 11 : Now configure networkmanager, use wep instead of wpa-psk or wpa2-psk. Your wireless will be able to connect to the internet. If there&#8217;s no connection, then do step 12.<br /><br />Step 12 : Update networkmanager. Go to System – Software Sources – Other software, add the following line<br />deb http://ppa.launchpad.net/network-manager/trunk/ubuntu karmic main<br /><br />That&#8217;s the end.</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/12/">&larr; Older</a>
@@ -482,6 +482,10 @@ Step 0 : At terminal, aaa@ubuntu:~$ sudo gedit /etc/modprobe.d/blacklist.conf. A
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/09/lte-reading-excerpt/">LTE reading excerpt</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/30/johnsons-algorithm/">All-pairs shortest path</a>
       </li>
     
@@ -495,10 +499,6 @@ Step 0 : At terminal, aaa@ubuntu:~$ sudo gedit /etc/modprobe.d/blacklist.conf. A
     
       <li class="post">
         <a href="/blog/2013/08/08/reading-note-of-sicp-3/">Reading note of SICP (3)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/07/reading-note-of-sicp-2/">Reading note of SICP (2)</a>
       </li>
     
   </ul>

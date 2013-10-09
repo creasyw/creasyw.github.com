@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="These days, I did lots of parallel programming. Although sometimes this activity does suffer from low efficiency, it do help me a lot for further &hellip;">
+  <meta name="description" content="There is a good introduction in wikipedia, which includes several useful external links at the end of the article. The MATLAB also has quite a few &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/10/fixed-point-arithmetic/">Fixed Point Arithmetic</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-10T00:00:00-06:00" pubdate data-updated="true">Mar 10<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+There is a good introduction in <a href="http://en.wikipedia.org/wiki/Fixed-point_arithmetic">wikipedia</a>, which includes several useful external links at the end of the article. The <a href="http://www.mathworks.com/help/toolbox/fixedpoint/ug/f6312.html">MATLAB</a> also has quite a few functions dealing with this kind of problems, as well as a thorough introductory article. Besides, the <a href="http://groups.google.com/group/comp.lang.c/browse_thread/thread/16fc49e7e6efe383?hl=en">comp.lang.c</a> happen to take one inspiring discussion about it. All these things adding together shall definitely let me understand sufficient knowledge about this field of study.<br /><br />In addition, there are other resources from <a href="http://www.edn.com/archives/1996/101096/21df_04.htm">TI</a> and <a href="http://www.eetimes.com/discussion/other/4024639/Fixed-point-math-in-C">article written by Joe Lemieux</a> directly concerning the fixed point C programming.</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ see also &lt;<a href="http://www.joelonsoftware.com/articles/fog0000000319.html"
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/02/21/some-abstract/">Some Abstract</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-21T00:00:00-06:00" pubdate data-updated="true">Feb 21<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-说到Unix为我们所带来的软件开发的哲学，我必需要说一说。Unix遵循的原则是KISS（Keep it simple, stupid）。在http://en.wikipedia.org/wiki/Unix_philosophy 上有很多的基本上大同小异的Unix哲学，都是很经典的。<br /><br />Doug McIlroy 是认为UNIX的哲学是这样的：三条哲学，简明扼要，就是这三条哲学贯穿着整个Unix世界。尤其是第一条“do one thing and do it well”真是相当精彩！<br /><br />&nbsp;&nbsp;&nbsp; * Write programs that do one thing and do it well.<br />&nbsp;&nbsp;&nbsp; * Write programs to work together.<br />&nbsp;&nbsp;&nbsp; * Write programs to handle text streams, because that is a universal interface.<br /><br />只要是Unix的程序员，他们会比别的程序员在任何时候都会不停地强调着这三条哲学。<br /><br />而《The Art of Unix Programming》总结了下面这些哲学，都是至理名言啊。<br /><br />&nbsp;&nbsp;&nbsp; * Rule of Modularity: Write simple parts connected by clean interfaces.<br />&nbsp;&nbsp;&nbsp; * Rule of Clarity: Clarity is better than cleverness.<br />&nbsp;&nbsp;&nbsp; * Rule of Composition: Design programs to be connected to other programs.<br />&nbsp;&nbsp;&nbsp; * Rule of Separation: Separate policy from mechanism; separate interfaces from engines.<br />&nbsp;&nbsp;&nbsp; * Rule of Simplicity: Design for simplicity; add complexity only where you must.<br />&nbsp;&nbsp;&nbsp; * Rule of Parsimony: Write a big program only when it is clear by demonstration that nothing else will do.<br />&nbsp;&nbsp;&nbsp; * Rule of Transparency: Design for visibility to make inspection and debugging easier.<br />&nbsp;&nbsp;&nbsp; * Rule of Robustness: Robustness is the child of transparency and simplicity.<br />&nbsp;&nbsp;&nbsp; * Rule of Representation: Fold knowledge into data so program logic can be stupid and robust.<br />&nbsp;&nbsp;&nbsp; * Rule of Least Surprise: In interface design, always do the least surprising thing.<br />&nbsp;&nbsp;&nbsp; * Rule of Silence: When a program has nothing surprising to say, it should say nothing.<br />&nbsp;&nbsp;&nbsp; * Rule of Repair: When you must fail, fail noisily and as soon as possible.<br />&nbsp;&nbsp;&nbsp; * Rule of Economy: Programmer time is expensive; conserve it in preference to machine time.<br />&nbsp;&nbsp;&nbsp; * Rule of Generation: Avoid hand-hacking; write programs to write programs when you can.<br />&nbsp;&nbsp;&nbsp; * Rule of Optimization: Prototype before polishing. Get it working before you optimize it.<br />&nbsp;&nbsp;&nbsp; * Rule of Diversity: Distrust all claims for “one true way”.<br />&nbsp;&nbsp;&nbsp; * Rule of Extensibility: Design for the future, because it will be here sooner than you think.<br /><br />X Windows 的设计者 Mike Gancarz 给出了下面九条哲学思想<br /><br />&nbsp;&nbsp; 1. Small is beautiful.<br />&nbsp;&nbsp; 2. Make each program do one thing well.<br />&nbsp;&nbsp; 3. Build a prototype as soon as possible.<br />&nbsp;&nbsp; 4. Choose portability over efficiency.<br />&nbsp;&nbsp; 5. Store data in flat text files.<br />&nbsp;&nbsp; 6. Use software leverage to your advantage.<br />&nbsp;&nbsp; 7. Use shell scripts to increase leverage and portability.<br />&nbsp;&nbsp; 8. Avoid captive user interfaces.<br />&nbsp;&nbsp; 9. Make every program a filter.<br /><br /><br />十条不错的编程观点<br />1） The only “best practice” you should be using all the time is “Use Your Brain”, rather than some so-called &#8220;famous&#8221; frameworks, methods, classes, or prototypes.<br />2）Programmers who don’t code in their spare time for fun will never become as good as those that do.<br />3）Most comments in code are in fact a pernicious form of code duplication, which should explain &#8220;why&#8221;, rather than &#8220;how&#8221; and &#8220;what&#8221;.<br />4）XML is highly overrated<br />5）Not all programmers are created equal<br />6）”Googling it” is okay!<br />7）If you only know one language, no matter how well you know it, you’re not a great programmer.<br />8）Your job is to put yourself out of work. Or, saying, if you can’t be replaced then you can’t be promoted!<br />9）Design patterns are hurting good design more than they’re helping it.<br />10）Unit Testing won’t help you write good code</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/7/">&larr; Older</a>
@@ -469,6 +469,10 @@ see also &lt;<a href="http://www.joelonsoftware.com/articles/fog0000000319.html"
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/09/lte-reading-excerpt/">LTE reading excerpt</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/30/johnsons-algorithm/">All-pairs shortest path</a>
       </li>
     
@@ -482,10 +486,6 @@ see also &lt;<a href="http://www.joelonsoftware.com/articles/fog0000000319.html"
     
       <li class="post">
         <a href="/blog/2013/08/08/reading-note-of-sicp-3/">Reading note of SICP (3)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/07/reading-note-of-sicp-2/">Reading note of SICP (2)</a>
       </li>
     
   </ul>

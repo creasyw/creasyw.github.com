@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2013-10-04T23:34:34-05:00</updated>
+  <updated>2013-10-09T18:36:17-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[LTE reading excerpt]]></title>
+    <link href="http://creasyw.github.io/blog/2013/10/09/lte-reading-excerpt/"/>
+    <updated>2013-10-09T18:21:00-05:00</updated>
+    <id>http://creasyw.github.io/blog/2013/10/09/lte-reading-excerpt</id>
+    <content type="html"><![CDATA[<p>The LTE-Advanced introduced by LTE standard release 10 has many new features, including the carrier aggregation, enhanced intercell interferernce coordination (ICIC) for heterogeneous networks (HetNets), enhanced multiple-antenna transmission supporting up to eight downlink layers, and relaying and coordinated multipoint (CoMP) transmission.</p>
+
+<p>For the carrier aggregation, in order to fully compliant with the IMT-Advanced requirements, the radio-access technology in LTE-Advanced does not only provide entensive support for deployment in spectrum allocations with bandwides ranging from 1 MHz to 20 MHz for backwards compatibility, but also extends by means of carrier aggregation, where multiple component carriers are aggregated and jointly used for transmission to/from a signle terminal. Up to five component carriers, possibly each of different bandwidth, can be aggregated, allowing for transmission bandwidth up to 100 MHz. The component carriers that a UE needs to support are determined through a UE-specific configuration process and a dynamic activation and deactivation process. Due to this activation/deactivation process, the state of SCells can be changed frequently. As a result, <strong>radio link monitoring is only supported in the PCell but not in SCells to avoid complex UE behavior and additional control signaling overhead. Despite this kind of effort, the increased complexity due to physical downlink control channel (PDCCH) decoding and timing tracking of multiple component carriers cannot be avoided</strong>. </p>
+
+<p>The receiver RF filter design depends on the type of carrier aggregation. For the interest of low hardware complexity, a singular RF chain is preferable. But it requires an analog-to-digital converter and RF filter with larger bandwidth. Moreover, due to activation and deactivation of component carriers, there is a retuning issue when a single RF is used for these component carriers. <strong>There should be techniques balancing the packet loss due to RF retuning and the measurement of deactivated SCells to achieve optimal network performance</strong>.</p>
+
+<p>A HetNet consists of low-power picocells and femtocells in addition to high-power macrocells to improve end-users QoS. But this benefit comes at the cost of additional intercell interference between heterogeneous cells, and some of the femtocells might be closed subscriber group, which make the strongest downlink power at the viewpoint of certain UE be the interference. Besides, the commeon reference signal (CRS), synchronization signals, and physical broadcast channel (PBCH) are transmitted in almost blank subframe (ABS), which cause the collision among different Scells. **The interference cancellation should developed based on the release 8/9 which soly considers the macrocell interference management through ABS.</p>
+
+<p>The LTE-Advanced system should fulfill the ITU requirements of the downlink peak spectral efficiency of 30 b/s/Hz. The peak spectral efficiency is the highest achievable data rate per overall cell bandwidth assuming error-free conditions when all available radio resources for the corresponding link direction are assigned to a single UE unit. While two- or four-layer transmission would be more prevalent even for the LTE-Advanced system, the required downlink peak spectral efficiency can only be attained using high-order antenna configurations (i.e., 8 × 8). <strong>The main challenge of high-order multiple-input multiple-output (MIMO) is computational complexity</strong>. Maximum likelihood (ML) detection is optimal in the sense that it minimizes error probability when the distributions of all data are equally likely. However, due to its high complexity in 8×8 MIMO systems with high modulation order, a direct implementation of ML detection might not be a viable option for such MIMO systems.</p>
+
+<p>The alternatives are zero-forcing (ZF) and minimum mean square error (MMSE) detection, but both of them are much worse in performance compared with ML. The k-best detection is another choice, but although its performance is close to ML, its computational complexity is still high to be implemented in the real-world multi-antennas configurations.</p>
+
+<p>In the UE, channel estimation is for feeding back channel state information (CSI) to the base station and equalization of the downlink channel in the process of data demodulation. One of the requirements for LTE-Advanced is that it should support up to eight-layer transmission, which implies that there need to be at least eight transmit antenna ports. Toward this, a key change in the reference signal design philosophy from LTE Release 8 is the separation of the demodulation reference signals (DM-RS) from the channel state information reference signals (CSI-RS) in Release 10. The up-side is saving significant reference signal overhead since it allows the densely populated DM-RS to be UE-specific. The down-side is that in order to provide for eight CSI-RS patterns, the density of CSI-RS in LTE-Advanced is significantly less than that of CRS, that is, there is only one CSI-RS resource element (RE) per RB per antenna port. Besides, CSI-RS is expected to be transmitted only once every five or ten sub-frames. <strong>Advanced algorithms are needed for CSI-RS-based channel estimation and computation of the CSI feedback parameters such as CQI (i.e., modulation and coding rate) because existing methods may incur throughput degradation and/or result in a failure to meet the target BLER requirements.</strong> Possible strategies to improve the CSI-RS channel estimation performance could include exploitation of the time-frequency correlations, the channel’s power delay profile (PDP) and the Doppler shift. </p>
+
+<p>[1] S. Parkvall, A. Furuskär, and E. Dahlman, “Evolution of LTE Toward IMT-Advanced,” <em>IEEE Commun. Mag.</em>, vol. 49, no. 2, pp. 84-91, Feb, 2011.<br />
+[2] D. Bai, C. Park, J. Lee, and H. Nguyen, “LTE-advanced modem design: challenges and perspectives,” <em>IEEE Commun. Mag.</em>, vol. 50, no. 2, pp. 178-186, Feb. 2012.<br />
+[3] E. Dahlman, S. Parkvall, and J. Sköld, <em>4G LTE/LTE-Advanced for Mobile Broadband</em>, Academic Press, 2011.<br />
+[4] Z. Guo and P. Nilsson, “Algorithm and Implementation of the K-Best Sphere Decoding for MIMO Detection,” <em>IEEE JSAC</em>, vol. 24, no. 3, Mar. 2006, pp. 491–503.<br />
+[5] M. Baker, <a href="http://www.3gpp.org/ftp/workshop/2009-12-17_ITU-R_IMT-Adv_eval/docs/pdf/REV-090003-r1.pdf">LTE Advanced Physical Layer</a><br />
+[6] J. Wannstrom <a href="http://www.3gpp.org/IMG/pdf/lte_advanced_v2.pdf">Introduction to LTE-Advanced</a>  </p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[All-pairs shortest path]]></title>
@@ -344,16 +373,6 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
     <id>http://creasyw.github.io/blog/2012/05/16/hd-and-sicp</id>
     <content type="html"><![CDATA[<div class='post'>
 &nbsp; &nbsp;&nbsp; <br />Humming Identification. <br /><br />已然经历了两次较大的重建，现在的中段程序应该算是稳定了，前段程序接近黔驴技穷了，后段程序最后一次大修改后还在服务器里面跑着。出结果之后再用一两天时间整理，然后再看看清唱部分的阈值应该如何处理。不出意外的话，这就接近世界先进水平了:)<br /><br />现在回头看来，其实真正值得研究的部分还是在最初的参数提取。SIFT里面对于图像的各种锥形不变、边框加深、棱角过滤，对于音频信号都是不适用的。而语音信号的频谱重复或者音乐信号的长时重复在哼唱识别中又是不适用的。所以现在只能使用较为原始的 local maximum cascade filtering。若是频谱图能如图像般的直观，有些经验总结的东西在里面，就好了。<br /><br /><br />SICP<br /><br />思考过一段时间的结果，<a href="http://coolshell.cn/articles/6639.html">因为有了电据就少用到电钻</a>，于是熟练了Py也就先放放ruby了。转过身来硬着头皮读这本书。而第一天读过前言，我就知道这决不会是个令我后悔的决定。无数人的推荐，自然是有其中道理的。而把读过的几本经典书籍横向比较，会发现它们都会刻意避开很多fancy的概念，着力强调着那些在设计程序过程中永恒不变的东西。K&amp;R把C的很多基本库函数都重建了一遍，而SICP更是从加减乘除开始重构。<br /><br />开始读书之前，我也刻意找了一下CL和Scheme的对比。记得有个人说，如果想用Lisp做项目，CL更合适；想体会编程的乐趣，Scheme更合适，只是，它的核实在是太简单了。几个月看下来，其对于Scheme的评价当真实字字珠玑。这是一个无比强大的语言，data abstraction &amp; procedure abstraction，之后再抹去两者的差别，都只是当作object处理。看到这里，我会有错觉，认为自己都可以来设计Clojure了，这简直就是顺理成章的事情！tail recursion，比循环更加直观易懂，而更牛逼的是这竟然不会按照stack的模式迭代后增加内存的占用。至于enclosure和lambda calculus，在Python里面也有借鉴，但是我是直到这里才真正学会了如何使用它们⋯⋯当然，我很清楚这些词汇推砌起来的仍然仅仅是些皮毛。里面很多在程序设计时的考虑，才是更需要我好好体会的。<br /><br /><br />BTW, 今天的时间累计到2800了~<br /><br />cheers, <br /><br /></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Install MIT/Scheme with Vim]]></title>
-    <link href="http://creasyw.github.io/blog/2012/04/10/install-mitscheme-with-vim/"/>
-    <updated>2012-04-10T00:00:00-05:00</updated>
-    <id>http://creasyw.github.io/blog/2012/04/10/install-mitscheme-with-vim</id>
-    <content type="html"><![CDATA[<div class='post'>
-&nbsp; &nbsp;&nbsp; <br />After wondering around for a while, I finally found this was quite foolproof&#8230; <br /><br />It could be divided into five steps:<br />1. $ <i>brew install mit-scheme</i>. (Its version is usually a little bit older than the latest <a href="http://www.gnu.org/software/mit-scheme/">MIT/GNU Scheme</a>)<br />2. Install <a href="http://www.gnu.org/software/screen/">GNU screen</a> if it was not installed before.<br />3. Install <a href="http://www.vim.org/scripts/script.php?script_id=2711">Screen Vim plug-in</a> according the steps in that webpage.<br />4. $ <i>vim ~/.vimrc</i><br /><code>"For screen.vim send block<br />"to SendScreen function<br />"(eg Scheme interpreter)<br />vmap <c-c><c-c> :ScreenSend<cr><br />nmap <c-c><c-c> vip<c-c><c-c></c-c></c-c></c-c></c-c></cr></c-c></c-c></code><br />5. Launch Vim and write &#8220;:ScreenShell mit-scheme&#8221;. It is all set for the fun:)<br /><br />References: <a href="http://www.ktaylor.name/vim/">[1]</a>, <a href="http://www.uponmyshoulder.com/blog/2011/so-you-want-to-do-the-sicp/">[2]</a><br /><br />cheers,</div>
 ]]></content>
   </entry>
   

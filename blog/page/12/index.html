@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Step 0 : At terminal, aaa@ubuntu:~$ sudo gedit /etc/modprobe.d/blacklist.conf. Add “blacklist rt2870usb” without quote at the end of the file, then &hellip;">
+  <meta name="description" content="将一个容器复制给另一个容器时，类型必须匹配：容器类型和元素类型都必须一致。迭代器first和last如果满足以下两点，则可以形成一个迭代器范围：1、它们指向同一个容器中的元素或超出末端的下一个位置；如果两个迭代器不相等，则对first反复应用自增加运算必须能够到达last，即， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,43 +81,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/07/02/install-rt2870-usb-wireless-adapter-in/">Install RT2870 Usb Wireless Adapter in Ubuntu 10</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-02T00:00:00-05:00" pubdate data-updated="true">Jul 2<span>nd</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-Step 0 : At terminal, aaa@ubuntu:~$ sudo gedit /etc/modprobe.d/blacklist.conf. Add “blacklist rt2870usb” without quote at the end of the file, then save it.<br /><br />Step 1 : Download the latest rt2870 driver (<a href="http://www.ralinktech.com/support.php?s=2">here</a>) from Ralink.<br /><br />Step 2 : Untar the file and save to your home folder, and name it. (eg. the folder name is rt2870)<br /><br />Step 2.51 : According to the instruction I found in the internet, there should be another three steps done with the dongle: firstly, without plug your wireless usb at this moment, at terminal aaa@ubuntu:~$ type lsusb.<br /><br />Step 2.52 : Then plug in the wireless usb to the computer, type lsusb again, the&nbsp;wireless usb ID (8 digits)&nbsp;will be found. Write it down.<br /><br />Step 2.53 : Check it at aaa@ubuntu:~/rt2870/os/linux$, sudo gedit usb_main_dev.c. If the usb device is not included, add the wireless usb ID. Save the file. For example, the additional two lines are:<br />{USB_DEVICE(0x0B05,0x1761)}, /* Asus */<br />{USB_DEVICE(0x1761,0x0B05)}, /* Asus */<br /><br />Step 3 :&nbsp;In Makefile,&nbsp;set the &#8220;MODE = STA&#8221; in Makefile and chose the TARGET to Linux by set &#8220;TARGET = LINUX&#8221;. Then, change the directory of RT28XX_DIR in line 7 by &#8220;aaa@ubuntu:~$&nbsp;shell pwd&#8221;. Finally, via the command &#8220;aaa@ubuntu:~$&nbsp;shell uname -r&#8221;,&nbsp;define the linux kernel source include file path LINUX_SRC&nbsp;modify to meet your need.<br /><br />Step 4 : At same terminal , sudo gedit config.mk, and change two settings.<br /># Support Wpa_Supplicant<br />HAS_WPA_SUPPLICANT=n → y<br /># Support Native WpaSupplicant for Network Maganger<br />HAS_NATIVE_WPA_SUPPLICANT_SUPPORT=n → y<br /><br />Step 5 : At aaa@ubuntu:~/rt2870$, sudo gedit Makefile, check the folllowing at the top of the file:<br />RT28xx_MODE = STA<br />TARGET = LINUX<br />CHIPSET = 2870<br />If ok, close the file. If not, change the setting as above.<br /><br />Step 6: rt2870 2.2.00 version do not support kernel 2.6.31-14-generic, so you have to do a patch. The download link is <a href="http://launchpadlibrarian.net/35348337/rt2870-2.6.31.patch">here</a>, and the patch is via &#8220;patch -p1 &lt; rt2870-2.6.31.patch&#8221;.If you get a message of unable to patch, then download and install Patch_2.5.9-5_amd64.deb.<br /><br />Step 7 : At aaa@ubuntu:~/rt2870$, do the compilation.<br />sudo make uninstall<br />sudo make clean<br />sudo make<br />sudo make install<br /><br />Step 8 : At aaa@ubuntu:~$ sudo modprobe rt2870sta<br /><br />Step 9 : At aaa@ubuntu”~$ sudo gedit /etc/rc.local, add following two lines prior to exit0.<br />ifconfig ra0 up<br />pkill NetworkManager<br />save it, then at same terminal, sudo gedit /etc/modules, add rt2870sta, then save the file.<br /><br />Step 10 :At aaa@ubuntu:~$ ifconfig or iwconfig, you will see your wireless is up as ra0 or wlan0.<br /><br />Step 11 : Now configure networkmanager, use wep instead of wpa-psk or wpa2-psk. Your wireless will be able to connect to the internet. If there&#8217;s no connection, then do step 12.<br /><br />Step 12 : Update networkmanager. Go to System – Software Sources – Other software, add the following line<br />deb http://ppa.launchpad.net/network-manager/trunk/ubuntu karmic main<br /><br />That&#8217;s the end.</div>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -445,6 +408,43 @@ Cherubic cutie, you will be alright. I will bless for you all day long&#8230;</d
 
   <div class="entry-content"><div class='post'>
 其实什么事情都没有发生，日子就如往常般平淡着过着。可就是想你，无法抑制，不能自已。</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/06/02/raining-and-waiting/">Raining and Waiting</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-02T00:00:00-05:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+austin的雨水总是很迷人。身处一个古香古色的自习室里，又是独自一人占据这个大屋子。桌子、百叶窗、窗掾的暗红色木质感配合淡黄色的灯光，让人感觉安逸。雨水就这样一阵阵间断而急促的敲打着玻璃。之前下雨时在宿舍，总会感慨，有个屋檐可以躲避雨水而安然入睡，真好。现在的感慨是，有个屋檐，可以静听雨声，读读书写写字，真好。总之，真好。<br /><br />6月12日老师才会从外地抵达学校。自己的研究方向最终的确定，也需要等到那会儿。然后，又是一个多月后，才能回国，才能见到lan。又是一个漫长的等待。我所能做的，就是按时做好自己份内的事情。然后每日掰着手指数上一遍。想念是很玄的东西，无论如何形容，都无法尽情展述。</div>
 </div>
   
   

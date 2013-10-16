@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="It is weird that the official website of CDT does not contain anything about how to integrate the CDT with an existing Eclipse, and so does its &hellip;">
+  <meta name="description" content="from comp.lang.c (click)======1st paste:steve wrote:&gt; Hey guys,&gt; I have a delemna which I can&#8217;t figure out.&gt; This is regarding &#8220 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,43 +81,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/10/11/cc-development-tooling-plug-in-eclipse/">C/C++ Development Tooling Plug in Eclipse</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-11T00:00:00-05:00" pubdate data-updated="true">Oct 11<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-It is weird that the official website of <a href="http://www.eclipse.org/cdt/" target="_blank">CDT</a> does not contain anything about how to integrate the CDT with an existing Eclipse, and so does its google search within the website. However, except the awkward &#8220;import project&#8221; method (at least, for me&#8230; I have tried several times on the username/password to ssh the remote server), the method mentioned <a href="http://download.eclipse.org/tools/cdt/builds/7.0.0/I.I201006141710/index.html" target="_blank">here</a> is much more straightforward. For more information, the Eclipse CDT <a href="http://wiki.eclipse.org/CDT/User/DownloadCDT5.0" target="_blank">wiki</a> is a nice place to go.<br /><br />The method is:<br /><br />1. Download the <a href="http://download.eclipse.org/tools/cdt/builds/7.0.0/I.I201006141710/cdt-master-7.0.0-I201006141710.zip">master zip file</a> and put it somewhere on your machine.<br />2. Fire up Eclipse (The Platform Run-time 3.6 is minimum recommended)<br />3. Help-&gt;Install New Software&#8230;<br />4. Add&#8230; in the master zip as an Archive site<br />5. Under CDT Main Features select the one you want. C/C++ Development Tools is the main one. The SDK adds in the schemas and source for building extensions to the CDT. The C/C++ Development Platform is the Tools without the GNU toolchain support.<br />6. You can install other neat things, including the Mylyn bridge, from the CDT Optional Features category.<br /><br />ps.<br />the Pydev install web address is: http://pydev.org/updates/<br />The EPIC for perl can be downloaded from: http://e-p-i-c.sf.net/updates. And it also need the ActivePerl (http://www.activestate.com/Products/activeperl/) for windows os.</div>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -445,6 +408,43 @@ strcat<br />save<br />dlmwrite<br />some basic sorting algorthms<br /><br />TODO
 
   <div class="entry-content"><div class='post'>
 Fix Wireless Ad-Hoc in GUI [<a href="http://www.ubuntugeek.com/creating-an-adhoc-host-with-ubuntu.html">click</a>]<br /><br /><br />Wireless Extensions CLI tools<br />This process is often used as the fall back position if the gui tools fail to work. The following example uses eth1 for the wifi interface though this may be wlan0, ath0 or something else in your case.<br /><br />Preparation:<br />Ensure that network manager has been stopped and then bring the interface down.<br /><b>sudo service network-manager stop</b><br /><b>sudo ifconfig eth1 down</b><br /><b>iwconfig (or ifconfig)</b> //look up if there is anything abnormal<br /><b>sudo dhclient eth1</b> &nbsp;////Bring the interface back up<br /><br />Configuration:<br /><b>sudo iwconfig eth1 mode ad-hoc</b> &nbsp;//Switch the card into ad hoc mode<br /><b>*sudo iwconfig eth1 channel 4</b> &nbsp;//Set the channel/frequency that you want to use.<br /><b>sudo iwconfig eth1 essid &#8216;name&#8217;</b> &nbsp;//Add the name (ssid) for the network you want to create/join. Use single quotes if there is a space in the name.<br /><b>*sudo iwconfig eth1 key 1234567890</b> &nbsp;//Add a WEP encryption key<br /><b>*sudo dhclient eth1</b> &nbsp;//Start dhclient to get an address<br /><b>sudo ifconfig eth1 169.254.34.2 </b>&nbsp;//If you want to do it manually, you will have to make up an IP address.<br /><br />You should now be connected to the ad hoc network. Use the iwconfig command to view the cell being used. This must match the same cell on the other PCs that you want to connect to.<br /><br />Testing:<br /><b>ping 169.254.34.2</b> &nbsp;//Once you have two or more computers connected to the ad hoc network, all of them showing the same cell number and having different IP addresses, then try pinging one from the others. If that doesn&#8217;t work then try specifying the interface name along with the address.<br /><b>ping -I eth1 169.254.34.2</b> &nbsp;//If you have more than one interface with link-local addresses there can be some routing confusion, so I recommend that you bring down these unused interfaces while connected to non-DHCP networks. If the other interfaces are all on DHCP networks, such as in the case of InternetConnectionSharing this is not necessary.<br />sudo ifdown eth0<br /><br />Example Interfaces File:<br />Currently Network Manager does not support static address settings and Network-Admin does not support ad hoc networks. So instead we can configure the network in the /etc/network/interfaces file. The following is an example.<br /><br />auto lo<br />iface lo inet loopback<br /><br />auto eth1<br />iface eth1 inet static<br />wireless-mode ad-hoc<br />wireless-channel 4<br />wireless-essid &#8216;name&#8217;<br />wireless-key 1234567890<br />address 192.168.0.2<br />netmask 255.255.255.0<br />gateway 192.168.0.1<br /><br /><br /><br />ps. some useful command:<br />ifconfig [<a href="http://www.faqs.org/docs/linux_network/x-087-2-iface.ifconfig.html">click</a>] &nbsp;iwconfig [<a href="http://gd.tuwien.ac.at/linuxcommand.org/man_pages/iwconfig8.html">click</a>]<br />wlanconfig [<a href="http://linux.die.net/man/8/wlanconfig">click</a>] &nbsp;tcpdump [<a href="http://www.tcpdump.org/tcpdump_man.html">click</a>]</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/08/rssi-and-snr/">Rssi and Snr</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-08T00:00:00-05:00" pubdate data-updated="true">Sep 8<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+In telecommunications, received signal strength indicator (RSSI) is a measurement of the power present in a received radio signal. RSSI is generic radio receiver technology metric, which is usually invisible to the user of device containing the receiver, but is directly known to users of wireless networking of IEEE 802.11 protocol family. RSSI is often done in the intermediate frequency (IF) stage before the IF amplifier. In zero-IF systems, it is done in the baseband signal chain, before the baseband amplifier. RSSI output is often a DC analog level. It can also be sampled by an internal ADC and the resulting codes available directly or via peripheral or internal processor bus.<br /><br />&#8220;RSSI&#8221; values have unspecified unit, ie. their meaning depends on manufacturer. Some report as dBm, some as a percent, some even in milliwatts. There is no standard. Also, the proper way to find SNR *is* to subtract dB values, as dB are logarithmic and hence the difference of logs is the same as a ratio without log. In other words, if a signal has amplitude 1 and noise is 0.5, the SNR is (1/0.5) = 2, but if the signal is measured as being at (say) -12 dB and noise floor is -16 dB, the SNR is (-12-(-16)) = 4 dB.<br /><br />Moreover, link quality depends on many other factors and the signal-to-noise ratio (computed from rssi and noise floor) is only one such factor.<br /><br />And finally, finding SNR of a wifi signal by subtracting noise floor from the rssi is of course only applicable if both values are reported in a log/dB scale. Otherwise if they are linear you&#8217;d need to use ratio (as you said) and if they are some other sort of scale then who knows what needs to be used!</div>
 </div>
   
   

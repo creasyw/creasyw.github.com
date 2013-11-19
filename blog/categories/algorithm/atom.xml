@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Java | Qiong Wu]]></title>
-  <link href="http://creasyw.github.io/blog/categories/java/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Algorithm | Qiong Wu]]></title>
+  <link href="http://creasyw.github.io/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
   <updated>2013-11-18T23:00:29-06:00</updated>
   <id>http://creasyw.github.io/</id>

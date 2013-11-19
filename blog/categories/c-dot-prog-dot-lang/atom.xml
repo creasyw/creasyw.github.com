@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C.prog.lang | Qiong Wu]]></title>
   <link href="http://creasyw.github.io/blog/categories/c-dot-prog-dot-lang/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2013-11-18T22:53:53-06:00</updated>
+  <updated>2013-11-18T23:00:29-06:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -12,16 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Largest palindrome made from the product of two 3-digit numbers]]></title>
-    <link href="http://creasyw.github.io/blog/2011/09/06/largest-palindrome-made-from-product-of/"/>
-    <updated>2011-09-06T00:00:00-05:00</updated>
-    <id>http://creasyw.github.io/blog/2011/09/06/largest-palindrome-made-from-product-of</id>
-    <content type="html"><![CDATA[<div class="post">
-This question is an entry level puzzle from <a href="http://projecteuler.net/">Project Euler</a>.<br /><br />It is very interesting because it has far more pitfalls than it first appears to be. There are some helpful discussions to pick up the whole scenario of this puzzle: <a href="http://codeblog.dhananjaynene.com/2010/01/find-the-largest-palindrome-made-from-the-product-of-two-3-digit-numbers/comment-page-1/#comment-48">1)</a> and <a href="http://pthree.org/2007/09/15/largest-palindromic-number-in-python/">2)</a>. Basically speaking, the first post listed the most straightforward thoughts, which is iterations two numbers both from 100 to 1000 and finding the maximum of the outcomes. While I wrote the algorithm, this is also the first idea came into mind while I added several optimizations on it.<br />1) Decrease one number 1 per step, and iterate the other one from 999 to 100.<br />2) Stop the step whenever it finds a palindrome and march to the next step by decrease the benchmark number by one.<br />3) Meanwhile, increase the lower bound of iterator from 100 to whenever it finds a palindrome. This will exponentially decrease the searching range. e.g. (A--benchmark number, B--iterator) if A*B==palindrome, the searching range for the next step would be [A-1, B]. Because if both numbers less than the previous finding, it must not be the LARGEST palindrome we would like to find.<br />4) The second stop criteria is the iterator equal or less than the lower bound mentioned in the last item.<br /><br />The major pitfall that I did see quite a few people mentioned is alternative decrease two numbers from 999, which the result comes to be 834*836=698896. The difference for two numbers are obviously unnecessary to be less or equal to one.<br /><br />The second reference provides the basic optimization from math point of view. All of the palindrome can be divided by 11, so...<br />P=100000x+10000y+1000z+100z+10y+x<br />P=100001x+10010y+1100z<br />P=11*(9091x+910y+100z)<br />Then, the question is simplified to find two 3-digit numbers, at least one of which should be divided by 11. Similarly as the previous method, if A can be divided by 11, decreasing B by one per time; and if A cannot divided by 11, decreasing B by 11 per time.<br /><br />My solutions for the first 5 puzzles are <a href="https://github.com/creasyw/learning/blob/master/puzzles/q001To005.c">here</a>.<br />cheers,</div>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[great resources for C.prog.lang]]></title>

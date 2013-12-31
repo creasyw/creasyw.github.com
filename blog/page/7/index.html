@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="说到Unix为我们所带来的软件开发的哲学，我必需要说一说。Unix遵循的原则是KISS（Keep it simple, stupid）。在http://en.wikipedia.org/wiki/Unix_philosophy 上有很多的基本上大同小异的Unix哲学，都是很经典的。Doug &hellip;">
+  <meta name="description" content="// Breadth-First Search // The tricky part is that we have to know the entire info. about // the graph, which indicates in the link-matrix &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/28/tree-search-algorithms/">Tree Search Algorithms</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-28T00:00:00-06:00" pubdate data-updated="true">Feb 28<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+// Breadth-First Search <br />// The tricky part is that we have to know the entire info. about <br />// the graph, which indicates in the link-matrix graphmatrix <br /><br />struct node{ <br />&nbsp;&nbsp; &nbsp;int color;&nbsp;&nbsp; &nbsp;// 0-white, 1-grey, 2-black <br />&nbsp;&nbsp; &nbsp;int index;&nbsp;&nbsp; &nbsp;// fount order <br />&nbsp;&nbsp; &nbsp;int d; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// distance to the root <br />&nbsp;&nbsp; &nbsp;struct node *parent; <br />}; <br />typedef struct node* Node; <br /><br />void buildBFS1(int *graphmatrix, Node graph, Node start){ <br />&nbsp;&nbsp; &nbsp;int i=0, n, head, tail; <br />&nbsp;&nbsp; &nbsp;Node queue;&nbsp;&nbsp; &nbsp;// used as stack to do BFS <br />&nbsp;&nbsp; &nbsp;Node temp; <br /><br />&nbsp;&nbsp; &nbsp;while(graph[i]!=NULL){ <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].color = 0; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].index = i; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].parent = NULL; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].d = 0; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;i++; <br />&nbsp;&nbsp; &nbsp;} <br />&nbsp;&nbsp; &nbsp;n = i; <br />&nbsp;&nbsp; &nbsp;start-&gt;color = 1; <br />&nbsp;&nbsp; &nbsp;queue = (Node)malloc(n*sizeof(Node));&nbsp;&nbsp; &nbsp;// not sure here&#8230; <br />&nbsp;&nbsp; &nbsp;head = tail = 0; <br />&nbsp;&nbsp; &nbsp;enqueue(queue, &amp;tail, start); <br /><br />&nbsp;&nbsp; &nbsp;while(!isEmpty(head, tail)){ <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;temp = dequeue(queue, &amp;head); <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for (i=0; i<n; i++){=""><br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(graphMatrix[temp-&gt;index][i]!=0){ <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(graph[i].color==0){ <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].color = 1; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].d = temp-&gt;d+1; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].parent = temp; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;enqueue(queue, &amp;tail, graph[i]); <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;temp-&gt;color = 2; <br />&nbsp;&nbsp; &nbsp;} <br />} <br /><br />void initQueue(int *head, int *tail){ <br />&nbsp;&nbsp; &nbsp;*head = *tail =0; <br />} <br /><br />void enqueue(Node q, int *tail, Node element){ <br />&nbsp;&nbsp; &nbsp;q[(*tail)++]=element; <br />} <br /><br />Node dequeue(Node q, int *head){ <br />&nbsp;&nbsp; &nbsp;return q[(*head)++]; <br />} <br /><br />int isEmpty(int head, int tail){ <br />&nbsp;&nbsp; &nbsp;return head==tail? 1:0; <br />} <br /><br />int isFull(int tail, const int size){ <br />&nbsp;&nbsp; &nbsp;return tail==size? 1:0; <br />} <br /><br /><br />// Depth-First Search <br />// has more knowledge about the structure of the tree <br />// at the cost of a more complicated struct <br /><br />struct node{ <br />&nbsp;&nbsp; &nbsp;int index; <br />&nbsp;&nbsp; &nbsp;int color; <br />&nbsp;&nbsp; &nbsp;int detected; <br />&nbsp;&nbsp; &nbsp;int finished; <br />&nbsp;&nbsp; &nbsp;struct node *parent; <br />} <br />typedef struct node* Node; <br /><br />// the original algorithm in the textbook is a little bit wierd<br />// cause it is different from BFS by no need of starting point<br />// while it is obvious that starting with different points will <br />// generate trees with different structures, given the same link-matrix <br />void buildDFS(int *graphMatrx, Node graph, Node start){ <br />&nbsp;&nbsp; &nbsp;int i=0, n, time;<br />&nbsp;&nbsp; &nbsp;Node temp; <br />&nbsp;&nbsp; &nbsp;while(graph[i]!=NULL){ <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].color = 0; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].parent = NULL; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].detected = graph[i].finished = 0; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].index = i; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;i++; <br />&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp; &nbsp;n = i; <br />&nbsp;&nbsp; &nbsp;time = 0;<br />&nbsp;&nbsp; &nbsp;graph[1] = temp;<br />&nbsp;&nbsp; &nbsp;graph[1] = start;<br />&nbsp;&nbsp; &nbsp;start = temp;&nbsp;&nbsp; &nbsp;// just want to start at the beginning of the array <br />&nbsp;&nbsp; &nbsp;while(i&gt;=0){<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(graph[i].color == 0)<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;visitDFS(graphMatrix, graph, i, &amp;time, n);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;i&#8211;;<br />&nbsp;&nbsp; &nbsp;}<br />}<br /><br />void visitDFS(int *graphMatrix, Node graph, int i, int *time, int length){<br />&nbsp;&nbsp; &nbsp;graph[i].color = 1;&nbsp;&nbsp; &nbsp;// grey, begin to visit<br />&nbsp;&nbsp; &nbsp;graph[i].detected = ++(*time);<br />&nbsp;&nbsp; &nbsp;for (int j=0; j<length; j++){=""><br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(graphMatrix[graph[i].index][j]!=0){<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(graph[j].color == 0){<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[j].parent = &amp;graph[i];<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;visitDFS(graphMatrix, graph, j, time, length);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp; &nbsp;graph[i].color = 2;&nbsp;&nbsp; &nbsp;// black, conclude the visiting<br />&nbsp;&nbsp; &nbsp;graph[i].finished = ++(*time);<br />}</length;></n;><br /><br /><n; i++){=""><length; j++){="">(<a href="http://creasywuqiong.blogspot.com/2011/03/tree-search-algorithm-cont.html">to be continued</a>) &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; </length;></n;><br />=========<br /><br />reference: &lt;<a href="http://www.amazon.com/Introduction-Algorithms-Third-Thomas-Cormen/dp/0262033844/ref=sr_1_2?ie=UTF8&amp;qid=1298923887&amp;sr=8-2">Introduction to algorithms</a>&gt;</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ the original webpage:&nbsp;<a href="http://sd.csdn.net/a/20101020/280710.html">c
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/19/top-20-programming-lessons-ive-learned/">Top 20 Programming Lessons I&#8217;ve Learned in 20 Years</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-19T00:00:00-06:00" pubdate data-updated="true">Nov 19<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<ol><li><strong>Set a duration of how long you think it should take to solve a problem - </strong>C&#8217;mon, admit it! I&#8217;m just as guilty as the next programmer. I&#8217;ve seen programmers sit in front of a monitor for eight hours at a time trying to solve a particular problem. Set a time table for yourself of 1 hour, 30 minutes, or even 15 minutes. If you can&#8217;t figure out a solution to your problem within your time frame, ask for help or research your problem on the Internet instead of trying to be super-coder.</li><li><strong>A language is a language is a language</strong> - Over time, once you understand how one language works, you&#8217;ll notice similarities between other languages. The language you choose should provide you with a suitable &#8220;comfort&#8221; level, the ability to produce efficient (and clean) code, and, above all, allow the language to suit the project and vice-versa.</li><li><strong>Don&#8217;t over-&#8220;design pattern&#8221; applications</strong> - Sometimes it&#8217;s just easier to write a simple algorithm than it is to incorporate a singleton or facade pattern. For the most part, it even allows for cleaner, understandable code. :-)</li><li><strong>Always backup your code</strong> - I&#8217;ve experienced a complete hard drive failue and lost a lot of code when I was younger and felt horrible because of what had happened. The one time you don&#8217;t back up your data may be the one time where you have a strict deadline with a client and they need it tomorrow. Source code/version control applies here as well.<br /></li><li><strong>You are not the best at programming. Live with it.</strong> - I always thought that I knew so much about programming, but there is always someone out there better than you. Always. Learn from them.</li><li><strong>Learn to learn more</strong> - With number five explained, I&#8217;ve always had a magazine or book in my hand about computers or programming (ask my friends, they&#8217;ll confirm). True, there is a lot of technology out there and keeping up with it is a fulltime job, but if you have a smart way of receiving your news, you&#8217;ll learn about new technology every single day.</li><li><strong>Change is constant</strong> - Your knowledge of technology and/or programming should be similar to how you treat stocks: Diversify. Don&#8217;t get too comfortable with a particular technology. If there&#8217;s not enough support for that language or technology, you might as well start updating your resume now and start your training period. My general rule of thumb that has kept me going? Know at least two or three languages, so if one dies off, you have another one to fall back on while you train for a new technology.</li><li><strong>Support Junior</strong> - Assist and train the junior/entry-level developers on good programming guidelines and techniques. You never know&#8230;you may move up in rank and you&#8217;ll feel more confident having personally trained and prepared them for their next position.</li><li><strong>Simplify the algorithm</strong> - Code like a fiend, but once you&#8217;re done, go back through your code and optimize it. A little code improvement here and there will make support happier in the long run.</li><li><strong>Document your code</strong> - Whether its documenting a Web Service API or documenting a simple class, document as you go. I&#8217;ve been accused of over-commenting my code and that&#8217;s something I&#8217;m proud of. It only takes a second to add an additional comment line for each 3 lines of code. If it&#8217;s a harder technique to grasp, don&#8217;t be afraid to over-comment. This is one problem most architects, backup coders, and support groups don&#8217;t complain about if you&#8217;ve done your job right.</li><li><strong>Test, Test, Test</strong> - I&#8217;m a fan of <a href="http://en.wikipedia.org/wiki/Black_box_testing">Black Box Testing</a>. When your routine is finished, your &#8220;stamp of approval&#8221; period starts. If you have a Quality Assurance department, you may be talking more to them than your project manager regarding errors in your code. If you don&#8217;t test your code thoroughly, you may develop more than code. Possibly a bad reputation.</li><li><strong>Celebrate every success</strong> - I&#8217;ve met a lot of programmers who have conquered headache-style problems with a great programming technique and celebrated with a fellow programmer by doing the &#8220;shake&#8221;, the high-five, or even a &#8220;happy dance.&#8221; Everyone has enlightening periods in their life and even though that one happy coder asked you to come and see his extraordinary piece of code and you&#8217;ve seen that one piece of code over 100 times in your experiences, celebrate the success of a fellow developer for the 101-st time.</li><li><strong>Have Code Reviews Frequently</strong> - On projects and personally. In the company, you will always have code reviews of how well you coded something. Don&#8217;t look at it as people crucifying your coding style. Think of it as constructive criticism. On the personal front, review your code and always ask, &#8220;How could I have done it better?&#8221; This will accelerate your learning and make you a better programmer.</li><li><strong>R</strong><strong>eminisce about your code</strong> - There are two ways to looking at old code: &#8220;I can&#8217;t believe I wrote this code&#8221; and &#8220;I can&#8217;t believe I wrote this code.&#8221; The first statement is often of disgust and wondering how you can improve it. You&#8217;d be surprised at how old code can be resurrected into a possible and better routine, or maybe even an entire product. The second statement is of amazement and achievement. Developers have their one or two project code achievements that they completed and had everyone standing up and taking notice. Again, based on your excellent coding ability, you could take those past routines or projects and update them into a better product or idea.</li><li><strong>Humor is necessary</strong> - In my 20 years of development, I have never met a programmer who hasn&#8217;t had a decent sense of humor. Actually, in this industry, it&#8217;s a requirement.</li><li><strong>Beware the know-it-all, <a href="http://www.dcs-media.com/Archive/business-lesson-1-7G">possessive coder</a>, and the inexperienced coder</strong> - Humble yourself when you meet these types of coders. The know-it-all tries to upstage you instead of working as a team player, the defensive coder created code that he doesn&#8217;t want to share with anyone, and the inexperienced coder constantly asks for assistance every ten minutes where the finished code developed is yours, not theirs.</li><li><strong>No project is ever simple</strong> - I&#8217;ve been asked by friends, family, and associates to just &#8220;whip something up for me.&#8221; To &#8220;whip&#8221; up a program or web site, it takes planning from both parties to complete something that both sides can appreciate. If someone needs a 3-page web site with Microsoft Access from the start, it winds up becoming a 15-page web site with SQL Server, a forum, and a custom CMS (Content Management System).</li><li><strong>Never take anything for granted</strong> - If you take on a simple project, you may think that a certain section will be easy to complete. Don&#8217;t think that even for a moment. Unless you have a class, component, or piece of code<em> already coded</em>&#8230;and has been tested thoroughly&#8230;and is in production from an existing project, don&#8217;t think it will be easy.</li><li><strong>Software is never finished</strong> - A fellow programmer once told me that software is never finished, it&#8217;s &#8220;temporarily completed.&#8221; Sound advice. If the client is still using a program you wrote and has stood the test of time, chances are, you are still updating it, which isn&#8217;t a bad thing. It keeps you working. :-)</li><li><strong>Patience is definitely a virtue</strong> - When clients, friends, or family members use a PC, they get frustrated and proceed to hit a component of the PC or storm off. I keep telling everyone, &#8220;you are controlling the computer not the other way around.&#8221; You need to have a certain level of patience for programming computers. As soon as programmers understand what they did wrong, they look at it from the computers point of view and say, &#8220;Oh, that&#8217;s why it was doing that.&#8221;</li></ol></div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/8/">&larr; Older</a>
@@ -469,6 +469,10 @@ the original webpage:&nbsp;<a href="http://sd.csdn.net/a/20101020/280710.html">c
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/31/my-2013-and-new-year-resolution/">My 2013 and new year resolution</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/10/09/lte-reading-excerpt/">LTE reading excerpt</a>
       </li>
     
@@ -482,10 +486,6 @@ the original webpage:&nbsp;<a href="http://sd.csdn.net/a/20101020/280710.html">c
     
       <li class="post">
         <a href="/blog/2013/08/10/reading-note-of-sicp-4/">Reading note of SICP (4)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/08/reading-note-of-sicp-3/">Reading note of SICP (3)</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2013-12-29T23:20:08-06:00</updated>
+  <updated>2013-12-31T11:40:37-06:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[My 2013 and new year resolution]]></title>
+    <link href="http://creasyw.github.io/blog/2013/12/31/my-2013-and-new-year-resolution/"/>
+    <updated>2013-12-31T10:13:00-06:00</updated>
+    <id>http://creasyw.github.io/blog/2013/12/31/my-2013-and-new-year-resolution</id>
+    <content type="html"><![CDATA[<p>没有想到，这一年能发生这么多的事情。效率从年初开始，越来越高。然后是暑假实习，认识了很多有趣的人，开始打网球。去了波多黎各和维京群岛，看到一生迄今为止最蓝的海。回来后继续打网球，开始瘦身，失散了三十年的六块腹肌和人鱼线都找到了，可年末却把豆豆丢了。痛彻心扉的最后两个月，不太清楚自己是怎么度过的。</p>
+
+<h3 id="statistics">Statistics:</h3>
+
+<p>过去的一年，在学校里修了两门课，GPA还是4.0。发表了三篇文章，还有三篇在等消息，两篇在写，为IEEE Trans. of Signal Processing 和ICC2014 审了两篇论文。此外，在Coursera上完成了6门课，其中收获最大的有Dan Grossman 的Programming Language 以及Tim Roughgarden 的Algorithm Analysis I &amp; II。比较可惜的是Andrew Ng 的 Machine Learning，课程和作业都过半了，但因为自己的论文进度太紧，这门课最终还是没能完成。希望它来年还能再开。</p>
+
+<p>根据豆瓣上的统计，这一年我看完19本书，听了27盘专辑，看了50部电影。其中看过最好看的书是现在还没有读完的巨著SICP…最好看的电影包括Argo, The Social Network, Now You See Me, and Star Trek Into Darkness；听歌因为大量使用Douban FM 和Pandora，已经无法具体记录了。另外，完成了2325小时的编程。从九月到年底，用nike running 跑了110 miles，越跑越快，从九月份的7’36”/mi 到十二月的6’47”/mi。体重从78公斤降低到现在的68公斤，腹肌和手臂的肌肉都清晰可见了。还有很多东西没有量化，比如网球的一发成功率，主动得分，以及非受迫性失误，等等。</p>
+
+<h3 id="programming">Programming:</h3>
+
+<p>在Coursera上的几门课程对我帮助很大，从熟悉新的编程语言，到高屋建瓴的指导如何实践。这一年新学的语言包括ML, Scala, Ruby, and Haskell，其中前三个都是课程里涉及的。编程时间的积累已经过半，到了5750小时。从简历上，我可以堆出一大坨熟练使用的语言。而对自己而言，进步最大的有两方面。其一，现在可以用很短的时间，甚至是一个下午，去学习一门新的编程语言，其实只用熟悉常用的语法就好，其中的范式和思想都是共通的。其二，对于算法和数据结构的掌握，让我能在更短的时间里将一个具体问题转变成模型。</p>
+
+<p>这一年花了大量的时间写C++代码，实习里用到了，自己的项目也用到了。但写来写去，依然不喜欢这个语言。使用它，仅仅是因为所处状况暂时没有其他选择而已。在2014年里，计划将实验室的项目逐渐向Haskell过渡，如果确实必须使用OOP的事后，用Scala来做替代。至于继续提高的方向，暂时还没想到什么新的语言特别值得学习，但需要花时间把Compiler学完，然后读完SICP, The Scheme Programming Language, and Real World Haskell。若是此外还有空余，可以旁听一下iOS的课程，重温一下已经放下两年的Obj-C。</p>
+
+<p>因为Haskell的缘故，这几个月越来越多的使用Emacs。发觉一个有关它的笑话大体是对的，Emacs的启动时间都足够用vim写完一个脚本了。当然，依此类推，启动Eclipse都足够写完一个项目了。。。现在我主要还是是把Emacs当vim来用，除了C-c C-l来加载Haskell的Compiler，我只不过是在使用Vim里对应的快捷键组合来写程序。我也知道，有关Emacs最吸引人的.el 脚本，我还没有过多涉及。希望在接下来的一年里，我能像使用vim一样熟练的使用Emacs，有一套自己的加载脚本，多一个得心应手的开发工具。</p>
+
+<h3 id="sth-else">Sth. else</h3>
+<ul>
+  <li>每周锻炼3-4次</li>
+  <li>进入 Tennis Recreation League 3.5</li>
+  <li>累积2500+小时的编程</li>
+  <li>毕业</li>
+</ul>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[LTE reading excerpt]]></title>
@@ -363,16 +394,6 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
     <id>http://creasyw.github.io/blog/2012/06/04/general-posts-about-lisp</id>
     <content type="html"><![CDATA[<div class='post'>
 &nbsp; &nbsp;&nbsp; <br />Paul Graham: <a href="http://lib.store.yahoo.net/lib/paulgraham/jmc.ps">The Roots of Lisp (ps)</a>, <a href="http://www.paulgraham.com/diff.html">What Made Lisp Different</a> (<a href="http://www.ruanyifeng.com/blog/2010/10/why_lisp_is_superior.html">Chinese translation</a>), and his <a href="http://www.paulgraham.com/lisp.html">collection</a>.<br /><a href="http://www.winestockwebdesign.com/Essays/Lisp_Curse.html">The Lisp Curse</a> by Rudolf Winestock <br /><a href="http://lists.warhead.org.uk/pipermail/iwe/2005-July/000130.html">Why Lisp macros are cool, a Perl perspective </a><br /><a href="http://www.defmacro.org/ramblings/lisp.html">The Nature of Lisp</a><br /><a href="http://www.dreamsongs.com/Files/LispGoodNewsBadNews.pdf">Lisp: Good News, Bad News, How to Win Big (pdf)</a><br /><a href="http://www.lambdassociates.org/blog/bipolar.htm%20">The Bipolar Lisp Programmer</a><br /><a href="http://www.informatics.sussex.ac.uk/research/groups/nlp/gazdar/nlp-in-lisp/index.html%20">Natural Language Processing in Lisp (book)</a><br /><a href="http://www.cs.rpi.edu/academics/courses/fall05/ai/scheme/tips.html">Tips for using Scheme and debugging your code</a><br /><a href="http://coolshell.cn/articles/7526.html">Lisp的永恒之道</a> (Chinese)<br /><br /><br />A <a href="http://itasoftware.com/careers/work-at-ita/ita-engineering.html?catid=#">great explanation</a> from ITA Software about why and how to use different languages, including Lisp (CL), Python, Java, and C/C++. <br /><blockquote class="tr_bq">Lisp is a programmable programming language, and one of the few languages that can be used for a wide range of applications. At ITA we have projects with vastly different focus, and it&#8217;s precisely Lisp&#8217;s versatility that makes it so useful to us. Lisp allows us to define a wide variety of abstractions to manage the complexity, and at the same time we get the speed we want - and our customers demand.<br /><br />While most of ITA&#8217;s algorithm-intensive code is implemented in high-level languages like Lisp, we use C/C++ to provide system support to our Lisp-based applications where the Common Lisp runtime support is inadequate. For instance, we represent large static datasets as densely packed arrays stored in files. We use C++ to make the mmap() calls and fetch pointers into these mappings for Lisp to access.<br /><br />Once in a while, we have had a hard time fooling the Lisp compiler into generating sufficiently fast machine code for a given function. When that happens, we can usually just rewrite the function in C++ and call it from Lisp.</blockquote>and&#8230; <a href="http://www.paulgraham.com/carl.html">quote from an email</a> of Carl de Marcken from Paul: <br /><blockquote class="tr_bq">A lot of our Lisp is designed to compile into very efficient assembly. We make a lot of use of Lisp&#8217;s macro capabilities, but shy away from many other Lisp features like closures, generic functions, complex sequence functions and garbage collection. We&#8217;re doing an incredible amount of computation - getting 10 seconds on a modern machine is an incredible gift - but if we&#8217;re sloppy at all 10 seconds can turn into ten minutes, not adequate for a travel agent or web site. We disassemble most every Lisp function looking for inefficiencies and have had both CMUCL and Franz enhanced to compile our code better.<br /><br />We&#8217;ve had very little trouble getting non-Lisp programmers to read and understand and extend our Lisp code. The only real problem is that the training most programmers have in Lisp has taught them to code very inefficiently, without paying any attention to the compiler. Of course, with things like STL and Java, I think programmers of other languages are also becoming pretty ignorant.</blockquote><br /><br /><br /></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[HD and SICP]]></title>
-    <link href="http://creasyw.github.io/blog/2012/05/16/hd-and-sicp/"/>
-    <updated>2012-05-16T00:00:00-05:00</updated>
-    <id>http://creasyw.github.io/blog/2012/05/16/hd-and-sicp</id>
-    <content type="html"><![CDATA[<div class='post'>
-&nbsp; &nbsp;&nbsp; <br />Humming Identification. <br /><br />已然经历了两次较大的重建，现在的中段程序应该算是稳定了，前段程序接近黔驴技穷了，后段程序最后一次大修改后还在服务器里面跑着。出结果之后再用一两天时间整理，然后再看看清唱部分的阈值应该如何处理。不出意外的话，这就接近世界先进水平了:)<br /><br />现在回头看来，其实真正值得研究的部分还是在最初的参数提取。SIFT里面对于图像的各种锥形不变、边框加深、棱角过滤，对于音频信号都是不适用的。而语音信号的频谱重复或者音乐信号的长时重复在哼唱识别中又是不适用的。所以现在只能使用较为原始的 local maximum cascade filtering。若是频谱图能如图像般的直观，有些经验总结的东西在里面，就好了。<br /><br /><br />SICP<br /><br />思考过一段时间的结果，<a href="http://coolshell.cn/articles/6639.html">因为有了电据就少用到电钻</a>，于是熟练了Py也就先放放ruby了。转过身来硬着头皮读这本书。而第一天读过前言，我就知道这决不会是个令我后悔的决定。无数人的推荐，自然是有其中道理的。而把读过的几本经典书籍横向比较，会发现它们都会刻意避开很多fancy的概念，着力强调着那些在设计程序过程中永恒不变的东西。K&amp;R把C的很多基本库函数都重建了一遍，而SICP更是从加减乘除开始重构。<br /><br />开始读书之前，我也刻意找了一下CL和Scheme的对比。记得有个人说，如果想用Lisp做项目，CL更合适；想体会编程的乐趣，Scheme更合适，只是，它的核实在是太简单了。几个月看下来，其对于Scheme的评价当真实字字珠玑。这是一个无比强大的语言，data abstraction &amp; procedure abstraction，之后再抹去两者的差别，都只是当作object处理。看到这里，我会有错觉，认为自己都可以来设计Clojure了，这简直就是顺理成章的事情！tail recursion，比循环更加直观易懂，而更牛逼的是这竟然不会按照stack的模式迭代后增加内存的占用。至于enclosure和lambda calculus，在Python里面也有借鉴，但是我是直到这里才真正学会了如何使用它们⋯⋯当然，我很清楚这些词汇推砌起来的仍然仅仅是些皮毛。里面很多在程序设计时的考虑，才是更需要我好好体会的。<br /><br /><br />BTW, 今天的时间累计到2800了~<br /><br />cheers, <br /><br /></div>
 ]]></content>
   </entry>
   

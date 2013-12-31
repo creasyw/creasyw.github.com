@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="from comp.lang.c (click)======1st paste:steve wrote:&gt; Hey guys,&gt; I have a delemna which I can&#8217;t figure out.&gt; This is regarding &#8220 &hellip;">
+  <meta name="description" content="It is weird that the official website of CDT does not contain anything about how to integrate the CDT with an existing Eclipse, and so does its &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/11/cc-development-tooling-plug-in-eclipse/">C/C++ Development Tooling Plug in Eclipse</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-11T00:00:00-05:00" pubdate data-updated="true">Oct 11<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+It is weird that the official website of <a href="http://www.eclipse.org/cdt/" target="_blank">CDT</a> does not contain anything about how to integrate the CDT with an existing Eclipse, and so does its google search within the website. However, except the awkward &#8220;import project&#8221; method (at least, for me&#8230; I have tried several times on the username/password to ssh the remote server), the method mentioned <a href="http://download.eclipse.org/tools/cdt/builds/7.0.0/I.I201006141710/index.html" target="_blank">here</a> is much more straightforward. For more information, the Eclipse CDT <a href="http://wiki.eclipse.org/CDT/User/DownloadCDT5.0" target="_blank">wiki</a> is a nice place to go.<br /><br />The method is:<br /><br />1. Download the <a href="http://download.eclipse.org/tools/cdt/builds/7.0.0/I.I201006141710/cdt-master-7.0.0-I201006141710.zip">master zip file</a> and put it somewhere on your machine.<br />2. Fire up Eclipse (The Platform Run-time 3.6 is minimum recommended)<br />3. Help-&gt;Install New Software&#8230;<br />4. Add&#8230; in the master zip as an Archive site<br />5. Under CDT Main Features select the one you want. C/C++ Development Tools is the main one. The SDK adds in the schemas and source for building extensions to the CDT. The C/C++ Development Platform is the Tools without the GNU toolchain support.<br />6. You can install other neat things, including the Mylyn bridge, from the CDT Optional Features category.<br /><br />ps.<br />the Pydev install web address is: http://pydev.org/updates/<br />The EPIC for perl can be downloaded from: http://e-p-i-c.sf.net/updates. And it also need the ActivePerl (http://www.activestate.com/Products/activeperl/) for windows os.</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ Fix Wireless Ad-Hoc in GUI [<a href="http://www.ubuntugeek.com/creating-an-adhoc
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/08/rssi-and-snr/">Rssi and Snr</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-08T00:00:00-05:00" pubdate data-updated="true">Sep 8<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-In telecommunications, received signal strength indicator (RSSI) is a measurement of the power present in a received radio signal. RSSI is generic radio receiver technology metric, which is usually invisible to the user of device containing the receiver, but is directly known to users of wireless networking of IEEE 802.11 protocol family. RSSI is often done in the intermediate frequency (IF) stage before the IF amplifier. In zero-IF systems, it is done in the baseband signal chain, before the baseband amplifier. RSSI output is often a DC analog level. It can also be sampled by an internal ADC and the resulting codes available directly or via peripheral or internal processor bus.<br /><br />&#8220;RSSI&#8221; values have unspecified unit, ie. their meaning depends on manufacturer. Some report as dBm, some as a percent, some even in milliwatts. There is no standard. Also, the proper way to find SNR *is* to subtract dB values, as dB are logarithmic and hence the difference of logs is the same as a ratio without log. In other words, if a signal has amplitude 1 and noise is 0.5, the SNR is (1/0.5) = 2, but if the signal is measured as being at (say) -12 dB and noise floor is -16 dB, the SNR is (-12-(-16)) = 4 dB.<br /><br />Moreover, link quality depends on many other factors and the signal-to-noise ratio (computed from rssi and noise floor) is only one such factor.<br /><br />And finally, finding SNR of a wifi signal by subtracting noise floor from the rssi is of course only applicable if both values are reported in a log/dB scale. Otherwise if they are linear you&#8217;d need to use ratio (as you said) and if they are some other sort of scale then who knows what needs to be used!</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/11/">&larr; Older</a>
@@ -469,6 +469,10 @@ In telecommunications, received signal strength indicator (RSSI) is a measuremen
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/31/my-2013-and-new-year-resolution/">My 2013 and new year resolution</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/10/09/lte-reading-excerpt/">LTE reading excerpt</a>
       </li>
     
@@ -482,10 +486,6 @@ In telecommunications, received signal strength indicator (RSSI) is a measuremen
     
       <li class="post">
         <a href="/blog/2013/08/10/reading-note-of-sicp-4/">Reading note of SICP (4)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/08/reading-note-of-sicp-3/">Reading note of SICP (3)</a>
       </li>
     
   </ul>

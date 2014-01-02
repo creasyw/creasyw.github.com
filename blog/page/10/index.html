@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="It is weird that the official website of CDT does not contain anything about how to integrate the CDT with an existing Eclipse, and so does its &hellip;">
+  <meta name="description" content="#!/usr/bin/perl## ^^ ensure this is pointing to the correct location.## Title: &nbsp; &nbsp;SLimPath# Author: &nbsp; David "Shoe Lace" Pyke # &nbsp &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,51 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/12/ways-to-keep-from-duplicating-path/">Ways to Keep From Duplicating Path Variable in Csh</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-12T00:00:00-05:00" pubdate data-updated="true">Oct 12<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<pre class="prettyprint"><code><span class="com">#!/usr/bin/perl</span><span class="pln"><br /></span><span class="com">#</span><span class="pln"><br /></span><span class="com"># ^^ ensure this is pointing to the correct location.</span><span class="pln"><br /></span><span class="com">#</span><span class="pln"><br /></span><span class="com"># Title: &nbsp; &nbsp;SLimPath</span><span class="pln"><br /></span><span class="com"># Author: &nbsp; David "Shoe Lace" Pyke <eselle@users.sourceforge.net></eselle@users.sourceforge.net></span><span class="pln"><br /></span><span class="com"># &nbsp; : &nbsp; Tim Nelson </span><span class="pln"><br /></span><span class="com"># Purpose: To create a slim version of my envirnoment path so as to eliminate</span><span class="pln"><br /></span><span class="com"># &nbsp; &nbsp; &nbsp; duplicate entries and ensure that the "." path was last.</span><span class="pln"><br /></span><span class="com"># Date Created: April 1st 1999</span><span class="pln"><br /></span><span class="com"># Revision History:</span><span class="pln"><br /></span><span class="com"># &nbsp; 01/04/99: initial tests.. didn't wok verywell at all</span><span class="pln"><br /></span><span class="com"># &nbsp; &nbsp; &nbsp; : retreived path throught '$ENV' call</span><span class="pln"><br /></span><span class="com"># &nbsp; 07/04/99: After an email from Tim Nelson <wayland@ne.com.au> got it to</wayland@ne.com.au></span><span class="pln"><br /></span><span class="com"># &nbsp; &nbsp; &nbsp; &nbsp; work.</span><span class="pln"><br /></span><span class="com"># &nbsp; &nbsp; &nbsp; : used 'push' to add to array</span><span class="pln"><br /></span><span class="com"># &nbsp; &nbsp; &nbsp; : used 'join' to create a delimited string from a list/array.</span><span class="pln"><br /></span><span class="com"># &nbsp; 16/02/00: fixed cmd-line options to look/work better</span><span class="pln"><br /></span><span class="com"># &nbsp; 25/02/00: made verbosity level-oriented</span><span class="pln"><br /></span><span class="com">#</span><span class="pln"><br /></span><span class="com">#</span><span class="pln"><br /></span><span class="kwd">use</span><span class="pln"> </span><span class="typ">Getopt</span><span class="pun">::</span><span class="typ">Std</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">sub</span><span class="pln"> printlevel</span><span class="pun">;</span><span class="pln"><br /><br />$initial_str </span><span class="pun">=</span><span class="pln"> </span><span class="str">""</span><span class="pun">;</span><span class="pln"><br />$debug_mode </span><span class="pun">=</span><span class="pln"> </span><span class="str">""</span><span class="pun">;</span><span class="pln"><br />$delim_chr </span><span class="pun">=</span><span class="pln"> </span><span class="str">":"</span><span class="pun">;</span><span class="pln"><br />$opt_v </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"><br /><br />getopts</span><span class="pun">(</span><span class="str">"v:hd:l:e:s:"</span><span class="pun">);</span><span class="pln"><br /><br />OPTS</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br />&nbsp; &nbsp; $opt_h </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n$0 [-v level] [-d level] [-l delim] ( -e varname | -s strname | -h )"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\nWhere:"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n &nbsp; -h &nbsp;This help"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n &nbsp; -d &nbsp;Debug level"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n &nbsp; -l &nbsp;Delimiter (between path vars)"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n &nbsp; -e &nbsp;Specify environment variable (NB: don't include \$ sign)"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n &nbsp; -s &nbsp;String (ie. $0 -s \$PATH:/looser/bin/)"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n &nbsp; -v &nbsp;Verbosity (0 = quiet, 1 = normal, 2 = verbose)"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n"</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">exit</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="pun">};</span><span class="pln"><br />&nbsp; &nbsp; $opt_d </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; printlevel </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"You selected debug level $opt_d\n"</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; $debug_mode </span><span class="pun">=</span><span class="pln"> $opt_d</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="pun">};</span><span class="pln"><br />&nbsp; &nbsp; $opt_l </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; printlevel </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"You are going to delimit the string with \"$opt_l\"\n"</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; $delim_chr </span><span class="pun">=</span><span class="pln"> $opt_l</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="pun">};</span><span class="pln"><br />&nbsp; &nbsp; $opt_e </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$opt_s</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">die</span><span class="pln"> </span><span class="str">"Cannot specify BOTH env var and string\n"</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; printlevel </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Using Environment variable \"$opt_e\"\n"</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; $initial_str </span><span class="pun">=</span><span class="pln"> $ENV</span><span class="pun">{</span><span class="pln">$opt_e</span><span class="pun">};</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="pun">};</span><span class="pln"><br />&nbsp; &nbsp; $opt_s </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; printlevel </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Using String \"$opt_s\"\n"</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; $initial_str </span><span class="pun">=</span><span class="pln"> $opt_s</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="pun">};</span><span class="pln"><br /></span><span class="pun">}</span><span class="pln"><br /></span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$</span><span class="com">#ARGV != 1) and !$opt_e and !$opt_s){</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="kwd">die</span><span class="pln"> </span><span class="str">"Nothing to work with -- try $0 -h\n"</span><span class="pun">;</span><span class="pln"><br /></span><span class="pun">}</span><span class="pln"><br /><br />$what </span><span class="pun">=</span><span class="pln"> shift </span><span class="lit">@ARGV</span><span class="pun">;</span><span class="pln"><br /></span><span class="com"># Split path using the delimiter</span><span class="pln"><br /></span><span class="lit">@dirs</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> split</span><span class="pun">(</span><span class="str">/$delim_chr/</span><span class="pun">,</span><span class="pln"> $initial_str</span><span class="pun">);</span><span class="pln"><br /><br />$dest</span><span class="pun">;</span><span class="pln"><br /></span><span class="lit">@newpath</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">();</span><span class="pln"><br />LOOP</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">foreach</span><span class="pln"> </span><span class="pun">(</span><span class="lit">@dirs</span><span class="pun">){</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="com"># Ensure the directory exists and is a directory</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(!</span><span class="pln"> </span><span class="pun">-</span><span class="pln">e </span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> printlevel </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"$_ does not exist\n"</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">next</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="com"># If the directory is ., set $dot and go around again</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$_ eq </span><span class="str">'.'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> $dot </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">next</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln"><br /></span><span class="com"># &nbsp; if ($_ ne `realpath $_`){</span><span class="pln"><br /></span><span class="com"># &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printlevel 2, "$_ becomes ".`realpath $_`."\n";</span><span class="pln"><br /></span><span class="com"># &nbsp; }</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="kwd">undef</span><span class="pln"> $dest</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="com">#$_=Stdlib::realpath($_,$dest);</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="com"># Check for duplicates and dot path</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="kwd">foreach</span><span class="pln"> $adir </span><span class="pun">(</span><span class="lit">@newpath</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$_ eq $adir</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> <br />&nbsp; &nbsp; &nbsp; &nbsp; printlevel </span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Duplicate: $_\n"</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">next</span><span class="pln"> LOOP</span><span class="pun">;</span><span class="pln"> <br />&nbsp; &nbsp; </span><span class="pun">}}</span><span class="pln"><br /><br />&nbsp; &nbsp; push </span><span class="lit">@newpath</span><span class="pun">,</span><span class="pln"> $_</span><span class="pun">;</span><span class="pln"><br /></span><span class="pun">}</span><span class="pln"><br /></span><span class="com"># Join creates a string from a list/array delimited by the first expression</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> join</span><span class="pun">(</span><span class="pln">$delim_chr</span><span class="pun">,</span><span class="pln"> </span><span class="lit">@newpath</span><span class="pun">)</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$dot </span><span class="pun">?</span><span class="pln"> $delim_chr</span><span class="pun">.</span><span class="str">".\n"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"\n"</span><span class="pun">);</span><span class="pln"><br /><br />printlevel </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Thank you for using $0\n"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">exit</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">sub</span><span class="pln"> printlevel </span><span class="pun">{</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="kwd">my</span><span class="pun">(</span><span class="pln">$level</span><span class="pun">,</span><span class="pln"> $string</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">@_</span><span class="pun">;</span><span class="pln"><br /><br />&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$opt_v </span><span class="pun">&gt;=</span><span class="pln"> $level</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">print</span><span class="pln"> STDERR $string</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br /></span><span class="pun">}</span><span class="pln"><br /></span></code></pre></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+1,i love this company,it can link to baned web <br />2,you have to delete the links of my classmates!&gt;.&lt;</div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +460,6 @@ strcat<br />save<br />dlmwrite<br />some basic sorting algorthms<br /><br />TODO
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/08/setup-wireless-lan-among-ubuntu-linux/">Setup Wireless LAN Among Ubuntu Linux OS</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-08T00:00:00-05:00" pubdate data-updated="true">Sep 8<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-Fix Wireless Ad-Hoc in GUI [<a href="http://www.ubuntugeek.com/creating-an-adhoc-host-with-ubuntu.html">click</a>]<br /><br /><br />Wireless Extensions CLI tools<br />This process is often used as the fall back position if the gui tools fail to work. The following example uses eth1 for the wifi interface though this may be wlan0, ath0 or something else in your case.<br /><br />Preparation:<br />Ensure that network manager has been stopped and then bring the interface down.<br /><b>sudo service network-manager stop</b><br /><b>sudo ifconfig eth1 down</b><br /><b>iwconfig (or ifconfig)</b> //look up if there is anything abnormal<br /><b>sudo dhclient eth1</b> &nbsp;////Bring the interface back up<br /><br />Configuration:<br /><b>sudo iwconfig eth1 mode ad-hoc</b> &nbsp;//Switch the card into ad hoc mode<br /><b>*sudo iwconfig eth1 channel 4</b> &nbsp;//Set the channel/frequency that you want to use.<br /><b>sudo iwconfig eth1 essid &#8216;name&#8217;</b> &nbsp;//Add the name (ssid) for the network you want to create/join. Use single quotes if there is a space in the name.<br /><b>*sudo iwconfig eth1 key 1234567890</b> &nbsp;//Add a WEP encryption key<br /><b>*sudo dhclient eth1</b> &nbsp;//Start dhclient to get an address<br /><b>sudo ifconfig eth1 169.254.34.2 </b>&nbsp;//If you want to do it manually, you will have to make up an IP address.<br /><br />You should now be connected to the ad hoc network. Use the iwconfig command to view the cell being used. This must match the same cell on the other PCs that you want to connect to.<br /><br />Testing:<br /><b>ping 169.254.34.2</b> &nbsp;//Once you have two or more computers connected to the ad hoc network, all of them showing the same cell number and having different IP addresses, then try pinging one from the others. If that doesn&#8217;t work then try specifying the interface name along with the address.<br /><b>ping -I eth1 169.254.34.2</b> &nbsp;//If you have more than one interface with link-local addresses there can be some routing confusion, so I recommend that you bring down these unused interfaces while connected to non-DHCP networks. If the other interfaces are all on DHCP networks, such as in the case of InternetConnectionSharing this is not necessary.<br />sudo ifdown eth0<br /><br />Example Interfaces File:<br />Currently Network Manager does not support static address settings and Network-Admin does not support ad hoc networks. So instead we can configure the network in the /etc/network/interfaces file. The following is an example.<br /><br />auto lo<br />iface lo inet loopback<br /><br />auto eth1<br />iface eth1 inet static<br />wireless-mode ad-hoc<br />wireless-channel 4<br />wireless-essid &#8216;name&#8217;<br />wireless-key 1234567890<br />address 192.168.0.2<br />netmask 255.255.255.0<br />gateway 192.168.0.1<br /><br /><br /><br />ps. some useful command:<br />ifconfig [<a href="http://www.faqs.org/docs/linux_network/x-087-2-iface.ifconfig.html">click</a>] &nbsp;iwconfig [<a href="http://gd.tuwien.ac.at/linuxcommand.org/man_pages/iwconfig8.html">click</a>]<br />wlanconfig [<a href="http://linux.die.net/man/8/wlanconfig">click</a>] &nbsp;tcpdump [<a href="http://www.tcpdump.org/tcpdump_man.html">click</a>]</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/11/">&larr; Older</a>
@@ -469,6 +477,10 @@ Fix Wireless Ad-Hoc in GUI [<a href="http://www.ubuntugeek.com/creating-an-adhoc
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/02/emacs-progression-path/">Emacs Progression Path</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/31/my-2013-and-new-year-resolution/">My 2013 and new year resolution</a>
       </li>
     
@@ -482,10 +494,6 @@ Fix Wireless Ad-Hoc in GUI [<a href="http://www.ubuntugeek.com/creating-an-adhoc
     
       <li class="post">
         <a href="/blog/2013/08/15/more-freedom-in-doing-things/">More freedom in doing things</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/10/reading-note-of-sicp-4/">Reading note of SICP (4)</a>
       </li>
     
   </ul>

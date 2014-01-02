@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Qiong Wu]]></title>
   <link href="http://creasyw.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-01-02T16:27:41-06:00</updated>
+  <updated>2014-01-02T16:56:56-06:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Emacs Progression Path]]></title>
+    <link href="http://creasyw.github.io/blog/2014/01/02/emacs-progression-path/"/>
+    <updated>2014-01-02T16:37:00-06:00</updated>
+    <id>http://creasyw.github.io/blog/2014/01/02/emacs-progression-path</id>
+    <content type="html"><![CDATA[<p>I’m kind of hoping to find something like <a href="http://stackoverflow.com/questions/2573135/python-progression-path-from-apprentice-to-guru">Python Progression Path</a> or sort of “best practice” when I am learning Emacs, since the difference between Vim and Emacs is much larger than I thought. But what I found via Google are either for really rookie teaching about basic operations such as saving and quiting the editor, or for only advanced player talking about using Emacs LISP…</p>
+
+<p>Well, as a Vim user for roughly ten years, I will try to sort the contents as an incremental record simulating my learn process, as well as keeping track of nontrivial materials and thoughts.</p>
+
+<h3 id="resources">Resources:</h3>
+<ul>
+  <li>Tow pics served as the very beginning of entering the world of Emacs (<a href="http://sachachua.com/blog/2013/05/how-to-learn-emacs-a-hand-drawn-one-pager-for-beginners/">1</a>, <a href="http://sachachua.com/p/26006">2</a>).</li>
+  <li>Cheat Sheet (<a href="http://refcards.com/docs/gildeas/gnu-emacs/emacs-refcard-a4.pdf">compact version</a>, and <a href="http://cs.iupui.edu/~kweimer/EmacsCheatSheet.pdf">a more user friendly verion</a>).</li>
+  <li>C-h t. Tutorial of Emacs within the editor. It should be the first doc to read.</li>
+</ul>
+
+<h3 id="useful-keys-combinings">Useful Keys Combinings:</h3>
+
+<p>Kill a line:
+C-a C-k (move the cursor to the begining of the line, thenkill from the cursor to the end of the line)</p>
+
+<p>Kill 2 lines:
+C-a C-u 2 C-k</p>
+
+<p>Kill a specific region
+C-<spc> C-w (move around to highlight region, then kill contents within highlight region)</spc></p>
+
+<p>Yank the killed contents
+C-y</p>
+
+<p>Retrieve yanking history
+M-y (right after the 1st yanking. – this is intersting)</p>
+
+<p>The difference between “killing” and “deleting” is that “killed” text
+can be reinserted (at any position), whereas “deleted” things cannot
+be reinserted in this way (you can, however, undo a deletion–see below).
+Reinsertion of killed text is called “yanking”.  Generally, the
+commands that can remove a lot of text kill the text (they are set up so
+that you can yank the text), while the commands that remove just one
+character, or only remove blank lines and spaces, do deletion (so you
+cannot yank that text).  <del> and C-d do deletion in the simplest
+case, with no argument.  When given an argument, they kill instead.
+– This is valid for both vim and emacs.</del></p>
+
+<p>Scoll down the page
+* C-v (page down)
+* C-u 8 C-v (scoll down 8 lines)
+* C-l (move the current line to the middle of the window)
+* C-u 0 C-l (move the current line to the head of the window)</p>
+
+<p>Getting help
+C-h c <command sequence="" />   (a very brief description of the command.)
+C-h k <command sequence="" />   (displays the documentation of the function, as well as its name)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[All-pairs shortest path]]></title>
@@ -178,16 +234,6 @@ p.p.s. The inline latex-style formula comes with Kramdown, MathJax and <a href="
     <id>http://creasyw.github.io/blog/2013/08/07/reading-note-of-sicp-2</id>
     <content type="html"><![CDATA[<div class="post">
 <br />While I am reading, I always try to distinguish which part of thoughts I used to learn from here when I read it for the first time, and which part I learned from Dan's course. And, surprisingly enough, I learned almost all basic factors from Dan, though I always felt I learned a lot of things last year when I began to read it.<br /><br />The name of this book is perfect for the content -- Structure and Interpretation of Computer Programs. It does not teach about how to program, nor a specific programming language. Of course it is a legacy book. But it seems to me that I cannot get enough from this book unless I have mastered quite a few programming languages. After Dan taught me everything about basic aspects of programming languages and I played with Ruby and Racket for a long time, even after I leaned all those "nontrivial" trivial things about C++, when I read it now, I am able to distinguish which part is the essence and which part is written just for the ease of learning, and I can fully focus on how to put different abstractions into different layers-- in other words, learning the structure and interpretation of computer programs.<br /><br />I read a comment, saying that Chapter 4 and 5 are the essence of the book. Hopefully, I can finish reading it before September, and leave enough time for Design Patterns.</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Reading note of SICP]]></title>
-    <link href="http://creasyw.github.io/blog/2013/08/06/reading-digest-sicp/"/>
-    <updated>2013-08-06T00:00:00-05:00</updated>
-    <id>http://creasyw.github.io/blog/2013/08/06/reading-digest-sicp</id>
-    <content type="html"><![CDATA[<div class="post">
-P59. I still don't think it is necessary to use "square" instead of (* x x) everywhere we perform this operation, but I appreciate the idea of "abstraction". It is really a good idea (and practice) to abstract concepts in different levels and use them accordingly.<br /><br />Most of the examples I read are in a top-down design manner: firstly use the abstract concepts, and then implement it in a lower level. The concerns for specific lower-level modules is similar to the way I did using unit test. But I am a little bit confuse how to perform the unit test in this manner. Especially for the closure using in LISP--implementing local helper functions right after building major function-- how can I make sure the helper functions are right before I run the program as a whole? If I separate a helper function as an independent one, it seems that quite a little redundant work has to perform when I move it back to the major function.<br /><br />Anyway, SICP just makes me love Racket even more =D<br /><br />cheers,</div>
 ]]></content>
   </entry>
   

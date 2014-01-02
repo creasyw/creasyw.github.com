@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="没有想到，这一年能发生这么多的事情。效率从年初开始，越来越高。然后是暑假实习，认识了很多有趣的人，开始打网球。去了波多黎各和维京群岛，看到一生迄今为止最蓝的海。回来后继续打网球，开始瘦身，失散了三十年的六块腹肌和人鱼线都找到了，可年末却把豆豆丢了。痛彻心扉的最后两个月，不太清楚自己是怎么度过的。 &hellip;">
+  <meta name="description" content="I’m kind of hoping to find something like Python Progression Path or sort of “best practice” when I am learning Emacs, since the difference between &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,89 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/02/emacs-progression-path/">Emacs Progression Path</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-02T16:37:00-06:00" pubdate data-updated="true">Jan 2<span>nd</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I’m kind of hoping to find something like <a href="http://stackoverflow.com/questions/2573135/python-progression-path-from-apprentice-to-guru">Python Progression Path</a> or sort of “best practice” when I am learning Emacs, since the difference between Vim and Emacs is much larger than I thought. But what I found via Google are either for really rookie teaching about basic operations such as saving and quiting the editor, or for only advanced player talking about using Emacs LISP…</p>
+
+<p>Well, as a Vim user for roughly ten years, I will try to sort the contents as an incremental record simulating my learn process, as well as keeping track of nontrivial materials and thoughts.</p>
+
+<h3 id="resources">Resources:</h3>
+<ul>
+  <li>Tow pics served as the very beginning of entering the world of Emacs (<a href="http://sachachua.com/blog/2013/05/how-to-learn-emacs-a-hand-drawn-one-pager-for-beginners/">1</a>, <a href="http://sachachua.com/p/26006">2</a>).</li>
+  <li>Cheat Sheet (<a href="http://refcards.com/docs/gildeas/gnu-emacs/emacs-refcard-a4.pdf">compact version</a>, and <a href="http://cs.iupui.edu/~kweimer/EmacsCheatSheet.pdf">a more user friendly verion</a>).</li>
+  <li>C-h t. Tutorial of Emacs within the editor. It should be the first doc to read.</li>
+</ul>
+
+<h3 id="useful-keys-combinings">Useful Keys Combinings:</h3>
+
+<p>Kill a line:
+C-a C-k (move the cursor to the begining of the line, thenkill from the cursor to the end of the line)</p>
+
+<p>Kill 2 lines:
+C-a C-u 2 C-k</p>
+
+<p>Kill a specific region
+C-<spc> C-w (move around to highlight region, then kill contents within highlight region)</spc></p>
+
+<p>Yank the killed contents
+C-y</p>
+
+<p>Retrieve yanking history
+M-y (right after the 1st yanking. – this is intersting)</p>
+
+<p>The difference between “killing” and “deleting” is that “killed” text
+can be reinserted (at any position), whereas “deleted” things cannot
+be reinserted in this way (you can, however, undo a deletion–see below).
+Reinsertion of killed text is called “yanking”.  Generally, the
+commands that can remove a lot of text kill the text (they are set up so
+that you can yank the text), while the commands that remove just one
+character, or only remove blank lines and spaces, do deletion (so you
+cannot yank that text).  <del> and C-d do deletion in the simplest
+case, with no argument.  When given an argument, they kill instead.
+– This is valid for both vim and emacs.</del></p>
+
+<p>Scoll down the page
+* C-v (page down)
+* C-u 8 C-v (scoll down 8 lines)
+* C-l (move the current line to the middle of the window)
+* C-u 0 C-l (move the current line to the head of the window)</p>
+
+<p>Getting help
+C-h c <command sequence="" />   (a very brief description of the command.)
+C-h k <command sequence="" />   (displays the documentation of the function, as well as its name)</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -592,43 +675,6 @@ P59. I still don&#8217;t think it is necessary to use &#8220;square&#8221; inste
 
   <div class="entry-content"><div class='post'>
 &nbsp; &nbsp; <br />Before this accident, I did not even know there were so many places relevant with a single program&#8230; I opened the pandora&#8217;s box beginning with using <code>brew doctor</code> &nbsp;which told me to move directory /usr/local/bin/ prior to /usr/bin/ so that all the homebrewed packages could be found automatically. After I did this, if I executed matplotlib, I would have this runtime error <code>RuntimeError: module compiled against API version 8 but this version of numpy is 6</code>&nbsp;which was somewhat correct by the way. Because I used superpack installed the latest version of numpy(1.8), scipy(0.13), and matplotlib(1.4), but if I printed out the &#8220;numpy.__version__&#8221; in a script, it showed 1.6.1.<br /><br />1) delete all of the outdated versions of numpy<br />2) make sure I explicitly add PYTHONPATH in the bash_profile.<br />3) I even uninstalled and reinstalled the numpy<br />But the problem was still there.<br /><br />After an exhausted search, I found that numpy-1.6.1 in &#8220;/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/&#8221; WTF! I still don&#8217;t know why it search into 2.6 given there is another 2.7 in the same level of directory. Deleting both 2.6 and 2.7 directories (only delete the 2.6 could not work either&#8230;) finally solved the problem. ahooooo&#8230;.<br /><br /></div>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/01/setup-emacs-in-mac-os/">Setup Emacs in Mac OS</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-01T00:00:00-05:00" pubdate data-updated="true">Jul 1<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<br />The setup is much harder than I thought&#8230;<br /><br />1) using homebrew installs the emacs and guile. Then, I also need to add path in the .bash_profile to launch the up-to-date emacs rather than the original version 22.1 shipped with the os.<br /><code>export PATH=/usr/local/Cellar/emacs/24.3/bin:$PATH</code><br />2) Enable the <a href="http://stackoverflow.com/questions/162896/emacs-on-mac-os-x-leopard-key-bindings">Meta key in terminal</a>, or similar position for iterm2.<br /><br />After these two steps, the following is more&nbsp;straightforward.<br /><br />3) I accidentally found this &#8221;<a href="https://github.com/technomancy/emacs-starter-kit">emacs-starter-kit</a>&#8221;, which had 2300+ stared and really saved my day. Just follow the instruction and everything will be fine.<br /><br />In current state, I feel emacs kind of like vim+tmux. Anyway, learning new knowledge is always a pleasure, especially about this kind of &#8220;legacy&#8221; stuff.<br /><br /><br />cheers,<br /><br />[UPDATE: after changed the loading sequence of bash in <code>/etc/paths/</code> the first step seems unnecessary&#8230; actually, that was something I should do as soon as I used homebrew to port packages.&nbsp;<a href="http://bit.ly/IUVl9a">http://bit.ly/IUVl9a</a></div>
 </div>
   
   

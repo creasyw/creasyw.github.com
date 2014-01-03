@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-01-02T20:00:38-06:00</updated>
+  <updated>2014-01-03T00:45:09-06:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -39,7 +39,7 @@ C-a C-k (move the cursor to the begining of the line, thenkill from the cursor t
 C-a C-u 2 C-k</p>
 
 <p>Kill a specific region
-C-<spc> C-w (move around to highlight region, then kill contents within highlight region)</spc></p>
+C-&lt;SPC&gt; C-w (move around to highlight region, then kill contents within highlight region)</p>
 
 <p>Yank the killed contents
 C-y</p>
@@ -68,8 +68,8 @@ case, with no argument.  When given an argument, they kill instead.
 </ul>
 
 <p>Getting help
-C-h c <command sequence="" />   (a very brief description of the command.)
-C-h k <command sequence="" />   (displays the documentation of the function, as well as its name)</p>
+C-h c &lt;Command sequence&gt;   (a very brief description of the command.)
+C-h k &lt;Command sequence&gt;   (displays the documentation of the function, as well as its name)</p>
 ]]></content>
   </entry>
   

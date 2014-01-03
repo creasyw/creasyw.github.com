@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-01-03T00:45:09-06:00</updated>
+  <updated>2014-01-03T10:26:42-06:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -342,8 +342,17 @@ P59. I still don&#8217;t think it is necessary to use &#8220;square&#8221; inste
     <link href="http://creasyw.github.io/blog/2013/07/23/pythonnumpy-version-collisions/"/>
     <updated>2013-07-23T00:00:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/07/23/pythonnumpy-version-collisions</id>
-    <content type="html"><![CDATA[<div class='post'>
-&nbsp; &nbsp; <br />Before this accident, I did not even know there were so many places relevant with a single program&#8230; I opened the pandora&#8217;s box beginning with using <code>brew doctor</code> &nbsp;which told me to move directory /usr/local/bin/ prior to /usr/bin/ so that all the homebrewed packages could be found automatically. After I did this, if I executed matplotlib, I would have this runtime error <code>RuntimeError: module compiled against API version 8 but this version of numpy is 6</code>&nbsp;which was somewhat correct by the way. Because I used superpack installed the latest version of numpy(1.8), scipy(0.13), and matplotlib(1.4), but if I printed out the &#8220;numpy.__version__&#8221; in a script, it showed 1.6.1.<br /><br />1) delete all of the outdated versions of numpy<br />2) make sure I explicitly add PYTHONPATH in the bash_profile.<br />3) I even uninstalled and reinstalled the numpy<br />But the problem was still there.<br /><br />After an exhausted search, I found that numpy-1.6.1 in &#8220;/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/&#8221; WTF! I still don&#8217;t know why it search into 2.6 given there is another 2.7 in the same level of directory. Deleting both 2.6 and 2.7 directories (only delete the 2.6 could not work either&#8230;) finally solved the problem. ahooooo&#8230;.<br /><br /></div>
+    <content type="html"><![CDATA[Before this accident, I did not even know there were so many places relevant with a single program&#8230; I opened the pandora&#8217;s box beginning with using <code>brew doctor</code> which told me to move directory /usr/local/bin/ prior to /usr/bin/ so that all the homebrewed packages could be found automatically. After I did this, if I executed matplotlib, I would have this runtime error <code>RuntimeError: module compiled against API version 8 but this version of numpy is 6</code> which was somewhat correct by the way. Because I used superpack installed the latest version of numpy(1.8), scipy(0.13), and matplotlib(1.4), but if I printed out the &#8220;numpy.__version__&#8221; in a script, it showed 1.6.1.
+
+Then I tried the following solution:
+
+1. delete all of the outdated versions of numpy
+2. make sure I explicitly add PYTHONPATH in the bash_profile.
+3. I even uninstalled and reinstalled the numpy
+
+But the problem was still there&#8230;
+
+After an exhausted search, I found that numpy-1.6.1 in <code>/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/</code> I still don&#8217;t know why it search into the directory of 2.6 given there is another 2.7 in the same level. Deleting both 2.6 and 2.7 directories (only delete the 2.6 could not work either&#8230;) finally solved the problem. ahooooo&#8230;.
 ]]></content>
   </entry>
   

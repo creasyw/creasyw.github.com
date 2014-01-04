@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-01-04T00:55:12-06:00</updated>
+  <updated>2014-01-04T00:55:50-06:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -379,7 +379,7 @@ I still don’t know why it search into the directory of 2.6 given there is anot
 
 <p>cheers,</p>
 
-<p>[UPDATE: after changed the loading sequence of bash in <code>/etc/paths/</code> the first step seems unnecessary… actually, that was something I should do as soon as I used homebrew to port packages. <a href="http://bit.ly/IUVl9a">http://bit.ly/IUVl9a</a>&lt;/div&gt;</p>
+<p>[UPDATE: after changed the loading sequence of bash in <code>/etc/paths/</code> the first step seems unnecessary… actually, that was something I should do as soon as I used homebrew to port packages. <a href="http://bit.ly/IUVl9a">http://bit.ly/IUVl9a</a></p>
 ]]></content>
   </entry>
   

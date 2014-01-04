@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-01-04T00:53:18-06:00</updated>
+  <updated>2014-01-04T00:55:12-06:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -366,9 +366,10 @@ I still don’t know why it search into the directory of 2.6 given there is anot
     <id>http://creasyw.github.io/blog/2013/07/01/setup-emacs-in-mac-os</id>
     <content type="html"><![CDATA[<p>The setup is much harder than I thought…</p>
 
-<p>1) using homebrew installs the emacs and guile. Then, I also need to add path in the .bash_profile to launch the up-to-date emacs rather than the original version 22.1 shipped with the os.
-<code>export PATH=/usr/local/Cellar/emacs/24.3/bin:$PATH</code>
-2) Enable the <a href="http://stackoverflow.com/questions/162896/emacs-on-mac-os-x-leopard-key-bindings">Meta key in terminal</a>, or similar position for iterm2.</p>
+<p>1) using homebrew installs the emacs and guile. Then, I also need to add path in the .bash_profile to launch the up-to-date emacs rather than the original version 22.1 shipped with the os.<br />
+<code>export PATH=/usr/local/Cellar/emacs/24.3/bin:$PATH</code></p>
+
+<p>2) Enable the <a href="http://stackoverflow.com/questions/162896/emacs-on-mac-os-x-leopard-key-bindings">Meta key in terminal</a>, or similar position for iterm2.</p>
 
 <p>After these two steps, the following is more straightforward.</p>
 

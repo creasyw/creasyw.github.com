@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Qiong Wu]]></title>
   <link href="http://creasyw.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-01-05T22:16:20-06:00</updated>
+  <updated>2014-01-05T23:19:44-06:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -40,19 +40,18 @@
 
 <h3 id="useful-key-combinings">Useful Key Combinings:</h3>
 
-<p>Kill a line:
+<p>Kill a line:<br />
 C-a C-k (move the cursor to the begining of the line, thenkill from the cursor to the end of the line)</p>
 
-<p>Kill 2 lines:
+<p>Kill 2 lines:<br />
 C-a C-u 2 C-k</p>
 
-<p>Kill a specific region
+<p>Kill a specific region<br />
 C-&lt;SPC&gt; C-w (move around to highlight region, then kill contents within highlight region)</p>
 
-<p>Yank the killed contents
-C-y</p>
+<p>Yank the killed contents C-y</p>
 
-<p>Retrieve yanking history
+<p>Retrieve yanking history<br />
 M-y (right after the 1st yanking. – this is intersting)</p>
 
 <p>The difference between “killing” and “deleting” is that “killed” text
@@ -66,18 +65,19 @@ cannot yank that text).  &lt;DEL&gt; and C-d do deletion in the simplest
 case, with no argument.  When given an argument, they kill instead.
 – This is valid for both vim and emacs.</p>
 
-<p>Scoll down the page</p>
+<p>Scoll down the page<br />
+* C-v (page down)
+* C-u 8 C-v (scoll down 8 lines)
+* C-l (move the current line to the middle of the window)
+* C-u 0 C-l (move the current line to the head of the window)</p>
 
-<ul>
-  <li>C-v (page down)</li>
-  <li>C-u 8 C-v (scoll down 8 lines)</li>
-  <li>C-l (move the current line to the middle of the window)</li>
-  <li>C-u 0 C-l (move the current line to the head of the window)</li>
-</ul>
-
-<p>Getting help
+<p>Getting help<br />
 C-h c &lt;Command sequence&gt;   (a very brief description of the command.)
 C-h k &lt;Command sequence&gt;   (displays the documentation of the function, as well as its name)</p>
+
+<p>Auto-completion<br />
+M-/<br />
+<a href="http://company-mode.github.io/">Company</a> is good complementory plug-in</p>
 ]]></content>
   </entry>
   

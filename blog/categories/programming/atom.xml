@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Qiong Wu]]></title>
   <link href="http://creasyw.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-01-16T17:19:38-06:00</updated>
+  <updated>2014-01-16T17:21:46-06:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -85,6 +85,7 @@ M-r: Begin an incremental regexp search of old shell commands.
 C-c C-x: Fetch the next subsequent command from the history.    
 C-c . : Fetch one argument from an old shell command.       
 C-c C-l: Display the buffer's history of shell commands in another window (comint-dynamic-list-input-ring).</down></up></p>
+
 ]]></content>
   </entry>
   

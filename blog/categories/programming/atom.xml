@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Qiong Wu]]></title>
   <link href="http://creasyw.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-01-16T17:33:59-06:00</updated>
+  <updated>2014-01-21T13:24:21-06:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -38,6 +38,13 @@
 </ul>
 
 <p>–Well, it is really a road that will never end…</p>
+
+<h3 id="packages">Packages:</h3>
+
+<ul>
+  <li><a href="https://github.com/magit/magit">Magit</a>. “Magit is the most popular interface to git. If you are new to git and do not need support for other vcs this is likely the package you should try first” – quoted from <a href="http://www.emacswiki.org/emacs/Git">EmacsWiki</a>. The detail explanation can be found from <a href="http://www.masteringemacs.org/articles/2013/12/06/introduction-magit-emacs-mode-git/">Mastering Emacs</a>.</li>
+  <li><a href="http://company-mode.github.io/">Company</a> for auto-completion.</li>
+</ul>
 
 <h3 id="useful-key-combinings">Useful Key Combinings:</h3>
 

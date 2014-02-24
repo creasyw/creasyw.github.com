@@ -9,7 +9,9 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Fix Wireless Ad-Hoc in GUI [click]Wireless Extensions CLI toolsThis process is often used as the fall back position if the gui tools fail to work. &hellip;">
+  <meta name="description" content="
+今天学到的东西rmscpmkdirmv&#8230;data quota exceededsome basic perl rules待学的东西vimtcpdump实验室工作今儿到此为止。开始写作业了～
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +83,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/09/todays-update/">Today&#8217;s Update</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-09T00:00:00-05:00" pubdate data-updated="true">Sep 9<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+今天学到的东西<br />rm<br />scp<br />mkdir<br />mv<br />&#8230;<br />data quota exceeded<br />some basic perl rules<br /><br />待学的东西<br />vim<br />tcpdump<br /><br />实验室工作今儿到此为止。开始写作业了～</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -428,43 +467,6 @@ pair类型，以及更为典型的map类型。既具有vector类型可以纵向�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/07/05/install-click-in-ubuntu-1004/">Install Click in Ubuntu 10.04</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-05T00:00:00-05:00" pubdate data-updated="true">Jul 5<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-GIT is the best way to acquire the code, so it is necessary to install this software first. Besides, there are several packages needed to patch before the click installs. And it is also tricky for the final step of installation.<br /><br />**************<br /><br /># git clone git://git.kernel.org/pub/scm/git/git.git<br /><br /># apt-get install git-core<br /><br /># git clone git://read.cs.ucla.edu/git/click<br /><br /># apt-get install autoconf<br /><br /># apt-get install libgtk2.0-dev<br /><br /># apt-get install libtool<br /><br />To update to the latest version checked in to the public repository, change into your working copy directory DIR and run:<br /><br /># git pull<br /><br />To fetch the Click packages:<br /><br /># git clone git://read.cs.ucla.edu/git/click-packages DIR<br /><br />Installation of Click:<br /><br /># cd CLICKDIR<br /># ./configure &#8211;prefix=$HOME &#8211;enable-analysis &#8211;enable-test<br /># make install<br /><br />The –prefix=$HOME configuration switch causes Click to install into your home directory. To run the Click driver and read its manual pages, you&#8217;ll need to add $HOME/bin and $HOME/man&nbsp; to your PATH and MANPATH environment variables, respectively. Alternatively, if you have root privilege on your machine, you can install Click in /usr/local, /usr/local/click, or wherever you&#8217;d like.<br /><br />The –enable-analysis and –enable-test configuration switches turn on support for two necessary sub-packages, including trace analysis and regression test elements.<br /><br />If you get a bus error when running Click on a Solaris or other non-x86 machine, try running your conﬁguration through click-align: “click-align config.click | click”. <br /><br />Furthermore, make sure your system has the necessary libraries and packages<br />installed.&nbsp; On a Debian or Ubuntu system, this will include automake,<br />autoconf, libtool, libgtk2.0-dev (or libgtk2-dev), and graphviz.&nbsp; Then:<br /><br /># cd CLICKDIR/apps/clicky<br /># autoreconf -i<br /># ./configure [&#8211;prefix=PREFIX] &#8211;with-click=CLICKPREFIX<br /># make install<br /><br />That&#8217;s done:)<br /><br />But on the other hand, there are some warning coming out, although they seem to be all right till now.<br /><br />FIRST &amp; SECOND appear in the Click Configuration step.<br /><br />Your Linux kernel header files cause errors when included by a C++ program,<br />so I won&#8217;t try to compile the linuxmodule driver.<br /><br />There are two common reasons for this error:<br />1. You have not applied the Linux kernel patch that comes with this distribution.&nbsp; Apply the right patch and try again.&nbsp; See the INSTALL file for more information.<br />2. Your Linux configuration enables some functionality that is not yet covered by our patches.&nbsp; Turn off this functionality and try again, or fix the error and tell us how you did it.&nbsp; See the config.log file for more detailed information on the error.<br /><br />==============<br /><br />WARNING: `makeinfo&#8217; is missing on your system.&nbsp; You should only need it if you modified a `.texi&#8217; or `.texinfo&#8217; file, or any other file indirectly affecting the aspect of the manual.&nbsp; The spurious call might also be the consequence of using a buggy `make&#8217; (AIX, DU, IRIX).&nbsp; You might want to install the `Texinfo&#8217; package or the `GNU make&#8217; package.&nbsp; Grab either from any GNU archive site.<br /><br />=============<br /><br />The THIRD comes out when I build the Click install.<br /><br />click-elem2man: warning: category &#8216;devices&#8217; begins with a lowercase letter (used in UMLSwitch)<br />click-elem2man: warning: category &#8216;devices&#8217; begins with a lowercase letter (used in UMLSwitch)<br />../missing makeinfo ./click.texi<br />WARNING: `makeinfo&#8217; is missing on your system.&nbsp; You should only need it if<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; you modified a `.texi&#8217; or `.texinfo&#8217; file, or any other file<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; indirectly affecting the aspect of the manual.&nbsp; The spurious<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call might also be the consequence of using a buggy `make&#8217; (AIX,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DU, IRIX).&nbsp; You might want to install the `Texinfo&#8217; package or<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the `GNU make&#8217; package.&nbsp; Grab either from any GNU archive site.<br />make[1]: [click.info] Error 1 (ignored)<br />&#8230;&#8230;<br />install-info: warning: don&#8217;t call programs like install-info with an absolute path,<br />install-info: warning: /usr/sbin/install-info provided by dpkg is deprecated and will go away soon;<br />install-info: warning: its replacement lives in /usr/bin/.<br />This is not dpkg install-info anymore, but GNU install-info<br />See the man page for ginstall-info for command line arguments<br />install-info: No such file or directory for /root/share/info/click.info<br />make[1]: [install-info] Error 1 (ignored)<br /><br />=============<br /><br />The FINAL one appears when I build the clicky.<br /><br />xcallbacks.c: In function ‘on_cut1_activate’:<br />xcallbacks.c:11: warning: unused parameter ‘menuitem’<br />xcallbacks.c:12: warning: unused parameter ‘user_data’<br />xcallbacks.c: In function ‘on_copy1_activate’:<br />xcallbacks.c:19: warning: unused parameter ‘menuitem’<br />xcallbacks.c:20: warning: unused parameter ‘user_data’<br />xcallbacks.c: In function ‘on_paste1_activate’:<br />xcallbacks.c:27: warning: unused parameter ‘menuitem’<br />xcallbacks.c:28: warning: unused parameter ‘user_data’<br />xcallbacks.c: In function ‘on_clear1_activate’:<br />xcallbacks.c:35: warning: unused parameter ‘menuitem’<br />xcallbacks.c:36: warning: unused parameter ‘user_data’<br />xcallbacks.c: In function ‘on_properties1_activate’:<br />xcallbacks.c:43: warning: unused parameter ‘menuitem’<br />xcallbacks.c:44: warning: unused parameter ‘user_data’<br />xcallbacks.c: In function ‘on_preferences1_activate’:<br />xcallbacks.c:51: warning: unused parameter ‘menuitem’<br />xcallbacks.c:52: warning: unused parameter ‘user_data’<br />xcallbacks.c: In function ‘on_about1_activate’:<br />xcallbacks.c:59: warning: unused parameter ‘menuitem’<br />xcallbacks.c:60: warning: unused parameter ‘user_data’</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/12/">&larr; Older</a>
@@ -482,6 +484,10 @@ GIT is the best way to acquire the code, so it is necessary to install this soft
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/24/better-look-for-git-log/">Better look for &#8220;git log&#8221;</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/02/emacs-progression-path/">Emacs Progression Path</a>
       </li>
     
@@ -495,10 +501,6 @@ GIT is the best way to acquire the code, so it is necessary to install this soft
     
       <li class="post">
         <a href="/blog/2013/09/30/johnsons-algorithm/">All-pairs shortest path</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/15/more-freedom-in-doing-things/">More freedom in doing things</a>
       </li>
     
   </ul>

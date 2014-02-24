@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Qiong Wu]]></title>
   <link href="http://creasyw.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-02-19T13:59:52-06:00</updated>
+  <updated>2014-02-24T14:02:20-06:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Better look for "git log"]]></title>
+    <link href="http://creasyw.github.io/blog/2014/02/24/better-look-for-git-log/"/>
+    <updated>2014-02-24T13:30:00-06:00</updated>
+    <id>http://creasyw.github.io/blog/2014/02/24/better-look-for-git-log</id>
+    <content type="html"><![CDATA[<p>The first time that I read it is from coolshell.cn, and then today from <a href="http://www.reddit.com/r/programming/comments/1yqiq8/git_log_is_so_2005/">reddit</a>. Just put here as a backup.</p>
+
+<p><code>sh
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"
+</code></p>
+
+<p>The afterwards effect is something like:</p>
+
+<p><img class="center" src="/images/git_lg.png"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Emacs Progression Path]]></title>
@@ -254,16 +271,6 @@ p.p.s. The inline latex-style formula comes with Kramdown, MathJax and <a href="
     <id>http://creasyw.github.io/blog/2013/08/08/reading-note-of-sicp-3</id>
     <content type="html"><![CDATA[<div class="post">
 &nbsp;<br />At the end of the 1st chapter, it enumerates the basic reason for the powerful lisp: first-order procedure.<br /><br />The major "privileges" of the first-order elements are:<br />1) They may be named by variables.<br />2) They may be passed as arguments to procedures.<br />3) They may be returned as the results of procedures.<br />4) They may be included in data structures.<br />They can be crucial abstraction mechanism permitting to express the general methods of computing as explicit elements in programming language, so that they can be handled just like other computational elements. The expression power is enormous.<br /><br />I have already been used to use the first two kinds of procedures, but the last two actually make the program even more expressive and powerful. Those are also the attractive properties sharing among functional programming languages.</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Reading note of SICP (2)]]></title>
-    <link href="http://creasyw.github.io/blog/2013/08/07/reading-note-of-sicp-2/"/>
-    <updated>2013-08-07T00:00:00-05:00</updated>
-    <id>http://creasyw.github.io/blog/2013/08/07/reading-note-of-sicp-2</id>
-    <content type="html"><![CDATA[<div class="post">
-<br />While I am reading, I always try to distinguish which part of thoughts I used to learn from here when I read it for the first time, and which part I learned from Dan's course. And, surprisingly enough, I learned almost all basic factors from Dan, though I always felt I learned a lot of things last year when I began to read it.<br /><br />The name of this book is perfect for the content -- Structure and Interpretation of Computer Programs. It does not teach about how to program, nor a specific programming language. Of course it is a legacy book. But it seems to me that I cannot get enough from this book unless I have mastered quite a few programming languages. After Dan taught me everything about basic aspects of programming languages and I played with Ruby and Racket for a long time, even after I leaned all those "nontrivial" trivial things about C++, when I read it now, I am able to distinguish which part is the essence and which part is written just for the ease of learning, and I can fully focus on how to put different abstractions into different layers-- in other words, learning the structure and interpretation of computer programs.<br /><br />I read a comment, saying that Chapter 4 and 5 are the essence of the book. Hopefully, I can finish reading it before September, and leave enough time for Design Patterns.</div>
 ]]></content>
   </entry>
   

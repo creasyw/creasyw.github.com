@@ -9,7 +9,9 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="the original webpage:&nbsp;click Lisp被许多资深程序员视为编程语言中的圣杯，因为学起来很难。著名程序员、最热门的技术问答网站StackOverflow创始人Joel Spolsky曾经在&#8220;Java语言学校的危险性&#8221;一 文中说， &hellip;">
+  <meta name="description" content="
+here
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +83,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/04/programmer-competency-matrix/">Programmer Competency Matrix</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-04T00:00:00-06:00" pubdate data-updated="true">Dec 4<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<a href="http://www.indiangeek.net/wp-content/uploads/Programmer%20competency%20matrix.htm">here</a></div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +454,6 @@ author: <a href="http://blog.csdn.net/michaellufhl/archive/2010/11/08/5996261.as
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/10/29/sth-about-usrp-in-gnuradio/">Sth. About Usrp in Gnuradio</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-29T00:00:00-05:00" pubdate data-updated="true">Oct 29<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-On Thu, Jul 21, 2005 at 05:48:33PM +0530, Arora_Amit wrote:<br />&gt; Hi all,<br />&gt;<br />&gt; We are working on USRP. Please can any let us know what the<br />&gt; factors or on what basis the audio_decimation, if_freq, usrp_decim.<br /><br />These values are choosen so that the sample rates through the<br />processing path &#8220;make sense&#8221;.&nbsp; The USRP can sample and decimate at<br />particular rates.&nbsp; The audio sink/source can sample at particular<br />rates.&nbsp; We generally pick ratios such that they are related by simple<br />integer factors and that the signals of interest have appropriate<br />bandwidth at various points in the signal processing chain.<br /><br />The API for using and controlling the usrp is documented in <br />usrp/host/lib/usrp_basic.h and usrp_standard.h<br /><br />&gt; It will be help if we can get what the following mention programs does:<br /><br />&gt; 1.&nbsp;&nbsp;&nbsp; usrp_fft_simple.py<br /><br />Does the same thing as usrp_fft only with less gui cruft.<br />(Plots Fast Fourier Transform of samples received from USRP.)<br /><br />&gt; 2.&nbsp;&nbsp;&nbsp; benchmark_usb.py <br /><br />An unreliable program to detemine maximum bandwidth of USB<br /><br />&gt;From the comment at the top of the file:<br /><br />&nbsp; Benchmark the USB/USRP throughput.&nbsp; Finds the maximum full-duplex speed<br />&nbsp; the USRP/USB combination can sustain without errors.<br /><br />&gt; 3.&nbsp;&nbsp;&nbsp; usrp_oscope.py<br /><br />Digital oscilloscope that uses a USRP as the source of samples.<br /><br />&gt; 4.&nbsp;&nbsp;&nbsp; dbs_debug.py <br /><br />Program to assist in debugging the DBS_RX daughterboard.<br /><br />The DBS_RX daughterboard is a receive-only daughterboard that covers <br />800 MHz to 2400 MHz.<br /><br />&gt; 5.&nbsp;&nbsp;&nbsp; nbfm_ptt_quick_and_dirty.py <br /><br />Removed from CVS.&nbsp; See nbfm_ptt.py&nbsp; Narrow Band FM &#8220;Push to Talk&#8221; (wakie-talkie)<br /><br />&gt; 6.&nbsp;&nbsp;&nbsp;&nbsp; usrp_rx_cfile.py<br /><br />Read samples from the USRP and write to file formatted as binary<br />single-precision complex values.<br /><br />&gt; 7.&nbsp;&nbsp;&nbsp; dbs_fft.py<br /><br />Removed from CVS.<br /><br />&gt; 8.&nbsp;&nbsp;&nbsp; nbfm_rcv.py <br /><br />Narrow Band FM receiver.<br /><br /><br />If you haven&#8217;t already, I suggest that you spend some time with:<br /><br />&nbsp; <a href="http://www.gnu.org/software/gnuradio/doc/exploring-gnuradio.html" target="_blank">http://www.gnu.org/software/gnuradio/doc/exploring-gnuradio.html</a><br />&nbsp; <a href="http://www.gnu.org/software/gnuradio/doc/howto-write-a-block.html" target="_blank">http://www.gnu.org/software/gnuradio/doc/howto-write-a-block.html</a><br /><br /><br />Also, there are online docs for the C++ guts:<br /><br />&nbsp; <a href="http://www.gnu.org/software/gnuradio/doc/index.html" target="_blank">http://www.gnu.org/software/gnuradio/doc/index.html</a></div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/9/">&larr; Older</a>
@@ -469,6 +471,10 @@ On Thu, Jul 21, 2005 at 05:48:33PM +0530, Arora_Amit wrote:<br />&gt; Hi all,<br
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/27/plotting-in-latex/">Plotting in Latex</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/24/better-look-for-git-log/">Better look for &#8220;git log&#8221;</a>
       </li>
     
@@ -482,10 +488,6 @@ On Thu, Jul 21, 2005 at 05:48:33PM +0530, Arora_Amit wrote:<br />&gt; Hi all,<br
     
       <li class="post">
         <a href="/blog/2013/10/09/lte-reading-excerpt/">LTE reading excerpt</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/30/johnsons-algorithm/">All-pairs shortest path</a>
       </li>
     
   </ul>

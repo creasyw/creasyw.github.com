@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="GIT is the best way to acquire the code, so it is necessary to install this software first. Besides, there are several packages needed to patch &hellip;">
+  <meta name="description" content="pair类型，以及更为典型的map类型。既具有vector类型可以纵向联系某种特定数据类型的特点，又可以把两种不同数据类型但在应用中意义相关的数据横向联系起来。这种联系可以理解为“映射”，每个key和唯一的另一个数据类型存放地址相关。另一种理解方法， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/07/06/associative-container/">Associative Container</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-06T00:00:00-05:00" pubdate data-updated="true">Jul 6<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+pair类型，以及更为典型的map类型。既具有vector类型可以纵向联系某种特定数据类型的特点，又可以把两种不同数据类型但在应用中意义相关的数据横向联系起来。这种联系可以理解为“映射”，每个key和唯一的另一个数据类型存放地址相关。另一种理解方法，key值可以视为对应于其值value的一个指针或者是迭代器，只是这样的对应始终是一对一的。此外，map类型默认如果所查询的key值不存在，则自动添加到队尾，默认赋值0。这个特点很适合计数使用。<br /><br />但在单纯进行查找操作的时候则需要小心。若要仅仅确定某个key是否存在，可以使用m.count(k)，返回值为0或1。若要确定某个key值的具体位置，则可使用m.find(k)，若k键存在，则返回的是指向它的一个迭代器，若不存在，则返回指向超出队尾位置的迭代器，这个返回值和m.end()的返回值一致。<br /><br />//count number of times each word occurs in the input<br />map<string, int=""> word_count</string,><br />string word;<br />while(cin &gt;&gt; word){<br />&nbsp;&nbsp; &nbsp;++word_count[word]; &nbsp; }<br /><br />//equal funtion with .insert<br />&#8230;&#8230;<br />while(cin &gt;&gt; word){<br />&nbsp;&nbsp; &nbsp;//insert element with key equal to word and value 1<br />&nbsp;&nbsp; &nbsp;//if word already in word_count, insert does nothing<br />&nbsp;&nbsp; &nbsp;pair<map><string, int="">::iterator, bool&gt; ret =</string,></map><br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;word_count.insert(make_pair(word, 1));<br />&nbsp;&nbsp; &nbsp;if (!ret.second) &nbsp; //word already in word_count<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;++ret.first-&gt;second; &nbsp; //increment counter<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;//which is equal to ++((ret.first)-&gt;second);<br />}<br /><br />这里有一点需要注意的，仍然是不同符号连用时优先级的问题。之前在c.lang组里面也遇到了这样的问题，简单的一段程序都会出现匪夷所思的结果。那么，得到的启发就是，在任何情况下，多写几层括号，既可以方便之后的阅读代码，又可以避免因为默认优先级而引起难以察觉的问题。<br /><br />ps. 设计程序的一个良好习惯是首先将程序需要完成的任务明确成条目，然后列出涉及的操作，明确了这些需要提供的操作，有助于建立需要的数据结构和实现这些行为。一般的顺序是，明确输入输出参量以及将其相关联起来的数据的结构&#8211;&gt;明确程序行为-&gt;根据数据结构设计类-&gt;设计主函数-&gt;设计输出函数&#8211;&gt;设计成员函数。<br /><br />pps. 一篇介绍C++的文章(<a href="http://blog.csdn.net/pongba/archive/2007/09/14/1785372.aspx">为什么C++</a>)</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ C vs. C++ 其中一个显式区别，就是后者增添了标准库类型，vect
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/06/19/recent-update/">Recent Update</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-19T00:00:00-05:00" pubdate data-updated="true">Jun 19<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-一周的时间，生活改变了不少。可以按照自己的时间睡觉、起床。也可以躺在床上给小同学打电话。除了电话，一直不说话，感觉也还不错:) 做了一次西红柿牛腩，味道最终很像烤牛肉干，可以算作失之东隅收之桑榆么。出门跑步，把钥匙放在隔墙上，结果掉到了空心的墙壁中，钓了整整一晚。世界杯开幕了，兴趣一般，也许是听不到母语解说的缘故，不能嘲笑解说时而的短路，于是比赛也索然了很多。<br /><br />周三见了老师，笑眯眯的样子，应该是蛮好相处。组里的同学，接触较多的两个印度人，暂时还算友好。测量增益的实验，这周没有做成，下周一希望能用少量的时间完成。折腾了两天，终于自己安装好了cygwin和ns-2，竟然终究是版本兼容的问题，还枉费我卸了装、装了卸的鼓捣了半天gcc……上个学期dsp课程设计，我学会了应该如何解读完全陌生的matlab代码，这次学会了如何在感觉上乱七八糟的英文google信息中找到自己想要的东西，也算是有所得的。实验先从SISO的状况开始，仿真一下手中已有的几个算法，归一化所有的自变量，之后希望自己能给出一个MIMO的测试结果，这样结合实际测量的一些初步结果，就可以攒一篇论文出来了。<br /><br />效率高些。也希望这段时间快点过。我想回家了。 想她了。</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/13/">&larr; Older</a>
@@ -469,6 +469,10 @@ C vs. C++ 其中一个显式区别，就是后者增添了标准库类型，vect
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/27/plotting-in-latex/">Plotting in Latex</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/24/better-look-for-git-log/">Better look for &#8220;git log&#8221;</a>
       </li>
     
@@ -482,10 +486,6 @@ C vs. C++ 其中一个显式区别，就是后者增添了标准库类型，vect
     
       <li class="post">
         <a href="/blog/2013/10/09/lte-reading-excerpt/">LTE reading excerpt</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/30/johnsons-algorithm/">All-pairs shortest path</a>
       </li>
     
   </ul>

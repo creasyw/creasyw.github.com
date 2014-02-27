@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-02-24T14:02:20-06:00</updated>
+  <updated>2014-02-27T13:23:50-06:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Plotting in Latex]]></title>
+    <link href="http://creasyw.github.io/blog/2014/02/27/plotting-in-latex/"/>
+    <updated>2014-02-27T13:14:00-06:00</updated>
+    <id>http://creasyw.github.io/blog/2014/02/27/plotting-in-latex</id>
+    <content type="html"><![CDATA[<p>I just hope that I could find this feature earlier. <a href="http://www.texample.net/tikz/">TikZ</a></p>
+
+<p>Some nice examples to start with:</p>
+
+<ul>
+  <li><a href="http://commons.wikimedia.org/wiki/File:Neighbourhood_definition2.svg">Neighbourhood definition</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/highlighting-matrix/">Highlighting elements in matrices</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/more-tikz-timing-examples/">Signal timing</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/bode-plot/">Body plot of functions</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/database-decimation-process/">Database decimation process</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/labs-schema/">Flowchart with block highlights</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/set-operations-illustrated-with-venn-diagrams/">Set operations</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/credit-rationing/">Cross-comparsion among curves</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/phasor-diagram/">Phasor diagram (more fancy)</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/difference-quotient/">Difference quotient (partial zoom-in)</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/nested-grids-in-swan-and-wam-coupling/">Nested Grids</a></li>
+</ul>
+
+<p>More examples are <a href="http://www.texample.net/tikz/examples/">here</a></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Better look for "git log"]]></title>
@@ -493,16 +521,6 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
     <id>http://creasyw.github.io/blog/2012/09/17/missing-you_17</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />小葛儿转眼安排好纽约面试就登飞机了。因为GPS的缘故，在机场周围转了好几圈，结果弄的再见都匆匆忙忙。送完她回到寝室——是的，没有了她，这里还是叫寝室合适——空荡荡的，安安静静。一分钟都不想多停留，背着书包就去了实验室。<br /><br />晚上也不想回去，因为想到又是空空的房间就不自在。<br /><br />一个人在这里。忽然一下安静了。多出了好多时间来想你，似乎一切记忆瞬间无比清晰，触手可及。你的肩膀软软的，抱在怀里的时候，还要告诉自己小心别把你弄疼了。你哭的时候，撅着嘴，鼻子里些许呜哝呜哝的声音，眼泪扑簌扑簌就落下来了。你笑的时候，眼睛眉毛嘴角都弯弯的，咯咯咯的，清脆悦耳。每到这个样的时候，我都在反问自己，为什么要和你吵架啊，有什么气好生呢。<br /><br />可无论怎么吵架，我都还是爱你的，比每一次吵架前还要爱你，比每一次生气之前还要更想和你在一起。有时候会想，也许我太把你说的每句话当回事儿了，才会又好多的弄巧成拙。但翻回头来，我仍就欠你好多在一起的时光。<br /><br />小葛儿啊。你的一举一动，一颦一笑，我都记在心里呢。欠你的那些时光，我也一定要都好好还你。快回来吧。有你在的地方，我就认为是家了。<br /><br />我想你。<br /></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My August and a new beginning]]></title>
-    <link href="http://creasyw.github.io/blog/2012/09/14/my-august-and-new-beginning/"/>
-    <updated>2012-09-14T00:00:00-05:00</updated>
-    <id>http://creasyw.github.io/blog/2012/09/14/my-august-and-new-beginning</id>
-    <content type="html"><![CDATA[<div class='post'>
-<br />八月份，是个开始的月份，来到了一个小屯子里，没有公交，没有市集，只是明晃晃的阳光，会照的人发晕。当真是个修行的地方。有关这里，想法都有关不要虚度光阴，要快些离开这里。<br /><br />月中，和大瀾、乌龟、聪哥、温总一起去了黄石，西雅图，以及波特兰。这次旅行，如同酿酒发酵一般，越到后来越是留恋。<br /><br />刚到Bozman的时候，大瀾看着大山都激动的手舞足蹈。然后进入黄石以后，各种臭泉以及异常干燥的气候弄的大家都越发烦躁起来。大瀾背着手，像居委会大妈一样视察颜色异常的泉水；也会二劲儿大发，摘下花来给每个人带上，拍个大头贴。大乌龟在走trail时候，被路上唯一的一个钉子扎破了后背。甩着舌头奔跑的牦牛，成群在树林里休息的大鹿，elk or moose。在大峡谷的晚上，八月间，大家竟然都被冻醒了，我迷迷糊糊间，看着大瀾给我盖被子，感动了好久。<br /><br />三日后的大提顿满是惊喜。前一天晚上大瀾肚子疼的没吃好晚饭，扶她回房间后，我连吃饭的心思都没有了，更不要说后一天的提顿之旅。第二天早晨，大家也是有懒床的，有睡回笼觉的。只有唯一想去的温总，一肚子郁闷说不出口。而且刚启程，就发现没带门票，又折回。我开着车都能想到留守的聪哥似笑非笑的的得意样子。最终正午才进入大提顿，就遇见了满眼惊喜。厚厚的草甸，飘满小花的湖泊。大瀾拄着两人多长的树枝照相。在Jackson Lake租船的时候，旁边的小孩儿们兴奋的举着水瓶，炫耀捉住的水蛭。大瀾在船上，看不出任何身体异样，兴奋的拍水，尝试各种怪异的划船方法，几次都殃及到了坐在后面的我。但不管怎样，我俩划起船来，左右开工，还喊着号子，小船乘风破浪的指那儿打哪儿，相比而言，乌龟和温总的另一艘船大多就是在原地打转了。上岸之后，我们还在岸边的饭馆儿吃了进黄石以来最丰盛的一顿饭。在Jenny Lake，看着一湖清水，我和温总都脱到只剩内裤，跳进去玩水，结果上岸时候悲剧了，小石子们就像是锥子一样，走向岸边每一步都钻心的疼。。。大瀾在岸边，一边叹息着想游泳啊想游泳，一边带着乌龟和温总的俩单反，不断练习摄影技术。傍晚看日落，所有的山峰都一览无余，感慨自然壮丽。然后在把车开到山间处，再看一遍日落，再感慨一遍。晚上回程，看到了过马路的小狐狸，也许是被车灯照迷糊了，久久不离去，真想把它抱回来养。<br /><br />晚上回到酒店，又出门，和大瀾并排躺在码头上，我第一次清楚看到了银河，像棉絮一样一团一团的，还看到了流星。拉着大瀾的手，看着奇妙的景色，时间就静止了。<br /><br />到西雅图的第一天晚上，还有更多的惊喜。从倾斜的街道看到大海，身旁小酒馆门庭若市。城市真好。也是在这个时候，我们发现Yelp的预算对我们不适用。$的我们可以吃成$$$，$$的我们能吃成$$$$的。几个难民坐在日式料理最靠窗的桌子，烤肉、寿司、炒饭、拌面&#8230;，我们狼吞虎咽的样子，就是这家店最好的活体广告了。酒馆、小肥羊、牛逼的图书馆、大麻公园、面海公寓、满是鲜花的阳台，这就是我对西雅图的印象。<br /><br />去波特兰是因为Grimm。精致的block，友好的大瀾校友，以及玫瑰花园。我们在市区停留只有半日。然后就是一个小时的公车，从二十几街坐到了245街。。作为这座庄园里唯一一队乘坐公车前来的客人，我们受到了主人的热情接待，安排我们住宿在一个墙上画着这个庄园某位109岁员工的房间里。庄园的晚饭不错，温总一时兴起喝了六七杯或者十来杯红酒，结果把大乌龟给喝醉了，嚷嚷着要脱衣服去游泳，又把聪哥紧张的如同被非礼了一样。。晚饭后我们还视察了庄园的绿化状况，并亲切会见了酒馆里的各种奇怪大叔大妈。<br /><br />转眼相聚就要分离，回家的回家，旅行的继续上路，确实舍不得另外三位。昨天在豆瓣上读到马克吐温的一句话，“好友、好书，不轻易判断是非，这就是理想生活”。一路上颠簸，没读什么书，这生活却以足以让我留恋了。<br /><br />在这里，开始学习工作快满一月了。老板人不错，几次问他有关研究的问题，他都很耐心的回答，给的方法也足够有操作性。今天一个师兄作报告被骂，也从另一个侧面证明老板足够聪明，不能唬弄。组里大家关系也很融洽，实验室、图书馆，资源也算充裕。新车也用的顺手。还是开始时的那个想法，不要浪费时间，早些离开这里。</div>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Qiong Wu]]></title>
   <link href="http://creasyw.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-02-24T14:02:20-06:00</updated>
+  <updated>2014-02-27T13:23:50-06:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Plotting in Latex]]></title>
+    <link href="http://creasyw.github.io/blog/2014/02/27/plotting-in-latex/"/>
+    <updated>2014-02-27T13:14:00-06:00</updated>
+    <id>http://creasyw.github.io/blog/2014/02/27/plotting-in-latex</id>
+    <content type="html"><![CDATA[<p>I just hope that I could find this feature earlier. <a href="http://www.texample.net/tikz/">TikZ</a></p>
+
+<p>Some nice examples to start with:</p>
+
+<ul>
+  <li><a href="http://commons.wikimedia.org/wiki/File:Neighbourhood_definition2.svg">Neighbourhood definition</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/highlighting-matrix/">Highlighting elements in matrices</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/more-tikz-timing-examples/">Signal timing</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/bode-plot/">Body plot of functions</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/database-decimation-process/">Database decimation process</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/labs-schema/">Flowchart with block highlights</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/set-operations-illustrated-with-venn-diagrams/">Set operations</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/credit-rationing/">Cross-comparsion among curves</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/phasor-diagram/">Phasor diagram (more fancy)</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/difference-quotient/">Difference quotient (partial zoom-in)</a></li>
+  <li><a href="http://www.texample.net/tikz/examples/nested-grids-in-swan-and-wam-coupling/">Nested Grids</a></li>
+</ul>
+
+<p>More examples are <a href="http://www.texample.net/tikz/examples/">here</a></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Better look for "git log"]]></title>
@@ -261,16 +289,6 @@ p.p.s. The inline latex-style formula comes with Kramdown, MathJax and <a href="
   I really appreciate the exercises within each subsections, because I can feel that they are well designed. I used to have the same feeling when I did the homework from Dan's course of programming languages. The exercises make the general concepts concrete and doable.
   <br /><br />
   The abstraction is far from merely making the code more structured and readable. It is a design choice. Sometimes, it takes experience to find out where should be abstracted. And sometimes, it takes much more endeavors than simply mix everything together. But once the choice of abstraction is right, the program becomes clearer, and it increases many degrees of freedom for the design afterwards.</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Reading note of SICP (3)]]></title>
-    <link href="http://creasyw.github.io/blog/2013/08/08/reading-note-of-sicp-3/"/>
-    <updated>2013-08-08T00:00:00-05:00</updated>
-    <id>http://creasyw.github.io/blog/2013/08/08/reading-note-of-sicp-3</id>
-    <content type="html"><![CDATA[<div class="post">
-&nbsp;<br />At the end of the 1st chapter, it enumerates the basic reason for the powerful lisp: first-order procedure.<br /><br />The major "privileges" of the first-order elements are:<br />1) They may be named by variables.<br />2) They may be passed as arguments to procedures.<br />3) They may be returned as the results of procedures.<br />4) They may be included in data structures.<br />They can be crucial abstraction mechanism permitting to express the general methods of computing as explicit elements in programming language, so that they can be handled just like other computational elements. The expression power is enormous.<br /><br />I have already been used to use the first two kinds of procedures, but the last two actually make the program even more expressive and powerful. Those are also the attractive properties sharing among functional programming languages.</div>
 ]]></content>
   </entry>
   

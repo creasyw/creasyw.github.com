@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-02-27T13:23:50-06:00</updated>
+  <updated>2014-03-01T14:46:48-06:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Strategic Playing for the First Several Sets]]></title>
+    <link href="http://creasyw.github.io/blog/2014/03/01/strategic-playing-for-the-first-several-sets/"/>
+    <updated>2014-03-01T14:29:00-06:00</updated>
+    <id>http://creasyw.github.io/blog/2014/03/01/strategic-playing-for-the-first-several-sets</id>
+    <content type="html"><![CDATA[<p>It is worth noting that yesterday I had my first win in the 3.0 league=D 7-5, 3-6, and 10-6 in the tie-breaker set. In today’s lesson, Bob told me a bit more about strategic playing. It was all about probing different aspects of the opponent.</p>
+
+<ul>
+  <li>Keey hitting in the middle (or either left or right) as long as I can, and see what is the tolerance of the opponent – whether him or me would get frustrated first and try to make some change.</li>
+  <li>Consistently push either his backhand or forehand within a point.</li>
+  <li>Driving the ball from side to side and observe the pattern of his transition – does he have a high successful rate for the ground stroke? Is forehand-to-backhand better or worse than the backhand-to-forehand? Does he tend to hit cross court or staight to the baseline?</li>
+</ul>
+
+<p>The advanced version will combine the timing of pushing towards the net and volley, but I haven’t got there yet… I am still struggling to position in the transition of volley, let alone the judgement of lobbing or cut-across… So, there is a long way to go(:</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Plotting in Latex]]></title>
@@ -511,16 +529,6 @@ By&nbsp;<span style="background-color: white; font-family: arial, sans-serif;">L
     <id>http://creasyw.github.io/blog/2012/10/04/install-opencv-in-mac-osx</id>
     <content type="html"><![CDATA[<div class='post'>
 The most straightforward way is via homebrew.<br /><code>brew update <br />sudo brew install opencv</code><br />Then, all of the dependencies will be install with opencv. The reason to use &#8220;sodu&#8221; is because there will be twice &#8220;brew link&#8221; used in the process which could not link certain libraries without permission.<br /><br />Finally, the brew gave a wrong file to update. Instead of updating .profile, the correct destination should be .bash_profile. Add this line:<br /><code>export PYTHONPATH=/usr/local/lib/python2.7/site-packages/:$PYTHONPATH&lt;\code&gt;</code><br /><br />That is it.<br /><br /><br />cheers,</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[missing you]]></title>
-    <link href="http://creasyw.github.io/blog/2012/09/17/missing-you_17/"/>
-    <updated>2012-09-17T00:00:00-05:00</updated>
-    <id>http://creasyw.github.io/blog/2012/09/17/missing-you_17</id>
-    <content type="html"><![CDATA[<div class='post'>
-<br />小葛儿转眼安排好纽约面试就登飞机了。因为GPS的缘故，在机场周围转了好几圈，结果弄的再见都匆匆忙忙。送完她回到寝室——是的，没有了她，这里还是叫寝室合适——空荡荡的，安安静静。一分钟都不想多停留，背着书包就去了实验室。<br /><br />晚上也不想回去，因为想到又是空空的房间就不自在。<br /><br />一个人在这里。忽然一下安静了。多出了好多时间来想你，似乎一切记忆瞬间无比清晰，触手可及。你的肩膀软软的，抱在怀里的时候，还要告诉自己小心别把你弄疼了。你哭的时候，撅着嘴，鼻子里些许呜哝呜哝的声音，眼泪扑簌扑簌就落下来了。你笑的时候，眼睛眉毛嘴角都弯弯的，咯咯咯的，清脆悦耳。每到这个样的时候，我都在反问自己，为什么要和你吵架啊，有什么气好生呢。<br /><br />可无论怎么吵架，我都还是爱你的，比每一次吵架前还要爱你，比每一次生气之前还要更想和你在一起。有时候会想，也许我太把你说的每句话当回事儿了，才会又好多的弄巧成拙。但翻回头来，我仍就欠你好多在一起的时光。<br /><br />小葛儿啊。你的一举一动，一颦一笑，我都记在心里呢。欠你的那些时光，我也一定要都好好还你。快回来吧。有你在的地方，我就认为是家了。<br /><br />我想你。<br /></div>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-03-01T21:54:41-06:00</updated>
+  <updated>2014-03-01T23:45:12-06:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -54,7 +54,7 @@
   <li><a href="http://www.texample.net/tikz/examples/nested-grids-in-swan-and-wam-coupling/">Nested Grids</a></li>
 </ul>
 
-<p>More examples are <a href="http://www.texample.net/tikz/examples/">here</a></p>
+<p>More examples can be found in <a href="http://www.texample.net/tikz/examples/">the official site</a>, <a href="http://graphtheoryinlatex.wordpress.com/">Graph Theory in LaTeX 2</a>, <a href="http://elishapeterson.wikidot.com/tikz:diagrams">Drawing Trace Diagrams</a>, and <a href="http://www.statistiker-wg.de/pgf/tutorials.htm">TikZ tutorials</a>.</p>
 
 ]]></content>
   </entry>

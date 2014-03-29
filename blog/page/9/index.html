@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="下面是一些比较重要的算法，原文罗 列了32个，但我觉得有很多是数论里的，和计算机的不相干，所以没有选取。下面的这些，有的我们经常在用，有的基本不用。有的很常见，有的很偏。不过了解 一下也是好事。也欢迎你留下你觉得有意义的算法。（注：本篇文章并非翻译，其中的算法描述大部份摘自Wikipedia， &hellip;">
+  <meta name="description" content="On Thu, Jul 21, 2005 at 05:48:33PM +0530, Arora_Amit wrote:&gt; Hi all,&gt;&gt; We are working on USRP. Please can any let us know what the&gt; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,43 +81,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/01/zt-some-important-algorithms/">(ZT) Some Important Algorithms</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-01T00:00:00-05:00" pubdate data-updated="true">Nov 1<span>st</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-下面是一些比较重要的算法，<a href="http://www.risc.jku.at/people/ckoutsch/stuff/e_algorithms.html" target="_blank" title="原文">原文</a>罗 列了32个，但我觉得有很多是数论里的，和计算机的不相干，所以没有选取。下面的这些，有的我们经常在用，有的基本不用。有的很常见，有的很偏。不过了解 一下也是好事。也欢迎你留下你觉得有意义的算法。（注：本篇文章并非翻译，其中的算法描述大部份摘自Wikipedia，因为维基百科描述的很专业了）<br /><br /><a href="http://zh.wikipedia.org/zh-cn/A*%E6%90%9C%E5%AF%BB%E7%AE%97%E6%B3%95" target="_blank" title="A*搜寻算法">A*搜寻算法</a><br /><br />俗称A星算法。这是一种在图形平面上，有多个节点的路径，求出最低通过成本的算法。常用于游戏中的NPC的移动计算，或线上游戏的BOT的移动计算上。该算法像Dijkstra算法一样，可以找到一条最短路径；也像BFS一样，进行启发式的搜索。<br /><br /><a href="http://en.wikipedia.org/wiki/Beam_search" target="_blank" title="Beam Search">Beam Search</a><br /><br />束 搜索(beam search)方法是解决优化问题的一种启发式方法，它是在分枝定界方法基础上发展起来的，它使用启发式方法估计k个最好的路径，仅从这k个路径出发向下 搜索，即每一层只有满意的结点会被保留，其它的结点则被永久抛弃，从而比分枝定界法能大大节省运行时间。束搜索于20 世纪70年代中期首先被应用于人工智能领域,1976 年Lowerre在其称为HARPY的语音识别系统中第一次使用了束搜索方法，他的目标是并行地搜索几个潜在的最优决策路径以减少回溯，并快速地获得一个 解。<br /><br /><a href="http://zh.wikipedia.org/zh-cn/%E6%8A%98%E5%8D%8A%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95" target="_blank" title="二分取中查找算法">  二分取中查找算法</a>一 种在有序数组中查找某一特定元素的搜索算法。搜素过程从数组的中间元素开始，如果中间元素正好是要查找的元素，则搜素过程结束；如果某一特定元素大于或者 小于中间元素，则在数组大于或小于中间元素的那一半中查找，而且跟开始一样从中间元素开始比较。这种搜索算法每一次比较都使搜索范围缩小一半。<br /><br /><a href="http://en.wikipedia.org/wiki/Branch_and_bound" target="_blank" title="Branch and bound">Branch and bound</a><br /><br />分支定界(branch and bound)算法是一种在问题的解空间树上搜索问题的解的方法。但与回溯算法不同，分支定界算法采用广度优先或最小耗费优先的方法搜索解空间树，并且，在分支定界算法中，每一个活结点只有一次机会成为扩展结点。<br /><br /><a href="http://en.wikipedia.org/wiki/Data_compression" target="_blank" title="数据压缩">数据压缩</a><br /><br />数据压缩是通过减少计算机中所存储数据或者通信传播中数据的冗余度，达到增大数据密度，最终使数据的存储空间减少的技术。数据压缩在文件存储和分布式系统领域有着十分广泛的应用。数据压缩也代表着尺寸媒介容量的增大和网络带宽的扩展。<br /><br /><a href="http://zh.wikipedia.org/zh-cn/Diffie-Hellman%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2" target="_blank" title="Diffie�Hellman密钥协商">  Diffie�Hellman密钥协商</a>Diffie�Hellman key exchange，简称&#8221;D�H&#8221;，是一种安全协议。它可以让双方在完全没有对方任何预先信息的条件下通过不安全信道建立起一个密钥。这个密钥可以在后续的通讯中作为对称密钥来加密通讯内容。<br /><br /><a href="http://zh.wikipedia.org/zh-cn/%E8%BF%AA%E7%A7%91%E6%96%AF%E5%BD%BB%E7%AE%97%E6%B3%95" target="_blank" title="Dijkstra's 算法">  Dijkstra&#8217;s 算法</a>迪 科斯彻算法（Dijkstra）是由荷兰计算机科学家艾兹格・迪科斯彻（Edsger Wybe Dijkstra）发明的。算法解决的是有向图中单个源点到其他顶点的最短路径问题。举例来说，如果图中的顶点表示城市，而边上的权重表示著城市间开车行 经的距离，迪科斯彻算法可以用来找到两个城市之间的最短路径。<br /><br /><a href="http://zh.wikipedia.org/zh-cn/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92" target="_blank" title="动态规划">动态规划</a><br /><br />动 态规划是一种在数学和计算机科学中使用的，用于求解包含重叠子问题的最优化问题的方法。其基本思想是，将原问题分解为相似的子问题，在求解的过程中通过子 问题的解求出原问题的解。动态规划的思想是多种算法的基础，被广泛应用于计算机科学和工程领域。比较著名的应用实例有：求解最短路径问题，背包问题，项目 管理，网络流优化等。这里也有一篇文章说得比较详细。<br /><br /><a href="http://zh.wikipedia.org/zh-cn/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95" target="_blank" title="欧几里得算法">欧几里得算法</a><br /><br />在数学中，辗转相除法，又称欧几里得算法，是求最大公约数的算法。辗转相除法首次出现于欧几里得的《几何原本》（第VII卷，命题i和ii）中，而在中国则可以追溯至东汉出现的《九章算术》。<br /><br /><a href="http://zh.wikipedia.org/zh-cn/%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95" target="_blank" title="最大期望（EM）算法">  最大期望（EM）算法</a>在 统计计算中，最大期望（EM）算法是在概率（probabilistic）模型中寻找参数最大似然估计的算法，其中概率模型依赖于无法观测的隐藏变量 （Latent Variable）。最大期望经常用在机器学习和计算机视觉的数据聚类（Data Clustering）领域。最大期望算法经过两个步骤交替进行计算，第一步是计算期望（E），利用对隐藏变量的现有估计值，计算其最大似然估计值；第二 步是最大化（M），最大化在 E 步上求得的最大似然值来计算参数的值。M 步上找到的参数估计值被用于下一个 E 步计算中，这个过程不断交替进行。<br /><br /><a href="http://zh.wikipedia.org/zh-cn/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2" target="_blank" title="快速傅里叶变换(FFT)">  快速傅里叶变换(FFT)</a>快 速傅里叶变换（Fast Fourier Transform，FFT），是离散傅里叶变换的快速算法，也可用于计算离散傅里叶变换的逆变换。快速傅里叶变换有广泛的应用，如数字信号处理、计算大 整数乘法、求解偏微分方程等等。本条目只描述各种快速算法，对于离散傅里叶变换的性质和应用，请参见离散傅里叶变换。<br /><br /><a href="http://zh.wikipedia.org/zh-cn/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B8" target="_blank" title="哈希函数">哈希函数</a><br /><br />HashFunction 是一种从任何一种数据中创建小的数字&#8221;指纹&#8221;的方法。该函数将数据打乱混合，重新创建一个叫做散列值的指纹。散列值通常用来代表一个短的随机字母和数字组 成的字符串。好的散列函数在输入域中很少出现散列冲突。在散列表和数据处理中，不抑制冲突来区别数据，会使得数据库记录更难找到。<br /><br /><a href="http://zh.wikipedia.org/zh-cn/%E5%A0%86%E7%A9%8D%E6%8E%92%E5%BA%8F" target="_blank" title="堆排序">堆排序</a><br /><br />Heapsort是指利用堆积树（堆）这种数据结构所设计的一种排序算法。堆积树是一个近似完全二叉树的结构，并同时满足堆积属性：即子结点的键值或索引总是小于（或者大于）它的父结点。<br /><br /><a href="http://zh.wikipedia.org/zh-cn/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F" target="_blank" title="归并排序">归并排序</a><br /><br />Merge sort是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。<br /><br /><a href="http://en.wikipedia.org/wiki/RANSAC" target="_blank" title="RANSAC 算法">RANSAC 算法</a><br /><br />RANSAC 是&#8221;RANdom SAmpleConsensus&#8221;的缩写。该算法是用于从一组观测数据中估计数学模型参数的迭代方法，由Fischler and Bolles在1981提出，它是一种非确定性算法，因为它只能以一定的概率得到合理的结果，随着迭代次数的增加，这种概率是增加的。该算法的基本假设是 观测数据集中存在&#8221;inliers&#8221;（那些对模型参数估计起到支持作用的点）和&#8221;outliers&#8221;（不符合模型的点），并且这组观测数据受到噪声影响。 RANSAC 假设给定一组&#8221;inliers&#8221;数据就能够得到最优的符合这组点的模型。<br /><br /><a href="http://zh.wikipedia.org/zh-tw/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95" target="_blank" title="RSA加密演算法">RSA加密演算法</a><br /><br />这是一个公钥加密算法，也是世界上第一个适合用来做签名的算法。今天的RSA已经专利失效，其被广泛地用于电子商务加密，大家都相信，只要密钥足够长，这个算法就会是安全的<br /><br /><a href="http://zh.wikipedia.org/zh-cn/%E5%B9%B6%E6%9F%A5%E9%9B%86" target="_blank" title="并查集Union-find">并查集Union-find</a><br /><br />并查集是一种树型的数据结构，用于处理一些不相交集合（Disjoint Sets）的合并及查询问题。常常在使用中以森林来表示。<br /><br /><a href="http://blog.52nlp.org/hmm-learn-best-practices-six-viterbi-algorithm-1" target="_blank" title="Viterbi algorithm">Viterbi algorithm</a><br /><br />寻找最可能的隐藏状态序列(Finding most probable sequence of hidden states)<br /><br /><br />BTY:<br />关于这个世界上的算法，你可以看看Wikipedia的这个网页：<a href="http://en.wikipedia.org/wiki/List_of_algorithms" target="_blank" title="http://en.wikipedia.org/wiki/List_of_algorithms">http://en.wikipedia.org/wiki/List_of_algorithms</a><br /><br />关于排序算法，你可以看看本站的这几篇文章《<a href="http://coolshell.cn/articles/536.html" target="_blank" title="一个显示排序过程的Python脚本">一个显示排序过程的Python脚本</a>》、《<a href="http://coolshell.cn/articles/399.html" target="_blank" title="一个排序算法比较的网站">一个排序算法比较的网站</a>》</div>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -445,6 +408,1193 @@ matrix functions<br /><br /><b>&nbsp;INV</b>&nbsp;&nbsp;&nbsp; Matrix inverse.<b
 
   <div class="entry-content"><div class='post'>
 Hi Everybody,<br /><br />and Merry Christmas<br /><br />I received many emails requesting some explanation for usrp_spectrum_sense.py gnuradio example program. The following link contains the code with some explanation and one bug fix (in self.max_center_freq equation):<br /><br /><a href="http://rapidshare.com/files/177960860/usrp_spectrum_sense.py">http://rapidshare.com/files/177960860/usrp_spectrum_sense.py</a><br /><br /><br /><br /><br /><br />usrp_spectrum_sense.py Explanation :<br />=======================================================================================<br /><br />Introduction:<br />&#8212;&#8212;&#8212;&#8212;-<br /><br />1) This program can be used as a basic code for implementing wideband spectrum analyzer.<br />2) As we know, the USRP cannot examine more than 8 MHz of RF spectrum due to USB bus limitations.<br />3) So, to scan across a wide RF spectrum band (bigger than 8 MHz) we have to tune USRP RF front end in suitable steps so that we can examine a lot of spectrum, although not all at the same instant.<br />4) The usrp_spectrum_sense shows the way how it can be done.It steps across the spectrum and make the RF measurements. This application can<br />sense a large bandwidth, but not in real time, and it can do the frequency sweep over the required frequency range,<br /><br /><br /><br />Theory:<br />&#8212;&#8212;-<br /><br />1) To use N points complex FFT X(W) analysis, we have to get N time samples x(t) which are sampled at Fs.<br />2) These N time samples must be time windowed using a known window function to reduce spectral leakage.<br />3) Performing N points complex FFT analysis.<br />4) The output of the complex FFT will represent the frequency spectrum contents as follows:<br /><br />a) The first value of the FFT output (bin 0 == X[0]) is the passband center frequency.<br />b) The first half of the FFT (X[1] to X[N/2-1] contains the positive baseband frequencies,which corresponds to the passband spectrum from the center frequency out to the maximum passband frequency (from center frequency to +Fs/2).<br />c) The second half of the FFT (X[N/2] to X[N-1]) contains the negative baseband frequencies,which correspond to the lowest passband frequency up to the passband center frequency (from -Fs/2 to center frequency).<br /><br /><br />Example<br />&#8212;&#8212;-<br /><br />Let us assume that we have 1024 (I and Q) samples gathered using a tuner centered at 20MHz. And let us assume that the sampling frequency was 8MHz.<br />Doing 1024 points complex FFT means:<br /><br />1) FFT Frequency resolution is : 8MHz / 1024 = 7812.5 KHz<br />2) The output of the FFT X[0] represents the spectrum at 20MHz.<br />3) The output of the FFT X[1] to X[511] represents the frequencies from 20.0078125 MHz to 23.9921875 MHz (about 4MHz above center frequency).<br />4) The output of the FFT X[512] to X[1023] represents the frequencies from 16.0078125 MHz to 19.9921875 MHz (about 4MHz bellow center frequency).<br /><br /><br /><br /><br />RF Frequency Sweeping<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /><br />1) Let us suppose that we want to scan RF spectrum band from 10MHz to 52 MHz.<br />2) Let us remember that USRP can analyze 8MHz of frequency at a time.<br />3) So theoretically we have to step our RF center frequency as follows:<br /><br />First step is 14MHz (it will cover frequency band from 10MHz to 18MHz),<br />Second step is 22MHz (it will cover frequency band from 18MHz to 26MHz),<br />Third step is 30MHz (it will cover frequency band from 26MHz to 34MHz),<br />Fourth step is 38MHz (it will cover frequency band from 34MHz to 42MHz),<br />Fifth step is 46MHz (it will cover frequency band from 42MHz to 50MHz),<br />and finally the Sixth step is 54MHz (it will cover frequency band from 50MHz to 58MHz). Remember that we want the frequencies up to 52MHz only, so we have to discard some FFT points from the Sixth analysis.<br /><br /><br />4) Paralytically we have to use FFT overlapping to reduce the non linearity response of the Digital Down Converter (the DDC frequency response is not Flat from -Fs/2 to + Fs/2) and to fill the frequency holes that will be present at the FFT analysis edges (10MHz, 18MHz, 26MHz, 34MHz, 42MHz, 50 MHz).<br /><br />So if we choose to use an overlap of 25%, this means that our step size will be 6MHz (8MHz*(1-.25)), thus practically we have to step our RF center frequency as follows:<br /><br />First step is 13MHz (it will cover frequency band from 9MHz to 17MHz),<br />Second step is 19MHz (it will cover frequency band from 15MHz to 23MHz),<br />Third step is 25MHz (it will cover frequency band from 21MHz to 29MHz),<br />Fourth step is 31MHz (it will cover frequency band from 27MHz to 35MHz),<br />Fifth step is 37MHz (it will cover frequency band from 33MHz to 41MHz),<br />Sixth step is 43MHz (it will cover frequency band from 39MHz to 47MHz),<br />and Finally the Seventh step is 49MHz (it will cover frequency band from 45MHz to 53MHz),<br /><br /><br /><br /><br /><br />Changing RF center Frequency<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br /><br />1) To change USRP RF center frequency we have to send a tunning command to the USRP every time we complete the analysis of the current frequency chunk.<br />2) Before gnuradio revision [10165], all USRP RF daughterboards tunning were done using Python functions and classes. After that revision, tunning the USRP daughterboards from withen C++ code is possible.<br />3) In usrp_spectrum_sense.py, the DSP C++ written code is allowed to transparently invoke Python code USRP tune function. This tunning control is done in gr_bin_statistics_f sink function.<br /><br /><br /><br /><br />Tunning Delay Problem:<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /><br />When we command the usrp RF daughterboard to change its center frequency, we have to wait until (right) ADC samples arrive to our FFT engine and we have to insure that it belongs to the wanted center frequency. This represents a problem since there are many delays along the digitization path (RF synthesizer settling time, and pipeline propagation delay [FPGA FIFO filling time, USB transferring time&#8230;etc]). To overcome this problem we have to use enough tune delay time in order to  be sure that the samples entering our FFT block are belong to the requested center frequency. This is done simply by dropping the incoming received samples over a specified tunning delay time.<br /><br /><br /><br />usrp_spectrum_sense Implementation<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br /><br />1) The engine of the usrp_spectrum_sense depends mainly on bin_statistics sink function.<br /><br />2) bin_statistics function combines statistics gathering with a state machine for controlling the USRP RF tuning (frequency sweeping). It determines max values (keeps track of the maximum power in each FFT bin) of vectors (with length vlen) over a time period determined by dwell_delay (after converting it to a number of FFT vectors). This operation is performed after discarding tune_delay samples.<br /><br />3) After processing N = dwell_delay samples, bin_statistics composes a message and inserts it in a message queue.<br /><br />4) Each message from bin_statistics consists of a vector of max values, prefixed by the center frequency corresponding to the associated samples,<br />i.e., it is the center frequency value of the delivered input samples to bin_statistics.<br /><br /><br /><br /><br />Choosing Tune and Dwell delay times<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br /><br />1) We have to play with the &#8211;tune-delay and &#8211;dwell-delay command line options to determine appropriate timming values. The most important one is the tune delay time.<br /><br />2) The choose of tune-delay should include time for the front end PLL to settle, plus time for the new samples to propagate through the pipeline.  The default value is 1ms, which is probably in the ballpark on the RFX** boards.  The TV RX board is much slower.  The tuner data sheets says it could take 100ms to settle.<br /><br />3) The tune delay timing parameter passed to bin_statistics is calculated in FFT frames which depends on USRP rate and FFT length as in :<br /><br />tune_delay_passed_to_bin_statistics = int(round(required_tune_delay_in_sec*usrp_rate/fft_size))<br /><br />if this calculated value is less than &quot;1&quot;, then we should make it at least &quot;1&quot; FFT frame.<br /><br />For example:<br /><br />If the :<br /><br />required_tune_delay_in_sec = 10e-3<br />and usrp_rate = 8000000 (decimation =8)<br />and FFT size is 1024<br /><br /><br />Then :<br /><br />tune_delay_passed_to_bin_stats = 78   (FFT Frames)<br /><br />This means we have to skip 78 incoming vectors (FFT frames) before we actually use the acquired samples in our spectrum statistics.<br /><br />4) Beside tunning time depends on the hardware (RF synthesizer speed),one should remember that the time needed to collect 1024 samples<br />with decimation rate=8 (minimum USRP decimation) is 128 usec, while the time needed to collect 1024 samples with decimation rate=256 (maximum USRP decimation) is 4.096 msec. This means that the tune delay in the case of decimation rate =256 should be larger than that used for decimation = 8.<br /><br />5) A working tune delay value (which gives accurate results) can be known by experiments (for given decimation rate and FFT length).<br /><br /><br /><br /><br />Interrupting Output Spectrum<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br /><br />The actual mapping from the levels at the daughterboard antenna input port to the output analysis values depends on a lot of factors including the used daughterboard RF gain and decimation specific gain in the digital down converter. You&#39;ll need to calibrate the system if you need something that maps to dBm.Currently, the output of usrp_spectrum_sense is the magnitude squared of the FFT output.  That is, for each FFT bin[i], the output is Y[i] = re[X[i]]*re[X[i]] + im[X[i]]*im[X[i]]. If you want power, take the square root of the output.<br /><br />========================================================================================<br /><br /><br />Best Regards,<br /><br /><br />Firas</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/18/advance-info-about-usrp-trans/">Advance Info. About Usrp Trans.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-18T00:00:00-05:00" pubdate data-updated="true">Oct 18<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+new examples for the 802.11b trans. (<a href="https://www.cgran.org/browser/projects/bbn_80211/branches/douggeiger/src/examples?rev=113">here</a>)<br /><br />======================<br /><br />btw, there is an <a href="http://www.mail-archive.com/discuss-gnuradio@gnu.org/msg18734.html">excellent discussion</a> about how to run the code.<br /><br /><b><span style="font-size: large;">(1)</span></b><br /><pre>&nbsp;</pre><pre>Hi</pre><br />I am trying to establish communication between USRP2 and USRP1. I am using RFX2400 daughterboard. I am using Ubuntu 8.10. I am using the svn version of GNU Radio. I dont know the revision number. I am not able to receive anything on USRP2 when USRP1 is transmitting and vice versa. The python codes for USRP2 work perfectly fine. I guess there is some problem with the ADC and DAC incompatibility (interpolation and decimation) between USRP2 and USRP1. I am attaching all the necessary files that I am using currently. I would appreciate if someone can look at these files and help me to sort out the problem. &nbsp; </pre><br /><br /><pre>benchmark_tx.py
+<br />
+<br />#!/usr/bin/env python
+<br />#
+<br /># Copyright 2005, 2006, 2007 Free Software Foundation, Inc.
+<br /># 
+<br /># This file is part of GNU Radio
+<br /># 
+<br /># GNU Radio is free software; you can redistribute it and/or modify
+<br /># it under the terms of the GNU General Public License as published by
+<br /># the Free Software Foundation; either version 3, or (at your option)
+<br /># any later version.
+<br /># 
+<br /># GNU Radio is distributed in the hope that it will be useful,
+<br /># but WITHOUT ANY WARRANTY; without even the implied warranty of
+<br /># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+<br /># GNU General Public License for more details.
+<br /># 
+<br /># You should have received a copy of the GNU General Public License
+<br /># along with GNU Radio; see the file COPYING.  If not, write to
+<br /># the Free Software Foundation, Inc., 51 Franklin Street,
+<br /># Boston, MA 02110-1301, USA.
+<br /># 
+<br />
+<br />from gnuradio import gr, gru, modulation_utils
+<br />from gnuradio import usrp2
+<br />from gnuradio import eng_notation
+<br />from gnuradio.eng_option import eng_option
+<br />from optparse import OptionParser
+<br />
+<br />import random
+<br />import time
+<br />import struct
+<br />import sys
+<br />
+<br /># from current dir
+<br />from transmit_path_usrp2 import transmit_path
+<br />import fusb_options
+<br />
+<br />#import os 
+<br />#print os.getpid()
+<br />#raw_input('Attach and press enter')
+<br />
+<br />class my_top_block(gr.top_block):
+<br />    def __init__(self, modulator, options):
+<br />        gr.top_block.__init__(self)
+<br />        self.txpath = transmit_path(modulator, options)
+<br />        self.connect(self.txpath)
+<br />
+<br />#
+<br />/////////////////////////////////////////////////////////////////////////////
+<br />#                                   main
+<br />#
+<br />/////////////////////////////////////////////////////////////////////////////
+<br />
+<br />def main():
+<br />
+<br />    def send_pkt(payload='', eof=False):
+<br />        return tb.txpath.send_pkt(payload, eof)
+<br />
+<br />    def rx_callback(ok, payload):
+<br />        print "ok = %r, payload = '%s'" % (ok, payload)
+<br />
+<br />    mods = modulation_utils.type_1_mods()
+<br />
+<br />    parser = OptionParser(option_class=eng_option,
+<br />conflict_handler="resolve")
+<br />    expert_grp = parser.add_option_group("Expert")
+<br />
+<br />    parser.add_option("-m", "--modulation", type="choice",
+<br />choices=mods.keys(),
+<br />                      default='gmsk',
+<br />                      help="Select modulation from: %s [default=%%default]"
+<br />                            % (', '.join(mods.keys()),))
+<br />
+<br />    parser.add_option("-s", "--size", type="eng_float", default=1500,
+<br />                      help="set packet size [default=%default]")
+<br />    parser.add_option("-M", "--megabytes", type="eng_float", default=1.0,
+<br />                      help="set megabytes to transmit [default=%default]")
+<br />    parser.add_option("","--discontinuous", action="store_true",
+<br />default=False,
+<br />                      help="enable discontinous transmission (bursts of 5
+<br />packets)")
+<br />    parser.add_option("","--from-file", default=None,
+<br />                      help="use file for packet contents")
+<br />
+<br />    transmit_path.add_options(parser, expert_grp)
+<br />
+<br />    for mod in mods.values():
+<br />        mod.add_options(expert_grp)
+<br />
+<br />    fusb_options.add_options(expert_grp)
+<br />    (options, args) = parser.parse_args ()
+<br />
+<br />    if len(args) != 0:
+<br />        parser.print_help()
+<br />        sys.exit(1)
+<br />
+<br />    if options.tx_freq is None:
+<br />        sys.stderr.write("You must specify -f FREQ or --freq FREQ\n")
+<br />        parser.print_help(sys.stderr)
+<br />        sys.exit(1)
+<br />
+<br />    if options.from_file is not None:
+<br />        source_file = open(options.from_file, 'r')
+<br />
+<br />    # build the graph
+<br />    tb = my_top_block(mods[options.modulation], options)
+<br />
+<br />    r = gr.enable_realtime_scheduling()
+<br />    if r != gr.RT_OK:
+<br />        print "Warning: failed to enable realtime scheduling"
+<br />
+<br />    tb.start()                       # start flow graph
+<br />        
+<br />    # generate and send packets
+<br />    nbytes = int(1e6 * options.megabytes)
+<br />    n = 0
+<br />    pktno = 0
+<br />    pkt_size = int(options.size)
+<br />
+<br />    while n &lt; nbytes:
+<br />        if options.from_file is None:
+<br />            data = (pkt_size - 2) * chr(pktno &amp; 0xff) 
+<br />        else:
+<br />            data = source_file.read(pkt_size - 2)
+<br />            if data == '':
+<br />                break;
+<br />
+<br />        payload = struct.pack('!H', pktno &amp; 0xffff) + data
+<br />        send_pkt(payload)
+<br />        n += len(payload)
+<br />        sys.stderr.write('.')
+<br />        if options.discontinuous and pktno % 5 == 4:
+<br />            time.sleep(1)
+<br />        pktno += 1
+<br />        
+<br />    send_pkt(eof=True)
+<br />
+<br />    tb.wait()                       # wait for it to finish
+<br />
+<br />if __name__ == '__main__':
+<br />    try:
+<br />        main()
+<br />    except KeyboardInterrupt:
+<br />        pass
+<br />
+<br />
+<br />transmit_path_usrp2.py
+<br />
+<br />#
+<br /># Copyright 2005,2006,2007 Free Software Foundation, Inc.
+<br /># 
+<br /># This file is part of GNU Radio
+<br /># 
+<br /># GNU Radio is free software; you can redistribute it and/or modify
+<br /># it under the terms of the GNU General Public License as published by
+<br /># the Free Software Foundation; either version 3, or (at your option)
+<br /># any later version.
+<br /># 
+<br /># GNU Radio is distributed in the hope that it will be useful,
+<br /># but WITHOUT ANY WARRANTY; without even the implied warranty of
+<br /># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+<br /># GNU General Public License for more details.
+<br /># 
+<br /># You should have received a copy of the GNU General Public License
+<br /># along with GNU Radio; see the file COPYING.  If not, write to
+<br /># the Free Software Foundation, Inc., 51 Franklin Street,
+<br /># Boston, MA 02110-1301, USA.
+<br /># 
+<br />
+<br />from gnuradio import gr, gru, blks2
+<br />from gnuradio import usrp2
+<br />from gnuradio import eng_notation
+<br />
+<br />import copy
+<br />import sys
+<br />
+<br /># from current dir
+<br />from pick_bitrate import pick_tx_bitrate
+<br />
+<br />#
+<br />/////////////////////////////////////////////////////////////////////////////
+<br />#                              transmit path
+<br />#
+<br />/////////////////////////////////////////////////////////////////////////////
+<br />
+<br />class transmit_path(gr.hier_block2): 
+<br />    def __init__(self, modulator_class, options):
+<br />        '''
+<br />        See below for what options should hold
+<br />        '''
+<br />        gr.hier_block2.__init__(self, "transmit_path",
+<br />                                gr.io_signature(0, 0, 0), # Input signature
+<br />                                gr.io_signature(0, 0, 0)) # Output signature
+<br />
+<br />        options = copy.copy(options)    # make a copy so we can
+<br />destructively modify
+<br />
+<br />        self._interface          = options.interface           # the USRP
+<br />board attached
+<br />        self._mac_addr           = options.mac_addr
+<br />        self._verbose            = options.verbose
+<br />        self._tx_freq            = options.tx_freq         # tranmitter's
+<br />center frequency
+<br />        self._tx_amplitude       = options.tx_amplitude    # digital
+<br />amplitude sent to USRP
+<br />        #self._tx_subdev_spec     = options.tx_subdev_spec  # daughterboard
+<br />to use
+<br />        self._bitrate            = options.bitrate         # desired bit
+<br />rate
+<br />        self._interp             = options.interp          # interpolating rate 
+<br />for
+<br />the USRP (prelim) 
+<br />        self._samples_per_symbol = options.samples_per_symbol  # desired
+<br />samples/baud 
+<br />        #self._fusb_block_size    = options.fusb_block_size # usb info for USRP
+<br />        #self._fusb_nblocks       = options.fusb_nblocks    # usb info for
+<br />USRP
+<br />        self._use_whitener_offset = options.use_whitener_offset # increment
+<br />start of whitener XOR data
+<br />        
+<br />        self._modulator_class = modulator_class         # the
+<br />modulator_class we are using
+<br />    
+<br />        if self._tx_freq is None:
+<br />            sys.stderr.write("-f FREQ or --freq FREQ or --tx-freq FREQ must
+<br />be specified\n")
+<br />            raise SystemExit
+<br />
+<br />        # Set up USRP sink; also adjusts interp, samples_per_symbol, and
+<br />bitrate
+<br />        self._setup_usrp_sink()  
+<br />
+<br />        # copy the final answers back into options for use by modulator
+<br />        options.samples_per_symbol = self._samples_per_symbol
+<br />        options.bitrate = self._bitrate
+<br />        options.interp = self._interp
+<br />
+<br />        # Get mod_kwargs
+<br />        mod_kwargs =
+<br />self._modulator_class.extract_kwargs_from_options(options)
+<br />
+<br />        # Set center frequency of USRP
+<br />        ok = self.set_freq(self._tx_freq)
+<br />        if not ok:
+<br />            print "Failed to set Tx frequency to %s" %
+<br />(eng_notation.num_to_str(self._tx_freq),)
+<br />            raise ValueError
+<br />    
+<br />        # transmitter
+<br />        self.packet_transmitter = \
+<br />            blks2.mod_pkts(self._modulator_class(**mod_kwargs),
+<br />                           access_code=None,
+<br />                           msgq_limit=4,
+<br />                           pad_for_usrp=True,
+<br />                           use_whitener_offset=options.use_whitener_offset)
+<br />
+<br />
+<br />        # Set the USRP for maximum transmit gain
+<br />        # (Note that on the RFX cards this is a nop.)
+<br />        self.set_gain(self.u.gain_range()[1])
+<br />
+<br />        self.amp = gr.multiply_const_cc(1)
+<br />        self.set_tx_amplitude(self._tx_amplitude)
+<br />
+<br />        # enable Auto Transmit/Receive switching
+<br />        #fiske_removed self.set_auto_tr(True)
+<br />
+<br />        # Display some information about the setup
+<br />        if self._verbose:
+<br />            self._print_verbage()
+<br />
+<br />        # Create and setup transmit path flow graph
+<br />        self.connect(self.packet_transmitter, self.amp, self.u)
+<br />
+<br />    def _setup_usrp_sink(self):
+<br />        """
+<br />        Creates a USRP sink, determines the settings for best bitrate,
+<br />        and attaches to the transmitter's subdevice.
+<br />        """
+<br />        #self.u = usrp2.source_32fc(options.interface, options.mac_addr)
+<br />        #self.u = usrp2.sink_32fc (options._interface, options._mac_addr)
+<br />        self.u = usrp2.sink_32fc("eth0","00:50:C2:85:31:5A")  #fiske hard coded 
+<br />        dac_rate = self.u.dac_rate();
+<br />
+<br />        # derive values of bitrate, samples_per_symbol, and interp from
+<br />desired info
+<br />        (self._bitrate, self._samples_per_symbol, self._interp) = \
+<br />            pick_tx_bitrate(self._bitrate,
+<br />self._modulator_class.bits_per_symbol(),
+<br />                            self._samples_per_symbol, self._interp,
+<br />dac_rate)
+<br />        
+<br />        #fiske_removed self.u.set_interp_rate(self._interp)
+<br />
+<br />        # determine the daughterboard subdevice we're using
+<br />        #if self._tx_subdev_spec is None:
+<br />        #    self._tx_subdev_spec = usrp.pick_tx_subdevice(self.u)
+<br />        #self.u.set_mux(usrp.determine_tx_mux_value(self.u,
+<br />self._tx_subdev_spec))
+<br />        #self.subdev = usrp.selected_subdev(self.u, self._tx_subdev_spec)
+<br />
+<br />
+<br />    def set_freq(self, target_freq):
+<br />        """
+<br />        Set the center frequency we're interested in.
+<br />
+<br />        @param target_freq: frequency in Hz
+<br />        @rypte: bool
+<br />
+<br />        Tuning is a two step process.  First we ask the front-end to
+<br />        tune as close to the desired frequency as it can.  Then we use
+<br />        the result of that operation and our target_frequency to
+<br />        determine the value for the digital up converter.
+<br />        """
+<br />        r = self.u.set_center_freq(target_freq)
+<br />        if r:
+<br />            return True
+<br />
+<br />        return False
+<br />        
+<br />    def set_gain(self, gain):
+<br />        """
+<br />        Sets the analog gain in the USRP
+<br />        """
+<br />        self.gain = gain
+<br />        self.u.set_gain(gain)
+<br />
+<br />    def set_tx_amplitude(self, ampl):
+<br />        """
+<br />        Sets the transmit amplitude sent to the USRP
+<br />        @param: ampl 0 &lt;= ampl &lt; 32768.  Try 8000
+<br />        """
+<br />        self._tx_amplitude = max(0.0, min(ampl, 32767.0))
+<br />        self.amp.set_k(self._tx_amplitude)
+<br />        
+<br />    def set_auto_tr(self, enable):
+<br />        """
+<br />        Turns on auto transmit/receive of USRP daughterboard (if exits; else
+<br />ignored)
+<br />        """
+<br />        return self.u.set_auto_tr(enable)
+<br />        
+<br />    def send_pkt(self, payload='', eof=False):
+<br />        """
+<br />        Calls the transmitter method to send a packet
+<br />        """
+<br />        return self.packet_transmitter.send_pkt(payload, eof)
+<br />        
+<br />    def bitrate(self):
+<br />        return self._bitrate
+<br />
+<br />    def samples_per_symbol(self):
+<br />        return self._samples_per_symbol
+<br />
+<br />    def interp(self):
+<br />        return self._interp
+<br />
+<br />    def add_options(normal, expert):
+<br />        """
+<br />        Adds transmitter-specific options to the Options Parser
+<br />        """
+<br />        add_freq_option(normal)
+<br />        if not normal.has_option('--bitrate'):
+<br />            normal.add_option("-r", "--bitrate", type="eng_float",
+<br />default=None,
+<br />                              help="specify bitrate.  samples-per-symbol and
+<br />interp/decim will be derived.")
+<br />        normal.add_option("-e", "--interface", type="string",
+<br />default="eth0",
+<br />                          help="select Ethernet interface, default is eth0")
+<br />        normal.add_option("-m", "--mac-addr", type="string", default="",
+<br />                          help="select USRP by MAC address, default is
+<br />auto-select")
+<br />        #normal.add_option("-T", "--tx-subdev-spec", type="subdev",
+<br />default=None,
+<br />        #                  help="select USRP Tx side A or B")
+<br />        normal.add_option("", "--tx-amplitude", type="eng_float",
+<br />default=12000, metavar="AMPL",
+<br />                          help="set transmitter digital amplitude: 0 &lt;= AMPL
+<br />&lt; 32768 [default=%default]")
+<br />        normal.add_option("-v", "--verbose", action="store_true",
+<br />default=False)
+<br />
+<br />        expert.add_option("-S", "--samples-per-symbol", type="int",
+<br />default=None,
+<br />                          help="set samples/symbol [default=%default]")
+<br />        expert.add_option("", "--tx-freq", type="eng_float", default=None,
+<br />                          help="set transmit frequency to FREQ
+<br />[default=%default]", metavar="FREQ")
+<br />        expert.add_option("-i", "--interp", type="intx", default=None,
+<br />                          help="set fpga interpolation rate to INTERP
+<br />[default=%default]")
+<br />        expert.add_option("", "--log", action="store_true", default=False,
+<br />                          help="Log all parts of flow graph to file
+<br />(CAUTION: lots of data)")
+<br />        expert.add_option("","--use-whitener-offset", action="store_true",
+<br />default=False,
+<br />                          help="make sequential packets use different
+<br />whitening")
+<br />
+<br />    # Make a static method to call before instantiation
+<br />    add_options = staticmethod(add_options)
+<br />
+<br />    def _print_verbage(self):
+<br />        """
+<br />        Prints information about the transmit path
+<br />        """
+<br />        print "Using TX d'board %s"    % (self.u.daughterboard_id(),)
+<br />        print "Tx amplitude     %s"    % (self._tx_amplitude)
+<br />        print "modulation:      %s"    % (self._modulator_class.__name__)
+<br />        print "bitrate:         %sb/s" %
+<br />(eng_notation.num_to_str(self._bitrate))
+<br />        print "samples/symbol:  %3d"   % (self._samples_per_symbol)
+<br />        print "interp:          %3d"   % (self._interp)
+<br />        print "Tx Frequency:    %s"    %
+<br />(eng_notation.num_to_str(self._tx_freq))
+<br />        
+<br />
+<br />def add_freq_option(parser):
+<br />    """
+<br />    Hackery that has the -f / --freq option set both tx_freq and rx_freq
+<br />    """
+<br />    def freq_callback(option, opt_str, value, parser):
+<br />        parser.values.rx_freq = value
+<br />        parser.values.tx_freq = value
+<br />
+<br />    if not parser.has_option('--freq'):
+<br />        parser.add_option('-f', '--freq', type="eng_float",
+<br />                          action="callback", callback=freq_callback,
+<br />                          help="set Tx and/or Rx frequency to FREQ
+<br />[default=%default]",
+<br />                          metavar="FREQ")
+<br />
+<br />benchmark_rx.py
+<br />
+<br />#!/usr/bin/env python
+<br />#
+<br /># Copyright 2005,2006,2007 Free Software Foundation, Inc.
+<br /># 
+<br /># This file is part of GNU Radio
+<br /># 
+<br /># GNU Radio is free software; you can redistribute it and/or modify
+<br /># it under the terms of the GNU General Public License as published by
+<br /># the Free Software Foundation; either version 3, or (at your option)
+<br /># any later version.
+<br /># 
+<br /># GNU Radio is distributed in the hope that it will be useful,
+<br /># but WITHOUT ANY WARRANTY; without even the implied warranty of
+<br /># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+<br /># GNU General Public License for more details.
+<br /># 
+<br /># You should have received a copy of the GNU General Public License
+<br /># along with GNU Radio; see the file COPYING.  If not, write to
+<br /># the Free Software Foundation, Inc., 51 Franklin Street,
+<br /># Boston, MA 02110-1301, USA.
+<br /># 
+<br />
+<br />from gnuradio import gr, gru, modulation_utils
+<br />from gnuradio import usrp2
+<br />from gnuradio import eng_notation
+<br />from gnuradio.eng_option import eng_option
+<br />from optparse import OptionParser
+<br />
+<br />import random
+<br />import struct
+<br />import sys
+<br />
+<br /># from current dir
+<br />from receive_path_usrp2 import receive_path
+<br />import fusb_options
+<br />
+<br />#import os
+<br />#print os.getpid()
+<br />#raw_input('Attach and press enter: ')
+<br />
+<br />class my_top_block(gr.top_block):
+<br />    def __init__(self, demodulator, rx_callback, options):
+<br />        gr.top_block.__init__(self)
+<br />        self.rxpath = receive_path(demodulator, rx_callback, options) 
+<br />        self.connect(self.rxpath)
+<br />
+<br />#
+<br />/////////////////////////////////////////////////////////////////////////////
+<br />#                                   main
+<br />#
+<br />/////////////////////////////////////////////////////////////////////////////
+<br />
+<br />global n_rcvd, n_right
+<br />
+<br />def main():
+<br />    global n_rcvd, n_right
+<br />
+<br />    n_rcvd = 0
+<br />    n_right = 0
+<br />    
+<br />    def rx_callback(ok, payload):
+<br />        global n_rcvd, n_right
+<br />        (pktno,) = struct.unpack('!H', payload[0:2])
+<br />        n_rcvd += 1
+<br />        if ok:
+<br />            n_right += 1
+<br />
+<br />        print "ok = %5s  pktno = %4d  n_rcvd = %4d  n_right = %4d" % (
+<br />            ok, pktno, n_rcvd, n_right)
+<br />
+<br />
+<br />    demods = modulation_utils.type_1_demods()
+<br />
+<br />    # Create Options Parser:
+<br />    parser = OptionParser (option_class=eng_option,
+<br />conflict_handler="resolve")
+<br />    expert_grp = parser.add_option_group("Expert")
+<br />
+<br />    parser.add_option("-m", "--modulation", type="choice",
+<br />choices=demods.keys(), 
+<br />                      default='gmsk',
+<br />                      help="Select modulation from: %s [default=%%default]"
+<br />                            % (', '.join(demods.keys()),))
+<br />
+<br />    receive_path.add_options(parser, expert_grp)
+<br />
+<br />    for mod in demods.values():
+<br />        mod.add_options(expert_grp)
+<br />
+<br />    fusb_options.add_options(expert_grp)
+<br />    (options, args) = parser.parse_args ()
+<br />
+<br />    if len(args) != 0:
+<br />        parser.print_help(sys.stderr)
+<br />        sys.exit(1)
+<br />
+<br />    if options.rx_freq is None:
+<br />        sys.stderr.write("You must specify -f FREQ or --freq FREQ\n")
+<br />        parser.print_help(sys.stderr)
+<br />        sys.exit(1)
+<br />
+<br />
+<br />    # build the graph
+<br />    tb = my_top_block(demods[options.modulation], rx_callback, options)
+<br />
+<br />    r = gr.enable_realtime_scheduling()
+<br />    if r != gr.RT_OK:
+<br />        print "Warning: Failed to enable realtime scheduling."
+<br />
+<br />    tb.start()        # start flow graph
+<br />    tb.wait()         # wait for it to finish
+<br />
+<br />if __name__ == '__main__':
+<br />    try:
+<br />        main()
+<br />    except KeyboardInterrupt:
+<br />        pass
+<br />
+<br />receive_path_usrp2.py
+<br />
+<br />#!/usr/bin/env python
+<br />#
+<br /># Copyright 2005,2006,2007 Free Software Foundation, Inc.
+<br /># 
+<br /># This file is part of GNU Radio
+<br /># 
+<br /># GNU Radio is free software; you can redistribute it and/or modify
+<br /># it under the terms of the GNU General Public License as published by
+<br /># the Free Software Foundation; either version 3, or (at your option)
+<br /># any later version.
+<br /># 
+<br /># GNU Radio is distributed in the hope that it will be useful,
+<br /># but WITHOUT ANY WARRANTY; without even the implied warranty of
+<br /># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+<br /># GNU General Public License for more details.
+<br /># 
+<br /># You should have received a copy of the GNU General Public License
+<br /># along with GNU Radio; see the file COPYING.  If not, write to
+<br /># the Free Software Foundation, Inc., 51 Franklin Street,
+<br /># Boston, MA 02110-1301, USA.
+<br /># 
+<br />
+<br />from gnuradio import gr, gru, blks2
+<br />from gnuradio import usrp2
+<br />from gnuradio import eng_notation
+<br />import copy
+<br />import sys
+<br />
+<br /># from current dir
+<br />from pick_bitrate import pick_rx_bitrate
+<br />
+<br />#
+<br />/////////////////////////////////////////////////////////////////////////////
+<br />#                              receive path
+<br />#
+<br />/////////////////////////////////////////////////////////////////////////////
+<br />
+<br />class receive_path(gr.hier_block2):
+<br />    def __init__(self, demod_class, rx_callback, options):
+<br />
+<br />        gr.hier_block2.__init__(self, "receive_path",
+<br />                                gr.io_signature(0, 0, 0), # Input signature
+<br />                                gr.io_signature(0, 0, 0)) # Output signature
+<br />
+<br />        options = copy.copy(options)    # make a copy so we can
+<br />destructively modify
+<br />
+<br />        self._interface          = options.interface           # the USRP
+<br />board attached
+<br />        self._mac_addr           = options.mac_addr
+<br />        self._verbose            = options.verbose
+<br />        self._rx_freq            = options.rx_freq         # receiver's
+<br />center frequency
+<br />        self._rx_gain            = options.rx_gain         # receiver's gain
+<br />        #self._rx_subdev_spec     = options.rx_subdev_spec  # daughterboard
+<br />to use
+<br />        self._bitrate            = options.bitrate         # desired bit
+<br />rate 
+<br />        self._decim              = options.decim           # Decimating rate
+<br />for the USRP (prelim) 
+<br />        self._samples_per_symbol = options.samples_per_symbol  # desired
+<br />samples/symbol
+<br />        self._fusb_block_size    = options.fusb_block_size # usb info for USRP
+<br />        self._fusb_nblocks       = options.fusb_nblocks    # usb info for
+<br />USRP
+<br />
+<br />        self._rx_callback   = rx_callback      # this callback is fired when
+<br />there's a packet available
+<br />        self._demod_class   = demod_class      # the demodulator_class we're
+<br />using
+<br />
+<br />        if self._rx_freq is None:
+<br />            sys.stderr.write("-f FREQ or --freq FREQ or --rx-freq FREQ must
+<br />be specified\n")
+<br />            raise SystemExit
+<br />
+<br />        # Set up USRP source; also adjusts decim, samples_per_symbol, and
+<br />bitrate
+<br />        self._setup_usrp_source()
+<br />
+<br />        g = self.u.gain_range()
+<br />        if options.show_rx_gain_range:
+<br />            print "Rx Gain Range: minimum = %g, maximum = %g, step size =
+<br />%g" \
+<br />                  % (g[0], g[1], g[2])
+<br />
+<br />        self.set_gain(options.rx_gain)
+<br />
+<br />        self.set_auto_tr(True)                 # enable Auto
+<br />Transmit/Receive switching
+<br />
+<br />        # Set RF frequency
+<br />        ok = self.set_freq(self._rx_freq)
+<br />        if not ok:
+<br />            print "Failed to set Rx frequency to %s" %
+<br />(eng_notation.num_to_str(self._rx_freq))
+<br />            raise ValueError, eng_notation.num_to_str(self._rx_freq)
+<br />
+<br />        # copy the final answers back into options for use by demodulator
+<br />        options.samples_per_symbol = self._samples_per_symbol
+<br />        options.bitrate = self._bitrate
+<br />        options.decim = self._decim
+<br />
+<br />        # Get demod_kwargs
+<br />        demod_kwargs =
+<br />self._demod_class.extract_kwargs_from_options(options)
+<br />        # Fix USRP2 -&gt; USRP1 scaling
+<br />        self.scale = gr.multiply_const_cc(32768)
+<br />        # Design filter to get actual channel we want
+<br />        sw_decim = 1
+<br />        chan_coeffs = gr.firdes.low_pass (1.0,                  # gain
+<br />                                          sw_decim *
+<br />self._samples_per_symbol, # sampling rate
+<br />                                          1.0,                  # midpoint
+<br />of trans. band
+<br />                                          0.5,                  # width of
+<br />trans. band
+<br />                                          gr.firdes.WIN_HANN)   # filter
+<br />type 
+<br />
+<br />        # Decimating channel filter
+<br />        # complex in and out, float taps
+<br />        self.chan_filt = gr.fft_filter_ccc(sw_decim, chan_coeffs)
+<br />        #self.chan_filt = gr.fir_filter_ccf(sw_decim, chan_coeffs)
+<br />
+<br />        # receiver
+<br />        self.packet_receiver = \
+<br />            blks2.demod_pkts(self._demod_class(**demod_kwargs),
+<br />                             access_code=None,
+<br />                             callback=self._rx_callback,
+<br />                             threshold=-1)
+<br />    
+<br />        # Carrier Sensing Blocks
+<br />        alpha = 0.001
+<br />        thresh = 30   # in dB, will have to adjust
+<br />
+<br />        if options.log_rx_power == True:
+<br />            self.probe = gr.probe_avg_mag_sqrd_cf(thresh,alpha)
+<br />            self.power_sink = gr.file_sink(gr.sizeof_float, "rxpower.dat")
+<br />            self.connect(self.chan_filt, self.probe, self.power_sink)
+<br />        else:
+<br />            self.probe = gr.probe_avg_mag_sqrd_c(thresh,alpha)
+<br />            self.connect(self.chan_filt, self.probe)
+<br />
+<br />        # Display some information about the setup
+<br />        if self._verbose:
+<br />            self._print_verbage()
+<br />            
+<br />        self.connect(self.u, self.scale, self.chan_filt,
+<br />self.packet_receiver)
+<br />
+<br />    def _setup_usrp_source(self):
+<br />        self.u = usrp2.source_32fc (self._interface, self._mac_addr)
+<br />        adc_rate = self.u.adc_rate()
+<br />
+<br />        # derive values of bitrate, samples_per_symbol, and decim from
+<br />desired info
+<br />        (self._bitrate, self._samples_per_symbol, self._decim) = \ 
+<br />            pick_rx_bitrate(self._bitrate,
+<br />self._demod_class.bits_per_symbol(), \
+<br />                            self._samples_per_symbol, self._decim, adc_rate) 
+<br />
+<br />        self.u.set_decim(self._decim)
+<br />        # determine the daughterboard subdevice we're using
+<br />        #if self._rx_subdev_spec is None:
+<br />        #    self._rx_subdev_spec = usrp.pick_rx_subdevice(self.u)
+<br />        #self.subdev = usrp.selected_subdev(self.u, self._rx_subdev_spec)
+<br />
+<br />        #self.u.set_mux(usrp.determine_rx_mux_value(self.u,
+<br />self._rx_subdev_spec))
+<br />
+<br />    def set_freq(self, target_freq):
+<br />        """
+<br />        Set the center frequency we're interested in.
+<br />
+<br />        @param target_freq: frequency in Hz
+<br />        @rypte: bool
+<br />
+<br />        Tuning is a two step process.  First we ask the front-end to
+<br />        tune as close to the desired frequency as it can.  Then we use
+<br />        the result of that operation and our target_frequency to
+<br />        determine the value for the digital up converter.
+<br />        """
+<br />        r = self.u.set_center_freq(target_freq)
+<br />        if r:
+<br />            return True
+<br />
+<br />        return False
+<br />
+<br />    def set_gain(self, gain):
+<br />        """
+<br />        Sets the analog gain in the USRP
+<br />        """
+<br />        if gain is None:
+<br />            r = self.u.gain_range()
+<br />            gain = (r[0] + r[1])/2               # set gain to midpoint
+<br />        self.gain = gain
+<br />        return self.u.set_gain(gain)
+<br />
+<br />    def set_auto_tr(self, enable):
+<br />        #return self.u.set_auto_tr(enable)
+<br />        return
+<br />        
+<br />    def bitrate(self):
+<br />        return self._bitrate
+<br />
+<br />    def samples_per_symbol(self):
+<br />        return self._samples_per_symbol
+<br />
+<br />    def decim(self):
+<br />        return self._decim
+<br />
+<br />    def carrier_sensed(self):
+<br />        """
+<br />        Return True if we think carrier is present.
+<br />        """
+<br />        #return self.probe.level() &gt; X
+<br />        return self.probe.unmuted()
+<br />
+<br />    def carrier_threshold(self):
+<br />        """
+<br />        Return current setting in dB.
+<br />        """
+<br />        return self.probe.threshold()
+<br />
+<br />    def set_carrier_threshold(self, threshold_in_db):
+<br />        """
+<br />        Set carrier threshold.
+<br />
+<br />        @param threshold_in_db: set detection threshold
+<br />        @type threshold_in_db:  float (dB)
+<br />        """
+<br />        self.probe.set_threshold(threshold_in_db)
+<br />    
+<br />        
+<br />    def add_options(normal, expert):
+<br />        """
+<br />        Adds receiver-specific options to the Options Parser
+<br />        """
+<br />        add_freq_option(normal)
+<br />        if not normal.has_option("--bitrate"):
+<br />            normal.add_option("-r", "--bitrate", type="eng_float",
+<br />default=None,
+<br />                              help="specify bitrate.  samples-per-symbol and
+<br />interp/decim will be derived.")
+<br />        normal.add_option("-e", "--interface", type="string",
+<br />default="eth0",
+<br />                          help="select Ethernet interface, default is eth0")
+<br />        normal.add_option("-m", "--mac-addr", type="string", default="",
+<br />                          help="select USRP by MAC address, default is
+<br />auto-select")
+<br />        #normal.add_option("-R", "--rx-subdev-spec", type="subdev",
+<br />default=None,
+<br />        #                  help="select USRP Rx side A or B")
+<br />        normal.add_option("", "--rx-gain", type="eng_float", default=None,
+<br />metavar="GAIN",
+<br />                          help="set receiver gain in dB [default=midpoint]. 
+<br />See also --show-rx-gain-range")
+<br />        normal.add_option("", "--show-rx-gain-range", action="store_true",
+<br />default=False, 
+<br />                          help="print min and max Rx gain available on
+<br />selected daughterboard")
+<br />        normal.add_option("-v", "--verbose", action="store_true",
+<br />default=False)
+<br />        expert.add_option("-S", "--samples-per-symbol", type="int",
+<br />default=None,
+<br />                          help="set samples/symbol [default=%default]")
+<br />        expert.add_option("", "--rx-freq", type="eng_float", default=None,
+<br />                          help="set Rx frequency to FREQ
+<br />[default=%default]", metavar="FREQ")
+<br />        expert.add_option("-d", "--decim", type="intx", default=None,
+<br />                          help="set fpga decimation rate to DECIM
+<br />[default=%default]")
+<br />        expert.add_option("", "--log", action="store_true", default=False,
+<br />                          help="Log all parts of flow graph to files
+<br />(CAUTION: lots of data)")
+<br />        expert.add_option("", "--log-rx-power", action="store_true",
+<br />default=False,
+<br />                          help="Log receive signal power to file (CAUTION:
+<br />lots of data)")
+<br />
+<br />    # Make a static method to call before instantiation
+<br />    add_options = staticmethod(add_options)
+<br />
+<br />
+<br />    def _print_verbage(self):
+<br />        """
+<br />        Prints information about the receive path
+<br />        """
+<br />        print "\nReceive Path:"
+<br />        print "Using RX d'board %s"    % (self.u.daughterboard_id(),)
+<br />        print "Rx gain:         %g"    % (self.gain,)
+<br />        print "modulation:      %s"    % (self._demod_class.__name__)
+<br />        print "bitrate:         %sb/s" %
+<br />(eng_notation.num_to_str(self._bitrate))
+<br />        print "samples/symbol:  %3d"   % (self._samples_per_symbol)
+<br />        print "decim:           %3d"   % (self._decim)
+<br />        print "Rx Frequency:    %s"    %
+<br />(eng_notation.num_to_str(self._rx_freq))
+<br />        # print "Rx Frequency:    %f"    % (self._rx_freq)
+<br />
+<br />    def __del__(self):
+<br />        # Avoid weak reference error
+<br />        #del self.subdev
+<br />        return
+<br />            
+<br />def add_freq_option(parser):
+<br />    """
+<br />    Hackery that has the -f / --freq option set both tx_freq and rx_freq
+<br />    """
+<br />    def freq_callback(option, opt_str, value, parser):
+<br />        parser.values.rx_freq = value
+<br />        parser.values.tx_freq = value
+<br />
+<br />    if not parser.has_option('--freq'):
+<br />        parser.add_option('-f', '--freq', type="eng_float",
+<br />                          action="callback", callback=freq_callback,
+<br />                          help="set Tx and/or Rx frequency to FREQ
+<br />[default=%default]",
+<br />                          metavar="FREQ")
+<br />
+<br />pick_bitrate.py
+<br />
+<br />#
+<br /># Copyright 2005,2006 Free Software Foundation, Inc.
+<br /># 
+<br /># This file is part of GNU Radio
+<br /># 
+<br /># GNU Radio is free software; you can redistribute it and/or modify
+<br /># it under the terms of the GNU General Public License as published by
+<br /># the Free Software Foundation; either version 3, or (at your option)
+<br /># any later version.
+<br /># 
+<br /># GNU Radio is distributed in the hope that it will be useful,
+<br /># but WITHOUT ANY WARRANTY; without even the implied warranty of
+<br /># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+<br /># GNU General Public License for more details.
+<br /># 
+<br /># You should have received a copy of the GNU General Public License
+<br /># along with GNU Radio; see the file COPYING.  If not, write to
+<br /># the Free Software Foundation, Inc., 51 Franklin Street,
+<br /># Boston, MA 02110-1301, USA.
+<br /># 
+<br />
+<br />_default_bitrate = 500e3
+<br />
+<br />_valid_samples_per_symbol = (2,3,4,5,6,7)
+<br />
+<br />def _gen_tx_info(converter_rate):
+<br />    results = []
+<br />    for samples_per_symbol in _valid_samples_per_symbol:
+<br />        for interp in range(16, 512 + 1, 4):
+<br />            bitrate = converter_rate / interp / samples_per_symbol
+<br />            results.append((bitrate, samples_per_symbol, interp))
+<br />    results.sort()
+<br />    return results
+<br />
+<br />def _gen_rx_info(converter_rate):
+<br />    results = []
+<br />    for samples_per_symbol in _valid_samples_per_symbol:
+<br />        for decim in range(8, 256 + 1, 2):
+<br />            bitrate = converter_rate / decim / samples_per_symbol
+<br />            results.append((bitrate, samples_per_symbol, decim))
+<br />    results.sort()
+<br />    return results
+<br />    
+<br />def _filter_info(info, samples_per_symbol, xrate):
+<br />    if samples_per_symbol is not None:
+<br />        info = [x for x in info if x[1] == samples_per_symbol]
+<br />    if xrate is not None:
+<br />        info = [x for x in info if x[2] == xrate]
+<br />    return info
+<br />
+<br />def _pick_best(target_bitrate, bits_per_symbol, info):
+<br />    """
+<br />    @returns tuple (bitrate, samples_per_symbol, interp_rate_or_decim_rate)
+<br />    """
+<br />    if len(info) == 0:
+<br />        raise RuntimeError, "info is zero length!"
+<br />
+<br />    if target_bitrate is None:     # return the fastest one
+<br />        return info[-1]
+<br />    
+<br />    # convert bit rate to symbol rate
+<br />    target_symbolrate = target_bitrate / bits_per_symbol
+<br />    
+<br />    # Find the closest matching symbol rate.
+<br />    # In the event of a tie, the one with the lowest samples_per_symbol
+<br />wins.
+<br />    # (We already sorted them, so the first one is the one we take)
+<br />
+<br />    best = info[0]
+<br />    best_delta = abs(target_symbolrate - best[0])
+<br />    for x in info[1:]:
+<br />        delta = abs(target_symbolrate - x[0])
+<br />        if delta &lt; best_delta:
+<br />            best_delta = delta
+<br />            best = x
+<br />
+<br />    # convert symbol rate back to bit rate
+<br />    return ((best[0] * bits_per_symbol),) + best[1:]
+<br />
+<br />def _pick_bitrate(bitrate, bits_per_symbol, samples_per_symbol,
+<br />                  xrate, converter_rate, gen_info):
+<br />    """
+<br />    @returns tuple (bitrate, samples_per_symbol, interp_rate_or_decim_rate)
+<br />    """
+<br />    if not isinstance(bits_per_symbol, int) or bits_per_symbol &lt; 1:
+<br />        raise ValueError, "bits_per_symbol must be an int &gt;= 1"
+<br />    
+<br />    if samples_per_symbol is not None and xrate is not None:  # completely
+<br />determined
+<br />        return (float(converter_rate) / xrate / samples_per_symbol,
+<br />                samples_per_symbol, xrate)
+<br />
+<br />    if bitrate is None and samples_per_symbol is None and xrate is None:
+<br />        bitrate = _default_bitrate
+<br />
+<br />    # now we have a target bitrate and possibly an xrate or
+<br />    # samples_per_symbol constraint, but not both of them.
+<br />
+<br />    return _pick_best(bitrate, bits_per_symbol,
+<br />                      _filter_info(gen_info(converter_rate),
+<br />samples_per_symbol, xrate))
+<br />    
+<br />#
+<br />---------------------------------------------------------------------------------------
+<br />
+<br />def pick_tx_bitrate(bitrate, bits_per_symbol, samples_per_symbol,
+<br />                    interp_rate, converter_rate=128e6): 
+<br />    """
+<br />    Given the 4 input parameters, return at configuration that matches
+<br />
+<br />    @param bitrate: desired bitrate or None
+<br />    @type bitrate: number or None
+<br />    @param bits_per_symbol: E.g., BPSK -&gt; 1, QPSK -&gt; 2, 8-PSK -&gt; 3
+<br />    @type bits_per_symbol: integer &gt;= 1
+<br />    @param samples_per_symbol: samples/baud (aka samples/symbol)
+<br />    @type samples_per_symbol: number or None
+<br />    @param interp_rate: USRP interpolation factor
+<br />    @type interp_rate: integer or None
+<br />    @param converter_rate: converter sample rate in Hz
+<br />    @type converter_rate: number
+<br />
+<br />    @returns tuple (bitrate, samples_per_symbol, interp_rate)
+<br />    """
+<br />    return _pick_bitrate(bitrate, bits_per_symbol, samples_per_symbol,
+<br />                         interp_rate, converter_rate, _gen_tx_info)
+<br />
+<br />
+<br />def pick_rx_bitrate(bitrate, bits_per_symbol, samples_per_symbol,
+<br />                    decim_rate, converter_rate=64e6): 
+<br />    """
+<br />    Given the 4 input parameters, return at configuration that matches
+<br />
+<br />    @param bitrate: desired bitrate or None
+<br />    @type bitrate: number or None
+<br />    @param bits_per_symbol: E.g., BPSK -&gt; 1, QPSK -&gt; 2, 8-PSK -&gt; 3
+<br />    @type bits_per_symbol: integer &gt;= 1
+<br />    @param samples_per_symbol: samples/baud (aka samples/symbol)
+<br />    @type samples_per_symbol: number or None
+<br />    @param decim_rate: USRP decimation factor
+<br />    @type decim_rate: integer or None
+<br />    @param converter_rate: converter sample rate in Hz
+<br />    @type converter_rate: number
+<br />
+<br />    @returns tuple (bitrate, samples_per_symbol, decim_rate)
+<br />    """
+<br />    return _pick_bitrate(bitrate, bits_per_symbol, samples_per_symbol,
+<br />                         decim_rate, converter_rate, _gen_rx_info)
+<br />
+<br />Thanks in advance for your cooperation.</pre><br /><span style="font-size: large;"><b>(2)</b></span><br /><br /><pre>Hi,
+<br />
+<br />This is what I get when I run benchmark _tx.py and benchmark_rx.py
+<br />respectively on USRP2 with transmit_path_usrp2.py and receive_path_usrp2.py
+<br />respectively:
+<br />
+<br />benchmark_tx.py:-
+<br />
+<br />m...@mcrl-desktop:~/gnuradio/gnuradio-examples/python/digital$ sudo
+<br />./benchmark_tx.py -f 2400M -v
+<br />usrp2::ctor reset_db failed
+<br />usrp2::ctor set_rx_gain failed
+<br />usrp2::ctor set_tx_interp failed
+<br />usrp2::ctor set_rx_scale_iq failed
+<br />&gt;&gt;&gt; gr_fir_fff: using SSE
+<br />bits per symbol = 1
+<br />Gaussian filter bt = 0.35
+<br />Using TX d'board 43
+<br />Tx amplitude     12000
+<br />modulation:      gmsk_mod
+<br />bitrate:         500kb/s
+<br />samples/symbol:    2
+<br />interp:          100
+<br />Tx Frequency:    2.4G
+<br />...........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................m...@mcrl-desktop:~/gnuradio/gnuradio-examples/python/digital$
+<br /> 
+<br />
+<br />benchmark_rx.py:-
+<br />
+<br />m...@mcrl-desktop:~/gnuradio/gnuradio-examples/python/digital$ sudo
+<br />./benchmark_rx.py -f 2400M -v
+<br />usrp2::ctor reset_db failed
+<br />&gt;&gt;&gt; gr_fir_fff: using SSE
+<br />bits per symbol = 1
+<br />M&amp;M clock recovery omega = 2.000000
+<br />M&amp;M clock recovery gain mu = 0.175000
+<br />M&amp;M clock recovery mu = 0.500000
+<br />M&amp;M clock recovery omega rel. limit = 0.005000
+<br />frequency error = 0.000000
+<br />
+<br />Receive Path:
+<br />Using RX d'board 39
+<br />Rx gain:         35
+<br />modulation:      gmsk_demod
+<br />bitrate:         500kb/s
+<br />samples/symbol:    2
+<br />decim:           100
+<br />Rx Frequency:    2.4G
+<br />
+<br />
+<br />Now the same thing for usrp1 but using transmit_path.py and receive_path.py
+<br />which is already provided in gnuradio:
+<br />
+<br />benchmark_tx.py:-
+<br />
+<br />m...@mcrl-desktop:~/gnuradio/gnuradio-examples/python/digital$ sudo
+<br />./benchmark_tx.py -f 2400M -v
+<br />&gt;&gt;&gt; gr_fir_fff: using SSE
+<br />bits per symbol = 1
+<br />Gaussian filter bt = 0.35
+<br />Using TX d'board A: Flex 2400 Tx MIMO B
+<br />Tx amplitude     12000
+<br />modulation:      gmsk_mod
+<br />bitrate:         500kb/s
+<br />samples/symbol:    2
+<br />interp:          128
+<br />Tx Frequency:    2.4G
+<br />...........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................m...@mcrl-desktop:~/gnuradio/gnuradio-examples/python/digital$
+<br /> 
+<br />
+<br />benchmark_rx.py:-
+<br />
+<br />m...@mcrl-desktop:~/gnuradio/gnuradio-examples/python/digital$ sudo
+<br />./benchmark_rx.py -f 2400M -v
+<br />&gt;&gt;&gt; gr_fir_fff: using SSE
+<br />bits per symbol = 1
+<br />M&amp;M clock recovery omega = 2.000000
+<br />M&amp;M clock recovery gain mu = 0.175000
+<br />M&amp;M clock recovery mu = 0.500000
+<br />M&amp;M clock recovery omega rel. limit = 0.005000
+<br />frequency error = 0.000000
+<br />
+<br />Receive Path:
+<br />Using RX d'board A: Flex 2400 Rx MIMO B
+<br />Rx gain:         45
+<br />modulation:      gmsk_demod
+<br />bitrate:         500kb/s
+<br />samples/symbol:    2
+<br />decim:            64
+<br />Rx Frequency:    2.4G
+<br />
+<br />I am using the same pick_bitrate.py file that is already provided in
+<br />gnuradio. As it can be seen that both usrp systems have the default bit rate
+<br />irrespective of whether it acts as receiver or transmitter. My concern is
+<br />with the interpolation and decimation. Do I need to make changes to the
+<br />pick_bitrate.py file for USRP2? If yes, then what kind of changes. I also
+<br />observed that even though USRP2 shows a bit rate of 500kbps, however I
+<br />believe that its transmitting too fast which does not allow USRP1 to receive
+<br />correctly.I would greatly appreciate any help in this matter.
+<br />
+<br />Thanks in advance.
+<br />
+<br /><b><span style="font-size: large;">(3)</span></b></pre><br /><pre>At a minimum, you will need to call pick_tx_bitrate and
+<br />pick_rx_bitrate providing proper rates for the ADC and DAC.  They
+<br />default to the values appropriate for the USRP1.  However, it looks
+<br />like you'll need a USRP2 version since they encode the acceptable
+<br />ranges for interpolation and decimation which are different between
+<br />the USRP1 and USRP2.
+<br />
+<br />Eric</pre><br /><b><span style="font-size: large;">(4)</span></b><br /><br /><pre>Hi,
+<br />
+<br />I already tried to set the value of the converter_rate in pick_tx_bitrate
+<br />and Pick_rx_bitrate according to the ADC and DAC specifications of u...@. I
+<br />set it to 200e6 in pick_tx_bitrate and in pick_rx_bitrate. But even that did
+<br />not worked. I am confused with how to modify the pick_bitrate.py file for
+<br />usrp2. I am not able to determine the different parameters that I need to
+<br />provide for usrp2. If anyone has already worked on it then please help me to
+<br />modify the pick_bitrate file for usrp2. Also if any other changes are
+<br />required in other python files.
+<br />
+<br />Thanks in advance.
+<br />
+<br />Smith</pre><br /><b><span style="font-size: large;">(5)</span></b><br /><br /><tt>The DAC rate is 100e6.  The &#8220;bitrate&#8221; is the desired data rate of the  </tt><tt>over the air modulation.  It should be MUCH less, like 100k to 1M or so. </tt><br /><tt>There is absolutely nothing in any of the systems for which 200e6 is a  </tt><tt>correct choice. </tt><br /><pre style="margin: 0em;">Matt</pre></div>
 </div>
   
   

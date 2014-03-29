@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="韩乔生老师最牛的一次解说—7号球员夏普分球，传给了9号队员，9号队员也叫夏普，他们可能是兄弟。—在足坛活跃着很多兄弟，比如荷兰的德波尔兄弟，爱尔兰的基恩兄弟（韩老师到底也没有纠正的错误，爱尔兰的两个基恩不是兄弟）。好球，这个球传给10号传得非常好。—咦，10号怎么也叫夏普。可能是这样的， &hellip;">
+  <meta name="description" content="pair类型，以及更为典型的map类型。既具有vector类型可以纵向联系某种特定数据类型的特点，又可以把两种不同数据类型但在应用中意义相关的数据横向联系起来。这种联系可以理解为“映射”，每个key和唯一的另一个数据类型存放地址相关。另一种理解方法， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,56 +81,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/07/11/funny-words/">Funny Words</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-11T00:00:00-05:00" pubdate data-updated="true">Jul 11<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-韩乔生老师最牛的一次解说<br /><br />—7号球员夏普分球，传给了9号队员，9号队员也叫夏普，他们可能是兄弟。<br />—在足坛活跃着很多兄弟，比如荷兰的德波尔兄弟，爱尔兰的基恩兄弟（韩老师到底也没有纠正的错误，爱尔兰的两个基恩不是兄弟）。好球，这个球传给10号传得非常好。<br />—咦，10号怎么也叫夏普。可能是这样的，外国球员印在球衣上的只是姓，这些球员都姓夏普，就像韩国有很多球员都姓朴。漂亮，<br />—10号连过两名队员，破门得分，11号上前祝贺，11号是–夏普(停顿好大一会）对不起，观众朋友，夏普是印在球衣上赞助商的名字。</div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'>Cindy</div>
-<div class='content'>
-Hi,I just come to the US and can login this blog freely.shuanging</div>
-</div>
-<div class='comment'>
-<div class='author'>Anonymous</div>
-<div class='content'>
-顶一个。。。。。好吧我只是想说我翻墙成功了。。。。终于可以上Facebook了。。。。。。<br />这届世界杯。。。刘建宏火了。。。。。<br />就是这样<br />Echo</div>
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -458,6 +408,43 @@ C vs. C++ 其中一个显式区别，就是后者增添了标准库类型，vect
 
   <div class="entry-content"><div class='post'>
 最近一直在鼓捣网络仿真软件，逐渐发现些开源的好处，大家都在整理资料，都在去努力完善一个项目。当这样的行为发生在某一群向着相同目标进发的专业人士身上，似乎惺惺相惜的感觉就更加强烈。当然，我还只能算作业余，逐渐把自己用到的链接添加在这里，应该比仅仅下载到本地的作用会更大。<br /><br />Useful references (order from more basic to more complex):<br /><br /><a href="http://www-sop.inria.fr/maestro/personnel/Eitan.Altman/COURS-NS/n3.pdf">NS Simulator for Beginners, lecture notes</a> This is a very good point to begin with.<br /><a href="http://wcc.iiita.ac.in/ns/nstutorial.pdf">Sandeep Gupta NS tutorial</a>&nbsp; Very simple and straightforward slides.<br /><a href="http://nile.wpi.edu/NS/">NS by Examples</a> Practical breakpoints to get involved. The comments are also useful if the current version of ns-2 cannot debug the original code.<br /><a href="http://www.isi.edu/nsnam/ns/tutorial/index.html">Marc Greis&#8217; Tutorial</a>&nbsp; This is the classic and most important tutorial. It has been fully recommend to MASTER the step-by-step exercises it describes, especially if you are going to change the NS2 code. The Ping Agent that he describes is very important to do it yourself, instead of simply downloading the c++ files and compiling it. Furthermore, refer to this post on the ns2 mailing list to know the additional steps required on the ping agent on the newest versions of NS2. (<a href="http://mailman.isi.edu/pipermail/ns-users/2006-January/053697.html">click</a>)<br /><a href="http://nsnam.isi.edu/nsnam/index.php/Main_Page">New NS wiki</a> There are lots of information which order in a more structured way.<br /><a href="http://www-sop.inria.fr/mistral/personnel/Eitan.Altman/ns.htm">NS Simulator Courses for Beginner</a> Although it has BEGINNER in the caption, the destination is to check the scripts. We can also refer to the /ns/tcl/ex and /ns/tcl/test directories of ns2 source tree.<br /><a href="http://www.isi.edu/nsnam/ns/ns-documentation.html">NS Manual</a> is used to peek the reference documentation.<br /><a href="http://140.116.72.80/%7Esmallko/ns2/NS_From%20China.rar">NS中文手册</a><br /><a href="http://masimum.dif.um.es/nsrt-howto/pdf/nsrt-howto.pdf">Implementing a New Manet Unicast Routing Protocol in NS2</a><br /><a href="http://icapeople.epfl.ch/aad/teaching/ns/ns-2-for-the-impatient.pdf">ns2 for the Impatient</a><br /><a href="http://info.iet.unipi.it/%7Ecng/ns2measure/manual-060529.pdf">ns2measure manual</a><br /><br /><br />Personal web pages: <br /><a href="http://140.116.72.80/%7Esmallko/ns2/ns2.htm">柯志亨教授的主页</a> has many useful references and video guidance.<br /><a href="http://tagus.inesc-id.pt/%7Epestrela/ns2/">Pedro Vale Estrela&#8217;s NS2 Page</a><br /><a href="http://personal.ee.surrey.ac.uk/Personal/L.Wood/ns/">Lloyd Wood&#8217;s NS2 Page</a></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/06/25/million-dollar-baby/">Million Dollar Baby</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-25T00:00:00-05:00" pubdate data-updated="true">Jun 25<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+和L的电话里说了好多。这样一部感动我的电影，让我有了想要写下些什么的冲动。<br /><br />电影中可用以回顾的东西太多，以至于我很难用其中的某一句话给电影在豆瓣里做一个标记——以前我总是习惯如此，拿自认为感触最深的一句话作为电影的总结，我曾经看过了。但百万宝贝不是。里面的很多话，用弗里德曼磁性的声音，演绎的犹如寓言：Winner is simply willing to do the things that loser won&#8217;t&#8230;&#8230;Boxing is about respect. Getting it for yourself, and taking it away from the other guy&#8230;&#8230;If there&#8217;s magic in boxing: it&#8217;s the magic of fighting battles beyond endurance, beyond cracked ribs, ruptured kidneys, and detached retinas&#8230;&#8230;<b>It&#8217;s the magic of risking everything for a dream that nobody sees but you</b>&#8230;&#8230;Frankie liked to say that boxing is an unnatural act that everything in boxing is backwards. Sometimes, best way to deliver a punch is step back. But step back too far, you ain&#8217;t fighting at all&#8230;&#8230;.Boxing is an unnatural act. Because everything in it is backwards. You wanna move to the left you don&#8217;t step left, you push on the right toe. To move right, you use your left toe. Instead of running from the pain, like a sane person would do, you step into it&#8230;&#8230;<br /><br />看过开头，如同monga，我料到这会是悲剧一出。很久以前看到的一句话分外贴切，我们是糖，甜到哀伤。maggie，剧中出场时还有月余就满32岁的小女人。微笑着，面对埃斯特伍德一次次冷血的拒绝。微笑着，把食客们吃剩的牛扒包进锡纸里，并笑着告诉老板要拿它回家喂小狗。微笑着，拿过弗里德曼手中破旧的拳击鞋和speed ball，说自己先借着，买了就还回来。微笑着，拿到两美元小费攒齐了买新speed ball的所有钱，然后欣喜的在体育用品店老板柜台上掏出一大堆硬币以及小额钞票，这是她给自己32岁买的生日礼物。当然，埃斯特伍德决定收她为徒时候，她笑得更加灿烂。以及每次打赢比赛，都笑得很傻，问埃斯特伍德，老板，我打的不错吧。<br /><br />当然，她也有不笑的时候。比如镜头几次切换到她回家的公车上。藏在宽大的套头衫里，她表情严峻的注视着窗外；或者正在一口水，一口剩牛排，吃着晚餐。在家的时候，拿一个小本子，细心地记下每一小笔收入，算着再过多久能买个speed ball，或者还要再攒多久，可以给妈妈和妹妹买套房子。还有在gym的时候，永远在专注的全力以赴。<br /><br />三位主角，独自一人时，幽怨而缓慢的吉他配乐。训练室里的荤笑话和一群粗人挑逗的笑声。拳击场旁观中的尖叫声。还有出现很多的，拳头打击沙袋或者speed ball的声音，短促而有力。所有的这些声响，叠加在一起，观看时候，就实实在在的堵在我胸口上。<br /><br />她的结局，似乎早已注定。专注和不知疲惫的奉献，成就了这个世界冠军；而纯真又不知自我保护，让她在这个险恶的世界里，从伤痕累累最终倒下不起。看到最后才发觉，原来见方的拳击台，只是作者表达思想而戏剧化出来的一个舞台而已。光阴在此，演绎的更加绚烂而摄人心魄。一个人从降生开始，生命就成了无数的随机事件不断累积之和，加之事物与生俱来的两面性，很难讲如何才能够善始善终。言行无愧于本心，尽力而无愧于时间，倒是可以做到且要时刻警醒达到的。<br /><br />弗里德曼在影片最后宽慰埃斯特伍德的一段话：Maggie walked through that door with nothing but guts. No chance in the world of being what she needed to be. A year and a half later, she&#8217;s fighting for the championship of the world. You did that. People die every day, Frankie. Mopping floors, washing dishes. And you know what their last thought is?&#8211;&#8220;I never got my shot.&#8221; Because of you, Maggie got her shot. If she dies today, you know what her last thought will be?&#8211;&#8220;I think I did all right. I know I could rest with that.&#8221;</div>
 </div>
   
   

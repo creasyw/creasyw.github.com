@@ -4,7 +4,7 @@
   <title><![CDATA[Category: My Life | Qiong Wu]]></title>
   <link href="http://creasyw.github.io/blog/categories/my-life/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-04-03T21:45:28-05:00</updated>
+  <updated>2014-04-05T10:46:03-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Survive on Busy Two weeks]]></title>
+    <link href="http://creasyw.github.io/blog/2014/04/05/survive-on-busy-two-weeks/"/>
+    <updated>2014-04-05T09:47:00-05:00</updated>
+    <id>http://creasyw.github.io/blog/2014/04/05/survive-on-busy-two-weeks</id>
+    <content type="html"><![CDATA[<p>I am glad that I could survive on three-hours sleep for almost two weeks. Of course, there were quite a few downsides: I felt very weak after the first several days, and the feeling lasted till the end; I lost 1 and dropped the other 2 times of tennis matches in this period; my Github longest streak of contribution stopped at 200 days, which is the date before my Comprehensive Defence…</p>
+
+<p>The things that I completed in return include:</p>
+
+<ul>
+  <li>A 96-pages thesis for the comprehensive defence</li>
+  <li>Prepare slides for the comprehensive defence</li>
+  <li>Pass it =D</li>
+  <li>A part of one NSF proposal</li>
+  <li>One research paper submitted to Globecom’14</li>
+  <li>Mid-term II of Game Theory</li>
+  <li>One reviewing paper from EuraSip</li>
+  <li>The least amount of homework and projects in Coursera that keep me within the schedule</li>
+</ul>
+
+<p>Furthermore, there are lots of lessons to take away from this process. Concerning the defence about research, I find myself still need to adjust the strategy handling problems. In research, it is not about getting thing done, but how to propose the right question (relevant with the basic/advanced theorems of the related fields) and to make at least some sense out of it.</p>
+
+<p>For the research, I should not pile up most of the work to the last week of the due date, especially when I could anticipate this busy schedule months before. In Jan. and Feb., I did waste plenty of time to try out different algorithms to tackle the problem, but none of them had the “sky-high” performances, so I just kept trying. Eventually, when the time run out, I chose the “sub-optimal” solution and wrote the paper in a hurry. This should not be the right way. Sometimes, when the theoretical merits are fascinating, I just need to derive the theorems and formulea with some naive simulations. When the trial and error process has to perform, I should set a “early termination” threshold and record every “best effort” in different scenarios. This will help me leisurely handle the due date, and maybe produce more work/papers.</p>
+
+<p>I hope I won’t have this kind of busy schedule again, in the sense that I have a better planning and complete each work as soon as I can.</p>
+
+<p>Aside note. I am glad to meet and know Monique. It feels really nice to find someone whom I can talk to and very conmfortably talk with. Smoking is not a good habit at all, and I will quit it, again… But thank you, cigarette, for helping me meet a nice person.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[My 2013 and new year resolution]]></title>
@@ -71,16 +101,6 @@
     <id>http://creasyw.github.io/blog/2011/12/07/winter-vacation-resolution</id>
     <content type="html"><![CDATA[<div class="post">
 <div>1. Study at least one online theoretical course;</div><div>2. Complete implementation of personal website and the Cal app in iOS;</div><div>3. Write blogs frequently documenting the progress;</div><div>4. Find a nice com to do the Spring intern;</div><div>5. Update info with Dr. Barber every other week about Identity threats;</div><div>6. Contact with professors on a daily basis;</div><div>7. Cumulate the training hours surpass 2400.</div></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Reflections after 15 hours continuous coding]]></title>
-    <link href="http://creasyw.github.io/blog/2011/03/19/reflections-after-15-hours-continous/"/>
-    <updated>2011-03-19T00:00:00-05:00</updated>
-    <id>http://creasyw.github.io/blog/2011/03/19/reflections-after-15-hours-continous</id>
-    <content type="html"><![CDATA[<div class="post">
-a) I love coding, because it is systematic and predictable.<br />b) Given advanced algorithms, sorting always finds its way in the program:)<br />c) It feels nice to concentrate for a long period. And every time as I had a break, it is also enjoyable to have a cup of coffee, or just look outside.<br />d) "C Bible" and "Algorithm" acquire their well-known fame for reasons. Most of the time, they are even better than internet.<br />e) It is magic that I would never think of taking a cigarette while coding, even when I see the pack. In retrospect, I still cannot understand how or remember exactly when I quit smoking. But, after all, the result is that I quit, and furthermore, have no desire to resume to that habit.</div>
 ]]></content>
   </entry>
   

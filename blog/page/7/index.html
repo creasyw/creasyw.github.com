@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="1) What are some of the main differences between a linked list and an array?Arrays are faster in access than a link list for random access with &hellip;">
+  <meta name="description" content="I am still familiar with the highlighted view for differences rather than the &#8220;diff&#8221; command, which produces the results in a &#8220 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/06/comparing-file-diff-in-ubuntu/">Comparing File Diff in Ubuntu</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-06T00:00:00-06:00" pubdate data-updated="true">Mar 6<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I am still familiar with the highlighted view for differences rather than the &#8220;diff&#8221; command, which produces the results in a &#8220;+/-&#8221; form. After a easy google, the Meld turns out be one good alternative solution for this purpose. <a href="http://meld.sourceforge.net/">Here</a> is its web page.<br /><br />Just one step to do:<br />$ sudo apt-get install meld<br /><br />Then, you will find the Meld in Application-&gt;Programming directory.<br /><br /><br />Have fun.</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ The configuration should be done in the file named &#8220;vimrc&#8221;.<br /><br
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/12/what-are-differences-between-union-and/">What Are the Differences Between a Union and a Structure in C?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-12T00:00:00-06:00" pubdate data-updated="true">Dec 12<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-original webpage&nbsp;<a href="http://wiki.answers.com/Q/What_are_the_differences_between_a_union_and_a_structure_in_C#ixzz17ecYS9zC">click</a><br /><br /><div><a href="http://wiki.answers.com/Q/What_are_the_differences_between_a_union_and_a_structure_in_C#ixzz17ecYS9zC"></a><br /><div><span class="Apple-style-span" style="font-family: Verdana,sans-serif; font-size: 12px;"><h2 style="font-size: 16px; margin: 0px; padding: 0px;"><a class="h2heading answer h2" href="" name="Answer" style="color: black; font-size: 16px; outline-style: none; padding: 0px; text-decoration: none;">Answer</a></h2><div style="margin: 0px; padding: 0px;">A union is a way of providing an alternate way of describing the same memory area. In this way, you could have a struct that contains a union, so that the &#8220;static&#8221;, or similar portion of the data is described first, and the portion that changes is described by the union. The idea of a union could be handled in a different way by having 2 different structs defined, and making a pointer to each kind of struct. The pointer to struct &#8220;a&#8221; could be assigned to the value of a buffer, and the pointer to struct &#8220;b&#8221; could be assigned to the same buffer, but now a-&gt;somefield and b-&gt;someotherfield are both located in the same buffer. That is the idea behind a union. It gives different ways to break down the same buffer area.</div><div style="margin: 0px; padding: 0px;"><br /></div><div style="margin: 0px; padding: 0px;"></div><h2 style="font-size: 16px; margin: 0px; padding: 0px;"><a class="h2heading h2" href="" name="Answer:" style="color: black; font-size: 16px; outline-style: none; padding: 0px; text-decoration: none;">Answer:</a></h2><div style="margin: 0px; padding: 0px;">The difference between structure and union in c are: 1. union allocates the memory equal to the maximum memory required by the member of the union but structure allocates the memory equal to the total memory required by the members. 2. In union, one block is used by all the member of the union but in case of structure, each member have their own memory space</div><div style="margin: 0px; padding: 0px;"><br /></div><div style="margin: 0px; padding: 0px;"></div><h2 style="font-size: 16px; margin: 0px; padding: 0px;"><a class="h2heading h2" href="" name="Difference_in_their_Usage:" style="color: black; font-size: 16px; outline-style: none; padding: 0px; text-decoration: none;">Difference in their Usage:</a></h2><div style="margin: 0px; padding: 0px;">While structure enables us treat a number of different variables stored at different in memory , a union enables us to treat the same space in memory as a number of different variables. That is a Union offers a way for a section of memory to be treated as a variable of one type on one occasion and as a different variable of a different type on another occasion.</div><div style="margin: 0px; padding: 0px;"><br /></div><div style="margin: 0px; padding: 0px;">There is frequent rwquirement while interacting with hardware to&nbsp;<a class="iAs" href="http://wiki.answers.com/Q/What_are_the_differences_between_a_union_and_a_structure_in_C#" style="background-color: transparent ! important; border-bottom: 0.1em solid rgb(0, 100, 0) ! important; border-left-style: none; border-right-style: none; border-top-style: none; bottom: auto; color: rgb(0, 100, 0) ! important; display: inline; float: none; font-family: inherit ! important; font-size: 12px; font-weight: normal ! important; left: auto; line-height: normal; margin: 0px; outline-style: none; padding-bottom: 1px ! important; padding-left: 0px; padding-right: 0px; padding-top: 0px; position: static ! important; right: auto; text-align: left; text-decoration: underline ! important; top: auto;" target="_blank">access</a>&nbsp;access a byte or group of bytes simultaneously and sometimes each byte individually. Usually union is the answer.</div><div style="margin: 0px; padding: 0px;"><br /></div><div style="margin: 0px; padding: 0px;">=======Difference With example***** Lets say a structure containing an int,char and float is created and a union containing int char float are declared. struct TT{ int a; float b; char c; } Union UU{ int a; float b; char c; }</div><div style="margin: 0px; padding: 0px;"><br /></div><div style="margin: 0px; padding: 0px;">sizeof TT(struct) would be &gt;9 bytes (compiler dependent-if int,float, char are taken as 4,4,1)</div><div style="margin: 0px; padding: 0px;"><br /></div><div style="margin: 0px; padding: 0px;">sizeof UU(Union) would be 4 bytes as supposed from above.If a variable in double exists in union then the size of union and struct would be 8 bytes and cumulative size of all variables in struct.</div><div style="margin: 0px; padding: 0px;"><br /></div><div style="margin: 0px; padding: 0px;"></div><h2 style="font-size: 16px; margin: 0px; padding: 0px;"><a class="h2heading h2" href="" name="Detailed_Example:" style="color: black; font-size: 16px; outline-style: none; padding: 0px; text-decoration: none;">Detailed Example:</a></h2><div style="margin: 0px; padding: 0px;">struct foo&nbsp;<br style="padding: 0px;" />  {&nbsp;<br style="padding: 0px;" />char c;&nbsp;<br style="padding: 0px;" />long l;&nbsp;<br style="padding: 0px;" />  char *p;&nbsp;<br style="padding: 0px;" />};&nbsp;<br style="padding: 0px;" /><br style="padding: 0px;" />  union bar&nbsp;<br style="padding: 0px;" />{&nbsp;<br style="padding: 0px;" />char c;&nbsp;<br style="padding: 0px;" />  long l;&nbsp;<br style="padding: 0px;" />char *p;&nbsp;<br style="padding: 0px;" />};&nbsp;<br style="padding: 0px;" />  <br style="padding: 0px;" />A struct foo contains all of the elements c, l, and p. Each element is&nbsp;separate and distinct.&nbsp;<br style="padding: 0px;" />  <br style="padding: 0px;" />A union bar contains only one of the elements c, l, and p at any given&nbsp;time. Each element is stored in the same memory location (well, they all&nbsp;start at the same memory location), and you can only refer to the element&nbsp;which was last stored. (ie: after &#8220;barptr-&gt;c = 2;&#8221; you cannot reference&nbsp;any of the other elements, such as &#8220;barptr-&gt;p&#8221; without invoking undefined&nbsp;behavior.)&nbsp;<br style="padding: 0px;" />  <br style="padding: 0px;" />Try the following program. (Yes, I know it invokes the above-mentioned&nbsp;&#8220;undefined behavior&#8221;, but most likely will give some sort of output on&nbsp;most computers.)&nbsp;<br style="padding: 0px;" />  <br style="padding: 0px;" />==========&nbsp;<br style="padding: 0px;" />#include&nbsp;<br style="padding: 0px;" />  <br style="padding: 0px;" />struct foo&nbsp;<br style="padding: 0px;" />{&nbsp;<br style="padding: 0px;" />  char c;&nbsp;<br style="padding: 0px;" />long l;&nbsp;<br style="padding: 0px;" />char *p;&nbsp;<br style="padding: 0px;" />  };&nbsp;<br style="padding: 0px;" /><br style="padding: 0px;" />union bar&nbsp;<br style="padding: 0px;" />  {&nbsp;<br style="padding: 0px;" />char c;&nbsp;<br style="padding: 0px;" />long l;&nbsp;<br style="padding: 0px;" />  char *p;&nbsp;<br style="padding: 0px;" />};&nbsp;<br style="padding: 0px;" /><br style="padding: 0px;" />  int main(int argc,char *argv[])&nbsp;<br style="padding: 0px;" />{&nbsp;<br style="padding: 0px;" />struct foo myfoo;&nbsp;<br style="padding: 0px;" />  union bar mybar;&nbsp;<br style="padding: 0px;" /><br style="padding: 0px;" />myfoo.c = 1;&nbsp;<br style="padding: 0px;" />  myfoo.l = 2L;&nbsp;<br style="padding: 0px;" />myfoo.p = &#8220;This is myfoo&#8221;;&nbsp;<br style="padding: 0px;" />  <br style="padding: 0px;" />mybar.c = 1;&nbsp;<br style="padding: 0px;" />mybar.l = 2L;&nbsp;<br style="padding: 0px;" />  mybar.p = &#8220;This is mybar&#8221;;&nbsp;<br style="padding: 0px;" /><br style="padding: 0px;" />printf(&#8220;myfoo: %d %ld %s\n&#8221;,myfoo.c,myfoo.l,myfoo.p);&nbsp;<br style="padding: 0px;" />  printf(&#8220;mybar: %d %ld %s\n&#8221;,mybar.c,mybar.l,mybar.p);&nbsp;<br style="padding: 0px;" /><br style="padding: 0px;" />  return 0;&nbsp;<br style="padding: 0px;" />}&nbsp;<br style="padding: 0px;" /><br style="padding: 0px;" />  ==========&nbsp;<br style="padding: 0px;" /><br style="padding: 0px;" />On my system, I get:&nbsp;<br style="padding: 0px;" />  <br style="padding: 0px;" />myfoo: 1 2 This is myfoo&nbsp;<br style="padding: 0px;" />mybar: 100 4197476 This is mybar</div></span></div></div></div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/8/">&larr; Older</a>
@@ -469,6 +469,10 @@ original webpage&nbsp;<a href="http://wiki.answers.com/Q/What_are_the_difference
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/05/survive-on-busy-two-weeks/">Survive on Busy Two weeks</a>
       </li>
     
@@ -482,10 +486,6 @@ original webpage&nbsp;<a href="http://wiki.answers.com/Q/What_are_the_difference
     
       <li class="post">
         <a href="/blog/2014/02/24/better-look-for-git-log/">Better look for &#8220;git log&#8221;</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/02/emacs-progression-path/">Emacs Progression Path</a>
       </li>
     
   </ul>

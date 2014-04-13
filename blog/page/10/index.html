@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="new examples for the 802.11b trans. (here)======================btw, there is an excellent discussion about how to run the code.(1)&nbsp;HiI am &hellip;">
+  <meta name="description" content="Hi Everybody,and Merry ChristmasI received many emails requesting some explanation for usrp_spectrum_sense.py gnuradio example program. The &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/18/some-usrpspectrumsensepy-code/">Some usrp_spectrum_sense.py Code Explanation</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-18T00:00:00-05:00" pubdate data-updated="true">Oct 18<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Hi Everybody,<br /><br />and Merry Christmas<br /><br />I received many emails requesting some explanation for usrp_spectrum_sense.py gnuradio example program. The following link contains the code with some explanation and one bug fix (in self.max_center_freq equation):<br /><br /><a href="http://rapidshare.com/files/177960860/usrp_spectrum_sense.py">http://rapidshare.com/files/177960860/usrp_spectrum_sense.py</a><br /><br /><br /><br /><br /><br />usrp_spectrum_sense.py Explanation :<br />=======================================================================================<br /><br />Introduction:<br />&#8212;&#8212;&#8212;&#8212;-<br /><br />1) This program can be used as a basic code for implementing wideband spectrum analyzer.<br />2) As we know, the USRP cannot examine more than 8 MHz of RF spectrum due to USB bus limitations.<br />3) So, to scan across a wide RF spectrum band (bigger than 8 MHz) we have to tune USRP RF front end in suitable steps so that we can examine a lot of spectrum, although not all at the same instant.<br />4) The usrp_spectrum_sense shows the way how it can be done.It steps across the spectrum and make the RF measurements. This application can<br />sense a large bandwidth, but not in real time, and it can do the frequency sweep over the required frequency range,<br /><br /><br /><br />Theory:<br />&#8212;&#8212;-<br /><br />1) To use N points complex FFT X(W) analysis, we have to get N time samples x(t) which are sampled at Fs.<br />2) These N time samples must be time windowed using a known window function to reduce spectral leakage.<br />3) Performing N points complex FFT analysis.<br />4) The output of the complex FFT will represent the frequency spectrum contents as follows:<br /><br />a) The first value of the FFT output (bin 0 == X[0]) is the passband center frequency.<br />b) The first half of the FFT (X[1] to X[N/2-1] contains the positive baseband frequencies,which corresponds to the passband spectrum from the center frequency out to the maximum passband frequency (from center frequency to +Fs/2).<br />c) The second half of the FFT (X[N/2] to X[N-1]) contains the negative baseband frequencies,which correspond to the lowest passband frequency up to the passband center frequency (from -Fs/2 to center frequency).<br /><br /><br />Example<br />&#8212;&#8212;-<br /><br />Let us assume that we have 1024 (I and Q) samples gathered using a tuner centered at 20MHz. And let us assume that the sampling frequency was 8MHz.<br />Doing 1024 points complex FFT means:<br /><br />1) FFT Frequency resolution is : 8MHz / 1024 = 7812.5 KHz<br />2) The output of the FFT X[0] represents the spectrum at 20MHz.<br />3) The output of the FFT X[1] to X[511] represents the frequencies from 20.0078125 MHz to 23.9921875 MHz (about 4MHz above center frequency).<br />4) The output of the FFT X[512] to X[1023] represents the frequencies from 16.0078125 MHz to 19.9921875 MHz (about 4MHz bellow center frequency).<br /><br /><br /><br /><br />RF Frequency Sweeping<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /><br />1) Let us suppose that we want to scan RF spectrum band from 10MHz to 52 MHz.<br />2) Let us remember that USRP can analyze 8MHz of frequency at a time.<br />3) So theoretically we have to step our RF center frequency as follows:<br /><br />First step is 14MHz (it will cover frequency band from 10MHz to 18MHz),<br />Second step is 22MHz (it will cover frequency band from 18MHz to 26MHz),<br />Third step is 30MHz (it will cover frequency band from 26MHz to 34MHz),<br />Fourth step is 38MHz (it will cover frequency band from 34MHz to 42MHz),<br />Fifth step is 46MHz (it will cover frequency band from 42MHz to 50MHz),<br />and finally the Sixth step is 54MHz (it will cover frequency band from 50MHz to 58MHz). Remember that we want the frequencies up to 52MHz only, so we have to discard some FFT points from the Sixth analysis.<br /><br /><br />4) Paralytically we have to use FFT overlapping to reduce the non linearity response of the Digital Down Converter (the DDC frequency response is not Flat from -Fs/2 to + Fs/2) and to fill the frequency holes that will be present at the FFT analysis edges (10MHz, 18MHz, 26MHz, 34MHz, 42MHz, 50 MHz).<br /><br />So if we choose to use an overlap of 25%, this means that our step size will be 6MHz (8MHz*(1-.25)), thus practically we have to step our RF center frequency as follows:<br /><br />First step is 13MHz (it will cover frequency band from 9MHz to 17MHz),<br />Second step is 19MHz (it will cover frequency band from 15MHz to 23MHz),<br />Third step is 25MHz (it will cover frequency band from 21MHz to 29MHz),<br />Fourth step is 31MHz (it will cover frequency band from 27MHz to 35MHz),<br />Fifth step is 37MHz (it will cover frequency band from 33MHz to 41MHz),<br />Sixth step is 43MHz (it will cover frequency band from 39MHz to 47MHz),<br />and Finally the Seventh step is 49MHz (it will cover frequency band from 45MHz to 53MHz),<br /><br /><br /><br /><br /><br />Changing RF center Frequency<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br /><br />1) To change USRP RF center frequency we have to send a tunning command to the USRP every time we complete the analysis of the current frequency chunk.<br />2) Before gnuradio revision [10165], all USRP RF daughterboards tunning were done using Python functions and classes. After that revision, tunning the USRP daughterboards from withen C++ code is possible.<br />3) In usrp_spectrum_sense.py, the DSP C++ written code is allowed to transparently invoke Python code USRP tune function. This tunning control is done in gr_bin_statistics_f sink function.<br /><br /><br /><br /><br />Tunning Delay Problem:<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /><br />When we command the usrp RF daughterboard to change its center frequency, we have to wait until (right) ADC samples arrive to our FFT engine and we have to insure that it belongs to the wanted center frequency. This represents a problem since there are many delays along the digitization path (RF synthesizer settling time, and pipeline propagation delay [FPGA FIFO filling time, USB transferring time&#8230;etc]). To overcome this problem we have to use enough tune delay time in order to  be sure that the samples entering our FFT block are belong to the requested center frequency. This is done simply by dropping the incoming received samples over a specified tunning delay time.<br /><br /><br /><br />usrp_spectrum_sense Implementation<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br /><br />1) The engine of the usrp_spectrum_sense depends mainly on bin_statistics sink function.<br /><br />2) bin_statistics function combines statistics gathering with a state machine for controlling the USRP RF tuning (frequency sweeping). It determines max values (keeps track of the maximum power in each FFT bin) of vectors (with length vlen) over a time period determined by dwell_delay (after converting it to a number of FFT vectors). This operation is performed after discarding tune_delay samples.<br /><br />3) After processing N = dwell_delay samples, bin_statistics composes a message and inserts it in a message queue.<br /><br />4) Each message from bin_statistics consists of a vector of max values, prefixed by the center frequency corresponding to the associated samples,<br />i.e., it is the center frequency value of the delivered input samples to bin_statistics.<br /><br /><br /><br /><br />Choosing Tune and Dwell delay times<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br /><br />1) We have to play with the &#8211;tune-delay and &#8211;dwell-delay command line options to determine appropriate timming values. The most important one is the tune delay time.<br /><br />2) The choose of tune-delay should include time for the front end PLL to settle, plus time for the new samples to propagate through the pipeline.  The default value is 1ms, which is probably in the ballpark on the RFX** boards.  The TV RX board is much slower.  The tuner data sheets says it could take 100ms to settle.<br /><br />3) The tune delay timing parameter passed to bin_statistics is calculated in FFT frames which depends on USRP rate and FFT length as in :<br /><br />tune_delay_passed_to_bin_statistics = int(round(required_tune_delay_in_sec*usrp_rate/fft_size))<br /><br />if this calculated value is less than &quot;1&quot;, then we should make it at least &quot;1&quot; FFT frame.<br /><br />For example:<br /><br />If the :<br /><br />required_tune_delay_in_sec = 10e-3<br />and usrp_rate = 8000000 (decimation =8)<br />and FFT size is 1024<br /><br /><br />Then :<br /><br />tune_delay_passed_to_bin_stats = 78   (FFT Frames)<br /><br />This means we have to skip 78 incoming vectors (FFT frames) before we actually use the acquired samples in our spectrum statistics.<br /><br />4) Beside tunning time depends on the hardware (RF synthesizer speed),one should remember that the time needed to collect 1024 samples<br />with decimation rate=8 (minimum USRP decimation) is 128 usec, while the time needed to collect 1024 samples with decimation rate=256 (maximum USRP decimation) is 4.096 msec. This means that the tune delay in the case of decimation rate =256 should be larger than that used for decimation = 8.<br /><br />5) A working tune delay value (which gives accurate results) can be known by experiments (for given decimation rate and FFT length).<br /><br /><br /><br /><br />Interrupting Output Spectrum<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br /><br />The actual mapping from the levels at the daughterboard antenna input port to the output analysis values depends on a lot of factors including the used daughterboard RF gain and decimation specific gain in the digital down converter. You&#39;ll need to calibrate the system if you need something that maps to dBm.Currently, the output of usrp_spectrum_sense is the magnitude squared of the FFT output.  That is, for each FFT bin[i], the output is Y[i] = re[X[i]]*re[X[i]] + im[X[i]]*im[X[i]]. If you want power, take the square root of the output.<br /><br />========================================================================================<br /><br /><br />Best Regards,<br /><br /><br />Firas</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1589,43 +1626,6 @@ Good Sites for Researchers and Students (<a href="http://www.cs.ucr.edu/%7Emicha
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/20/todays-word-tweak/">Today&#8217;s Word: Tweak</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-20T00:00:00-05:00" pubdate data-updated="true">Sep 20<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<ul><li class="dct-em"> <div class="dct-em"> <span class="dct-tt">Twist or pull (something) sharply</span> </div><ul><li class="dct-ee"> <div class="dct-ee"> <span class="dct-tt">he <em>tweaked</em> the boy&#8217;s ear</span> </div></li></ul></li><li class="dct-em"> <div class="dct-em"> <span class="dct-tt">Improve (a mechanism or system) by making fine adjustments to it</span> </div><ul><li class="dct-ee"> <div class="dct-ee"> <span class="dct-tt">engineers <em>tweak</em> the car&#8217;s operating systems during the race</span> </div></li></ul></li></ul></div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/11/">&larr; Older</a>
@@ -1643,6 +1643,10 @@ Good Sites for Researchers and Students (<a href="http://www.cs.ucr.edu/%7Emicha
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/05/survive-on-busy-two-weeks/">Survive on Busy Two weeks</a>
       </li>
     
@@ -1656,10 +1660,6 @@ Good Sites for Researchers and Students (<a href="http://www.cs.ucr.edu/%7Emicha
     
       <li class="post">
         <a href="/blog/2014/02/24/better-look-for-git-log/">Better look for &#8220;git log&#8221;</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/02/emacs-progression-path/">Emacs Progression Path</a>
       </li>
     
   </ul>

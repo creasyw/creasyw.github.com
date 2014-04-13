@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Firefox:) &#8211;(update: now, this is really a pain in my ass.. It just has no response now and then, on matter whether in snow leopard or lion. I &hellip;">
+  <meta name="description" content="Most of the steps are straightforward. The only twisted place is the combination of mysql-python and the mysql itself. During my installation, there &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/07/11/install-django-and-mysqldb-along-with/">Install Django and MySQLdb Along With Python</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-11T00:00:00-05:00" pubdate data-updated="true">Jul 11<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Most of the steps are straightforward. The only twisted place is the combination of mysql-python and the mysql itself. During my installation, there are two errors coming out:<br /><br />1) &#8220;EnvironmentError: mysql_config not found&#8221; happened at the 1st place when I install mysql-python using the python install. The solution is to edit the file &#8220;setup_posix.py&#8221;:<br /># mysql_config.path = &#8220;mysql_config&#8221;<br />mysql_config.path = &#8220;/usr/local/YOUR_LATEST_MYSQL_DIRECTORY/bin/mysql_config&#8221;<br />&#8211;Then, everything in the installation should be fine. <br /><br /><br />2) As I check the status of installation, I found some confusing info. popping up.<br />&gt;&gt;&gt; import MySQLdb<br />Traceback (most recent call last):<br />&nbsp; File &#8220;build/bdist.macosx-10.6-universal/egg/MySQLdb/__init__.py&#8221;, line 19, in <module><br />&nbsp; File &#8220;build/bdist.macosx-10.6-universal/egg/_mysql.py&#8221;, line 7, in <module><br />&nbsp; File &#8220;build/bdist.macosx-10.6-universal/egg/_mysql.py&#8221;, line 6, in __bootstrap__<br />ImportError: dlopen(/Users/creasywuqiong/.python-eggs/MySQL_python-1.2.3-py2.6-macosx-10.6-universal.egg-tmp/_mysql.so, 2): Library not loaded: libmysqlclient.18.dylib<br />&nbsp; Referenced from: /Users/creasywuqiong/.python-eggs/MySQL_python-1.2.3-py2.6-macosx-10.6-universal.egg-tmp/_mysql.so<br />&nbsp; Reason: image not found<br />&gt;&gt;&gt;</module></module><br />The solution is to add some symbolic links:<br />sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib<br />sudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql<br /><br />Everything is fine:)<br />cheers~<br /><br />References:<br /><a href="http://ageekstory.blogspot.com/2011/04/installing-massive-coupon-on-mac-os-10.html">1)</a> <a href="http://stackoverflow.com/questions/4730787/python-import-mysqldb-error-mac-10-6">2)</a> <a href="http://www.mechanicalgirl.com/view/installing-django-with-mysql-on-mac-os-x/">3)</a></div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ There is an essay talking about the <a href="http://www.winestockwebdesign.com/E
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/29/virtual-function-and-template-in-c/">Virtual Function and Template in C++</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-29T00:00:00-05:00" pubdate data-updated="true">Mar 29<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-Object-oriented programming is based on three fundamental concepts:  data abstraction, inheritance, and dynamic binding. In C++ we use  classes for data abstraction and class derivation to inherit one class  from another: A derived class inherits the members of its base  class(es). Dynamic binding lets the compiler determine at run time  whether to use a function defined in the base or derived class.<br /><br />Inheritance  and dynamic binding streamline our programs in two ways: They make it  easier to define new classes that are similar, but not identical, to  other classes, and they make it easier for us to write programs that can  ignore the details of how those similar types differ.<br /><br />By  default, function calls in C++ do not use dynamic binding. To trigger  dynamic binding, two conditions must be met: First, only member  functions that are specified as virtual can be dynamically bound. By  default, member functions are not virtual; nonvirtual functions are not  dynamically bound. Second, the call must be made through a reference or a  pointer to a base-class type.<br /><br />In <a href="http://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented programming</a>, a <b>virtual function</b> or <b>virtual method</b> is a <a class="mw-redirect" href="http://en.wikipedia.org/wiki/Function_%28computer_science%29" title="Function (computer science)">function</a> or <a class="mw-redirect" href="http://en.wikipedia.org/wiki/Method_%28computer_science%29" title="Method (computer science)">method</a> whose behaviour can be <a class="mw-redirect" href="http://en.wikipedia.org/wiki/Method_overriding_%28programming%29" title="Method overriding (programming)">overridden</a> within an inheriting class by a function with the same <a href="http://en.wikipedia.org/wiki/Method_signature" title="Method signature">signature</a>. This concept is a very important part of the <a href="http://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29" title="Polymorphism (computer science)">polymorphism</a> portion of <a href="http://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented programming</a> (OOP). <a href="http://en.wikipedia.org/wiki/Virtual_function">(Wikipage</a>)<br /><br />Virtual functions overcome the problems with the type-field solution by  allowing the programmer to declare functions in a base class that can be  redefined in each derived class. The distinction between virtual and non-virtual resolves this ambiguity.  If the function in question is designated &#8220;virtual&#8221; in the base class  then the derived class&#8217;s function would be called (if it exists). If it  is not virtual, the base class&#8217;s function would be called. C++ non-virtual function calls are resolved at compile time with static binding, while virtual function calls are resolved at run time with dynamic binding<br /><br />A destructor in base class need to be declared virtual.<br /><br />Calling a method with an object pointer always invokes:<br />»&nbsp;&nbsp;&nbsp;&nbsp; the most derived class function, if a method is virtual<br />»&nbsp;&nbsp;&nbsp;&nbsp; the function implementation corresponding to the object pointer type (used to call the method), if a method is non-virtual<br /><br />A  virtual destructor works in the same way A destructor gets called when  an object goes out of scope or when we call delete on an object pointer  When any derived class object goes out of scope, the destructor of that  derived class gets called first It then calls its parent class  destructor so memory allocated to the object is properly released. But,  if we call delete on a base pointer which points to a derived class  object, the base class destructor gets called first (for non-virtual  function). We should use virtual destructors if we call delete on a base  class pointer which points to a derived class<br /><br />=========<br /><br />Templates are the foundation of generic programming, which involves  writing code in a way that is independent of any particular type. The  library containers and iterators are examples of generic programming.  There is a single definition of each container, such as vector, but we  can define many different kinds of vectors that differ by the element  type that the vector contains. Similarly, we can, and have, used  templates without understanding how they are defined.<br /><br />A  template is a blueprint or formula for creating a class or a function. A  function template is a type-independent function that is used as a  formula for generating a type-specific version of the function. For  example, the standard library defines a single class template that  defines what it means to be a vector. That template is used to generate  any number of type-specific vector classesfor example,  vector&lt;int&gt; or vector&lt;string&gt;.<br /><br />reference &lt;<a href="http://www.amazon.com/Primer-4th-Stanley-B-Lippman/dp/0201721481/ref=sr_1_1?ie=UTF8&amp;qid=1301455836&amp;sr=8-1">C++ primer</a>&gt;</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -469,6 +469,10 @@ Object-oriented programming is based on three fundamental concepts:  data abstra
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/05/survive-on-busy-two-weeks/">Survive on Busy Two weeks</a>
       </li>
     
@@ -482,10 +486,6 @@ Object-oriented programming is based on three fundamental concepts:  data abstra
     
       <li class="post">
         <a href="/blog/2014/02/24/better-look-for-git-log/">Better look for &#8220;git log&#8221;</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/02/emacs-progression-path/">Emacs Progression Path</a>
       </li>
     
   </ul>

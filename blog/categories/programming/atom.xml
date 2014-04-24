@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Qiong Wu]]></title>
   <link href="http://creasyw.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-04-12T22:16:21-05:00</updated>
+  <updated>2014-04-23T21:00:02-04:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Plotting in Latex]]></title>
     <link href="http://creasyw.github.io/blog/2014/02/27/plotting-in-latex/"/>
-    <updated>2014-02-27T13:14:00-06:00</updated>
+    <updated>2014-02-27T13:14:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2014/02/27/plotting-in-latex</id>
     <content type="html"><![CDATA[<p>I just hope that I could find this feature earlier. <a href="http://www.texample.net/tikz/">TikZ</a></p>
 
@@ -45,7 +45,7 @@
   <entry>
     <title type="html"><![CDATA[Better look for "git log"]]></title>
     <link href="http://creasyw.github.io/blog/2014/02/24/better-look-for-git-log/"/>
-    <updated>2014-02-24T13:30:00-06:00</updated>
+    <updated>2014-02-24T13:30:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2014/02/24/better-look-for-git-log</id>
     <content type="html"><![CDATA[<p>The first time that I read it is from coolshell.cn, and then today from <a href="http://www.reddit.com/r/programming/comments/1yqiq8/git_log_is_so_2005/">reddit</a>. Just put here as a backup.</p>
 
@@ -62,7 +62,7 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
   <entry>
     <title type="html"><![CDATA[Emacs Progression Path]]></title>
     <link href="http://creasyw.github.io/blog/2014/01/02/emacs-progression-path/"/>
-    <updated>2014-01-02T16:37:00-06:00</updated>
+    <updated>2014-01-02T16:37:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2014/01/02/emacs-progression-path</id>
     <content type="html"><![CDATA[<p>I’m kind of hoping to find something like <a href="http://stackoverflow.com/questions/2573135/python-progression-path-from-apprentice-to-guru">Python Progression Path</a> or sort of “best practice” when I am learning Emacs, since the difference between Vim and Emacs is much larger than I thought. But what I found via Google are either for really rookie teaching about basic operations such as saving and quiting the editor, or for only advanced player talking about using Emacs LISP…</p>
 
@@ -148,7 +148,7 @@ C-c C-l: Display the buffer’s history of shell commands in another window (com
   <entry>
     <title type="html"><![CDATA[All-pairs shortest path]]></title>
     <link href="http://creasyw.github.io/blog/2013/09/30/johnsons-algorithm/"/>
-    <updated>2013-09-30T23:49:00-05:00</updated>
+    <updated>2013-09-30T23:49:00-04:00</updated>
     <id>http://creasyw.github.io/blog/2013/09/30/johnsons-algorithm</id>
     <content type="html"><![CDATA[<p>The question comes from the online course <em>Algorithm Design and Analysis (Part II)</em> in coursera. It is an <a href="http://en.wikipedia.org/wiki/Shortest_path_problem#All-pairs_shortest_paths">all-pairs shortest path problem</a>. As mentioned in the wikipedia, a more straightforward solution with Floyd–Warshall algorithm takes \(O(N^3)\) complexity, and the more computational efficient approach is to use a combination of Dijkstra’s algorithm, Bellman-Ford algorithm, and Johnson’s algorithm, which chould decrease the complexity to \(O(N^2logN)\). I implement the latter one for more interesting and challenging. There are several obstacles make the implementation a little bit trickier than I thought.</p>
 
@@ -282,7 +282,7 @@ p.p.s. The inline latex-style formula comes with Kramdown, MathJax and <a href="
   <entry>
     <title type="html"><![CDATA[Reading note of SICP (4)]]></title>
     <link href="http://creasyw.github.io/blog/2013/08/10/reading-note-of-sicp-4/"/>
-    <updated>2013-08-10T00:00:00-05:00</updated>
+    <updated>2013-08-10T00:00:00-04:00</updated>
     <id>http://creasyw.github.io/blog/2013/08/10/reading-note-of-sicp-4</id>
     <content type="html"><![CDATA[<div class="post">
   Aug. 10th. Complete the 1st chapter of sicp.<br /><br />

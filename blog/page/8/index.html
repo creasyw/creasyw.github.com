@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="original webpage&nbsp;clickAnswerA union is a way of providing an alternate way of describing the same memory area. In this way, you could have a &hellip;">
+  <meta name="description" content="int open(char * filename, int flags)int open(char * filename, int flags, int mode)include: fcntl.hflags = bitwise | or of any of the following:&nbsp &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/18/cc-open-file/">C/c++ Input/ouput Functions</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-18T00:00:00-06:00" pubdate data-updated="true">Dec 18<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<b>int open(char * filename, int flags)<br />int open(char * filename, int flags, int mode)</b><br />include: fcntl.h<br />flags = bitwise | or of any of the following:<br />&nbsp;&nbsp;&nbsp;&nbsp; O_RDONLY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Only read operations permitted<br />&nbsp;&nbsp;&nbsp;&nbsp; O_WRONLY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Only write operations permitted<br />&nbsp;&nbsp;&nbsp;&nbsp; O_RDWR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Read and Write operations both permitted<br />&nbsp;&nbsp;&nbsp;&nbsp; O_NONBLOCK&nbsp;&nbsp;&nbsp; Non-blocking, applies to open operation only<br />&nbsp;&nbsp;&nbsp;&nbsp; O_APPEND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; All writes go to end of file<br />&nbsp;&nbsp;&nbsp;&nbsp; O_CREAT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Create file if it doesn&#8217;t already exist<br />&nbsp;&nbsp;&nbsp;&nbsp; O_TRUNC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Delete existing contents of file<br />&nbsp;&nbsp;&nbsp;&nbsp; O_EXCL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Open fails if file already exists<br />&nbsp;&nbsp;&nbsp;&nbsp; O_SHLOCK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Get a &#8220;shared lock&#8221; on the file<br />&nbsp;&nbsp;&nbsp;&nbsp; O_EXLOCK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Get an &#8220;exclusive lock&#8221; on the file<br />&nbsp;&nbsp;&nbsp;&nbsp; O_DIRECT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Try to avoid all caching of operations<br />&nbsp;&nbsp;&nbsp;&nbsp; O_FSYNC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; All writes immediately effective, no buffering<br />&nbsp;&nbsp;&nbsp;&nbsp; O_NOFOLLOW&nbsp;&nbsp;&nbsp; If file is symbolic link, open it, don&#8217;t follow it<br />mode required if file is created, ignored otherwise.<br />mode specifies the protection bits, e.g. 0644 = rw-r&#8211;r&#8211;<br />returns &lt;0 for error, or integer file descriptor.<br /><br /><b>int close(int fd)</b><br />include: unistd.h<br />fd = file descriptor as returned by open<br />returns &lt;0 for error, 0 for success.<br /><br /><b>int read(int fd, void * ptr, int numbytes)</b><br />include: unistd.h<br />fd = file descriptor as returned by open<br />ptr = address in memory where data is to be stored;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; may be a pointer of any type.<br />numbytes = number of bytes to attempt to read<br />returns &lt;0 for error, 0 for end-of-file,or number of bytes successfully read. (for a non-blocking interactive file, that may be zero).<br /><br /><b>int write(int fd, void * ptr, int numbytes)</b><br />include: unistd.h<br />fd = file descriptor as returned by open<br />ptr = address in memory where data already is;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; may be a pointer of any type.<br />numbytes = number of bytes to attempt to write<br />returns &lt;=0 for error, or number of bytes successfully written. (for a non-blocking file, that may be less than the number attempted without any errors having occurred).<br /><br /><b>int lseek(int fd, int position, int startpoint)</b><br />include: unistd.h<br />Sets the file position effective for the next read or write operation.<br />fd = file descriptor as returned by open<br />position = position within file: number of bytes between startpoint and the desired position, may be negative.<br />startpoint = location in file that position is relative to, one of:<br />&nbsp;&nbsp;&nbsp;&nbsp; SEEK_SET: Position is number of bytes from beginning of file<br />&nbsp;&nbsp;&nbsp;&nbsp; SEEK_END: Position is number of bytes after end of file<br />&nbsp;&nbsp;&nbsp;&nbsp; SEEK_CUR: Position is number of bytes after current position<br />returns &lt;0 for error, or resulting file position relative to beginning of file. Moving beyond the end of the file is permitted; the file is extended in length only if a write occurs beyond the current end of file. Moveing before the beginning of a file is not permitted. A write operation after a move only overwrites the number of bytes actually written.<br /><br /><b>int stat(char * file, struct stat * info)</b><br />include: sys/types.h<br />include: sys/stat.h<br />Finds information about a file.<br />file = The name (or path) for the file.<br />info = A pointer to an uninitialised stat structure. Even in C++, the type must be &#8220;struct stat *&#8221; because of the name clash. Information about the file is stored in the info object.<br />returns &lt;0 for error (including file does not exist), or 0&nbsp; for success.<br />The useful fields of a stat object are as follows. All have types that behave like ints, although they may be 16, 32, or 64 bits long.<br />&nbsp;&nbsp;&nbsp;&nbsp; st_size: size in bytes<br />&nbsp;&nbsp;&nbsp;&nbsp; st_ino: inode number<br />&nbsp;&nbsp;&nbsp;&nbsp; st_mode: protection or mode (see below)<br />&nbsp;&nbsp;&nbsp;&nbsp; st_nlink: number of hard links<br />&nbsp;&nbsp;&nbsp;&nbsp; st_uid: file&#8217;s owner&#8217;s identification number<br />&nbsp;&nbsp;&nbsp;&nbsp; st_gid: file&#8217;s group identification number<br />&nbsp;&nbsp;&nbsp;&nbsp; st_birthtime: date and time of file creation (see below)<br />&nbsp;&nbsp;&nbsp;&nbsp; st_mtime: date and time of last modification (see below)<br />&nbsp;&nbsp;&nbsp;&nbsp; st_atime: date and time of last access (see below)<br />All times are stored as time_t values, as described here. Mode and Protection. st_mode is the logical-or of a number of bits each representing different properties. The named constants for these bits, and their values in octal are:<br />&nbsp;&nbsp;&nbsp;&nbsp; S_ISUID&nbsp; 0004000&nbsp; set user id on execution<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IRUSR&nbsp; 0000400&nbsp; protection: readable by owner<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IWUSR&nbsp; 0000200&nbsp; writable by owner<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IXUSR&nbsp; 0000100&nbsp; executable by owner<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IRGRP&nbsp; 0000040&nbsp; readable by group<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IWGRP&nbsp; 0000020&nbsp; writable by group<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IXGRP&nbsp; 0000010&nbsp; executable by group<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IROTH&nbsp; 0000004&nbsp; readable by all<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IWOTH&nbsp; 0000002&nbsp; writable by all<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IXOTH&nbsp; 0000001&nbsp; executable by all<br />Four bits of the mode give the file type. The mask for type is S_IFMT = 0170000<br />if (mode &amp; S_IFMT) is S_IFREG = 0100000,&nbsp; type = perfectly ordinary file<br />if (mode &amp; S_IFMT) is S_IFDIR = 0040000,&nbsp; type = directory<br />if (mode &amp; S_IFMT) is S_IFLNK = 0120000,&nbsp; type = symbolic link<br />if (mode &amp; S_IFMT) is S_IFIFO = 0010000,&nbsp; type = named pipe<br />if (mode &amp; S_IFMT) is S_IFSOCK = 0140000,&nbsp; type = named socket<br /><br /><b>File Mode or Protection Bits</b><br /><br />A file&#8217;s mode or protection is usually specified visually by 9 characters, for example rw-r&#8211;r&#8211; or rwxr-x&#8211;x. Each of the letters are (nearly always) &#8216;r&#8217; for read permitted, &#8216;w&#8217; for write permitted, or &#8216;x&#8217; for execute permitted.<br /><br />The letters always appear in groups of three. Within a group, the order is always &#8216;rwx&#8217;. The first group of three indicate operations permitted to the owner of the file; the second group of three indicates operations permitted to other users in the same group as the owner; the third group of three indicates operations permitted to all users who can access the file.<br /><br />If the file is a directory, &#8216;x&#8217; means that files in the directory may be accessed if referred to directly by name, but wildcard substitutions (&#8216;*&#8217;) and ls operations will not be permitted.<br /><br />Modes are usually represented inside programs by a sequence of three octal digits. each octal digit represents one of the groups of three characters, 4 for &#8216;r&#8217; plus 2 for &#8216;w&#8217; plus 1 for &#8216;x&#8217;. In C and C++ programs remember that numbers with leading zeros are always assumed to be in octal, so the mode 0751 represents rwxr-x&#8211;x.</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ After decades of programming I do not even think about these three ways to read 
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/10/what-make-code-looks-more-professional/">What Make Code LOOKS More Professional?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-10T00:00:00-06:00" pubdate data-updated="true">Nov 10<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-author: <a href="http://blog.csdn.net/michaellufhl/archive/2010/11/08/5996261.aspx">Micheal Lu</a><br /><br />这么题目看起来就比较有争议：运行起来专业的代码才专业嘛。但是从另外一个角度来说&#8221;让代码看上去比较专业&#8221;是一个积极的做法，无论对谁都没有坏处，对工程师，管理者和用户都有益无弊。<br /><br />&nbsp;首先这个题目说的是&#8221;看上去&#8221;,所以我不会说明如何使代码真正专业。世界上有很多的书籍和文章告诉软件工程师如何写出专业的代码。如果要说&#8221;什么样的代码看上去比较专业？&#8221;那就要定义什么是专业的代码。嗯，关于这点我不能下一个准确的定义。那么可以这样，大家可以参考一些大家共认的专业代码。对于Java JDK代码来说几乎没人会否认它是专业的代码。或者一些很有影响力的open source代码，像Spring 和Apache 的代码。当然很多商业软件的代码也是很专业，但是我们看不到，或者说这不是共认的专业代码。<br /><br />&nbsp; &nbsp;* 最显而易见的做法是充足的代码注释 和标准缩进 的格式。但是大家一致认为这是最明显的因素。<br /><br />&nbsp; &nbsp;* 然后是命名规范 。有人曾经在网上展示自己的一个framework的代码,framework自然是很牛的东西。但是接下来马上有人回帖&#8221;我一看到大写开头的方法名，我就没兴趣了&#8221;。这是个很典型的例子。<br /><br />&nbsp; &nbsp; &nbsp; &nbsp;命名规范里面用拼音 做包名，类名，方法和变量名字也会使代码看上去感觉比较差。我说的是代码，不是注释。<br /><br />&nbsp; &nbsp;* 还有就是要用最新的语言特性 。对于Java,譬如要用Annotaion, Generic。虽然这些特性已经出现很多年了。至少要用@Override 一下吧。我知道大家知道用Annotaion, Generic的真正的益处。<br /><br />&nbsp; &nbsp;* 尽量不要用Magic number 。如果一看到到处都是&#8221;id&#8221;.equals(&#8230;); if(i==356). ..大家就会感觉不好。<br /><br />&nbsp; &nbsp;* 还有就是最好包含单元测试 的代码，JUnit 已经成为Java的公认单元测试工具。很多开发人员认为对于一个严肃的程序，单元测试是必需的。<br /><br />&nbsp; &nbsp;* 避免冗长的方法和类。我知道大家深受其害。<br /><br />&nbsp;其实我认为&#8221;看上去&#8221;专业能促进代码质量。充足的代码注释和标准缩进的格式能增强可读性，另外在撰写注释的时候也是在&#8221;拷问&#8221;自己的代码，如果你觉得某个方法的注释很难写，那就要问问自己的这个方法的代码逻辑写得不够清晰。有时候在注释方法的@throws XXXException 的时候，你才会仔细考虑哪些Exception会在什么情况下被抛出。@Override 能够避免低级打字错误。Generic容器比较安全等等。<br /><br />&nbsp;从代码演变的角度来说，有个明显的&#8221;破窗理论&#8221;在起作用。就是越是难看的代码，在它的演化过程中会越来越差。因为当你看到你要bugfix的代码很乱，那么在bugfix的时候一般也会草草了事。一个方法有400行，在修改这个方法的时候大家不会在意再加上几十行代码。因为它看起来很差，它就是很差，我没必要美化它。反过来说，如果待改的代码很整洁很规范，那么修改者也会比较小心。这不是绝对，只是一般情况。一定有很帅的工程师把很难看的代码改得很整洁，也一定有很无畏的工程师在很好的代码上面乱改，这就是生活:)</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/9/">&larr; Older</a>
@@ -469,6 +469,10 @@ author: <a href="http://blog.csdn.net/michaellufhl/archive/2010/11/08/5996261.as
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
       </li>
     
@@ -482,10 +486,6 @@ author: <a href="http://blog.csdn.net/michaellufhl/archive/2010/11/08/5996261.as
     
       <li class="post">
         <a href="/blog/2014/02/27/plotting-in-latex/">Plotting in Latex</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/24/better-look-for-git-log/">Better look for &#8220;git log&#8221;</a>
       </li>
     
   </ul>

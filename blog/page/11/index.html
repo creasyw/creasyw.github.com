@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Twist or pull (something) sharply he tweaked the boy&#8217;s ear Improve (a mechanism or system) by making fine adjustments to it engineers tweak &hellip;">
+  <meta name="description" content="1. Live Monitoring and Writing Raw 802.11 Packets — From madwifi READMEThe driver can be used in a live “monitor” mode, by creating a monitorVAP and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/24/setup-monitor-mode-and-disable-crc/">Setup “monitor” Mode and Disable CRC Checking</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-24T00:00:00-05:00" pubdate data-updated="true">Sep 24<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+1. Live Monitoring and Writing Raw 802.11 Packets — From madwifi README<br /><br />The driver can be used in a live “monitor” mode, by creating a monitor<br />VAP and sending packets to it. All packets sent to a monitor mode VAP<br />will bypass any state machine.<br /><br />To create a monitor VAP, use:<br /><br />wlanconfig ath1 create wlandev wifi0 wlanmode monitor<br />ifconfig ath1 up<br /><br />Finally, you can choose to receive packets on ath1 in several different<br />packet formats:<br /><br />echo ’801′ &gt; /proc/sys/net/ath1/dev_type # only 802.11 headers<br />echo ’802′ &gt; /proc/sys/net/ath1/dev_type # prism2 headers<br />echo ’803′ &gt; /proc/sys/net/ath1/dev_type # radiotap headers<br />echo ’804′ &gt; /proc/sys/net/ath1/dev_type # atheros descriptors<br /><br />2. Disable CRC and PHY error checking<br /><br />Allows monitor VAPs to process frames that have been marked<br />as errors by the hardware. Two new sysctl entries are created,<br />“monitor_crc_errors” and “monitor_phy_errors”. When these are set<br />to 1, the monitor mode interface will pass through frames that have<br />been marked with HAL_RXERR_CRC and HAL_RXERR_PHY respectively.<br />Default is to maintain current behaviour – no rx errors are passed<br />through.<br /><br />echo ’1′ &gt; /proc/sys/net/ath1/monitor_crc_errors # Disable CRC error checking<br /><br />echo ’1′ &gt; /proc/sys/net/ath1/monitor_phy_errors # Disable PHY error checking</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ In telecommunications, received signal strength indicator (RSSI) is a measuremen
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/08/31/configuration-of-testbed/">Configuration of the Testbed</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-31T00:00:00-05:00" pubdate data-updated="true">Aug 31<span>st</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-# all the machines should be upgraded to ubuntu 10.04 #<br /><br />PRE INSTALLATION<br />&#8212;&#8212;&#8212;&#8212;&#8212;-<br />- note down the ip address of the eth0 interface<br /><br />INSTALLING UBUNTU<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />- use the 10.04 ISO image from the CD<br />- make sure the Fedora 4 partition is formatted and wiped out<br />- use the username: lili, password: interference-<machine-name><br />&nbsp;&nbsp;&nbsp; - for instance, if m/c name: ut-mesh-d-14.csres.utexas.edu; then password: interference-d14<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if m/c name: ut-mesh-14.csres.utexas.edu; then password: interference-14<br /><br /><br />POST INSTALLATION<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />A. Configuring the network interfaces<br />- /etc/resolv.conf: create this file if it doesn&#8217;t exist and use the following entries<br />search public.utexas.edu<br />nameserver 128.83.139.9<br /><br />- /etc/network/interfaces: add the entry<br /><br />auto eth0<br />iface eth0 inet static<br />address <ip_address here=""><br />gateway 128.83.141.1<br />netmask 255.255.255.0<br />network 128.83.141.0<br />broadcast 128.83.141.255<br /><br />- sudo service network-manager stop (kills the network manager service, we don&#8217;t need it)<br /><br />- sudo /etc/init.d/networking restart<br />&nbsp; - try connecting to the internet, should work!<br /><br />INSTALLING VIM, SSH and WIRESHARK<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />- open the Administration-&gt;Synaptic Packet Manager. Click Reload. (updates the package manager). Close the package manager.<br />- sudo apt-get install ssh<br />- sudo apt-get install vim<br />- sudo apt-get install wireshark<br /><br />ADD RSA key of the host machine to this remote machine<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />- generate rsa key on the host machine using <br />&nbsp;&nbsp;&nbsp; ssh-keygen -t rsa1 <br />- cat ~/.ssh/<rsa dump="" file=""> &gt;&gt; ~/.ssh/authorized_keys@remote_machine<br />- chmod 600 ~/.ssh/authorized_keys@remote_machine<br /><br />Update the SUDOERS file<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />- sudo visudo<br />- <begins><br />User_Alias FULLTIMERS=lili<br />lili&nbsp;&nbsp;&nbsp; ALL=NOPASSWD:ALL<br />FULLTIMERS ALL = NOPASSWD: ALL<br />&nbsp; <ends><br /><br />Remove ath5k and install madwifi<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />http://art.ubuntuforums.org/showthread.php?t=1163380<br /><br />IMPORTANT<br />&#8212;&#8212;&#8211;<br />Driver Bug: Do not try to perform channel switch in the master mode; causes a hard freeze (Ref: http://madwifi-project.org/ticket/1903)<br /></ends></begins></rsa></ip_address></machine-name></div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/12/">&larr; Older</a>
@@ -469,6 +469,10 @@ In telecommunications, received signal strength indicator (RSSI) is a measuremen
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
       </li>
     
@@ -482,10 +486,6 @@ In telecommunications, received signal strength indicator (RSSI) is a measuremen
     
       <li class="post">
         <a href="/blog/2014/02/27/plotting-in-latex/">Plotting in Latex</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/24/better-look-for-git-log/">Better look for &#8220;git log&#8221;</a>
       </li>
     
   </ul>

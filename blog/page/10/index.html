@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Hi Everybody,and Merry ChristmasI received many emails requesting some explanation for usrp_spectrum_sense.py gnuradio example program. The &hellip;">
+  <meta name="description" content="matrix functions&nbsp;INV&nbsp;&nbsp;&nbsp; Matrix inverse.&nbsp;&nbsp;&nbsp; INV(X) is the inverse of the square matrix X.&nbsp;&nbsp;&nbsp; A &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/21/some-commands-for-matlab/">Some Commands for Matlab</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-21T00:00:00-05:00" pubdate data-updated="true">Oct 21<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+matrix functions<br /><br /><b>&nbsp;INV</b>&nbsp;&nbsp;&nbsp; Matrix inverse.<br />&nbsp;&nbsp;&nbsp; INV(X) is the inverse of the square matrix X.<br />&nbsp;&nbsp;&nbsp; A warning message is printed if X is badly scaled or<br />&nbsp;&nbsp;&nbsp; nearly singular.<br /><br /><b>&nbsp;.&#8217; Transpose.</b><br />&nbsp;&nbsp;&nbsp; X.&#8217; is the non-conjugate transpose.<br />&nbsp;&nbsp;&nbsp; B = TRANSPOSE(A) is called for the syntax A.&#8217; when A is an object.<br /><br /><b>&nbsp;SQUEEZE</b> Remove singleton dimensions.<br />&nbsp;&nbsp;&nbsp; B = SQUEEZE(A) returns an array B with the same elements as<br />&nbsp;&nbsp;&nbsp; A but with all the singleton dimensions removed.&nbsp; A singleton<br />&nbsp;&nbsp;&nbsp; is a dimension such that size(A,dim)==1.&nbsp; 2-D arrays are<br />&nbsp;&nbsp;&nbsp; unaffected by squeeze so that row vectors remain rows.<br />&nbsp;&nbsp;&nbsp; For example,&nbsp;&nbsp; squeeze(rand(2,1,3))&nbsp;&nbsp;&nbsp; is 2-by-3.<br /><br />Especially, for a 3-dimension matrix, for the command &#8220;matri = original_matrix(1,:,:)&#8221;, the resulting matrix matri is still a 3-D matrix whose 1st dimension is just 1.<br /><br />==========<br /><br />for plotting, this example will explain the most frequently used commands:<br /><br />x = -pi:.1:pi;<br />y = sin(x);<br />plot(x,y);<br />set(gca,&#8217;XTick&#8217;,-pi:pi/2:pi);<br />set(gca,&#8217;XTickLabel&#8217;,{&#8216;-pi&#8217;,&#8217;-pi/2&#8217;,&#8217;0&#8217;,&#8217;pi/2&#8217;,&#8217;pi&#8217;});<br />xlabel(&#8216;-\pi \leq \Theta \leq \pi&#8217;);<br />ylabel(&#8216;sin(\Theta)&#8217;);<br />title(&#8216;Plot of sin(\Theta)&#8217;);<br />AXIS([XMIN XMAX YMIN YMAX])<br />XLIM([XMIN XMAX])<br />YLIM([YMIN YMAX])</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1589,43 +1626,6 @@ Good Sites for Researchers and Students (<a href="http://www.cs.ucr.edu/%7Emicha
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/24/setup-monitor-mode-and-disable-crc/">Setup “monitor” Mode and Disable CRC Checking</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-24T00:00:00-05:00" pubdate data-updated="true">Sep 24<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-1. Live Monitoring and Writing Raw 802.11 Packets — From madwifi README<br /><br />The driver can be used in a live “monitor” mode, by creating a monitor<br />VAP and sending packets to it. All packets sent to a monitor mode VAP<br />will bypass any state machine.<br /><br />To create a monitor VAP, use:<br /><br />wlanconfig ath1 create wlandev wifi0 wlanmode monitor<br />ifconfig ath1 up<br /><br />Finally, you can choose to receive packets on ath1 in several different<br />packet formats:<br /><br />echo ’801′ &gt; /proc/sys/net/ath1/dev_type # only 802.11 headers<br />echo ’802′ &gt; /proc/sys/net/ath1/dev_type # prism2 headers<br />echo ’803′ &gt; /proc/sys/net/ath1/dev_type # radiotap headers<br />echo ’804′ &gt; /proc/sys/net/ath1/dev_type # atheros descriptors<br /><br />2. Disable CRC and PHY error checking<br /><br />Allows monitor VAPs to process frames that have been marked<br />as errors by the hardware. Two new sysctl entries are created,<br />“monitor_crc_errors” and “monitor_phy_errors”. When these are set<br />to 1, the monitor mode interface will pass through frames that have<br />been marked with HAL_RXERR_CRC and HAL_RXERR_PHY respectively.<br />Default is to maintain current behaviour – no rx errors are passed<br />through.<br /><br />echo ’1′ &gt; /proc/sys/net/ath1/monitor_crc_errors # Disable CRC error checking<br /><br />echo ’1′ &gt; /proc/sys/net/ath1/monitor_phy_errors # Disable PHY error checking</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/11/">&larr; Older</a>
@@ -1643,6 +1643,10 @@ Good Sites for Researchers and Students (<a href="http://www.cs.ucr.edu/%7Emicha
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
       </li>
     
@@ -1656,10 +1660,6 @@ Good Sites for Researchers and Students (<a href="http://www.cs.ucr.edu/%7Emicha
     
       <li class="post">
         <a href="/blog/2014/02/27/plotting-in-latex/">Plotting in Latex</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/24/better-look-for-git-log/">Better look for &#8220;git log&#8221;</a>
       </li>
     
   </ul>

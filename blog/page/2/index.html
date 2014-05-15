@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Aug. 10th. Complete the 1st chapter of sicp. I really appreciate the exercises within each subsections, because I can feel that they are well &hellip;">
+  <meta name="description" content="I heard lots of opinions from both Mac lovers and haters before I bought my macbook pro. It made me struggle for a while to leverage the pros and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,59 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/15/more-freedom-in-doing-things/">More Freedom in Doing Things</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-15T00:15:00-05:00" pubdate data-updated="true">Aug 15<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I heard lots of opinions from both Mac lovers and haters before I bought my macbook pro. It made me struggle for a while to leverage the pros and cons. But it finally turned out neither of them was completely right. I love my mbp very much, but the reason is not the good looking, but the flexibility interacting with unix programs and great ease using homebrew for almost all dependent packages. Besides, if I was not forced using Windows OS again in my internship, I would not notice how ugly and inconvenient it is.</p>
+
+<p>The same process happened once again when I met latex. The final result was that I fell in love with it, and found out no one gave me a comprehensive description about it before.</p>
+
+<p>LaTeX is more about higher-level accessing Tex for formating and typesetting. That is it. The focus for writing, the ease of math formulas, and even the licensing advantage over MS are all derivatives from others personal experiences. Actually, the basic intention gives it the most attractive feature. First of all, setting up a general framework, then maybe another subset of framework. The framework is at will, but everything fell into it must follow the specific rules. Then, beyond the framework, or within the framework, everything is also at will. One can freely design all specifications, and if needed, one can also overwrite the general rules set by the framework. On the one hand, the environment setting let author get rid of all trivial concerns. On the other hand, in every place, one can regain the control of everything. LaTeX is not only for writing, it is for programming.</p>
+
+<p>Then, several days ago, I was trying to transfer my blog from Blogger to Jekyll. It is a static site generator that takes Markdown blog posts and onverts them into html files. The benefits are attractive: the website can be hosted by almost any server; the whole blog can easily be version controlled, since no php or MySQL needed, it requires less maintainance. During playing with it, I have the same kind of feeling again. I might easily mess everything up while on the other hand I have fully control of every element in the page.</p>
+
+<p>I cannot build it without kind-hearted help from others. Especially,</p>
+
+<ul>
+  <li><a href="https://github.com/yanga9">Alex Yang</a>, who designs this theme. I really like the succinct layout and the Hello page. His comprehensive introductory email also saved me lots of time and gave me solid understanding of how jekyll and octopress work.</li>
+  <li><a href="http://octopress.org/docs/setup/">Octopress: Getting started</a> and an <a href="http://labs.grupow.com/blog/2012/01/30/start-blogging-with-octopress">alternative post</a>. Provide fool-proof tutorials of setting things up. For the latter post, there is no need to insall Pow. The “rake preview” will get the result with <a href="http://stackoverflow.com/questions/17465404/rake-preview-not-working-in-octopress">one precaution</a>.</li>
+  <li><a href="https://gist.github.com/juniorz/1564581">Import from Blogger</a>. This script was found from Jekyll official site.</li>
+  <li><a href="http://conghui.github.io/2013/04/27/did-not-find-expected-key-while-parsing-a-block-mapping/">Rake Generate issue caused by double quotes</a>. The script above cannot well handle double quotes, which will cause problem when generating yaml. Here is the solution.</li>
+</ul>
+
+<p>Of course, there are some other things that I tried and failed to like. C++ might be an example… =P Anyway, my point is, regardless what other people say, you will never know what a thing really is unless you actually do it. There is one ultimate goal for a given project, and at least one suitable path to get there. Just do it. Then in retrospect, we will know if it is a better option, and will perform better the next time.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -445,43 +498,6 @@ By&nbsp;<span style="background-color: white; font-family: arial, sans-serif;">L
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/19/set-up-racket-for-vim-and-mac-terminal/">Set Up Racket for Vim and Mac Terminal</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-19T00:00:00-06:00" pubdate data-updated="true">Feb 19<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-&nbsp; &nbsp; <br />Racket is fairly great:), though the setting up procedure is kind of twisted. There is a .dmg installation file in the official website, which makes it quite straightforward to install in the Application folder. And, of course, the DrRacket app is awesome when I accidentally put mouse in one of the variables in the code, and then all its dependencies reveal via arrows.<br /><br />But I am still used to writing code in vim and testing it in a parallel split window of iterm. I googled the solution, but cannot find a comprehensive one. So, I just list my solution here, which come from either stackoverflow or other persons&#8217; blogs.<br /><br />1) vim syntax and highlight are <a href="https://github.com/wlangstroth/vim-racket">out there</a> ready for use.<br /><br />2) Adding one command line to ~/.vimrc<br /><code>&nbsp;au BufRead,BufNewFile *.rkt set filetype=racket</code><br />3) Adding the path of executable racket to ~/.bach_profile.<br /><code> export PATH=$PATH:/Applications/Racket\ v5.3.3/bin/</code><br />4) If using the existing file, one should delete the first line of code &#8220;#lang racket&#8221; if existed.<br /><br />5) Optional. Installing rlwrap to make the repl more user friendly.<br /><br />That is much of it.<br /><br /><br />cheers,</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -499,6 +515,10 @@ By&nbsp;<span style="background-color: white; font-family: arial, sans-serif;">L
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
       </li>
     
@@ -512,10 +532,6 @@ By&nbsp;<span style="background-color: white; font-family: arial, sans-serif;">L
     
       <li class="post">
         <a href="/blog/2014/02/27/plotting-in-latex/">Plotting in Latex</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/24/better-look-for-git-log/">Better look for &#8220;git log&#8221;</a>
       </li>
     
   </ul>

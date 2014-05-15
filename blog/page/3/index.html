@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="&nbsp; &nbsp; The issue came from my question in stackoverflow. Basically, it was a misplaced question, because the reason why my program would hit &hellip;">
+  <meta name="description" content="&nbsp; &nbsp; Racket is fairly great:), though the setting up procedure is kind of twisted. There is a .dmg installation file in the official &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/19/set-up-racket-for-vim-and-mac-terminal/">Set Up Racket for Vim and Mac Terminal</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-19T00:00:00-06:00" pubdate data-updated="true">Feb 19<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+&nbsp; &nbsp; <br />Racket is fairly great:), though the setting up procedure is kind of twisted. There is a .dmg installation file in the official website, which makes it quite straightforward to install in the Application folder. And, of course, the DrRacket app is awesome when I accidentally put mouse in one of the variables in the code, and then all its dependencies reveal via arrows.<br /><br />But I am still used to writing code in vim and testing it in a parallel split window of iterm. I googled the solution, but cannot find a comprehensive one. So, I just list my solution here, which come from either stackoverflow or other persons&#8217; blogs.<br /><br />1) vim syntax and highlight are <a href="https://github.com/wlangstroth/vim-racket">out there</a> ready for use.<br /><br />2) Adding one command line to ~/.vimrc<br /><code>&nbsp;au BufRead,BufNewFile *.rkt set filetype=racket</code><br />3) Adding the path of executable racket to ~/.bach_profile.<br /><code> export PATH=$PATH:/Applications/Racket\ v5.3.3/bin/</code><br />4) If using the existing file, one should delete the first line of code &#8220;#lang racket&#8221; if existed.<br /><br />5) Optional. Installing rlwrap to make the repl more user friendly.<br /><br />That is much of it.<br /><br /><br />cheers,</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/24/reading-digest-01242012/">Reading Digest 01/24/2012</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-24T00:00:00-06:00" pubdate data-updated="true">Jan 24<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-&nbsp; &nbsp;&nbsp; <br /><a href="http://reprog.wordpress.com/2012/01/21/my-plan-for-2012-do-things-that-children-do/">My plan for 2012: do things that children do</a><br />Learn things<br />Play sports<br />Sing and play instruments<br />Draw and paint<br />Write stories<br />&#8211; I have to say it is a better &#8220;next year resolution&#8221; than <a href="http://creasywuqiong.blogspot.com/2012/01/summary-of-2011-and-resolution-of-2012.html">what I have made</a>. The explanation is clear and straightforward. So, I should add them to my resolutions!<br /><br /><a href="http://www.jamesaltucher.com/2011/07/life-tastes-best-when-you-eat-what-you-kill/">Life Tastes Best When You Eat What You Kill</a><br />Don’t depend on one boss, buyer for your company, product, service you offer, etc. Diversify everything you can.<br />Become an expert.<br />Connect people.<br />Give ideas for free.<br />Always work on your exit. No matter where you are: a job, a startup, your startup, writing a column, working at Mcdonalds, always diversify your possible exits and begin immediately working on them. You don’t have to exit tomorrow, but never forget that you can get that email tomorrow that says you have to clean out your desk by Saturday.<br />Never say a bad word about anyone.<br />Don’t care what people think.<br />Create your luck.<br />Take responsibility for all failures.<br />Honesty. If you don’t ask for what you want, chances are you won’t get it. If you don’t say what you believe, you’ll never stand out from the 99% of people out there who hide the truth about themselves and their desires. If you don’t stand up and say or show how special you are, nobody will ever think you are special. Nobody is out there advocating for you. Honesty about what you feel, believe, know, think, want, will make you a multi-dimensional being in a flatland world.<br />Patience.让子弹飞一会儿。<br />&#8211; The general guidelines might be too vague to follow or helpful to summarize some vague thoughts in mind. This one is much closer to the latter category.</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -469,6 +469,10 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
       </li>
     
@@ -482,10 +486,6 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
     
       <li class="post">
         <a href="/blog/2014/02/27/plotting-in-latex/">Plotting in Latex</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/24/better-look-for-git-log/">Better look for &#8220;git log&#8221;</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-04-25T23:59:14-05:00</updated>
+  <updated>2014-05-14T23:44:37-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Kinetic Chain of Reactions]]></title>
+    <link href="http://creasyw.github.io/blog/2014/05/14/kinetic-chain-of-reactions/"/>
+    <updated>2014-05-14T23:28:00-05:00</updated>
+    <id>http://creasyw.github.io/blog/2014/05/14/kinetic-chain-of-reactions</id>
+    <content type="html"><![CDATA[<ul>
+  <li>Ideally, every time hitting the ball should be a “kinetic chain of reactions”– the momentum moves from feet to knee, to waist, to shoulder, and finally to the forearm and wrist.</li>
+  <li>If I only use part of the chain, I might still hit a good ball, occasionally. But it would consume more energy, and the hitting would be much more unstable.</li>
+  <li>Technically speaking, serve is the only way that I can completely control this kinetic chain, because I can control all of the paces and do not need to move around.</li>
+  <li>During a point, whenever opponent hits the ball, I should pause and split feet, no matter where I am in the court. This could help me make judgment. More importantly, it is the way to “load energy” and start the “kinetic chain”.</li>
+  <li>I have too many aspects to improve, but this might be the most important one.</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Thought Process in a Tennis Match]]></title>
@@ -550,16 +566,6 @@ By&nbsp;<span style="background-color: white; font-family: arial, sans-serif;">L
     <id>http://creasyw.github.io/blog/2013/06/04/excerpt-from-effective-c</id>
     <content type="html"><![CDATA[<div class='post'>
 &nbsp; &nbsp; <br />Cpp is like some stubborn old man, who always says &#8220;i have lots of obscure habits, dealing with it&#8221;&#8230;&#8230;<br /><br /><b>Lesson 4:</b> the initialization is different from assignment, as well as their representations respectively. It is better to write the constructor as the form of initialization, named &#8220;initialization list&#8221;, rather than just simply give the variables first assignment.<br /><br />To avoid using objects before they&#8217;re initialized, then, you need to do only three things. First, manually initialize non-member objects of built-in types. Second, use member initialization lists to initialize all parts of an object. Finally, design around the initialization order uncertainty that afflicts non-local static objects defined in separate translation units.<br /><br /><b>Lesson 7</b>: declare destructors virtual in polymorphic base classes. C++ specifies that when a derived class object is deleted through a pointer to a base class with a non-virtual destructor, results are undefined. What typically happens at runtime is that the derived part of the object is never destroyed. Eliminating the problem is simple: give the base class a virtual destructor. Then deleting a derived class object will do exactly what you want. It will destroy the entire object, including all its derived class parts.<br /><br />The purpose of virtual functions is to allow customization of derived class implementations. Any class with virtual functions should almost certainly have a virtual destructor. The implementation of virtual functions requires that objects carry information that can be used at runtime to determine which virtual functions should be invoked on the object. On the other hand, if a class does not contain virtual functions, that often indicates it is not meant to be used as a base class. When a class is not intended to be a base class, making the destructor virtual is usually a bad idea.<br /><br /><b>Lesson 9</b>: Never call virtual functions during construction or destruction. Because during base class construction of a derived class object, the type of the object is that of the base class. Not only do virtual functions resolve to the base class, but the parts of the language using runtime type information (e.g., dynamic_cast (see Item 27) and typeid) treat the object as a base class type.<br /><br />The same reasoning applies during destruction. Once a derived class destructor has run, the object&#8217;s derived class data members assume undefined values, so C++ treats them as if they no longer exist. Upon entry to the base class destructor, the object becomes a base class object, and all parts of C++ treat it that way.<br /><br />Since you can&#8217;t use virtual functions to call down from base classes during construction, you can compensate by having derived classes pass necessary construction information up to base class constructors instead.<br /><br /></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Set up Racket for Vim and mac Terminal]]></title>
-    <link href="http://creasyw.github.io/blog/2013/02/19/set-up-racket-for-vim-and-mac-terminal/"/>
-    <updated>2013-02-19T00:00:00-06:00</updated>
-    <id>http://creasyw.github.io/blog/2013/02/19/set-up-racket-for-vim-and-mac-terminal</id>
-    <content type="html"><![CDATA[<div class='post'>
-&nbsp; &nbsp; <br />Racket is fairly great:), though the setting up procedure is kind of twisted. There is a .dmg installation file in the official website, which makes it quite straightforward to install in the Application folder. And, of course, the DrRacket app is awesome when I accidentally put mouse in one of the variables in the code, and then all its dependencies reveal via arrows.<br /><br />But I am still used to writing code in vim and testing it in a parallel split window of iterm. I googled the solution, but cannot find a comprehensive one. So, I just list my solution here, which come from either stackoverflow or other persons&#8217; blogs.<br /><br />1) vim syntax and highlight are <a href="https://github.com/wlangstroth/vim-racket">out there</a> ready for use.<br /><br />2) Adding one command line to ~/.vimrc<br /><code>&nbsp;au BufRead,BufNewFile *.rkt set filetype=racket</code><br />3) Adding the path of executable racket to ~/.bach_profile.<br /><code> export PATH=$PATH:/Applications/Racket\ v5.3.3/bin/</code><br />4) If using the existing file, one should delete the first line of code &#8220;#lang racket&#8221; if existed.<br /><br />5) Optional. Installing rlwrap to make the repl more user friendly.<br /><br />That is much of it.<br /><br /><br />cheers,</div>
 ]]></content>
   </entry>
   

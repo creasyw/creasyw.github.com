@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="13 June 1996 New YorkDear Borges,Since your literature was always placed under the sign of eternity, it doesn&#8217;t seem too odd to be addressing &hellip;">
+  <meta name="description" content="author: Micheal Lu这么题目看起来就比较有争议：运行起来专业的代码才专业嘛。但是从另外一个角度来说&#8221;让代码看上去比较专业&#8221;是一个积极的做法，无论对谁都没有坏处，对工程师，管理者和用户都有益无弊。&nbsp;首先这个题目说的是&#8221;看上去&#8221 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/10/what-make-code-looks-more-professional/">What Make Code LOOKS More Professional?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-10T00:00:00-06:00" pubdate data-updated="true">Nov 10<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+author: <a href="http://blog.csdn.net/michaellufhl/archive/2010/11/08/5996261.aspx">Micheal Lu</a><br /><br />这么题目看起来就比较有争议：运行起来专业的代码才专业嘛。但是从另外一个角度来说&#8221;让代码看上去比较专业&#8221;是一个积极的做法，无论对谁都没有坏处，对工程师，管理者和用户都有益无弊。<br /><br />&nbsp;首先这个题目说的是&#8221;看上去&#8221;,所以我不会说明如何使代码真正专业。世界上有很多的书籍和文章告诉软件工程师如何写出专业的代码。如果要说&#8221;什么样的代码看上去比较专业？&#8221;那就要定义什么是专业的代码。嗯，关于这点我不能下一个准确的定义。那么可以这样，大家可以参考一些大家共认的专业代码。对于Java JDK代码来说几乎没人会否认它是专业的代码。或者一些很有影响力的open source代码，像Spring 和Apache 的代码。当然很多商业软件的代码也是很专业，但是我们看不到，或者说这不是共认的专业代码。<br /><br />&nbsp; &nbsp;* 最显而易见的做法是充足的代码注释 和标准缩进 的格式。但是大家一致认为这是最明显的因素。<br /><br />&nbsp; &nbsp;* 然后是命名规范 。有人曾经在网上展示自己的一个framework的代码,framework自然是很牛的东西。但是接下来马上有人回帖&#8221;我一看到大写开头的方法名，我就没兴趣了&#8221;。这是个很典型的例子。<br /><br />&nbsp; &nbsp; &nbsp; &nbsp;命名规范里面用拼音 做包名，类名，方法和变量名字也会使代码看上去感觉比较差。我说的是代码，不是注释。<br /><br />&nbsp; &nbsp;* 还有就是要用最新的语言特性 。对于Java,譬如要用Annotaion, Generic。虽然这些特性已经出现很多年了。至少要用@Override 一下吧。我知道大家知道用Annotaion, Generic的真正的益处。<br /><br />&nbsp; &nbsp;* 尽量不要用Magic number 。如果一看到到处都是&#8221;id&#8221;.equals(&#8230;); if(i==356). ..大家就会感觉不好。<br /><br />&nbsp; &nbsp;* 还有就是最好包含单元测试 的代码，JUnit 已经成为Java的公认单元测试工具。很多开发人员认为对于一个严肃的程序，单元测试是必需的。<br /><br />&nbsp; &nbsp;* 避免冗长的方法和类。我知道大家深受其害。<br /><br />&nbsp;其实我认为&#8221;看上去&#8221;专业能促进代码质量。充足的代码注释和标准缩进的格式能增强可读性，另外在撰写注释的时候也是在&#8221;拷问&#8221;自己的代码，如果你觉得某个方法的注释很难写，那就要问问自己的这个方法的代码逻辑写得不够清晰。有时候在注释方法的@throws XXXException 的时候，你才会仔细考虑哪些Exception会在什么情况下被抛出。@Override 能够避免低级打字错误。Generic容器比较安全等等。<br /><br />&nbsp;从代码演变的角度来说，有个明显的&#8221;破窗理论&#8221;在起作用。就是越是难看的代码，在它的演化过程中会越来越差。因为当你看到你要bugfix的代码很乱，那么在bugfix的时候一般也会草草了事。一个方法有400行，在修改这个方法的时候大家不会在意再加上几十行代码。因为它看起来很差，它就是很差，我没必要美化它。反过来说，如果待改的代码很整洁很规范，那么修改者也会比较小心。这不是绝对，只是一般情况。一定有很帅的工程师把很难看的代码改得很整洁，也一定有很无畏的工程师在很好的代码上面乱改，这就是生活:)</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ Rank 1:<p>SIGCOMM: ACM Conf on Comm Architectures, Protocols &amp; Apps<br />INF
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/10/21/some-commands-for-matlab/">Some Commands for Matlab</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-21T00:00:00-05:00" pubdate data-updated="true">Oct 21<span>st</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-matrix functions<br /><br /><b>&nbsp;INV</b>&nbsp;&nbsp;&nbsp; Matrix inverse.<br />&nbsp;&nbsp;&nbsp; INV(X) is the inverse of the square matrix X.<br />&nbsp;&nbsp;&nbsp; A warning message is printed if X is badly scaled or<br />&nbsp;&nbsp;&nbsp; nearly singular.<br /><br /><b>&nbsp;.&#8217; Transpose.</b><br />&nbsp;&nbsp;&nbsp; X.&#8217; is the non-conjugate transpose.<br />&nbsp;&nbsp;&nbsp; B = TRANSPOSE(A) is called for the syntax A.&#8217; when A is an object.<br /><br /><b>&nbsp;SQUEEZE</b> Remove singleton dimensions.<br />&nbsp;&nbsp;&nbsp; B = SQUEEZE(A) returns an array B with the same elements as<br />&nbsp;&nbsp;&nbsp; A but with all the singleton dimensions removed.&nbsp; A singleton<br />&nbsp;&nbsp;&nbsp; is a dimension such that size(A,dim)==1.&nbsp; 2-D arrays are<br />&nbsp;&nbsp;&nbsp; unaffected by squeeze so that row vectors remain rows.<br />&nbsp;&nbsp;&nbsp; For example,&nbsp;&nbsp; squeeze(rand(2,1,3))&nbsp;&nbsp;&nbsp; is 2-by-3.<br /><br />Especially, for a 3-dimension matrix, for the command &#8220;matri = original_matrix(1,:,:)&#8221;, the resulting matrix matri is still a 3-D matrix whose 1st dimension is just 1.<br /><br />==========<br /><br />for plotting, this example will explain the most frequently used commands:<br /><br />x = -pi:.1:pi;<br />y = sin(x);<br />plot(x,y);<br />set(gca,&#8217;XTick&#8217;,-pi:pi/2:pi);<br />set(gca,&#8217;XTickLabel&#8217;,{&#8216;-pi&#8217;,&#8217;-pi/2&#8217;,&#8217;0&#8217;,&#8217;pi/2&#8217;,&#8217;pi&#8217;});<br />xlabel(&#8216;-\pi \leq \Theta \leq \pi&#8217;);<br />ylabel(&#8216;sin(\Theta)&#8217;);<br />title(&#8216;Plot of sin(\Theta)&#8217;);<br />AXIS([XMIN XMAX YMIN YMAX])<br />XLIM([XMIN XMAX])<br />YLIM([YMIN YMAX])</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/10/">&larr; Older</a>
@@ -469,6 +469,10 @@ matrix functions<br /><br /><b>&nbsp;INV</b>&nbsp;&nbsp;&nbsp; Matrix inverse.<b
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
       </li>
     
@@ -482,10 +486,6 @@ matrix functions<br /><br /><b>&nbsp;INV</b>&nbsp;&nbsp;&nbsp; Matrix inverse.<b
     
       <li class="post">
         <a href="/blog/2014/02/27/plotting-in-latex/">Plotting in Latex</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/24/better-look-for-git-log/">Better look for &#8220;git log&#8221;</a>
       </li>
     
   </ul>

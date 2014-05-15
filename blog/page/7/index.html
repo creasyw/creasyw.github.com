@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="I am still familiar with the highlighted view for differences rather than the &#8220;diff&#8221; command, which produces the results in a &#8220 &hellip;">
+  <meta name="description" content="Reading the articles written by Joel sometimes feels frustrated. But, anyway, they are also illustrated. Here is another post about how to write &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/07/advices-about-resume/">Advices About Resume</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-07T00:00:00-06:00" pubdate data-updated="true">Mar 7<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Reading the articles written by <a href="http://www.joelonsoftware.com/articles/ResumeRead.html">Joel</a> sometimes feels frustrated. But, anyway, they are also illustrated. Here is another post about how to write readable resume:<br />======<br /><br /># Proofread everything a hundred times and have one other person proofread it. Someone who got really good grades in English.<br /><br /># Write a personal cover letter that is customized for the job you are applying for. Try to sound like a human in the cover letter. You want people to think of you as a human being. <br /><br /># Don&#8217;t apply for too many jobs. I don&#8217;t think there&#8217;s ever a reason to apply for more than three or four jobs at a time. Résuméspam, or any sign that you&#8217;re applying for 100 jobs, just makes you look desperate which makes you look unqualified. You want to look like you are good enough to be in heavy demand. You&#8217;re going to decide where you want to work, because you&#8217;re smart enough to have a choice in the matter, so you only need to apply for one or two jobs. A personalized cover letter that shows that you understand what the company does goes a long way to proving that you care enough to deserve a chance. <br /><br /># What we&#8217;re really looking for when we look at résumés is someone who is passionate and successful at whatever they try to do. We like people who are passionate about software. Writing a shareware app when you&#8217;re a teenager is just as good a qualification to us as getting into MIT. This is your life story, and by the time you&#8217;re applying for a job it&#8217;s probably too late to change that.<br /><br /># The number one best way to get someone to look at your resume closely: come across as a human being, not a list of jobs and programming languages.</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ The configuration should be done in the file named &#8220;vimrc&#8221;.<br /><br
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/18/cc-open-file/">C/c++ Input/ouput Functions</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-18T00:00:00-06:00" pubdate data-updated="true">Dec 18<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<b>int open(char * filename, int flags)<br />int open(char * filename, int flags, int mode)</b><br />include: fcntl.h<br />flags = bitwise | or of any of the following:<br />&nbsp;&nbsp;&nbsp;&nbsp; O_RDONLY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Only read operations permitted<br />&nbsp;&nbsp;&nbsp;&nbsp; O_WRONLY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Only write operations permitted<br />&nbsp;&nbsp;&nbsp;&nbsp; O_RDWR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Read and Write operations both permitted<br />&nbsp;&nbsp;&nbsp;&nbsp; O_NONBLOCK&nbsp;&nbsp;&nbsp; Non-blocking, applies to open operation only<br />&nbsp;&nbsp;&nbsp;&nbsp; O_APPEND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; All writes go to end of file<br />&nbsp;&nbsp;&nbsp;&nbsp; O_CREAT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Create file if it doesn&#8217;t already exist<br />&nbsp;&nbsp;&nbsp;&nbsp; O_TRUNC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Delete existing contents of file<br />&nbsp;&nbsp;&nbsp;&nbsp; O_EXCL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Open fails if file already exists<br />&nbsp;&nbsp;&nbsp;&nbsp; O_SHLOCK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Get a &#8220;shared lock&#8221; on the file<br />&nbsp;&nbsp;&nbsp;&nbsp; O_EXLOCK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Get an &#8220;exclusive lock&#8221; on the file<br />&nbsp;&nbsp;&nbsp;&nbsp; O_DIRECT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Try to avoid all caching of operations<br />&nbsp;&nbsp;&nbsp;&nbsp; O_FSYNC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; All writes immediately effective, no buffering<br />&nbsp;&nbsp;&nbsp;&nbsp; O_NOFOLLOW&nbsp;&nbsp;&nbsp; If file is symbolic link, open it, don&#8217;t follow it<br />mode required if file is created, ignored otherwise.<br />mode specifies the protection bits, e.g. 0644 = rw-r&#8211;r&#8211;<br />returns &lt;0 for error, or integer file descriptor.<br /><br /><b>int close(int fd)</b><br />include: unistd.h<br />fd = file descriptor as returned by open<br />returns &lt;0 for error, 0 for success.<br /><br /><b>int read(int fd, void * ptr, int numbytes)</b><br />include: unistd.h<br />fd = file descriptor as returned by open<br />ptr = address in memory where data is to be stored;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; may be a pointer of any type.<br />numbytes = number of bytes to attempt to read<br />returns &lt;0 for error, 0 for end-of-file,or number of bytes successfully read. (for a non-blocking interactive file, that may be zero).<br /><br /><b>int write(int fd, void * ptr, int numbytes)</b><br />include: unistd.h<br />fd = file descriptor as returned by open<br />ptr = address in memory where data already is;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; may be a pointer of any type.<br />numbytes = number of bytes to attempt to write<br />returns &lt;=0 for error, or number of bytes successfully written. (for a non-blocking file, that may be less than the number attempted without any errors having occurred).<br /><br /><b>int lseek(int fd, int position, int startpoint)</b><br />include: unistd.h<br />Sets the file position effective for the next read or write operation.<br />fd = file descriptor as returned by open<br />position = position within file: number of bytes between startpoint and the desired position, may be negative.<br />startpoint = location in file that position is relative to, one of:<br />&nbsp;&nbsp;&nbsp;&nbsp; SEEK_SET: Position is number of bytes from beginning of file<br />&nbsp;&nbsp;&nbsp;&nbsp; SEEK_END: Position is number of bytes after end of file<br />&nbsp;&nbsp;&nbsp;&nbsp; SEEK_CUR: Position is number of bytes after current position<br />returns &lt;0 for error, or resulting file position relative to beginning of file. Moving beyond the end of the file is permitted; the file is extended in length only if a write occurs beyond the current end of file. Moveing before the beginning of a file is not permitted. A write operation after a move only overwrites the number of bytes actually written.<br /><br /><b>int stat(char * file, struct stat * info)</b><br />include: sys/types.h<br />include: sys/stat.h<br />Finds information about a file.<br />file = The name (or path) for the file.<br />info = A pointer to an uninitialised stat structure. Even in C++, the type must be &#8220;struct stat *&#8221; because of the name clash. Information about the file is stored in the info object.<br />returns &lt;0 for error (including file does not exist), or 0&nbsp; for success.<br />The useful fields of a stat object are as follows. All have types that behave like ints, although they may be 16, 32, or 64 bits long.<br />&nbsp;&nbsp;&nbsp;&nbsp; st_size: size in bytes<br />&nbsp;&nbsp;&nbsp;&nbsp; st_ino: inode number<br />&nbsp;&nbsp;&nbsp;&nbsp; st_mode: protection or mode (see below)<br />&nbsp;&nbsp;&nbsp;&nbsp; st_nlink: number of hard links<br />&nbsp;&nbsp;&nbsp;&nbsp; st_uid: file&#8217;s owner&#8217;s identification number<br />&nbsp;&nbsp;&nbsp;&nbsp; st_gid: file&#8217;s group identification number<br />&nbsp;&nbsp;&nbsp;&nbsp; st_birthtime: date and time of file creation (see below)<br />&nbsp;&nbsp;&nbsp;&nbsp; st_mtime: date and time of last modification (see below)<br />&nbsp;&nbsp;&nbsp;&nbsp; st_atime: date and time of last access (see below)<br />All times are stored as time_t values, as described here. Mode and Protection. st_mode is the logical-or of a number of bits each representing different properties. The named constants for these bits, and their values in octal are:<br />&nbsp;&nbsp;&nbsp;&nbsp; S_ISUID&nbsp; 0004000&nbsp; set user id on execution<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IRUSR&nbsp; 0000400&nbsp; protection: readable by owner<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IWUSR&nbsp; 0000200&nbsp; writable by owner<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IXUSR&nbsp; 0000100&nbsp; executable by owner<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IRGRP&nbsp; 0000040&nbsp; readable by group<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IWGRP&nbsp; 0000020&nbsp; writable by group<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IXGRP&nbsp; 0000010&nbsp; executable by group<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IROTH&nbsp; 0000004&nbsp; readable by all<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IWOTH&nbsp; 0000002&nbsp; writable by all<br />&nbsp;&nbsp;&nbsp;&nbsp; S_IXOTH&nbsp; 0000001&nbsp; executable by all<br />Four bits of the mode give the file type. The mask for type is S_IFMT = 0170000<br />if (mode &amp; S_IFMT) is S_IFREG = 0100000,&nbsp; type = perfectly ordinary file<br />if (mode &amp; S_IFMT) is S_IFDIR = 0040000,&nbsp; type = directory<br />if (mode &amp; S_IFMT) is S_IFLNK = 0120000,&nbsp; type = symbolic link<br />if (mode &amp; S_IFMT) is S_IFIFO = 0010000,&nbsp; type = named pipe<br />if (mode &amp; S_IFMT) is S_IFSOCK = 0140000,&nbsp; type = named socket<br /><br /><b>File Mode or Protection Bits</b><br /><br />A file&#8217;s mode or protection is usually specified visually by 9 characters, for example rw-r&#8211;r&#8211; or rwxr-x&#8211;x. Each of the letters are (nearly always) &#8216;r&#8217; for read permitted, &#8216;w&#8217; for write permitted, or &#8216;x&#8217; for execute permitted.<br /><br />The letters always appear in groups of three. Within a group, the order is always &#8216;rwx&#8217;. The first group of three indicate operations permitted to the owner of the file; the second group of three indicates operations permitted to other users in the same group as the owner; the third group of three indicates operations permitted to all users who can access the file.<br /><br />If the file is a directory, &#8216;x&#8217; means that files in the directory may be accessed if referred to directly by name, but wildcard substitutions (&#8216;*&#8217;) and ls operations will not be permitted.<br /><br />Modes are usually represented inside programs by a sequence of three octal digits. each octal digit represents one of the groups of three characters, 4 for &#8216;r&#8217; plus 2 for &#8216;w&#8217; plus 1 for &#8216;x&#8217;. In C and C++ programs remember that numbers with leading zeros are always assumed to be in octal, so the mode 0751 represents rwxr-x&#8211;x.</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/8/">&larr; Older</a>
@@ -469,6 +469,10 @@ The configuration should be done in the file named &#8220;vimrc&#8221;.<br /><br
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
       </li>
     
@@ -482,10 +486,6 @@ The configuration should be done in the file named &#8220;vimrc&#8221;.<br /><br
     
       <li class="post">
         <a href="/blog/2014/02/27/plotting-in-latex/">Plotting in Latex</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/24/better-look-for-git-log/">Better look for &#8220;git log&#8221;</a>
       </li>
     
   </ul>

@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="留个印儿，待用。vimulipadericpydevemacseclipsenetbeanskomodowingIDE(the last two are commercial software)doubanLearning to program is like learning to write &hellip;">
+  <meta name="description" content="# all the machines should be upgraded to ubuntu 10.04 #PRE INSTALLATION&#8212;&#8212;&#8212;&#8212;&#8212;-- note down the ip address of the eth0 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/31/configuration-of-testbed/">Configuration of the Testbed</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-31T00:00:00-05:00" pubdate data-updated="true">Aug 31<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+# all the machines should be upgraded to ubuntu 10.04 #<br /><br />PRE INSTALLATION<br />&#8212;&#8212;&#8212;&#8212;&#8212;-<br />- note down the ip address of the eth0 interface<br /><br />INSTALLING UBUNTU<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />- use the 10.04 ISO image from the CD<br />- make sure the Fedora 4 partition is formatted and wiped out<br />- use the username: lili, password: interference-<machine-name><br />&nbsp;&nbsp;&nbsp; - for instance, if m/c name: ut-mesh-d-14.csres.utexas.edu; then password: interference-d14<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if m/c name: ut-mesh-14.csres.utexas.edu; then password: interference-14<br /><br /><br />POST INSTALLATION<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />A. Configuring the network interfaces<br />- /etc/resolv.conf: create this file if it doesn&#8217;t exist and use the following entries<br />search public.utexas.edu<br />nameserver 128.83.139.9<br /><br />- /etc/network/interfaces: add the entry<br /><br />auto eth0<br />iface eth0 inet static<br />address <ip_address here=""><br />gateway 128.83.141.1<br />netmask 255.255.255.0<br />network 128.83.141.0<br />broadcast 128.83.141.255<br /><br />- sudo service network-manager stop (kills the network manager service, we don&#8217;t need it)<br /><br />- sudo /etc/init.d/networking restart<br />&nbsp; - try connecting to the internet, should work!<br /><br />INSTALLING VIM, SSH and WIRESHARK<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />- open the Administration-&gt;Synaptic Packet Manager. Click Reload. (updates the package manager). Close the package manager.<br />- sudo apt-get install ssh<br />- sudo apt-get install vim<br />- sudo apt-get install wireshark<br /><br />ADD RSA key of the host machine to this remote machine<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />- generate rsa key on the host machine using <br />&nbsp;&nbsp;&nbsp; ssh-keygen -t rsa1 <br />- cat ~/.ssh/<rsa dump="" file=""> &gt;&gt; ~/.ssh/authorized_keys@remote_machine<br />- chmod 600 ~/.ssh/authorized_keys@remote_machine<br /><br />Update the SUDOERS file<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />- sudo visudo<br />- <begins><br />User_Alias FULLTIMERS=lili<br />lili&nbsp;&nbsp;&nbsp; ALL=NOPASSWD:ALL<br />FULLTIMERS ALL = NOPASSWD: ALL<br />&nbsp; <ends><br /><br />Remove ath5k and install madwifi<br />&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />http://art.ubuntuforums.org/showthread.php?t=1163380<br /><br />IMPORTANT<br />&#8212;&#8212;&#8211;<br />Driver Bug: Do not try to perform channel switch in the master mode; causes a hard freeze (Ref: http://madwifi-project.org/ticket/1903)<br /></ends></begins></rsa></ip_address></machine-name></div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -428,43 +465,6 @@ C vs. C++ 其中一个显式区别，就是后者增添了标准库类型，vect
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/06/28/digest-four-important-data-type-in-c/">Digest: Four Important Data Type in C++</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-28T00:00:00-05:00" pubdate data-updated="true">Jun 28<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<b>1.const的用法：</b><br />为什么使用const？采用符号常量写出的代码更容易维护；指针常常是边读边移动，而不是边写边移动；许多函数参数是只读不写的。const最常见用途是作为数组的界和switch分情况标号（也可以用枚举符代替）<br /><br />用法1：常量<br />取代了C中的宏定义，声明时必须进行初始化。const限制了常量的使用方式，并没有描述常量应该如何分配。如果编译器知道了某const的所有使用，它甚至可以不为该const分配空间。最简单的常见情况就是常量的值在编译时已知，而且不需要分配存储。（摘自《C++ Program Language》）用const声明的变量虽然增加了分配空间，但是可以保证类型安全。C标准中，const定义的常量是全局的。在C++中，const对象默认为定义它的文件的局部变量，那么把它定义在头文件中，也就意味着每个包含该头文件的源文件都有了自己的const变量，其名称和值都是一样的。<br /><br />用法2：指针和常量<br />使用指针时涉及到两个对象：该指针本身和被它所指的对象。将一个指针的声明用const“预先固定”将使那个对象而不是使这个指针成为常量。要将指针本身而不是被指对象声明为常量，必须使用声明运算符*const。所以出现在 * 之前的const是作为基础类型的一部分：<br />char *const cp; //到char的const指针<br />char const *pc1; //到const char的指针<br />const char *pc2; //到const char的指针（后两个声明是等同的）<br />从右向左读的记忆方式：<br />cp is a const pointer to char.<br />pc2 is a pointer to const char.<br /><br />用法3：const修饰函数传入参数<br />将函数传入参数声明为const，以指明使用这种参数仅仅是为了效率的原因，而不是想让调用函数能够修改对象的值。同理，将指针参数声明为const，函数将不修改由这个参数所指的对象。通常修饰指针参数和引用参数：<br />void Fun( const A *in); //修饰指针型传入参数<br />void Fun(const A &amp;in); //修饰引用型传入参数<br /><br />用法4：修饰函数返回值<br />可以阻止用户修改返回值。返回值也要相应的付给一个常量或常指针。<br /><br />用法5：const修饰成员函数<br />1、const对象只能访问const成员函数，而非const对象可以访问任意的成员函数，包括const成员函数；2、const对象的成员是不能修改的，而通过指针维护的对象确实可以修改的；3、const成员函数不可以修改对象的数据，不管对象是否具有const性质。编译时以是否修改成员数据为依据进行检查。<br /><br /><br /><b>2.static的用法：</b><br />静态变量作用范围在一个文件内，程序开始时分配空间，结束时释放空间，默认初始化为0，使用时可以改变其值。静态变量或静态函数只有本文件内的代码才能访问它，它的名字在其它文件中不可见。<br /><br />用法1：函数内部声明的static变量，可作为对象间的一种通信机制<br />如果一局部变量被声明为static，那么将只有唯一的一个静态分配的对象，它被用于在该函数的所有调用中表示这个变量。这个对象将只在执行线程第一次到达它的定义使初始化。<br /><br />用法2：局部静态对象<br />对于局部静态对象，构造函数是在控制线程第一次通过该对象的定义时调用。在程序结束时，局部静态对象的析构函数将按照他们被构造的相反顺序逐一调用，没有规定确切时间。<br /><br />用法3：静态成员和静态成员函数<br />如果一个变量是类的一部分，但却不是该类的各个对象的一部分，它就被成为是一个static静态成员。一个static成员只有唯一的一份副本，而不像常规的非static成员那样在每个对象里各有一份副本。同理，一个需要访问类成员，而不需要针对特定对象去调用的函数，也被称为一个static成员函数。需要注意，类的静态成员函数只能访问类的静态成员（变量或函数）。<br /><br /><b>3.extern的用法：</b><br />extern可以声明其他文件内定义的变量。在一个程序里，一个对象只能定义一次，它可以有多个声明，但类型必须完全一样。如果定义在全局作用域或者名字空间作用域里某一个变量没有初始化，它会被按照默认方式初始化。<br /><br />将变量或函数声明成外部链接，即该变量或函数名在其它函数中可见。被其修饰的变量（外部变量）是静态分配空间的，即程序开始时分配，结束时释放。在C++中，还可以指定使用另一语言链接，需要与特定的转换符一起使用。<br />extern “C” 声明语句<br />extern “C” { 声明语句块 }<br /><br />需要注意声明和定义之间的区别（from 《C++ Primer》）<br />extern int ival1; &nbsp; &nbsp; //it&#8217;s a&nbsp;declaration.<br />extern int ival2=10; &nbsp;//initializer, so it&#8217;s a definition.<br />double fica_rate; &nbsp; &nbsp; //no extern, so it&#8217;s a definition.<br />同一个程序中，有两个以上的文件含有上述对于同一个变量的任一种定义，都会导致多重定义链接错误。<br /><br /><br /><b>4.volatile的用法：</b><br />类型修正符（type-modifier），限定一个对象可被外部进程（操作系统、硬件或并发进程等）改变。volatile与变量连用，可以让变量被不同的线程访问和修改。常用于像中断处理程序之类的异步进程进行内存单元访问。声明时语法：<br />int volatile vInt;<br /><br />除了基本类型外，对用户定义类型也可以用volatile类型进行修饰。特别注意：可以把一个非volatile int赋给volatile int，但是不能把非volatile对象赋给一个volatile对象。一个有volatile标识符的类只能访问它接口的子集，一个由类的实现者控制的子集。用户只能用const_cast来获得对类型接口的完全访问。此外，volatile向const一样会从类传递到它的成员。</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/13/">&larr; Older</a>
@@ -482,6 +482,10 @@ C vs. C++ 其中一个显式区别，就是后者增添了标准库类型，vect
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
       </li>
     
@@ -495,10 +499,6 @@ C vs. C++ 其中一个显式区别，就是后者增添了标准库类型，vect
     
       <li class="post">
         <a href="/blog/2014/02/27/plotting-in-latex/">Plotting in Latex</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/24/better-look-for-git-log/">Better look for &#8220;git log&#8221;</a>
       </li>
     
   </ul>

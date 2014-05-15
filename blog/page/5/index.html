@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Most of the steps are straightforward. The only twisted place is the combination of mysql-python and the mysql itself. During my installation, there &hellip;">
+  <meta name="description" content="&#8220;MIT approach&#8221; with CLOS and Scheme:1) Simplicity-the design must be simple, both in implementation and interface. It is more important &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/07/23/some-general-programming-methodologies/">Some General Programming Methodologies</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-23T00:00:00-05:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+&#8220;MIT approach&#8221; with CLOS and Scheme:<br />1) Simplicity-the design must be simple, both in implementation and interface. It is more important for the interface to be simple than the implementation.<br />2) Correctness-the design must be correct in all observable aspects. Incorrectness is simply not allowed.<br />3) Consistency-the design must not be inconsistent. A design is allowed to be slightly less simple and less complete to avoid inconsistency. Consistency is as important as correctness.<br />4) Completeness-the design must cover as many important situations as is practical. All reasonably expected cases must be covered. Simplicity is not allowed to overly reduce completeness.<br /><br />&#8220;Worse-is-better&#8221; philosophy is only slightly different:<br />1) Simplicity-the design must be simple, both in implementation and interface. It is more important for the implementation to be simple than the interface. Simplicity is the most important consideration in a design.<br />2) Correctness-the design must be correct in all observable aspects. It is slightly better to be simple than correct.<br />3) Consistency-the design must not be overly inconsistent. Consistency can be sacrificed for simplicity in some cases, but it is better to drop those parts of the design that deal with less common circumstances than to introduce either implementational complexity or inconsistency.<br />4) Completeness-the design must cover as many important situations as is practical. All reasonably expected cases should be covered. Completeness can be sacrificed in favor of any other quality. In fact, completeness must sacrificed whenever implementation simplicity is jeopardized. Consistency can be sacrificed to achieve completeness if simplicity is retained; especially worthless is consistency of interface. <br /><br />Extreme Programming (XP) methodology:<br />1) Make samll, but freguent, release.<br />2) Develop in iteration cycles.<br />3) Do not put in anything that is not in the spec (no matter how tempted you are to put in functionarlity &#8220;for the future&#8221;).<br />4) Writhe the test code FIRST.<br />5) No killer schedules; work regular hours.<br />6) Refactor (improve the code) whenever and wherever you notice the opportunity.<br />7) Do not release anything until it passes all the tests.<br />8) Set realistic schedules, based around small releases.<br />9) Keep it simple.<br />10) Program in pairs, and move people around so that everybody knows pretty much everything about the code.<br /><br />Reference:<br />1) <a href="http://en.wikipedia.org/wiki/Extreme_programming">Wikipedia&#8211;Extreme Programming</a><br />2) <a href="http://www.jwz.org/doc/worse-is-better.html">The Rise of &#8220;Worse is Better&#8221;</a></div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ B.E.&nbsp;&nbsp; &nbsp;100*2+50=250&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;(two ex
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/15/recent-reflection/">Recent Reflection</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-15T00:00:00-05:00" pubdate data-updated="true">Apr 15<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-There is an essay talking about the <a href="http://www.winestockwebdesign.com/Essays/Lisp_Curse.htm">LISP Curse</a> , which is so much familiar with the development of Computer Vision/Machine Learning with signal processing. I have taken two consecutive courses of computer vision, and one paragraph of description in the essay above could summarize all of my feelings:<br /><br />&#8220;Programs written by individual contributors tend to follow the scratch-an-itch model. These programs will solve the problem that the contributor, himself, is having without necessarily handling related parts of the problem which would make the program more useful to others. Furthermore, the program is sure to work on that lone contributor&#8217;s own setup, but may not be portable to other implementations with even similar scenarios, or to the same implementation on other platforms. Documentation may be lacking. Being essentially a project done in one&#8217;s copious free time, or based on the only destination of making a proposal to apply grants, the program is liable to suffer should real-life responsibilities intrude on it. As Olin Shivers noted, this means that these one-man-band projects tend to solve eighty-percent of the problem&#8221;&#8230;(at maximum).<br /><br />Those two courses were just copying and trying hard to duplicate other works from some other professors. All of the works were self-contained. The instructor wished that some of the duplications would lead him any insight, and then let some of his own students to add some other specifications on it, to make the so-called &#8220;breakthrough&#8221;, and to publish one or more papers. Yes, the papers are the ultimate destination, which could both make the students graduate and reveal the extraordinary achievements of the professor.<br /><br />I should have somewhat lucky feeling not choosing this lab, although I might also learn a lot by choosing it and complete my doctoral degree&#8230; And in the latter scenario, the lucky feeling seems exactly like a useless self-consolation. But, anyway, collective intellectual is definitely the right way to improve one field of study. And more importantly, I should leave myself sufficient time to learn more and think about everything.</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -469,6 +469,10 @@ There is an essay talking about the <a href="http://www.winestockwebdesign.com/E
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
       </li>
     
@@ -482,10 +486,6 @@ There is an essay talking about the <a href="http://www.winestockwebdesign.com/E
     
       <li class="post">
         <a href="/blog/2014/02/27/plotting-in-latex/">Plotting in Latex</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/24/better-look-for-git-log/">Better look for &#8220;git log&#8221;</a>
       </li>
     
   </ul>

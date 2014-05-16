@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Qiong Wu]]></title>
   <link href="http://creasyw.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-05-14T23:44:37-05:00</updated>
+  <updated>2014-05-15T23:06:16-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Reading note of SICP (5)]]></title>
+    <link href="http://creasyw.github.io/blog/2014/05/15/reading-note-of-sicp-5/"/>
+    <updated>2014-05-15T00:55:00-05:00</updated>
+    <id>http://creasyw.github.io/blog/2014/05/15/reading-note-of-sicp-5</id>
+    <content type="html"><![CDATA[<ul>
+  <li>The ability to visualize the consequences of the actions under consideration is crucial to becoming an expert programmer.</li>
+  <li>Procedures that manipulate procedures, including accept them as arguments or return them as values, are called <em>higher-order procedures</em>. (The <em>sigma</em> summation and the derivative operation are all good/simple examples for the latter case.) This is one of the basic characteristics of <em>factional programming languages</em>.</li>
+  <li>The significance of higher-order procedures is that they enable us to represent these abstractions explicitly as elements in our programming language, so that they can be handled just like other computational elements……As programmers, we should be alert to opportunities to identify the underlying abstractions in our programs and to build upon them and generalize them to create more powerful abstractions……It poses challenges for efficient implementation, but the resulting gain in expressive power is enormous.</li>
+</ul>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Plotting in Latex]]></title>
@@ -276,20 +289,6 @@ data[count] = data[previous]
 
 <p>p.s. The vistualization of code block is optimized from the original Octopress style to Github-style based on the <a href="http://blog.codebykat.com/2013/05/23/gorgeous-octopress-codeblocks-with-coderay/">tutorial</a>.<br />
 p.p.s. The inline latex-style formula comes with Kramdown, MathJax and <a href="http://yoyzhou.github.io/blog/2012/08/05/add-latex-support-for-octopress/">this tutorial</a>. Besides, there is <a href="http://brianbuccola.github.io/blog/2012-11-28-latex-math-in-octopress.html">another minor bug to deal with</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Reading note of SICP (4)]]></title>
-    <link href="http://creasyw.github.io/blog/2013/08/10/reading-note-of-sicp-4/"/>
-    <updated>2013-08-10T00:00:00-05:00</updated>
-    <id>http://creasyw.github.io/blog/2013/08/10/reading-note-of-sicp-4</id>
-    <content type="html"><![CDATA[<div class="post">
-  Aug. 10th. Complete the 1st chapter of sicp.<br /><br />
-  
-  I really appreciate the exercises within each subsections, because I can feel that they are well designed. I used to have the same feeling when I did the homework from Dan's course of programming languages. The exercises make the general concepts concrete and doable.
-  <br /><br />
-  The abstraction is far from merely making the code more structured and readable. It is a design choice. Sometimes, it takes experience to find out where should be abstracted. And sometimes, it takes much more endeavors than simply mix everything together. But once the choice of abstraction is right, the program becomes clearer, and it increases many degrees of freedom for the design afterwards.</div>
 ]]></content>
   </entry>
   

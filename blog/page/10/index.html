@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="matrix functions&nbsp;INV&nbsp;&nbsp;&nbsp; Matrix inverse.&nbsp;&nbsp;&nbsp; INV(X) is the inverse of the square matrix X.&nbsp;&nbsp;&nbsp; A &hellip;">
+  <meta name="description" content="/gnuradio3.2.2/gr-wxgui/src/python/common.py##################### Shared Functions#####################import numpyimport math&quot;&quot;&quot;# &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/22/basic-python-math-calculation-in/">Basic Python Math Calculation in Gnuradio</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-22T00:00:00-05:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+/gnuradio3.2.2/gr-wxgui/src/python/common.py<p>####################<br /># Shared Functions<br />#####################<br />import numpy<br />import math<p>&quot;&quot;&quot;<br /># Python is a general purpose programming language.<br />It is interpreted and dynamically typed and is very<br />suited for interactive work and quick prototyping,<br />while being powerful enough to write large applications in.<br /># NumPy is a Python extension module, written mostly in C,<br />that defines the numerical array and matrix types<br />and basic operations on them.<br />&quot;&quot;&quot;<p>def get_exp(num):<br />&quot;&quot;&quot;<br />Get the exponent of the number in base 10.<br />@param num the floating point number<br />@return the exponent as an integer<br />&quot;&quot;&quot;<br />if num == 0: return 0<br />return int(math.floor(math.log10(abs(num))))<p>def get_clean_num(num):<br />&quot;&quot;&quot;<br />Get the closest clean number match to num with bases 1, 2, 5.<br />@param num the number<br />@return the closest number<br />&quot;&quot;&quot;<br />if num == 0: return 0<br />sign = num &gt; 0 and 1 or -1<br />exp = get_exp(num)<br />nums = numpy.array((1, 2, 5, 10))*(10**exp)<br />return sign*nums[numpy.argmin(numpy.abs(nums - abs(num)))]<br />#numpy.argmin: Return the indices of the minimum values along an axis.<p>def get_clean_incr(num):<br />&quot;&quot;&quot;<br />Get the next higher clean number with bases 1, 2, 5.<br />@param num the number<br />@return the next higher number<br />&quot;&quot;&quot;<br />num = get_clean_num(num)<br />exp = get_exp(num)<br />coeff = int(round(num/10**exp))<br />return {<br />-5: -2,<br />-2: -1,<br />-1: -.5,<br />1: 2,<br />2: 5,<br />5: 10,<br />}[coeff]*(10**exp)<p>def get_clean_decr(num):<br />&quot;&quot;&quot;<br />Get the next lower clean number with bases 1, 2, 5.<br />@param num the number<br />@return the next lower number<br />&quot;&quot;&quot;<br />num = get_clean_num(num)<br />exp = get_exp(num)<br />coeff = int(round(num/10**exp))<br />return {<br />-5: -10,<br />-2: -5,<br />-1: -2,<br />1: .5,<br />2: 1,<br />5: 2,<br />}[coeff]*(10**exp)<p>def get_min_max(samples):<br />&quot;&quot;&quot;<br />Get the minimum and maximum bounds for an array of samples.<br />@param samples the array of real values<br />@return a tuple of min, max<br />&quot;&quot;&quot;<br />scale_factor = 3<br />mean = numpy.average(samples)<br />rms = numpy.max([scale_factor*((numpy.sum((samples-mean)**2)/len(samples))**.5),<br />.1])<br />min = mean - rms<br />max = mean + rms<br />return min, max</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1589,43 +1626,6 @@ from comp.lang.c (<a href="http://groups.google.com/group/comp.lang.c/browse_thr
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/24/some-helpful-webpages/">Some Helpful Webpages</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-24T00:00:00-05:00" pubdate data-updated="true">Sep 24<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-Good Sites for Researchers and Students (<a href="http://www.cs.ucr.edu/%7Emichalis/techwriting.html">click</a>)<br /><br />Especially, there are something really worth reading:<br />Graduate School Survival Guide (<a href="http://faculty.washington.edu/wpratt/advice.htm">click</a>)<br />Writing Technical Articles (<a href="http://www.cs.columbia.edu/%7Ehgs/etc/writing-style.html">cllick</a>)<br />Networking on the Network: A Guide to Professional Skills for PhD Student (<a href="http://www.cs.uwyo.edu/%7Ejlc/courses/5000/networking_Agre.pdf">click</a>)<br />Useful Things to Know About Ph. D. Thesis Research (<a href="http://www.eecs.harvard.edu/%7Ehtk/thesis.htm">click</a>)<br />Resources for Ph.D. Students (<a href="http://enl.usc.edu/%7Ecs694/research_resources.html">click</a>)<br />Sources of good advice (<a href="http://www.cs.bu.edu/fac/byers/advice.html">click</a>)<br />So long, and thanks for the Ph.D. (for cs major) (<a href="http://www.cs.unc.edu/%7Eazuma/hitch4.html">click</a>)</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/11/">&larr; Older</a>
@@ -1643,6 +1643,10 @@ Good Sites for Researchers and Students (<a href="http://www.cs.ucr.edu/%7Emicha
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/15/reading-note-of-sicp-5/">Reading note of SICP (5)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
       </li>
     
@@ -1656,10 +1660,6 @@ Good Sites for Researchers and Students (<a href="http://www.cs.ucr.edu/%7Emicha
     
       <li class="post">
         <a href="/blog/2014/03/01/strategic-playing-for-the-first-several-sets/">Strategic Playing for the First Several Sets</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/27/plotting-in-latex/">Plotting in Latex</a>
       </li>
     
   </ul>

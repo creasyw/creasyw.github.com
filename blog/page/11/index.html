@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="1. Live Monitoring and Writing Raw 802.11 Packets — From madwifi READMEThe driver can be used in a live “monitor” mode, by creating a monitorVAP and &hellip;">
+  <meta name="description" content="Good Sites for Researchers and Students (click)Especially, there are something really worth reading:Graduate School Survival Guide (click)Writing &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/24/some-helpful-webpages/">Some Helpful Webpages</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-24T00:00:00-05:00" pubdate data-updated="true">Sep 24<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Good Sites for Researchers and Students (<a href="http://www.cs.ucr.edu/%7Emichalis/techwriting.html">click</a>)<br /><br />Especially, there are something really worth reading:<br />Graduate School Survival Guide (<a href="http://faculty.washington.edu/wpratt/advice.htm">click</a>)<br />Writing Technical Articles (<a href="http://www.cs.columbia.edu/%7Ehgs/etc/writing-style.html">cllick</a>)<br />Networking on the Network: A Guide to Professional Skills for PhD Student (<a href="http://www.cs.uwyo.edu/%7Ejlc/courses/5000/networking_Agre.pdf">click</a>)<br />Useful Things to Know About Ph. D. Thesis Research (<a href="http://www.eecs.harvard.edu/%7Ehtk/thesis.htm">click</a>)<br />Resources for Ph.D. Students (<a href="http://enl.usc.edu/%7Ecs694/research_resources.html">click</a>)<br />Sources of good advice (<a href="http://www.cs.bu.edu/fac/byers/advice.html">click</a>)<br />So long, and thanks for the Ph.D. (for cs major) (<a href="http://www.cs.unc.edu/%7Eazuma/hitch4.html">click</a>)</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ In telecommunications, received signal strength indicator (RSSI) is a measuremen
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/01/rate-adaptation-for-rt2870/">Rate Adaptation for RT2870</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-01T00:00:00-05:00" pubdate data-updated="true">Sep 1<span>st</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px;">The rate selection of the driver is working as follow: firstly, identify the initial link speed with the FUNCTION &#8220;MlmeUpdateTxRates&#8221; in mlme.c, then set the transmition rate with FUNCTION &#8220;SetCommonHT&#8221; in cmm_info.c. Specifically the FUNCTION &#8220;RTMPSetDesiredRates&#8221; in \common\cmm_info.c is to set 802.11a/b/g data rate; and FUNCTION &#8220;RTMPSetHT&#8221;, &#8220;RTMPSetIndividualHT&#8221;, and &#8220;RTMPUpdateHTIE&#8221; in the same file are to set the 802.11n data rate, where set its value according to desired rate according to input parameter and bandwidth.</span><span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px;"><br /></span><span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px;"><br /></span><span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px;">The FUNCTION &#8220;MlmeUpdateHtTxRates&#8221; in \include\mlme.c is to update the data rate used in 802.11n scenario. The update decision is made based on the desired PHY layer infromation saved in a struct, the updated channel parameters provided by FUNCTION &#8220;RTMPCheckHt&#8221; in the same file, and more importantly, the calculation provided by FUNCITON &#8220;MlmeSelectTxRateTable&#8221;. The three function mentioned about communication with each other mainly via the array MCSSet[16], whose definition is in file \include\mlme.h.</span><span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px;"><br /></span><span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px;"><br /></span><span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px;">Furthermore, your advice about the rate selection range help me find the definition of high throughput in file \include\rtmp_def.h, where has two groups of transition rate: 0 to 7 (6Mbps to 54Mbps) for OFDM, and 0 to 33 (MCS_0 to MCS_32, and MCS_33 is auto-rate). As long as the dongle we chose have two transmission antennas, we can use MCS_0 to MCS_15, corresponding&nbsp; up to 300Mbps. This can be set in file \common\cmm_profile.c, triggered by key words &#8220;FixedTxMode&#8221; or &#8220;HT_TxStream&#8221;. However, because the algorithm will check the status of channel every time it updates the date rate, the original algorithm cannot set the rate to a specific number all the time.</span></div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/12/">&larr; Older</a>
@@ -469,6 +469,10 @@ In telecommunications, received signal strength indicator (RSSI) is a measuremen
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/15/reading-note-of-sicp-5/">Reading note of SICP (5)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
       </li>
     
@@ -482,10 +486,6 @@ In telecommunications, received signal strength indicator (RSSI) is a measuremen
     
       <li class="post">
         <a href="/blog/2014/03/01/strategic-playing-for-the-first-several-sets/">Strategic Playing for the First Several Sets</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/27/plotting-in-latex/">Plotting in Latex</a>
       </li>
     
   </ul>

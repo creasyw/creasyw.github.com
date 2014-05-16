@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="# all the machines should be upgraded to ubuntu 10.04 #PRE INSTALLATION&#8212;&#8212;&#8212;&#8212;&#8212;-- note down the ip address of the eth0 &hellip;">
+  <meta name="description" content="The rate selection of the driver is working as follow: firstly, identify the initial link speed with the FUNCTION &#8220;MlmeUpdateTxRates&#8221; in &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/01/rate-adaptation-for-rt2870/">Rate Adaptation for RT2870</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-01T00:00:00-05:00" pubdate data-updated="true">Sep 1<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px;">The rate selection of the driver is working as follow: firstly, identify the initial link speed with the FUNCTION &#8220;MlmeUpdateTxRates&#8221; in mlme.c, then set the transmition rate with FUNCTION &#8220;SetCommonHT&#8221; in cmm_info.c. Specifically the FUNCTION &#8220;RTMPSetDesiredRates&#8221; in \common\cmm_info.c is to set 802.11a/b/g data rate; and FUNCTION &#8220;RTMPSetHT&#8221;, &#8220;RTMPSetIndividualHT&#8221;, and &#8220;RTMPUpdateHTIE&#8221; in the same file are to set the 802.11n data rate, where set its value according to desired rate according to input parameter and bandwidth.</span><span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px;"><br /></span><span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px;"><br /></span><span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px;">The FUNCTION &#8220;MlmeUpdateHtTxRates&#8221; in \include\mlme.c is to update the data rate used in 802.11n scenario. The update decision is made based on the desired PHY layer infromation saved in a struct, the updated channel parameters provided by FUNCTION &#8220;RTMPCheckHt&#8221; in the same file, and more importantly, the calculation provided by FUNCITON &#8220;MlmeSelectTxRateTable&#8221;. The three function mentioned about communication with each other mainly via the array MCSSet[16], whose definition is in file \include\mlme.h.</span><span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px;"><br /></span><span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px;"><br /></span><span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px;">Furthermore, your advice about the rate selection range help me find the definition of high throughput in file \include\rtmp_def.h, where has two groups of transition rate: 0 to 7 (6Mbps to 54Mbps) for OFDM, and 0 to 33 (MCS_0 to MCS_32, and MCS_33 is auto-rate). As long as the dongle we chose have two transmission antennas, we can use MCS_0 to MCS_15, corresponding&nbsp; up to 300Mbps. This can be set in file \common\cmm_profile.c, triggered by key words &#8220;FixedTxMode&#8221; or &#8220;HT_TxStream&#8221;. However, because the algorithm will check the status of channel every time it updates the date rate, the original algorithm cannot set the rate to a specific number all the time.</span></div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -428,43 +465,6 @@ Q: I&#8217;m trying to define a few simple little function-like macros such as<b
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/06/29/study-digest-standard-library-functions/">Study Digest: Standard Library Functions</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-29T00:00:00-05:00" pubdate data-updated="true">Jun 29<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-C vs. C++ 其中一个显式区别，就是后者增添了标准库类型，vector、string、bitset。<br /><br />以vector为例，实际上可将其看成是一个可变长度的数组，迭代器类比于增强版本的指针。而标准库函数最大的好处在于其成员函数，可以轻松地完成一些在C语言中需要特定代码段完成的功能。并且，就安全性而言，vector的迭代器也不必处处小心诸如指针初始化、或者指针越界之类的隐藏错误。<br /><br />而标准库函数中的string，比C语言中处理字符的char*，在实际应用中限制也更少。主要问题仍然是，C语言将字符串作为数组处理，则合并、拷贝时，必须考虑到起始点以及总长度的问题，这也就造成了代码块的可移植性受到了很大的限制。而C++不存在这样的问题，因为其语言的标准库处理所有的内存管理问题。只要在开始阶段定义了string型变量，则接下来的操作和一般的变量赋值加减的操作无异了。此外，C风格字符串一个更严重的缺陷在于默认null结尾字符的存在，strlen的返回值必须加一才是整个数组的真正长度，这样的细微之处很可能在数组操作时成为一个隐患。<br /><br />标准库提供的bitset操作，更直接，更容易阅读和书写、正确使用的可能性更高。而且，bitset对象的大小不受unsighed数的位数限制。通常来说，bitset优于整型数据的低级直接位操作。<br /><br />综上，C语言风格的内置数组和C++标准库函数相比，更易于出错，更难于理解难于调试，。所以除非是在极端要求代码执行速度的情况，否则使用C++的标准库函数更好。</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/13/">&larr; Older</a>
@@ -482,6 +482,10 @@ C vs. C++ 其中一个显式区别，就是后者增添了标准库类型，vect
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/15/reading-note-of-sicp-5/">Reading note of SICP (5)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
       </li>
     
@@ -495,10 +499,6 @@ C vs. C++ 其中一个显式区别，就是后者增添了标准库类型，vect
     
       <li class="post">
         <a href="/blog/2014/03/01/strategic-playing-for-the-first-several-sets/">Strategic Playing for the First Several Sets</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/27/plotting-in-latex/">Plotting in Latex</a>
       </li>
     
   </ul>

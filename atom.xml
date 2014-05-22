@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-05-15T23:06:16-05:00</updated>
+  <updated>2014-05-22T12:01:12-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -22,6 +22,9 @@
   <li>The ability to visualize the consequences of the actions under consideration is crucial to becoming an expert programmer.</li>
   <li>Procedures that manipulate procedures, including accept them as arguments or return them as values, are called <em>higher-order procedures</em>. (The <em>sigma</em> summation and the derivative operation are all good/simple examples for the latter case.) This is one of the basic characteristics of <em>factional programming languages</em>.</li>
   <li>The significance of higher-order procedures is that they enable us to represent these abstractions explicitly as elements in our programming language, so that they can be handled just like other computational elements……As programmers, we should be alert to opportunities to identify the underlying abstractions in our programs and to build upon them and generalize them to create more powerful abstractions……It poses challenges for efficient implementation, but the resulting gain in expressive power is enormous.</li>
+  <li>As with compound procedures, the main issue is to be addressed is that of abstraction as a technique for coping with complexity, while the data abstraction enables us to erect suitable <em>abstraction barriers</em> between different parts of a program.</li>
+  <li>In general, the underlying idea of data abstraction is to identify for each type of data object a basic set of operations in terms of which all manipulations of data objects of that type will be expressed, and then to use only those operations in manipulating the data.</li>
+  <li>The approach of <em>stratified design</em> is the notion that a complex system should be structured as a sequence of levels that are described using a sequence of languages. Each level is constructed by combining parts that are regarded as primitive at that level, and the parts constructed at each level are used as primitives at the next level. The language used at each level of a stratified design has primitives, means of combinations, and means of abstraction appropriate to that level of detail.</li>
 </ul>
 ]]></content>
   </entry>
@@ -175,9 +178,10 @@
   <li>C-h t. Tutorial of Emacs within the editor. It should be the first doc to read.</li>
   <li>My previous <a href="http://wqiong.com/blog/2013/07/01/setup-emacs-in-mac-os/">post</a> to setup Emacs in Mac OS.</li>
   <li>Steve Yegge’s suggestion for <a href="https://sites.google.com/site/steveyegge2/effective-emacs">improving productivity with Emacs</a></li>
-  <li>The <a href="https://github.com/xiaohanyu/oh-my-emacs">emacs enrionment</a> built by one of my friends.</li>
-  <li><a href="http://batsov.com/prelude/">Prelude</a>. –haven’t tried that yet.</li>
+  <li><a href="http://batsov.com/prelude/">Prelude</a> – very easy to setup, and add/disable modules.</li>
+  <li><a href="https://github.com/xiaohanyu/oh-my-emacs">Oh-my-emacs</a> is another option to start with, but I met quite a few incompatible issues for the mac os. <a href="https://github.com/eschulte/emacs24-starter-kit">Emacs24 Starter Kit</a> is also well-known but relatively inactively updated.</li>
   <li>GNU <a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/index.html">Emacs Manual</a> and <a href="http://www.gnu.org/software/emacs/manual/html_node/elisp/">Emacs LISP Manual</a></li>
+  <li><a href="http://batsov.com/articles/2012/02/19/package-management-in-emacs-the-good-the-bad-and-the-ugly/">Guidelines</a> for package management in Emacs.</li>
   <li><a href="http://www.emacswiki.org/emacs/">Emacs Wiki</a></li>
   <li><a href="http://www.masteringemacs.org/">Mastering Emacs</a></li>
 </ul>

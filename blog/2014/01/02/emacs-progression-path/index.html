@@ -109,8 +109,6 @@
 
 <p>I will try to sort the contents of this post as an incremental record simulating my Emacs learning process, as well as keeping track of nontrivial materials and thoughts.</p>
 
-<p>[UPDATA] One of the most fundamental change from Vim to Emacs is that Vim is the most powerful editor in this planet while Emacs is kind of <a href="http://c2.com/cgi/wiki?EmacsAsOperatingSystem">“operating system” with a lousy editor</a>. It might be a rant to the right place, but anyway, the other side of the story is that emacs can be regarded as an OS which means that it might be much more powerful when the configuration is right. I should be able to do things that are used to complete via the combination of vim, shell, REPL, and compiler, and I SHOULD NOT launch and exit it very often as what I am doing with vim.</p>
-
 <h3 id="resources">Resources:</h3>
 
 <ul>
@@ -136,19 +134,26 @@
   <li><a href="http://company-mode.github.io/">Company</a> for auto-completion.</li>
 </ul>
 
+<h3 id="random-thoughts">Random Thoughts</h3>
+<ul>
+  <li>One of the most fundamental change from Vim to Emacs is that Vim is the most powerful editor in this planet while Emacs is kind of <a href="http://c2.com/cgi/wiki?EmacsAsOperatingSystem">“operating system” with a lousy editor</a>. It might be a rant to the right place, but anyway, the other side of the story is that emacs can be regarded as an OS which means that it might be much more powerful when the configuration is right. I should be able to do things that are used to complete via the combination of vim, shell, REPL, and compiler, and I SHOULD NOT launch and exit it very often as what I am doing with vim.</li>
+  <li>Everything looks a little bit more decent within the emacs,
+including the shell.</li>
+</ul>
+
 <h3 id="useful-key-combinings">Useful Key Combinings:</h3>
 
-<p>Kill a line:<br />
+<p>Kill a line:
 C-a C-k (move the cursor to the begining of the line, thenkill from the cursor to the end of the line)</p>
 
 <p>Kill 2 lines: C-a C-u 2 C-k</p>
 
-<p>Kill a specific region<br />
+<p>Kill a specific region
 C-&lt;SPC&gt; C-w (move around to highlight region, then kill contents within highlight region)</p>
 
 <p>Yank the killed contents C-y</p>
 
-<p>Retrieve yanking history<br />
+<p>Retrieve yanking history
 M-y (right after the 1st yanking. – this is intersting)</p>
 
 <p>The difference between “killing” and “deleting” is that “killed” text
@@ -162,26 +167,26 @@ cannot yank that text).  &lt;DEL&gt; and C-d do deletion in the simplest
 case, with no argument.  When given an argument, they kill instead.
 – This is valid for both vim and emacs.</p>
 
-<p>Scoll down the page<br />
-C-v (page down)<br />
-C-u 8 C-v (scoll down 8 lines)<br />
-C-l (move the current line to the middle of the window)<br />
-C-u 0 C-l (move the current line to the head of the window)  </p>
+<p>Scoll down the page
+C-v (page down)
+C-u 8 C-v (scoll down 8 lines)
+C-l (move the current line to the middle of the window)
+C-u 0 C-l (move the current line to the head of the window)</p>
 
-<p>Getting help<br />
-C-h c &lt;Command sequence&gt;   (a very brief description of the command.)<br />
+<p>Getting help
+C-h c &lt;Command sequence&gt;   (a very brief description of the command.)
 C-h k &lt;Command sequence&gt;   (displays the documentation of the function, as well as its name)</p>
 
-<p>Auto-completion<br />
-M-/<br />
+<p>Auto-completion
+M-/
 <a href="http://company-mode.github.io/">Company</a> is good complementory plug-in</p>
 
-<p>Shell History (also Useful for Haskell REPL)<br />
-M-p (or) C-&lt;UP&gt;: Fetch the next earlier old shell command.    <br />
-M-n (or) C-&lt;DOWN&gt;: Fetch the next later old shell command.    <br />
-M-r: Begin an incremental regexp search of old shell commands.    <br />
-C-c C-x: Fetch the next subsequent command from the history.  <br />
-C-c . : Fetch one argument from an old shell command.     <br />
+<p>Shell History (also Useful for Haskell REPL)
+M-p (or) C-&lt;UP&gt;: Fetch the next earlier old shell command.
+M-n (or) C-&lt;DOWN&gt;: Fetch the next later old shell command.
+M-r: Begin an incremental regexp search of old shell commands.
+C-c C-x: Fetch the next subsequent command from the history.
+C-c . : Fetch one argument from an old shell command.
 C-c C-l: Display the buffer’s history of shell commands in another window (comint-dynamic-list-input-ring).</p>
 
 <h3 id="missing-features">Missing Features:</h3>

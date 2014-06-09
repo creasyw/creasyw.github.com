@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-05-30T23:21:01-05:00</updated>
+  <updated>2014-06-09T17:53:31-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -165,9 +165,9 @@
     <link href="http://creasyw.github.io/blog/2014/01/02/emacs-progression-path/"/>
     <updated>2014-01-02T16:37:00-06:00</updated>
     <id>http://creasyw.github.io/blog/2014/01/02/emacs-progression-path</id>
-    <content type="html"><![CDATA[<p>I’m kind of hoping to find something like <a href="http://stackoverflow.com/questions/2573135/python-progression-path-from-apprentice-to-guru">Python Progression Path</a> or sort of “best practice” when I am learning Emacs, since the difference between Vim and Emacs is much larger than I thought. But what I found via Google are either for really rookie teaching about basic operations such as saving and quiting the editor, or for only advanced player talking about using Emacs LISP…</p>
+    <content type="html"><![CDATA[<p>I was hoping to find something like <a href="http://stackoverflow.com/questions/2573135/python-progression-path-from-apprentice-to-guru">Python Progression Path</a> or sort of “best practice” for Emacs, because the difference between Vim and Emacs was much larger than I thought. But what I found were either teaching about basic operations such as saving and quiting the editor for people who had access to comupter for the 1st time, or talking about tricks of using Emacs Lisp for the high-end hard-core players… It seemed like I was stuck in the middle, and would stay there for a very long time…</p>
 
-<p>I will try to sort the contents of this post as an incremental record simulating my Emacs learning process, as well as keeping track of nontrivial materials and thoughts.</p>
+<p>I will sort the contents here as incremental records simulating my Emacs learning process, as well as keeping track of nontrivial materials and thoughts.</p>
 
 <h3 id="resources">Resources:</h3>
 

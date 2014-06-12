@@ -4,7 +4,7 @@
   <title><![CDATA[Category: matlab | Qiong Wu]]></title>
   <link href="http://creasyw.github.io/blog/categories/matlab/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-06-10T11:24:08-05:00</updated>
+  <updated>2014-06-11T18:22:45-07:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[matlab syms]]></title>
     <link href="http://creasyw.github.io/blog/2010/10/29/matlab-syms/"/>
-    <updated>2010-10-29T00:00:00-05:00</updated>
+    <updated>2010-10-29T00:00:00-07:00</updated>
     <id>http://creasyw.github.io/blog/2010/10/29/matlab-syms</id>
     <content type="html"><![CDATA[<div class="post">
 &gt;&gt;syms x<br />&gt;&gt;syms y<br />&gt;&gt;&nbsp;y=diff(0.25*3^x*exp(-3.56*x*(1-x)))<br /><br /><br />y =<br />(3^x*exp((89*x*(x - 1))/25)*((178*x)/25 - 89/25))/4 + (3^x*exp((89*x*(x - 1))/25)*log(3))/4<br /><br /><br />&gt;&gt; solve('-(178*x)/25 + 89/25-log(3)=0','x')<br /><br />ans = 1/2 - (25*log(3))/178<br /><br /><br />&gt;&gt; x=1/2 - (25*log(3))/178<br /><br />x =&nbsp;0.3457<br /><br /><br /><br />***OR***<br /><br />&gt;&gt; solve('y=0','y','x')<br /><br />% if x has only one solution, the value can be seen from the "Workspace"<br />% However, if it has more than one solution, i still do not know how to look into % the construction of syms......</div>
@@ -26,7 +26,7 @@
   <entry>
     <title type="html"><![CDATA[matlab log]]></title>
     <link href="http://creasyw.github.io/blog/2010/10/29/matlab-log/"/>
-    <updated>2010-10-29T00:00:00-05:00</updated>
+    <updated>2010-10-29T00:00:00-07:00</updated>
     <id>http://creasyw.github.io/blog/2010/10/29/matlab-log</id>
     <content type="html"><![CDATA[<div class="post">
 log: Natural logarithm<br />Syntax: Y = log(X)<br />Description:<br />The log function operates element-wise on arrays. Its domain includes<br />complex and negative numbers, which may lead to unexpected results if<br />used unintentionally.<br />Y = log(X) returns the natural logarithm of the elements of X. For<br />complex or negative , where , the complex logarithm is returned.<br />log(z) = log(abs(z)) + i*atan2(y,x)<br />Examples<br />The statement abs(log(-1)) is a clever way to generate .<br />ans =<br />3.1416</div>
@@ -36,7 +36,7 @@ log: Natural logarithm<br />Syntax: Y = log(X)<br />Description:<br />The log fu
   <entry>
     <title type="html"><![CDATA[some commands for matlab]]></title>
     <link href="http://creasyw.github.io/blog/2010/10/21/some-commands-for-matlab/"/>
-    <updated>2010-10-21T00:00:00-05:00</updated>
+    <updated>2010-10-21T00:00:00-07:00</updated>
     <id>http://creasyw.github.io/blog/2010/10/21/some-commands-for-matlab</id>
     <content type="html"><![CDATA[<div class="post">
 matrix functions<br /><br /><b>&nbsp;INV</b>&nbsp;&nbsp;&nbsp; Matrix inverse.<br />&nbsp;&nbsp;&nbsp; INV(X) is the inverse of the square matrix X.<br />&nbsp;&nbsp;&nbsp; A warning message is printed if X is badly scaled or<br />&nbsp;&nbsp;&nbsp; nearly singular.<br /><br /><b>&nbsp;.' Transpose.</b><br />&nbsp;&nbsp;&nbsp; X.' is the non-conjugate transpose.<br />&nbsp;&nbsp;&nbsp; B = TRANSPOSE(A) is called for the syntax A.' when A is an object.<br /><br /><b>&nbsp;SQUEEZE</b> Remove singleton dimensions.<br />&nbsp;&nbsp;&nbsp; B = SQUEEZE(A) returns an array B with the same elements as<br />&nbsp;&nbsp;&nbsp; A but with all the singleton dimensions removed.&nbsp; A singleton<br />&nbsp;&nbsp;&nbsp; is a dimension such that size(A,dim)==1.&nbsp; 2-D arrays are<br />&nbsp;&nbsp;&nbsp; unaffected by squeeze so that row vectors remain rows.<br />&nbsp;&nbsp;&nbsp; For example,&nbsp;&nbsp; squeeze(rand(2,1,3))&nbsp;&nbsp;&nbsp; is 2-by-3.<br /><br />Especially, for a 3-dimension matrix, for the command "matri = original_matrix(1,:,:)", the resulting matrix matri is still a 3-D matrix whose 1st dimension is just 1.<br /><br />==========<br /><br />for plotting, this example will explain the most frequently used commands:<br /><br />x = -pi:.1:pi;<br />y = sin(x);<br />plot(x,y);<br />set(gca,'XTick',-pi:pi/2:pi);<br />set(gca,'XTickLabel',{'-pi','-pi/2','0','pi/2','pi'});<br />xlabel('-\pi \leq \Theta \leq \pi');<br />ylabel('sin(\Theta)');<br />title('Plot of sin(\Theta)');<br />AXIS([XMIN XMAX YMIN YMAX])<br />XLIM([XMIN XMAX])<br />YLIM([YMIN YMAX])</div>

@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-06-13T06:34:29-07:00</updated>
+  <updated>2014-06-23T14:03:02-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -14,9 +14,27 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Half of Summer Season Has Gone]]></title>
+    <link href="http://creasyw.github.io/blog/2014/06/23/half-of-summer-season-has-gone/"/>
+    <updated>2014-06-23T14:01:00-05:00</updated>
+    <id>http://creasyw.github.io/blog/2014/06/23/half-of-summer-season-has-gone</id>
+    <content type="html"><![CDATA[<h3 id="research">Research</h3>
+
+<h3 id="tennis-and-excercises">Tennis and Excercises</h3>
+
+<h3 id="trip">Trip</h3>
+
+<h3 id="programming">Programming</h3>
+
+<h3 id="courses">Courses</h3>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Reading note of SICP (5)]]></title>
     <link href="http://creasyw.github.io/blog/2014/05/15/reading-note-of-sicp-5/"/>
-    <updated>2014-05-15T00:55:00-07:00</updated>
+    <updated>2014-05-15T00:55:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2014/05/15/reading-note-of-sicp-5</id>
     <content type="html"><![CDATA[<ul>
   <li>The ability to visualize the consequences of the actions under consideration is crucial to becoming an expert programmer.</li>
@@ -33,7 +51,7 @@
   <entry>
     <title type="html"><![CDATA[Kinetic Chain of Reactions]]></title>
     <link href="http://creasyw.github.io/blog/2014/05/14/kinetic-chain-of-reactions/"/>
-    <updated>2014-05-14T23:28:00-07:00</updated>
+    <updated>2014-05-14T23:28:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2014/05/14/kinetic-chain-of-reactions</id>
     <content type="html"><![CDATA[<ul>
   <li>Ideally, every time hitting the ball should be a “kinetic chain of reactions”– the momentum moves from feet to knee, to waist, to shoulder, and finally to the forearm and wrist.</li>
@@ -49,7 +67,7 @@
   <entry>
     <title type="html"><![CDATA[Thought Process in a Tennis Match]]></title>
     <link href="http://creasyw.github.io/blog/2014/04/12/thought-process-in-a-tennis-match/"/>
-    <updated>2014-04-12T13:53:00-07:00</updated>
+    <updated>2014-04-12T13:53:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2014/04/12/thought-process-in-a-tennis-match</id>
     <content type="html"><![CDATA[<p>Last Thursday, I had another win in the league(: In my point of view, I was pretty lucky for the previous victories, but I did have an overwhelming victory this time. I was much better than one month ago (yeah! of course=P), and the opponent was a sub-player, who was weaker than others in the league. Although he had a strong surfing, both his forehand and backhand were not so good. The responses were soft and shallow with only a little bit back spin, which gave me a wide angel to hit either inside-in or inside-out.</p>
 
@@ -68,7 +86,7 @@
   <entry>
     <title type="html"><![CDATA[Survive on Busy Two weeks]]></title>
     <link href="http://creasyw.github.io/blog/2014/04/05/survive-on-busy-two-weeks/"/>
-    <updated>2014-04-05T09:47:00-07:00</updated>
+    <updated>2014-04-05T09:47:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2014/04/05/survive-on-busy-two-weeks</id>
     <content type="html"><![CDATA[<p>I am glad that I could survive on three-hours sleep per day for almost two weeks. Of course, there were quite a few downsides: I felt very weak after the first several days, and the feeling lasted till the end; I lost 1 and dropped the other 2 times of tennis matches in this period; my Github longest streak of contribution stopped at 200 days, which is the date right before my comprehensive defense…</p>
 
@@ -96,7 +114,7 @@
   <entry>
     <title type="html"><![CDATA[Strategic Playing for the First Several Sets]]></title>
     <link href="http://creasyw.github.io/blog/2014/03/01/strategic-playing-for-the-first-several-sets/"/>
-    <updated>2014-03-01T14:29:00-07:00</updated>
+    <updated>2014-03-01T14:29:00-06:00</updated>
     <id>http://creasyw.github.io/blog/2014/03/01/strategic-playing-for-the-first-several-sets</id>
     <content type="html"><![CDATA[<p>It is worth noting that yesterday I had my first win in the 3.0 league=D 7-5, 3-6, and 10-6 in the tie-breaker set. In today’s lesson, Bob told me a bit more about strategic playing. It was all about probing different aspects of the opponent.</p>
 
@@ -117,7 +135,7 @@
   <entry>
     <title type="html"><![CDATA[Plotting in Latex]]></title>
     <link href="http://creasyw.github.io/blog/2014/02/27/plotting-in-latex/"/>
-    <updated>2014-02-27T13:14:00-07:00</updated>
+    <updated>2014-02-27T13:14:00-06:00</updated>
     <id>http://creasyw.github.io/blog/2014/02/27/plotting-in-latex</id>
     <content type="html"><![CDATA[<p>I just hope that I could find this feature earlier. <a href="http://www.texample.net/tikz/">TikZ</a></p>
 
@@ -146,7 +164,7 @@
   <entry>
     <title type="html"><![CDATA[Better look for "git log"]]></title>
     <link href="http://creasyw.github.io/blog/2014/02/24/better-look-for-git-log/"/>
-    <updated>2014-02-24T13:30:00-07:00</updated>
+    <updated>2014-02-24T13:30:00-06:00</updated>
     <id>http://creasyw.github.io/blog/2014/02/24/better-look-for-git-log</id>
     <content type="html"><![CDATA[<p>The first time that I read it is from coolshell.cn, and then today from <a href="http://www.reddit.com/r/programming/comments/1yqiq8/git_log_is_so_2005/">reddit</a>. Just put here as a backup.</p>
 
@@ -163,7 +181,7 @@
   <entry>
     <title type="html"><![CDATA[Emacs Progression Path]]></title>
     <link href="http://creasyw.github.io/blog/2014/01/02/emacs-progression-path/"/>
-    <updated>2014-01-02T16:37:00-07:00</updated>
+    <updated>2014-01-02T16:37:00-06:00</updated>
     <id>http://creasyw.github.io/blog/2014/01/02/emacs-progression-path</id>
     <content type="html"><![CDATA[<p>I was hoping to find something like <a href="http://stackoverflow.com/questions/2573135/python-progression-path-from-apprentice-to-guru">Python Progression Path</a> or sort of “best practice” for Emacs, because the difference between Vim and Emacs was much larger than I thought. But what I found were either teaching about basic operations such as saving and quiting the editor for people who had access to comupter for the 1st time, or talking about tricks of using Emacs Lisp for the high-end hard-core players… It seemed like I was stuck in the middle, and would stay there for a very long time…</p>
 
@@ -263,7 +281,7 @@ C-c C-l: Display the buffer’s history of shell commands in another window (com
   <entry>
     <title type="html"><![CDATA[My 2013 and new year resolution]]></title>
     <link href="http://creasyw.github.io/blog/2013/12/31/my-2013-and-new-year-resolution/"/>
-    <updated>2013-12-31T10:13:00-07:00</updated>
+    <updated>2013-12-31T10:13:00-06:00</updated>
     <id>http://creasyw.github.io/blog/2013/12/31/my-2013-and-new-year-resolution</id>
     <content type="html"><![CDATA[<p>没有想到，这一年能发生这么多的事情。效率从年初开始，越来越高。然后是暑假实习，认识了很多有趣的人，开始打网球。去了波多黎各和维京群岛，看到一生迄今为止最蓝的海。回来后继续打网球，开始瘦身，失散了三十年的六块腹肌和人鱼线都找到了，可年末却把豆豆丢了。痛彻心扉的最后两个月，不太清楚自己是怎么度过的。</p>
 
@@ -294,7 +312,7 @@ C-c C-l: Display the buffer’s history of shell commands in another window (com
   <entry>
     <title type="html"><![CDATA[LTE reading excerpt]]></title>
     <link href="http://creasyw.github.io/blog/2013/10/09/lte-reading-excerpt/"/>
-    <updated>2013-10-09T18:21:00-07:00</updated>
+    <updated>2013-10-09T18:21:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/10/09/lte-reading-excerpt</id>
     <content type="html"><![CDATA[<p>The LTE-Advanced introduced by LTE standard release 10 has many new features, including the carrier aggregation, enhanced intercell interferernce coordination (ICIC) for heterogeneous networks (HetNets), enhanced multiple-antenna transmission supporting up to eight downlink layers, and relaying and coordinated multipoint (CoMP) transmission.</p>
 
@@ -323,7 +341,7 @@ C-c C-l: Display the buffer’s history of shell commands in another window (com
   <entry>
     <title type="html"><![CDATA[All-pairs shortest path]]></title>
     <link href="http://creasyw.github.io/blog/2013/09/30/johnsons-algorithm/"/>
-    <updated>2013-09-30T23:49:00-07:00</updated>
+    <updated>2013-09-30T23:49:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/09/30/johnsons-algorithm</id>
     <content type="html"><![CDATA[<p>The question comes from the online course <em>Algorithm Design and Analysis (Part II)</em> in coursera. It is an <a href="http://en.wikipedia.org/wiki/Shortest_path_problem#All-pairs_shortest_paths">all-pairs shortest path problem</a>. As mentioned in the wikipedia, a more straightforward solution with Floyd–Warshall algorithm takes \(O(N^3)\) complexity, and the more computational efficient approach is to use a combination of Dijkstra’s algorithm, Bellman-Ford algorithm, and Johnson’s algorithm, which chould decrease the complexity to \(O(N^2logN)\). I implement the latter one for more interesting and challenging. There are several obstacles make the implementation a little bit trickier than I thought.</p>
 
@@ -457,7 +475,7 @@ p.p.s. The inline latex-style formula comes with Kramdown, MathJax and <a href="
   <entry>
     <title type="html"><![CDATA[More freedom in doing things]]></title>
     <link href="http://creasyw.github.io/blog/2013/08/15/more-freedom-in-doing-things/"/>
-    <updated>2013-08-15T00:15:00-07:00</updated>
+    <updated>2013-08-15T00:15:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/08/15/more-freedom-in-doing-things</id>
     <content type="html"><![CDATA[<p>I heard lots of opinions from both Mac lovers and haters before I bought my macbook pro. It made me struggle for a while to leverage the pros and cons. But it finally turned out neither of them was completely right. I love my mbp very much, but the reason is not the good looking, but the flexibility interacting with unix programs and great ease using homebrew for almost all dependent packages. Besides, if I was not forced using Windows OS again in my internship, I would not notice how ugly and inconvenient it is.</p>
 
@@ -483,7 +501,7 @@ p.p.s. The inline latex-style formula comes with Kramdown, MathJax and <a href="
   <entry>
     <title type="html"><![CDATA[Reading note of SICP (4)]]></title>
     <link href="http://creasyw.github.io/blog/2013/08/10/reading-note-of-sicp-4/"/>
-    <updated>2013-08-10T00:00:00-07:00</updated>
+    <updated>2013-08-10T00:00:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/08/10/reading-note-of-sicp-4</id>
     <content type="html"><![CDATA[<div class='post'>
   Aug. 10th. Complete the 1st chapter of sicp.<br/><br/>
@@ -497,7 +515,7 @@ p.p.s. The inline latex-style formula comes with Kramdown, MathJax and <a href="
   <entry>
     <title type="html"><![CDATA[Reading note of SICP (3)]]></title>
     <link href="http://creasyw.github.io/blog/2013/08/08/reading-note-of-sicp-3/"/>
-    <updated>2013-08-08T00:00:00-07:00</updated>
+    <updated>2013-08-08T00:00:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/08/08/reading-note-of-sicp-3</id>
     <content type="html"><![CDATA[<div class='post'>
 &nbsp;<br />At the end of the 1st chapter, it enumerates the basic reason for the powerful lisp: first-order procedure.<br /><br />The major &#8220;privileges&#8221; of the first-order elements are:<br />1) They may be named by variables.<br />2) They may be passed as arguments to procedures.<br />3) They may be returned as the results of procedures.<br />4) They may be included in data structures.<br />They can be crucial abstraction mechanism permitting to express the general methods of computing as explicit elements in programming language, so that they can be handled just like other computational elements. The expression power is enormous.<br /><br />I have already been used to use the first two kinds of procedures, but the last two actually make the program even more expressive and powerful. Those are also the attractive properties sharing among functional programming languages.</div>
@@ -507,7 +525,7 @@ p.p.s. The inline latex-style formula comes with Kramdown, MathJax and <a href="
   <entry>
     <title type="html"><![CDATA[Reading note of SICP (2)]]></title>
     <link href="http://creasyw.github.io/blog/2013/08/07/reading-note-of-sicp-2/"/>
-    <updated>2013-08-07T00:00:00-07:00</updated>
+    <updated>2013-08-07T00:00:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/08/07/reading-note-of-sicp-2</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />While I am reading, I always try to distinguish which part of thoughts I used to learn from here when I read it for the first time, and which part I learned from Dan&#8217;s course. And, surprisingly enough, I learned almost all basic factors from Dan, though I always felt I learned a lot of things last year when I began to read it.<br /><br />The name of this book is perfect for the content &#8211; Structure and Interpretation of Computer Programs. It does not teach about how to program, nor a specific programming language. Of course it is a legacy book. But it seems to me that I cannot get enough from this book unless I have mastered quite a few programming languages. After Dan taught me everything about basic aspects of programming languages and I played with Ruby and Racket for a long time, even after I leaned all those &#8220;nontrivial&#8221; trivial things about C++, when I read it now, I am able to distinguish which part is the essence and which part is written just for the ease of learning, and I can fully focus on how to put different abstractions into different layers&#8211; in other words, learning the structure and interpretation of computer programs.<br /><br />I read a comment, saying that Chapter 4 and 5 are the essence of the book. Hopefully, I can finish reading it before September, and leave enough time for Design Patterns.</div>
@@ -517,7 +535,7 @@ p.p.s. The inline latex-style formula comes with Kramdown, MathJax and <a href="
   <entry>
     <title type="html"><![CDATA[Reading note of SICP]]></title>
     <link href="http://creasyw.github.io/blog/2013/08/06/reading-digest-sicp/"/>
-    <updated>2013-08-06T00:00:00-07:00</updated>
+    <updated>2013-08-06T00:00:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/08/06/reading-digest-sicp</id>
     <content type="html"><![CDATA[<div class='post'>
 P59. I still don&#8217;t think it is necessary to use &#8220;square&#8221; instead of (* x x) everywhere we perform this operation, but I appreciate the idea of &#8220;abstraction&#8221;. It is really a good idea (and practice) to abstract concepts in different levels and use them accordingly.<br /><br />Most of the examples I read are in a top-down design manner: firstly use the abstract concepts, and then implement it in a lower level. The concerns for specific lower-level modules is similar to the way I did using unit test. But I am a little bit confuse how to perform the unit test in this manner. Especially for the closure using in LISP&#8211;implementing local helper functions right after building major function&#8211; how can I make sure the helper functions are right before I run the program as a whole? If I separate a helper function as an independent one, it seems that quite a little redundant work has to perform when I move it back to the major function.<br /><br />Anyway, SICP just makes me love Racket even more =D<br /><br />cheers,</div>
@@ -527,7 +545,7 @@ P59. I still don&#8217;t think it is necessary to use &#8220;square&#8221; inste
   <entry>
     <title type="html"><![CDATA[Python/Numpy version collisions]]></title>
     <link href="http://creasyw.github.io/blog/2013/07/23/pythonnumpy-version-collisions/"/>
-    <updated>2013-07-23T00:00:00-07:00</updated>
+    <updated>2013-07-23T00:00:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/07/23/pythonnumpy-version-collisions</id>
     <content type="html"><![CDATA[<p>Before this accident, I did not even know there were so many places relevant with a single program… I opened the pandora’s box beginning with using <code>brew doctor</code> which told me to move directory /usr/local/bin/ prior to /usr/bin/ so that all the homebrewed packages could be found automatically. After I did this, if I executed matplotlib, I would have this runtime error <code>RuntimeError: module compiled against API version 8 but this version of numpy is 6</code> which was somewhat correct by the way. Because I used superpack installed the latest version of numpy(1.8), scipy(0.13), and matplotlib(1.4), but if I printed out the “numpy.<strong>version</strong>” in a script, it showed 1.6.1.</p>
 
@@ -549,7 +567,7 @@ I still don’t know why it search into the directory of 2.6 given there is anot
   <entry>
     <title type="html"><![CDATA[Setup emacs in Mac OS]]></title>
     <link href="http://creasyw.github.io/blog/2013/07/01/setup-emacs-in-mac-os/"/>
-    <updated>2013-07-01T00:00:00-07:00</updated>
+    <updated>2013-07-01T00:00:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/07/01/setup-emacs-in-mac-os</id>
     <content type="html"><![CDATA[<p>The setup is much harder than I thought…</p>
 
@@ -573,20 +591,10 @@ I still don’t know why it search into the directory of 2.6 given there is anot
   <entry>
     <title type="html"><![CDATA[C++ rants (continued)]]></title>
     <link href="http://creasyw.github.io/blog/2013/06/05/c-rants-continued/"/>
-    <updated>2013-06-05T00:00:00-07:00</updated>
+    <updated>2013-06-05T00:00:00-05:00</updated>
     <id>http://creasyw.github.io/blog/2013/06/05/c-rants-continued</id>
     <content type="html"><![CDATA[<div class='post'>
 (<a href="http://www.realworldtech.com/forum/?threadid=104299&amp;curpostid=104196">link</a>)<br /><br />&gt;Care to write an explicit example of a deep problem? (Except memory management - you already mentioned garbage collection.)<br /><br />Concurrency, for example.<br /><br />My point being, that C++ adds absolutely nothing interesting.<br /><br />&gt;All right. Then why do you think C should have support for structures (struct {&#8230;})?<br /><br />That&#8217;s just singularly stupid.<br /><br />C is a good language. It&#8217;s complete enough (and yes, the ability to handle structured data is very much required for any serious language) to be supremely useful, while at the same time being quite simple.<br /><br />A language without structured data types would not be a powerful language the way C is. You do need data structures, and you need pointers (to both data and code) to be at all interesting.<br /><br />But where do you draw the line?<br /><br />I know that you as a C++ proponent you probably won&#8217;t really &#8220;get&#8221; this simple argument, but try:<br /><br />- read the K&amp;R book on C (the ANSI edition), and be enlightened.<br /><br />Notice how the language is basically described by one rather thin book. Readably.<br /><br />So what C does so well is to do that whole &#8220;make it as simple as you can, but no simpler&#8221;. And that is what makes it great. The language is powerful, yet fairly minimal.<br /><br />There really aren&#8217;t many features you could remove from the C language without crippling it. Sure, there&#8217;s<br />three different looping constructs, and you could make trivial (syntactic) changes to the language, but that&#8217;s<br />really not the point. The language is simple, but without being too simple.<br /><br />Now, that&#8217;s not what you always want. I understand very well why people want less system-oriented languages with more built-in functionality. As mentioned, support for both garbage collection and concurrency are quite real problems, and they are both things you can do in C, but that you cannot do well with library interfaces, which is how you normally would extend on C.<br /><br />And garbage collection and concurrency are way more than just syntactic extensions. You can still do them very badly, of course, so it&#8217;s not a trivial path to go down, and I&#8217;m not saying hat a language magically becomes &#8220;good&#8221; just from supporting one or the other.<br /><br />But again: C does what it does very well, and with a clarity of thought and design that is entirely and utterly lacking from C++.<br /><br />And yes, I happen to think that clarity of thought and design is a good thing. It&#8217;s why I liked UNIX, even though I was initially introduced to other things (VMS - ugh).<br /><br />C++ is a mess. There&#8217;s no design. It&#8217;s just &#8220;add crud on top of C&#8221;. And the crud isn&#8217;t even meaningful, much less does it have a design. It&#8217;s totally and utterly random.<br /><br />It started out random, now it&#8217;s randomness that gets added to by a committee.<br /><br />&gt;For example, namespaces and function overloading are *not*<br />&gt;useless. They *do* solve a real problem that C is incapable<br />&gt;of solving.<br /><br />You&#8217;re full of it.<br /><br />&gt;For example, if you want in your source code to define a<br />&gt;function called &#8220;connect&#8221; and you also want include<br />&gt;&#8221;sys/socket.h&#8221;, you cannot do that in C.<br /><br />So to prove how it&#8217;s not just a syntactic feature, you start talking about syntax?<br /><br />What drugs are you on?<br /><br />The name overloading is a total syntactic feature. In C, the way you fix your problem is by a totally trivial syntactic change: you call your function &#8220;my_connect()&#8221;.<br /><br />Wow. It&#8217;s like magic. I added three characters, and made your whole reason for the crap that is C++ go away.<br /><br />The thing is, the above is a really good example of why C++ is horrible, and why C is so simple.<br /><br />Yes, the C solution is really simple. It&#8217;s so simple that it looks downright stupid. But it&#8217;s actually so simple that it is smart because quite frankly, it&#8217;s a lot easier to get confused in C++ code, when the same function name means totally different due to overloading.<br /><br />Of course, you&#8217;re not &#8220;supposed&#8221; to overload things in confusing ways, but the thing is, just do what C does: just make your function names unique. It&#8217;s not that hard, and by avoiding the overloading mess, you make it a lot easier to search for (hey look! &#8220;grep -w my_connect&#8221; just works!), and you avoid ambiguity.<br /><br />(Same exact thing goes for your other example: just add a module prefix or have some other trivial naming rules for your functional split-up, and be happy)<br /><br />Linus<br /><div><br /></div></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[C++ rants]]></title>
-    <link href="http://creasyw.github.io/blog/2013/06/05/c-rants/"/>
-    <updated>2013-06-05T00:00:00-07:00</updated>
-    <id>http://creasyw.github.io/blog/2013/06/05/c-rants</id>
-    <content type="html"><![CDATA[<div class='post'>
-By&nbsp;<span style="background-color: white; font-family: arial, sans-serif;">Linus Torvalds:</span><br /><br /><a href="http://thread.gmane.org/gmane.comp.version-control.git/57643/focus=57918">On Wed, 5 Sep 2007</a>, Dmitry Kakurin wrote:<br />&gt;<br />&gt; When I first looked at Git source code two things struck me as odd:<br />&gt;1. Pure C as opposed to C++. No idea why. Please don&#8217;t talk about portability,<br />&gt;it&#8217;s BS.<br /><br />*YOU* are full of bullshit.<br /><br />C++ is a horrible language. It&#8217;s made more horrible by the fact that a lot of substandard programmers use it, to the point where it&#8217;s much much easier to generate total and utter crap with it. Quite frankly, even if the choice of C were to do *nothing* but keep the C++ programmers out, that in itself would be a huge reason to use C.<br /><br />In other words: the choice of C is the only sane choice. I know Miles Bader jokingly said &#8220;to piss you off&#8221;, but it&#8217;s actually true. I&#8217;ve come to the conclusion that any programmer that would prefer the project to be in C++ over C is likely a programmer that I really *would* prefer to piss off, so that he doesn&#8217;t come and screw up any project I&#8217;m involved with.<br /><br />C++ leads to really really bad design choices. You invariably start using the &#8220;nice&#8221; library features of the language like STL and Boost and other total and utter crap, that may &#8220;help&#8221; you program, but causes:<br /><br />&nbsp;- infinite amounts of pain when they don&#8217;t work (and anybody who tells me that STL and especially Boost are stable and portable is just so full &nbsp;of BS that it&#8217;s not even funny)<br /><br />&nbsp;- inefficient abstracted programming models where two years down the road you notice that some abstraction wasn&#8217;t very efficient, but now all your code depends on all the nice object models around it, and you cannot fix it without rewriting your app.<br /><br />In other words, the only way to do good, efficient, and system-level and portable C++ ends up to limit yourself to all the things that are basically available in C. And limiting your project to C means that people don&#8217;t screw that up, and also means that you get a lot of programmers that do actually understand low-level issues and don&#8217;t screw things up with any idiotic &#8220;object model&#8221; crap.<br /><br />So I&#8217;m sorry, but for something like git, where efficiency was a primary objective, the &#8220;advantages&#8221; of C++ is just a huge mistake. The fact that we also piss off people who cannot see that is just a big additional<br />advantage.<br /><br />If you want a VCS that is written in C++, go play with Monotone. Really. They use a &#8220;real database&#8221;. They use &#8220;nice object-oriented libraries&#8221;. They use &#8220;nice C++ abstractions&#8221;. And quite frankly, as a result of all these design decisions that sound so appealing to some CS people, the end result is a horrible and unmaintainable mess.<br /><br />But I&#8217;m sure you&#8217;d like it more than git.<br /><br /><span class="Apple-tab-span" style="white-space: pre;">   </span>Linus<br /><br />=====<br /><br />Heath Provost (galvanash@hotmail.com) on 6/5/10 wrote:<br />&gt;<br />&gt;As for C++ exceptions - the same thing really applies here.<br />&gt;They are trying to write explicit code. Exceptions are the<br />&gt;poster child for implicit magic&#8230;<br /><br />Yes, exceptions is a good example. The Linux kernel actually does its own exception mechanism, exactly because that way we control what is going on (and do it much more targeted to the actual need in question while giving much better performance and avoiding the crazy unwinding issues).<br /><br />And I really do dislike C++. It&#8217;s a really bad language, in my opinion. It tries to solve all the wrong problems, and does not tackle the right ones. The things C++ &#8220;solves&#8221; are trivial things, almost purely syntactic extensions to C rather than fixing some true deep problem.<br /><br />(The C++ objects, templates and function overloading are all just syntactic sugar. And generally bad syntax at that. And C++ actually makes the C type system actively worse.)<br /><br />In non-systems programming, you should almost certainly use a language that offers garbage collection. That will possibly make a real difference in the complexity of your application. The C++ features? Largely useless, and just helps you screw up more.<br /><br />And in systems programming, you&#8217;re simply better off with C. You&#8217;ll have a way easier time using all the existing code and libraries out there (re-using C++ code? Good luck). Fewer headaches, fewer opportunities to mess up the design and pick some unstable template library.<br /><br />So in neither case is C++ likely the right choice.<br /><br />Linus<br /><br /><br /></div>
 ]]></content>
   </entry>
   

@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="&nbsp; &nbsp; Cpp is like some stubborn old man, who always says &#8220;i have lots of obscure habits, dealing with it&#8221;&#8230;&#8230;Lesson 4 &hellip;">
+  <meta name="description" content="By&nbsp;Linus Torvalds:On Wed, 5 Sep 2007, Dmitry Kakurin wrote:&gt;&gt; When I first looked at Git source code two things struck me as odd:&gt;1. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +87,43 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/06/05/c-rants/">C++ Rants</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-05T00:00:00-05:00" pubdate data-updated="true">Jun 5<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+By&nbsp;<span style="background-color: white; font-family: arial, sans-serif;">Linus Torvalds:</span><br /><br /><a href="http://thread.gmane.org/gmane.comp.version-control.git/57643/focus=57918">On Wed, 5 Sep 2007</a>, Dmitry Kakurin wrote:<br />&gt;<br />&gt; When I first looked at Git source code two things struck me as odd:<br />&gt;1. Pure C as opposed to C++. No idea why. Please don&#8217;t talk about portability,<br />&gt;it&#8217;s BS.<br /><br />*YOU* are full of bullshit.<br /><br />C++ is a horrible language. It&#8217;s made more horrible by the fact that a lot of substandard programmers use it, to the point where it&#8217;s much much easier to generate total and utter crap with it. Quite frankly, even if the choice of C were to do *nothing* but keep the C++ programmers out, that in itself would be a huge reason to use C.<br /><br />In other words: the choice of C is the only sane choice. I know Miles Bader jokingly said &#8220;to piss you off&#8221;, but it&#8217;s actually true. I&#8217;ve come to the conclusion that any programmer that would prefer the project to be in C++ over C is likely a programmer that I really *would* prefer to piss off, so that he doesn&#8217;t come and screw up any project I&#8217;m involved with.<br /><br />C++ leads to really really bad design choices. You invariably start using the &#8220;nice&#8221; library features of the language like STL and Boost and other total and utter crap, that may &#8220;help&#8221; you program, but causes:<br /><br />&nbsp;- infinite amounts of pain when they don&#8217;t work (and anybody who tells me that STL and especially Boost are stable and portable is just so full &nbsp;of BS that it&#8217;s not even funny)<br /><br />&nbsp;- inefficient abstracted programming models where two years down the road you notice that some abstraction wasn&#8217;t very efficient, but now all your code depends on all the nice object models around it, and you cannot fix it without rewriting your app.<br /><br />In other words, the only way to do good, efficient, and system-level and portable C++ ends up to limit yourself to all the things that are basically available in C. And limiting your project to C means that people don&#8217;t screw that up, and also means that you get a lot of programmers that do actually understand low-level issues and don&#8217;t screw things up with any idiotic &#8220;object model&#8221; crap.<br /><br />So I&#8217;m sorry, but for something like git, where efficiency was a primary objective, the &#8220;advantages&#8221; of C++ is just a huge mistake. The fact that we also piss off people who cannot see that is just a big additional<br />advantage.<br /><br />If you want a VCS that is written in C++, go play with Monotone. Really. They use a &#8220;real database&#8221;. They use &#8220;nice object-oriented libraries&#8221;. They use &#8220;nice C++ abstractions&#8221;. And quite frankly, as a result of all these design decisions that sound so appealing to some CS people, the end result is a horrible and unmaintainable mess.<br /><br />But I&#8217;m sure you&#8217;d like it more than git.<br /><br /><span class="Apple-tab-span" style="white-space: pre;">   </span>Linus<br /><br />=====<br /><br />Heath Provost (galvanash@hotmail.com) on 6/5/10 wrote:<br />&gt;<br />&gt;As for C++ exceptions - the same thing really applies here.<br />&gt;They are trying to write explicit code. Exceptions are the<br />&gt;poster child for implicit magic&#8230;<br /><br />Yes, exceptions is a good example. The Linux kernel actually does its own exception mechanism, exactly because that way we control what is going on (and do it much more targeted to the actual need in question while giving much better performance and avoiding the crazy unwinding issues).<br /><br />And I really do dislike C++. It&#8217;s a really bad language, in my opinion. It tries to solve all the wrong problems, and does not tackle the right ones. The things C++ &#8220;solves&#8221; are trivial things, almost purely syntactic extensions to C rather than fixing some true deep problem.<br /><br />(The C++ objects, templates and function overloading are all just syntactic sugar. And generally bad syntax at that. And C++ actually makes the C type system actively worse.)<br /><br />In non-systems programming, you should almost certainly use a language that offers garbage collection. That will possibly make a real difference in the complexity of your application. The C++ features? Largely useless, and just helps you screw up more.<br /><br />And in systems programming, you&#8217;re simply better off with C. You&#8217;ll have a way easier time using all the existing code and libraries out there (re-using C++ code? Good luck). Fewer headaches, fewer opportunities to mess up the design and pick some unstable template library.<br /><br />So in neither case is C++ likely the right choice.<br /><br />Linus<br /><br /><br /></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/06/04/excerpt-from-effective-c/">Excerpt From Effective C++</a></h1>
     
     
@@ -103,7 +140,7 @@
   
 
 
-<time datetime="2013-06-04T00:00:00-07:00" pubdate data-updated="true">Jun 4<span>th</span>, 2013</time>
+<time datetime="2013-06-04T00:00:00-05:00" pubdate data-updated="true">Jun 4<span>th</span>, 2013</time>
         
       </p>
     
@@ -140,7 +177,7 @@
   
 
 
-<time datetime="2013-02-19T00:00:00-07:00" pubdate data-updated="true">Feb 19<span>th</span>, 2013</time>
+<time datetime="2013-02-19T00:00:00-06:00" pubdate data-updated="true">Feb 19<span>th</span>, 2013</time>
         
       </p>
     
@@ -177,7 +214,7 @@
   
 
 
-<time datetime="2013-02-14T00:00:00-07:00" pubdate data-updated="true">Feb 14<span>th</span>, 2013</time>
+<time datetime="2013-02-14T00:00:00-06:00" pubdate data-updated="true">Feb 14<span>th</span>, 2013</time>
         
       </p>
     
@@ -214,7 +251,7 @@
   
 
 
-<time datetime="2012-10-04T00:00:00-07:00" pubdate data-updated="true">Oct 4<span>th</span>, 2012</time>
+<time datetime="2012-10-04T00:00:00-05:00" pubdate data-updated="true">Oct 4<span>th</span>, 2012</time>
         
       </p>
     
@@ -251,7 +288,7 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
   
 
 
-<time datetime="2012-09-17T00:00:00-07:00" pubdate data-updated="true">Sep 17<span>th</span>, 2012</time>
+<time datetime="2012-09-17T00:00:00-05:00" pubdate data-updated="true">Sep 17<span>th</span>, 2012</time>
         
       </p>
     
@@ -288,7 +325,7 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
   
 
 
-<time datetime="2012-09-14T00:00:00-07:00" pubdate data-updated="true">Sep 14<span>th</span>, 2012</time>
+<time datetime="2012-09-14T00:00:00-05:00" pubdate data-updated="true">Sep 14<span>th</span>, 2012</time>
         
       </p>
     
@@ -325,7 +362,7 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
   
 
 
-<time datetime="2012-06-12T00:00:00-07:00" pubdate data-updated="true">Jun 12<span>th</span>, 2012</time>
+<time datetime="2012-06-12T00:00:00-05:00" pubdate data-updated="true">Jun 12<span>th</span>, 2012</time>
         
       </p>
     
@@ -362,7 +399,7 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
   
 
 
-<time datetime="2012-06-04T00:00:00-07:00" pubdate data-updated="true">Jun 4<span>th</span>, 2012</time>
+<time datetime="2012-06-04T00:00:00-05:00" pubdate data-updated="true">Jun 4<span>th</span>, 2012</time>
         
       </p>
     
@@ -399,7 +436,7 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
   
 
 
-<time datetime="2012-05-16T00:00:00-07:00" pubdate data-updated="true">May 16<span>th</span>, 2012</time>
+<time datetime="2012-05-16T00:00:00-05:00" pubdate data-updated="true">May 16<span>th</span>, 2012</time>
         
       </p>
     
@@ -408,43 +445,6 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
 
   <div class="entry-content"><div class='post'>
 &nbsp; &nbsp;&nbsp; <br />Humming Identification. <br /><br />已然经历了两次较大的重建，现在的中段程序应该算是稳定了，前段程序接近黔驴技穷了，后段程序最后一次大修改后还在服务器里面跑着。出结果之后再用一两天时间整理，然后再看看清唱部分的阈值应该如何处理。不出意外的话，这就接近世界先进水平了:)<br /><br />现在回头看来，其实真正值得研究的部分还是在最初的参数提取。SIFT里面对于图像的各种锥形不变、边框加深、棱角过滤，对于音频信号都是不适用的。而语音信号的频谱重复或者音乐信号的长时重复在哼唱识别中又是不适用的。所以现在只能使用较为原始的 local maximum cascade filtering。若是频谱图能如图像般的直观，有些经验总结的东西在里面，就好了。<br /><br /><br />SICP<br /><br />思考过一段时间的结果，<a href="http://coolshell.cn/articles/6639.html">因为有了电据就少用到电钻</a>，于是熟练了Py也就先放放ruby了。转过身来硬着头皮读这本书。而第一天读过前言，我就知道这决不会是个令我后悔的决定。无数人的推荐，自然是有其中道理的。而把读过的几本经典书籍横向比较，会发现它们都会刻意避开很多fancy的概念，着力强调着那些在设计程序过程中永恒不变的东西。K&amp;R把C的很多基本库函数都重建了一遍，而SICP更是从加减乘除开始重构。<br /><br />开始读书之前，我也刻意找了一下CL和Scheme的对比。记得有个人说，如果想用Lisp做项目，CL更合适；想体会编程的乐趣，Scheme更合适，只是，它的核实在是太简单了。几个月看下来，其对于Scheme的评价当真实字字珠玑。这是一个无比强大的语言，data abstraction &amp; procedure abstraction，之后再抹去两者的差别，都只是当作object处理。看到这里，我会有错觉，认为自己都可以来设计Clojure了，这简直就是顺理成章的事情！tail recursion，比循环更加直观易懂，而更牛逼的是这竟然不会按照stack的模式迭代后增加内存的占用。至于enclosure和lambda calculus，在Python里面也有借鉴，但是我是直到这里才真正学会了如何使用它们⋯⋯当然，我很清楚这些词汇推砌起来的仍然仅仅是些皮毛。里面很多在程序设计时的考虑，才是更需要我好好体会的。<br /><br /><br />BTW, 今天的时间累计到2800了~<br /><br />cheers, <br /><br /></div>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/04/10/install-mitscheme-with-vim/">Install MIT/Scheme With Vim</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-10T00:00:00-07:00" pubdate data-updated="true">Apr 10<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-&nbsp; &nbsp;&nbsp; <br />After wondering around for a while, I finally found this was quite foolproof&#8230; <br /><br />It could be divided into five steps:<br />1. $ <i>brew install mit-scheme</i>. (Its version is usually a little bit older than the latest <a href="http://www.gnu.org/software/mit-scheme/">MIT/GNU Scheme</a>)<br />2. Install <a href="http://www.gnu.org/software/screen/">GNU screen</a> if it was not installed before.<br />3. Install <a href="http://www.vim.org/scripts/script.php?script_id=2711">Screen Vim plug-in</a> according the steps in that webpage.<br />4. $ <i>vim ~/.vimrc</i><br /><code>"For screen.vim send block<br />"to SendScreen function<br />"(eg Scheme interpreter)<br />vmap <c-c><c-c> :ScreenSend<cr><br />nmap <c-c><c-c> vip<c-c><c-c></c-c></c-c></c-c></c-c></cr></c-c></c-c></code><br />5. Launch Vim and write &#8220;:ScreenShell mit-scheme&#8221;. It is all set for the fun:)<br /><br />References: <a href="http://www.ktaylor.name/vim/">[1]</a>, <a href="http://www.uponmyshoulder.com/blog/2011/so-you-want-to-do-the-sicp/">[2]</a><br /><br />cheers,</div>
 </div>
   
   
@@ -469,6 +469,10 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/06/23/half-of-summer-season-has-gone/">Half of Summer Season Has Gone</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/15/reading-note-of-sicp-5/">Reading note of SICP (5)</a>
       </li>
     
@@ -482,10 +486,6 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
     
       <li class="post">
         <a href="/blog/2014/04/05/survive-on-busy-two-weeks/">Survive on Busy Two weeks</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/01/strategic-playing-for-the-first-several-sets/">Strategic Playing for the First Several Sets</a>
       </li>
     
   </ul>

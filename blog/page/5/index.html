@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="It took me some time to find useful tools comparing hex file in mac. I had tried DiffMerge, kdiff3, HexEditor, and several other apps whose names I &hellip;">
+  <meta name="description" content="This question is an entry level puzzle from Project Euler.It is very interesting because it has far more pitfalls than it first appears to be. There &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +87,43 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2011/09/06/largest-palindrome-made-from-product-of/">Largest Palindrome Made From the Product of Two 3-digit Numbers</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-06T00:00:00-05:00" pubdate data-updated="true">Sep 6<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+This question is an entry level puzzle from <a href="http://projecteuler.net/">Project Euler</a>.<br /><br />It is very interesting because it has far more pitfalls than it first appears to be. There are some helpful discussions to pick up the whole scenario of this puzzle: <a href="http://codeblog.dhananjaynene.com/2010/01/find-the-largest-palindrome-made-from-the-product-of-two-3-digit-numbers/comment-page-1/#comment-48">1)</a> and <a href="http://pthree.org/2007/09/15/largest-palindromic-number-in-python/">2)</a>. Basically speaking, the first post listed the most straightforward thoughts, which is iterations two numbers both from 100 to 1000 and finding the maximum of the outcomes. While I wrote the algorithm, this is also the first idea came into mind while I added several optimizations on it.<br />1) Decrease one number 1 per step, and iterate the other one from 999 to 100.<br />2) Stop the step whenever it finds a palindrome and march to the next step by decrease the benchmark number by one.<br />3) Meanwhile, increase the lower bound of iterator from 100 to whenever it finds a palindrome. This will exponentially decrease the searching range. e.g. (A&#8211;benchmark number, B&#8211;iterator) if A*B==palindrome, the searching range for the next step would be [A-1, B]. Because if both numbers less than the previous finding, it must not be the LARGEST palindrome we would like to find.<br />4) The second stop criteria is the iterator equal or less than the lower bound mentioned in the last item.<br /><br />The major pitfall that I did see quite a few people mentioned is alternative decrease two numbers from 999, which the result comes to be 834*836=698896. The difference for two numbers are obviously unnecessary to be less or equal to one.<br /><br />The second reference provides the basic optimization from math point of view. All of the palindrome can be divided by 11, so&#8230;<br />P=100000x+10000y+1000z+100z+10y+x<br />P=100001x+10010y+1100z<br />P=11*(9091x+910y+100z)<br />Then, the question is simplified to find two 3-digit numbers, at least one of which should be divided by 11. Similarly as the previous method, if A can be divided by 11, decreasing B by one per time; and if A cannot divided by 11, decreasing B by 11 per time.<br /><br />My solutions for the first 5 puzzles are <a href="https://github.com/creasyw/learning/blob/master/puzzles/q001To005.c">here</a>.<br />cheers,</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2011/07/25/editing-hex-file-via-vim/">Editing Hex File via Vim</a></h1>
     
     
@@ -103,7 +140,7 @@
   
 
 
-<time datetime="2011-07-25T00:00:00-07:00" pubdate data-updated="true">Jul 25<span>th</span>, 2011</time>
+<time datetime="2011-07-25T00:00:00-05:00" pubdate data-updated="true">Jul 25<span>th</span>, 2011</time>
         
       </p>
     
@@ -140,7 +177,7 @@ It took me some time to find useful tools comparing hex file in mac. I had tried
   
 
 
-<time datetime="2011-07-23T00:00:00-07:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2011</time>
+<time datetime="2011-07-23T00:00:00-05:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2011</time>
         
       </p>
     
@@ -177,7 +214,7 @@ It took me some time to find useful tools comparing hex file in mac. I had tried
   
 
 
-<time datetime="2011-07-11T00:00:00-07:00" pubdate data-updated="true">Jul 11<span>th</span>, 2011</time>
+<time datetime="2011-07-11T00:00:00-05:00" pubdate data-updated="true">Jul 11<span>th</span>, 2011</time>
         
       </p>
     
@@ -214,7 +251,7 @@ Most of the steps are straightforward. The only twisted place is the combination
   
 
 
-<time datetime="2011-06-13T00:00:00-07:00" pubdate data-updated="true">Jun 13<span>th</span>, 2011</time>
+<time datetime="2011-06-13T00:00:00-05:00" pubdate data-updated="true">Jun 13<span>th</span>, 2011</time>
         
       </p>
     
@@ -251,7 +288,7 @@ Firefox:) &#8211;(update: now, this is really a pain in my ass.. It just has no 
   
 
 
-<time datetime="2011-05-18T00:00:00-07:00" pubdate data-updated="true">May 18<span>th</span>, 2011</time>
+<time datetime="2011-05-18T00:00:00-05:00" pubdate data-updated="true">May 18<span>th</span>, 2011</time>
         
       </p>
     
@@ -288,7 +325,7 @@ Firefox:) &#8211;(update: now, this is really a pain in my ass.. It just has no 
   
 
 
-<time datetime="2011-05-16T00:00:00-07:00" pubdate data-updated="true">May 16<span>th</span>, 2011</time>
+<time datetime="2011-05-16T00:00:00-05:00" pubdate data-updated="true">May 16<span>th</span>, 2011</time>
         
       </p>
     
@@ -325,7 +362,7 @@ General Insights: <br /><a href="http://batsov.com/Programming/2011/04/27/progra
   
 
 
-<time datetime="2011-04-25T00:00:00-07:00" pubdate data-updated="true">Apr 25<span>th</span>, 2011</time>
+<time datetime="2011-04-25T00:00:00-05:00" pubdate data-updated="true">Apr 25<span>th</span>, 2011</time>
         
       </p>
     
@@ -362,7 +399,7 @@ General Insights: <br /><a href="http://batsov.com/Programming/2011/04/27/progra
   
 
 
-<time datetime="2011-04-24T00:00:00-07:00" pubdate data-updated="true">Apr 24<span>th</span>, 2011</time>
+<time datetime="2011-04-24T00:00:00-05:00" pubdate data-updated="true">Apr 24<span>th</span>, 2011</time>
         
       </p>
     
@@ -399,7 +436,7 @@ Basic commands and references:<br /><a href="http://cprogramminglanguage.net/">C
   
 
 
-<time datetime="2011-04-24T00:00:00-07:00" pubdate data-updated="true">Apr 24<span>th</span>, 2011</time>
+<time datetime="2011-04-24T00:00:00-05:00" pubdate data-updated="true">Apr 24<span>th</span>, 2011</time>
         
       </p>
     
@@ -408,43 +445,6 @@ Basic commands and references:<br /><a href="http://cprogramminglanguage.net/">C
 
   <div class="entry-content"><div class='post'>
 &#8220;Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.&#8221; &#8211;Brian Kernighan<br /><br />Remark: If the code is complex enough to be at the limits of your skills, then debugging that code will exceed your skills. In other words, don&#8217;t make code so complex that you can&#8217;t maintain it. &#8220;Everyone knows that debugging is twice as hard as writing a program in the first place. So if you&#8217;re as clever as you can be when you write it, how will you ever debug it?&#8221;, quoted from Kernighan (and Plauger, in &#8220;The Elements of Programming Style&#8221;).<br /><br />I&#8217;ve found that using <i>weaker</i> tools can help with complexity.  It&#8217;s hard to write a complicated C program because it can&#8217;t do very much.  C programs tend to use lots of arrays because that&#8217;s all you get, but it turns out that arrays are great &#8211; compact memory representation, O(1) access, good data locality.  I&#8217;d never advocate intentionally using a weak tool, though.  Instead, my lesson has been: write Python code like it was C.&#8211;&#8221;<a href="http://neugierig.org/software/blog/2011/04/complexity.html">Complexity is the enemy</a>&#8221; written by Evan Martin.</div>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/16/starting-point/">Starting Point</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-16T00:00:00-07:00" pubdate data-updated="true">Apr 16<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-B.E.&nbsp;&nbsp; &nbsp;100*2+50=250&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;(two exam plus one course)<br />M.E.&nbsp;&nbsp; &nbsp;300+300+50=650&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;(three years)<br />MSc&nbsp;&nbsp; &nbsp;100+600+50+200=950&nbsp;&nbsp; &nbsp;(lab and homework)<br />=1850hr</div>
 </div>
   
   
@@ -469,6 +469,10 @@ B.E.&nbsp;&nbsp; &nbsp;100*2+50=250&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;(two ex
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/06/23/half-of-summer-season-has-gone/">Half of Summer Season Has Gone</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/15/reading-note-of-sicp-5/">Reading note of SICP (5)</a>
       </li>
     
@@ -482,10 +486,6 @@ B.E.&nbsp;&nbsp; &nbsp;100*2+50=250&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;(two ex
     
       <li class="post">
         <a href="/blog/2014/04/05/survive-on-busy-two-weeks/">Survive on Busy Two weeks</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/01/strategic-playing-for-the-first-several-sets/">Strategic Playing for the First Several Sets</a>
       </li>
     
   </ul>

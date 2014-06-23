@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="/gnuradio3.2.2/gr-wxgui/src/python/common.py##################### Shared Functions#####################import numpyimport math&quot;&quot;&quot;# &hellip;">
+  <meta name="description" content="我看UNIX与Windows的本质区别文化，我首先想到的是文化。Unix和Windows从诞生之初的文化差异本质上划分了两者的界限。直观看来，一个装逼文化，一个傻逼文化。Unix诞生在贝尔实验室的MULTICS项目之后。据说当时这个项目设计得十分复杂，功能设计也几乎是上天入地无所不能。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +87,43 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2010/10/22/zt-unix-vs-windows/">(ZT) Unix vs. Windows</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-22T00:00:00-05:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+我看UNIX与Windows的本质区别<br /><br />文化，我首先想到的是文化。Unix和Windows从诞生之初的文化差异本质上划分了两者的界限。直观看来，一个装逼文化，一个傻逼文化。<br /><br />Unix诞生在贝尔实验室的MULTICS项目之后。据说当时这个项目设计得十分复杂，功能设计也几乎是上天入地无所不能。虽说当时贝尔实验室是很牛，可以牛到不用装逼也能露逼一下的地步。但历史告诉我们这种项目最后绝对会死得很惨。当然，项目最终结果还是没有违背历史规律。当时一位MULTICS参与者Ken Thompson事后痛定思痛，准备重新自己开发一个多任务操作系统，摒弃了MULTICS过于复杂的系统设计，力求新系统的简洁紧凑。传闻时值Ken Thompson老婆带上孩子回娘家过日子去了，一时间Ken Thompson晚上无以为乐，只好天天以堆码为业。不到一个月，Ken Thompson用汇编把这套操作系统编写出来了，这就是后来流芳百世的UNIX。当然，当时的Ken Thompson根本没有意会到他这个业余时间的作品会改变整个计算机发展史。因此这个操作系统设计用户群只针对他预想的计算机科学家、黑客，再不济怎么也得算上个计算机科学技术本科生。Unix只面对政府、研究机构、大学等专业性很强的机构，简洁、高效、安全是Unix的文化哲学。同时结合到当时的硬件条件限制，也不难理解UNIX诞生之初就根深蒂固的文化：<br /><br />1、计算机庞大的占地面积、高额的购买维护费用使得普通用户根本无力支撑起一台计算机的各种资源消耗，当时更多的是计算机专家在通过终端在控制整个计算机运作逻辑。没有GUI、没有多媒体，字符界面，这对于这批靠计算机完成科学任务的黑客来说已经完全够用了。<br /><br />2、同时遵循简洁统一的输入输出接口，相比于GUI的事件驱动模型来说，更适合使用脚本将各种程序粘合起来，完成复杂多样的计算任务。<br /><br />有人说起过UNIX正巧在当年GUI史前诞生，时运不济，所以只出了个字符怪胎，要是再踌躇几年，等到GUI日臻成熟，那诞生出的UNIX恐怕就是如今Windows的翻版了。对此我还是不太认可，UNIX的存在是计算机荒洪时代遗留的文化，即使现在丰富多彩的GUI也照样没有改变UNIX的基础设计恐怕就是一个极好的证据。目前大多数的服务器依然保持着当年UNIX诞生之初的风貌，依然CLI、依然Shell，因为我们需要把更多的资源让给使用服务器的客户，人类对计算机性能的榨取永远是贪婪的。这让我想起了几年前Windows渐入佳境PC，游戏刚大行其道，桌面游戏编写还不是那么方便时候，有人预言等几年之后，按照摩尔定律，编写星际争霸之类的游戏便不需要多牛逼的算法，甚至能用写脚本语言都能完成。这几年算是大致差不多算过来了吧，星际是有牛人用JavaScript完成了，不过现时最牛逼的游戏(如魔兽世界)还是会用很牛逼的算法，还是需要使用C/C++，还是需要精通图形学，还是需要熟悉图形硬件。所以不管硬件如何发展，UNIX文化中的简洁高效这些准则还是依然存在，因为我们会把最佳的性能留给我们服务器的客户，然后可以把敲打字符，玩弄指法的时间留给自己，在老板面前装逼一下。<br /><br />Windows(以及其前任DOS)诞生在公司，公司不像学院，不会像UNIX一样如果能装逼就尽量装逼一下，公司直接面对客户，产品唯一使命就是取悦用户，只能把用户伺候好了，公司才能维系发展。所以Windows诞生之初就一直肩负比尔&#8221;让每一个家庭都有一台电脑&#8221;的使命，不装逼，不玩酷，一切功能照顾用户，就是用户是傻逼你也得当亲爹一样伺候。故而Windows一直就假定使用它的用户你就是一个傻逼，哪怕是删除文件这个小问题上，Windows也会想小娘们儿一样谨谨慎慎战战兢兢地一再向人确认&quot;确实要删除****吗？&quot;&quot;确实要删除只读文件****吗?&quot;。当然，最终能够让大妈大叔阿公阿婆阿猫阿狗都能使用上计算机的Windows绝对占领了终端用户桌面，比尔也因此一夜暴富，摇身一变成为世界首富&amp;慈善家。不得不承认，如果没有Windows，&quot;让每一个家庭都有一台电脑&quot;的崇高理想恐怕又得推迟几年才能够得以实现了。自然，微软技术是肯定不差的，而不是像一些Linux小菜鸟口中所言&quot;微软技术很烂&quot;，相反微软技术是很牛的，牛到曾经豪言可以立马灭掉Google，试看如今还有谁可以发出这样傻逼的豪言。但是微软牛，不代表Windows就可以干过MULTICS，上天入地翻江倒海无所不能。Windows 在安全性、性能以及开源项目上与UNIX相比确实还是有一定差距，但这并不妨碍windows成为桌面第一大操作系统。<br /><br />UNIX的黑客们，眼见着曾经引以为豪的计算机技术壁垒瞬间被Windows GUI冲击到荡然无存了，心中肯定是有落差的。不过这段技术演变技术普及已经成为了历史发展趋势。一个少数人才能驾驭的技术，哪怕就是敲一个ls这样简单的命令，你也可以把它吹破牛皮，扯虎皮拉大旗捧为艺术珍品，搞得善男甚广善女甚众。一旦技术被迫普及后，曾经视作的艺术瞬间就被廉价的工业化大生产所替代，现在满大街的廉价代码工就是计算机程序设计工业化后的结果。前段时间众人大骂Java程序员把自己的价位又拉低了。殊不知，拉低自己价位的非Java也，乃工业化大生产趋势。今不出Java，明儿准会出来个Bava，Cava，照样把你收拾成码农。时至如今，UNIX黑客们还在装逼，用CLI命令行跑出花花绿绿的文字，时不时感叹下曾经的软件英雄时代一去不复返，时不时像祥林嫂一般唠叨&quot;当年哥可是写汇编的，没想到如今沦落到如此地步，人心不古，世风日下啊~&quot;，时不时还顾影自怜，想装逼下，可惜时光不再。<br /><br />妈逼的给老子回去写代码！这个月还想不想领工资了！？<br /><br /><br />结语：<br /><br />不管是UNIX的装逼文化，还是Windows的傻逼文化，最终在计算机产业工业化的历史滚滚长流中归于平庸，归于廉价。曾经的那批牛逼的、不牛逼的、风骚的、不风骚的UNIX文化精英们，如今早已是廉颇老矣，尚可喝粥。曾经被意淫为&quot;计算机科学与艺术&quot;如今也早已沦落为&quot;软件码工&quot;。软件英雄时代早已不再，编码也成为三百六十行中的一行，一种用以谋生的手段，一种混饭吃的活路。关键问题早已不在程序，不在编码：<br /><br /><b>编程只是一个工具，关键在于你拿这个工具来实现别人的事业，还是自己的事业。</b></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2010/10/22/basic-python-math-calculation-in/">Basic Python Math Calculation in Gnuradio</a></h1>
     
     
@@ -103,7 +140,7 @@
   
 
 
-<time datetime="2010-10-22T00:00:00-07:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2010</time>
+<time datetime="2010-10-22T00:00:00-05:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2010</time>
         
       </p>
     
@@ -140,7 +177,7 @@
   
 
 
-<time datetime="2010-10-21T00:00:00-07:00" pubdate data-updated="true">Oct 21<span>st</span>, 2010</time>
+<time datetime="2010-10-21T00:00:00-05:00" pubdate data-updated="true">Oct 21<span>st</span>, 2010</time>
         
       </p>
     
@@ -177,7 +214,7 @@ matrix functions<br /><br /><b>&nbsp;INV</b>&nbsp;&nbsp;&nbsp; Matrix inverse.<b
   
 
 
-<time datetime="2010-10-18T00:00:00-07:00" pubdate data-updated="true">Oct 18<span>th</span>, 2010</time>
+<time datetime="2010-10-18T00:00:00-05:00" pubdate data-updated="true">Oct 18<span>th</span>, 2010</time>
         
       </p>
     
@@ -214,7 +251,7 @@ Hi Everybody,<br /><br />and Merry Christmas<br /><br />I received many emails r
   
 
 
-<time datetime="2010-10-18T00:00:00-07:00" pubdate data-updated="true">Oct 18<span>th</span>, 2010</time>
+<time datetime="2010-10-18T00:00:00-05:00" pubdate data-updated="true">Oct 18<span>th</span>, 2010</time>
         
       </p>
     
@@ -1401,7 +1438,7 @@ new examples for the 802.11b trans. (<a href="https://www.cgran.org/browser/proj
   
 
 
-<time datetime="2010-10-17T00:00:00-07:00" pubdate data-updated="true">Oct 17<span>th</span>, 2010</time>
+<time datetime="2010-10-17T00:00:00-05:00" pubdate data-updated="true">Oct 17<span>th</span>, 2010</time>
         
       </p>
     
@@ -1446,7 +1483,7 @@ patpat~<br />lan</div>
   
 
 
-<time datetime="2010-10-17T00:00:00-07:00" pubdate data-updated="true">Oct 17<span>th</span>, 2010</time>
+<time datetime="2010-10-17T00:00:00-05:00" pubdate data-updated="true">Oct 17<span>th</span>, 2010</time>
         
       </p>
     
@@ -1491,7 +1528,7 @@ patpat~<br />lan</div>
   
 
 
-<time datetime="2010-10-12T00:00:00-07:00" pubdate data-updated="true">Oct 12<span>th</span>, 2010</time>
+<time datetime="2010-10-12T00:00:00-05:00" pubdate data-updated="true">Oct 12<span>th</span>, 2010</time>
         
       </p>
     
@@ -1536,7 +1573,7 @@ patpat~<br />lan</div>
   
 
 
-<time datetime="2010-10-11T00:00:00-07:00" pubdate data-updated="true">Oct 11<span>th</span>, 2010</time>
+<time datetime="2010-10-11T00:00:00-05:00" pubdate data-updated="true">Oct 11<span>th</span>, 2010</time>
         
       </p>
     
@@ -1573,7 +1610,7 @@ It is weird that the official website of <a href="http://www.eclipse.org/cdt/" t
   
 
 
-<time datetime="2010-10-05T00:00:00-07:00" pubdate data-updated="true">Oct 5<span>th</span>, 2010</time>
+<time datetime="2010-10-05T00:00:00-05:00" pubdate data-updated="true">Oct 5<span>th</span>, 2010</time>
         
       </p>
     
@@ -1582,43 +1619,6 @@ It is weird that the official website of <a href="http://www.eclipse.org/cdt/" t
 
   <div class="entry-content"><div class='post'>
 from comp.lang.c (<a href="http://groups.google.com/group/comp.lang.c/browse_thread/thread/8f42cce6ecd8d85a?hl=en">click</a>)<br />======<br /><br />1st paste:<br /><br />steve wrote:<br />&gt; Hey guys,<br />&gt; I have a delemna which I can&#8217;t figure out.<br />&gt; This is regarding &#8220;void pointers&#8221; and I confess, I really don&#8217;t<br />&gt; understand them nearly enough to even understand what the problem is.<br /><br />A void pointer is an address of a region of memory (which may or may not<br />be occupied).&nbsp; It is an error to attempt to use a void value in an<br />expression, hence why compilers will often warn you if you dereference a<br />void pointer.<br />(Note to the regulars: I&#8217;m probably not being perfectly accurate here,<br />but I don&#8217;t think c.l.c pedantry is what steve needs)<br />(Note to steve: the correct spelling is dilemma)<br /><br />&gt;&nbsp;&nbsp; void * params[5];<br /><br />This creates an array of 5 pointers to void.&nbsp; It does not create an<br />array of &#8220;void&#8221; (as you seem to think).<br />&gt;&nbsp;&nbsp; int int_param_values[5] = {1,2,3,4,5};<br /><br />&gt;&nbsp;&nbsp; char **str_param_values;<br /><br />&gt;&nbsp;&nbsp; str_param_values = malloc(5 * sizeof(char *));<br />&gt;&nbsp;&nbsp; str_param_values[0] = malloc(10 * sizeof(char));<br />&gt;&nbsp;&nbsp; strcpy(str_param_values[0], &#8220;hello&#8221;);<br /><br />&gt;&nbsp;&nbsp; double dbl_param_values[5] = {1.1, 2.2, 3.3};<br /><br />This creates an array of int, an array of char *, and an array of<br />double, and initialises them in various ways.<br />Note two things: firstly, it would probably make more sense for<br />str_param_values to be an array of 5 char *, and allocated on the stack,<br />with<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *str_param_values[5];<br />There is no obvious need for it to be on the heap.<br />Secondly, you have not tested the return value of malloc() in either of<br />these calls; I realise this is only example code (incidentally, you will<br />get more informative answers if you post actual code; then we know what<br />you&#8217;re trying to achieve!) but nonetheless it bears pointing out.<br /><br />&gt; I can then assign my data values, to the array,<br />&gt; like so:<br />&gt;&nbsp;&nbsp; params[indx] = (void*)int_param_values[ndx];<br /><br />This is casting an int to a void *.&nbsp; This is generally incorrect as an<br />int is not a pointer type.&nbsp; It just so happens that you are, IIRC,<br />allowed to do this by a special provision to allow the use of integer<br />expressions as pointers.&nbsp; In this case this is clearly not what you are<br />doing as, for instance, params[0] is now (void *)1; this is now a<br />pointer to the memory with address 1, which probably isn&#8217;t even mapped<br />in your program&#8217;s address space (if you&#8217;re on a memory managed<br />architecture.&nbsp; On, say, an embedded system you might want to do this).<br /><br />&gt;&nbsp;&nbsp; params[indx] = (void*)str_param_values[ndx];<br /><br />This is casting a char * to a void *.&nbsp; This is allowed because both are<br />pointer types.&nbsp; params[indx] now points to the first character of<br />str_param_values[ndx].<br /><br />&gt; These two methods compile just fine and work as expected.<br />&gt; However, this statement will not compile:<br />&gt;&nbsp;&nbsp; params[indx] = (void*)dbl_param_values[ndx];<br /><br />This is casting a double to a void *.&nbsp; This is not allowed; a double is<br />not the same size as, nor anything like, a void *.&nbsp; Unlike an int it<br />cannot even reasonably be interpreted as an address; what location in<br />memory would (void *)0.5 point to?&nbsp; It&#8217;s just silly really!<br /><br />&gt; and generates this compiler error:<br /><br />&gt; &#8220;&#8230;cast from &#8216;double&#8217; to &#8216;pointer to void&#8217; is illegal&#8221;<br /><br />Quite right too.<br /><br />&gt; When it&#8217;s all said and done, the idea is to pass the data referred to<br />&gt; in the array as function parameters,<br />&gt; like so:<br /><br />&gt;&nbsp;&nbsp; MyFunction(params[0], params[1], etc.);<br /><br />There are two appropriate methods I can think of.&nbsp; One is to use<br />varargs; if the function&#8217;s first argument gives it some way of deducing<br />the types of the remaining arguments, it can do so.&nbsp; This is for<br />instance how the *printf() family of functions work.<br /><br />The other is to use void *, but populate it not with the data themselves<br />but with pointers to them; for instance your doubles would become<br />something like:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; params[indx] = (void *)&amp;dbl_param_values[ndx];<br />where we assign the /address/ of the double to the pointer; we are now<br />casting a double * to a void *, which makes much more sense as both are<br />pointer types.<br /><br />One question I do have: given your function prototype as you have it,<br />where the only arguments are the params[] elements, how does the<br />function know to what the pointers refer (i.e., whether you have used an<br />int, a double, a char *, or whatever).<br />If, of course, it is simply, say, printing their addresses, it need not<br />know; but if it is using their values, it will have to be told, since<br />not only does it not know their true types, it doesn&#8217;t even know their<br />sizes, and a pointer without size information is not much use.<br /><br />Note also that you cannot make an array of void and store the values<br />(ints, doubles etc.) in that, because void has no storage size.<br /><br />Perhaps the real solution to your problems, however, is to use a struct<br />or union.<br /><br />I can&#8217;t really give any more specific advice without some information as<br />to what you&#8217;re trying to achieve.<br /><br />-Edward<br />==========<br /><br />2nd paste:<br /><br />Hey Ed,<br />thanks for your indepth reply.<br />Very helpful.<br /><br />&gt; (Note to steve: the correct spelling is dilemma)<br /><br />Sorry for that.<br />I&#8217;m one of those people prone to typos and misspelling.<br />I should have run spell check, I usually do.<br /><br /><snip><br />&gt; &gt;&nbsp;&nbsp; void * params[5];<br /><br />&gt; This creates an array of 5 pointers to void.&nbsp; It does not create an<br />&gt; array of &#8220;void&#8221; (as you seem to think).&gt;&nbsp;&nbsp; int int_param_values[5] = {1,2,3,4,5};<br /></snip><br /><br />No, I get that.<br />My understanding was that it was creating an &#8220;array of 5 pointers to<br />void&#8221;.<br />Which I then intended to populate with the addresses of the variables.<br /><br /><snip><br />&gt; Note two things: firstly, it would probably make more sense for<br />&gt; str_param_values to be an array of 5 char *, and allocated on the stack,<br />&gt; with<br />&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *str_param_values[5];<br /></snip><br /><br />Actually, I did try that.<br />It did not produce the result I was hoping for.<br /><br /><snip><br /><br />&gt; This is casting a double to a void *.&nbsp; This is not allowed; a double is<br />&gt; not the same size as, nor anything like, a void *.&nbsp; Unlike an int it<br />&gt; cannot even reasonably be interpreted as an address; what location in<br />&gt; memory would (void *)0.5 point to?&nbsp; It&#8217;s just silly really!<br /><br />Clearly I&#8217;m wrong here, but, I was making the &#8216;assumption&#8217; that a<br />&#8220;pointer to void&#8221; was just that,<br />a pointer to the address of a variable of an undertermined type.<br />Regardless of the size of the variable.<br />On a given system, are not addresses the same size ?<br /><br />What I&#8217;m after here, is a &#8220;generic&#8221; mechanism for holding addresses of<br />mixed variable types.<br />i.e.: an array of addresses.<br />Be they of type int, or char, or double, etc.<br /><br />What I&#8217;m (really) after here is to construct a &#8216;generic mechanism&#8217; for<br />calling functions within DLLs at RunTime.<br />These DLLs, their Functions and Parameters passed are not known at<br />compile time.<br /><br />Research indicated that void pointers was the way to do this.<br /><br />Suggestions ?<br /><br />Steve&nbsp;</snip><br />==========<br /><br />3rd paste:<br /><br />steve wrote:<br />&gt;&gt; Note two things: firstly, it would probably make more sense for<br />&gt;&gt; str_param_values to be an array of 5 char *, and allocated on the stack,<br />&gt;&gt; with<br />&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *str_param_values[5];<br />&gt; <br /><br />&gt; Actually, I did try that.<br />&gt; It did not produce the result I was hoping for.<br /><br />Curious.&nbsp; It certainly should have.<br /><br />&gt;&gt; This is casting a double to a void *.&nbsp; This is not allowed; a double is<br />&gt;&gt; not the same size as, nor anything like, a void *.&nbsp; Unlike an int it<br />&gt;&gt; cannot even reasonably be interpreted as an address; what location in<br />&gt;&gt; memory would (void *)0.5 point to?&nbsp; It&#8217;s just silly really!<br /><br />&gt; Clearly I&#8217;m wrong here, but, I was making the &#8216;assumption&#8217; that a<br />&gt; &#8220;pointer to void&#8221; was just that,<br />&gt; a pointer to the address of a variable of an undertermined type.<br />&gt; Regardless of the size of the variable.<br />&gt; On a given system, are not addresses the same size ?<br /><br />Your assumption is valid; the problem is that you weren&#8217;t putting a<br />pointer to the double into the void *, you were trying to put the double<br />itself into the void *.&nbsp; As mentioned elsewhere in the thread, the &#8216;&amp;&#8217;<br />operator is what you&#8217;re looking for.<br /><br />&gt; What I&#8217;m after here, is a &#8220;generic&#8221; mechanism for holding addresses of<br />&gt; mixed variable types.<br />&gt; i.e.: an array of addresses.<br />&gt; Be they of type int, or char, or double, etc.<br /><br />&gt; What I&#8217;m (really) after here is to construct a &#8216;generic mechanism&#8217; for<br />&gt; calling functions within DLLs at RunTime.<br />&gt; These DLLs, their Functions and Parameters passed are not known at<br />&gt; compile time.<br /><br />&gt; Research indicated that void pointers was the way to do this.<br /><br />Firstly, I can&#8217;t think of a good reason why you would want to do this.<br />It sounds as though you&#8217;ve come up with some idea for a &#8216;generic<br />mechanism&#8217; without actually having any use cases in mind.<br />Besides, linking against ill-defined interfaces is a bad idea.&nbsp; If<br />you&#8217;re trying to define functionality at runtime, an embedded scripting<br />language is the way to go.<br />But if you /really/ want this, void pointers will do it - but you have<br />to remember that what you assign to the void pointer has to, itself, be<br />a pointer too (hence why your double to void * cast wasn&#8217;t valid).&nbsp; Also<br />remember that if you pass a pointer, the callee can modify the<br />referenced object.&nbsp; This may not be what you want.<br />What it /really/ sounds like is that you want function overloading<br />and/or dynamic types - in other words, you&#8217;re trying to make C more like<br />C++ or Java.&nbsp; From my perspective that seems like a silly thing to do:<br />why would you want C++ in the first place - and if you do, you know<br />where to find it ;)<br /><br /><br />-Edward<br />==========<br /><br />&nbsp;BTW, the <a href="http://dev-null.chu.cam.ac.uk/">website</a> of Edward is worth viewing.</div>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/10/03/visualize-resume/">Visualize Resume</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-03T00:00:00-07:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-两篇讲美化简历的日志，从第一篇阮一峰的<a href="http://www.ruanyifeng.com/blog/2010/09/infographic_resume.html">日志</a>可以链接到第二篇(<a href="http://www.vizualresume.com/10-free-resume-templates-257.html">click</a>)。乍一看心里还在想，若要使能这么做简历简直太炫了。直到看到英文那篇日志最后的评论，才算是豁然开朗。转贴到这里。<br /><br /><br /><b>All of them suck.</b> It’s nice eyecandy, but as a recruiter I wouldn’t want to waste my time to read them. My eyes would be hopping around without focus and I would be confused where to read next.<br /><br />Evalotta Lamm&#8217;s one would be the best of them if she had used only one column and a classic list from top to bottom. All the others that use two or more columns or completely defy any resumé standard are crap.<br /><br />Imagine what Albert Lo&#8217;s, Luc Pestille&#8217;s and Sarah Parmenter&#8217;s example looks like if the recruiter has to copy/print the resumé in black and white…<br /><br />Also never ever make your name stand out in a huge text size, come down from your high horse. No boss cares about someone that proudly displays his name, but has little experience or bad works. Even with a succesful career, you don’t need to show your name in an egoistical, arrogant way.<br /><br /><b>Playing around with a resumé design is only for people who can&#8217;t come up with a convincing portfolio. Be creative in your works, keep your resumé simple and boring.</b></div>
 </div>
   
   
@@ -1643,6 +1643,10 @@ from comp.lang.c (<a href="http://groups.google.com/group/comp.lang.c/browse_thr
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/06/23/half-of-summer-season-has-gone/">Half of Summer Season Has Gone</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/15/reading-note-of-sicp-5/">Reading note of SICP (5)</a>
       </li>
     
@@ -1656,10 +1660,6 @@ from comp.lang.c (<a href="http://groups.google.com/group/comp.lang.c/browse_thr
     
       <li class="post">
         <a href="/blog/2014/04/05/survive-on-busy-two-weeks/">Survive on Busy Two weeks</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/01/strategic-playing-for-the-first-several-sets/">Strategic Playing for the First Several Sets</a>
       </li>
     
   </ul>

@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="说到Unix为我们所带来的软件开发的哲学，我必需要说一说。Unix遵循的原则是KISS（Keep it simple, stupid）。在http://en.wikipedia.org/wiki/Unix_philosophy 上有很多的基本上大同小异的Unix哲学，都是很经典的。Doug &hellip;">
+  <meta name="description" content="// Breadth-First Search // The tricky part is that we have to know the entire info. about // the graph, which indicates in the link-matrix &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/28/tree-search-algorithms/">Tree Search Algorithms</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-28T00:00:00-06:00" pubdate data-updated="true">Feb 28<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+// Breadth-First Search <br />// The tricky part is that we have to know the entire info. about <br />// the graph, which indicates in the link-matrix graphmatrix <br /><br />struct node{ <br />&nbsp;&nbsp; &nbsp;int color;&nbsp;&nbsp; &nbsp;// 0-white, 1-grey, 2-black <br />&nbsp;&nbsp; &nbsp;int index;&nbsp;&nbsp; &nbsp;// fount order <br />&nbsp;&nbsp; &nbsp;int d; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// distance to the root <br />&nbsp;&nbsp; &nbsp;struct node *parent; <br />}; <br />typedef struct node* Node; <br /><br />void buildBFS1(int *graphmatrix, Node graph, Node start){ <br />&nbsp;&nbsp; &nbsp;int i=0, n, head, tail; <br />&nbsp;&nbsp; &nbsp;Node queue;&nbsp;&nbsp; &nbsp;// used as stack to do BFS <br />&nbsp;&nbsp; &nbsp;Node temp; <br /><br />&nbsp;&nbsp; &nbsp;while(graph[i]!=NULL){ <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].color = 0; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].index = i; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].parent = NULL; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].d = 0; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;i++; <br />&nbsp;&nbsp; &nbsp;} <br />&nbsp;&nbsp; &nbsp;n = i; <br />&nbsp;&nbsp; &nbsp;start-&gt;color = 1; <br />&nbsp;&nbsp; &nbsp;queue = (Node)malloc(n*sizeof(Node));&nbsp;&nbsp; &nbsp;// not sure here&#8230; <br />&nbsp;&nbsp; &nbsp;head = tail = 0; <br />&nbsp;&nbsp; &nbsp;enqueue(queue, &amp;tail, start); <br /><br />&nbsp;&nbsp; &nbsp;while(!isEmpty(head, tail)){ <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;temp = dequeue(queue, &amp;head); <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for (i=0; i<n; i++){=""><br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(graphMatrix[temp-&gt;index][i]!=0){ <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(graph[i].color==0){ <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].color = 1; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].d = temp-&gt;d+1; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].parent = temp; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;enqueue(queue, &amp;tail, graph[i]); <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;temp-&gt;color = 2; <br />&nbsp;&nbsp; &nbsp;} <br />} <br /><br />void initQueue(int *head, int *tail){ <br />&nbsp;&nbsp; &nbsp;*head = *tail =0; <br />} <br /><br />void enqueue(Node q, int *tail, Node element){ <br />&nbsp;&nbsp; &nbsp;q[(*tail)++]=element; <br />} <br /><br />Node dequeue(Node q, int *head){ <br />&nbsp;&nbsp; &nbsp;return q[(*head)++]; <br />} <br /><br />int isEmpty(int head, int tail){ <br />&nbsp;&nbsp; &nbsp;return head==tail? 1:0; <br />} <br /><br />int isFull(int tail, const int size){ <br />&nbsp;&nbsp; &nbsp;return tail==size? 1:0; <br />} <br /><br /><br />// Depth-First Search <br />// has more knowledge about the structure of the tree <br />// at the cost of a more complicated struct <br /><br />struct node{ <br />&nbsp;&nbsp; &nbsp;int index; <br />&nbsp;&nbsp; &nbsp;int color; <br />&nbsp;&nbsp; &nbsp;int detected; <br />&nbsp;&nbsp; &nbsp;int finished; <br />&nbsp;&nbsp; &nbsp;struct node *parent; <br />} <br />typedef struct node* Node; <br /><br />// the original algorithm in the textbook is a little bit wierd<br />// cause it is different from BFS by no need of starting point<br />// while it is obvious that starting with different points will <br />// generate trees with different structures, given the same link-matrix <br />void buildDFS(int *graphMatrx, Node graph, Node start){ <br />&nbsp;&nbsp; &nbsp;int i=0, n, time;<br />&nbsp;&nbsp; &nbsp;Node temp; <br />&nbsp;&nbsp; &nbsp;while(graph[i]!=NULL){ <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].color = 0; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].parent = NULL; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].detected = graph[i].finished = 0; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[i].index = i; <br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;i++; <br />&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp; &nbsp;n = i; <br />&nbsp;&nbsp; &nbsp;time = 0;<br />&nbsp;&nbsp; &nbsp;graph[1] = temp;<br />&nbsp;&nbsp; &nbsp;graph[1] = start;<br />&nbsp;&nbsp; &nbsp;start = temp;&nbsp;&nbsp; &nbsp;// just want to start at the beginning of the array <br />&nbsp;&nbsp; &nbsp;while(i&gt;=0){<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(graph[i].color == 0)<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;visitDFS(graphMatrix, graph, i, &amp;time, n);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;i&#8211;;<br />&nbsp;&nbsp; &nbsp;}<br />}<br /><br />void visitDFS(int *graphMatrix, Node graph, int i, int *time, int length){<br />&nbsp;&nbsp; &nbsp;graph[i].color = 1;&nbsp;&nbsp; &nbsp;// grey, begin to visit<br />&nbsp;&nbsp; &nbsp;graph[i].detected = ++(*time);<br />&nbsp;&nbsp; &nbsp;for (int j=0; j<length; j++){=""><br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(graphMatrix[graph[i].index][j]!=0){<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(graph[j].color == 0){<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;graph[j].parent = &amp;graph[i];<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;visitDFS(graphMatrix, graph, j, time, length);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp; &nbsp;graph[i].color = 2;&nbsp;&nbsp; &nbsp;// black, conclude the visiting<br />&nbsp;&nbsp; &nbsp;graph[i].finished = ++(*time);<br />}</length;></n;><br /><br /><n; i++){=""><length; j++){="">(<a href="http://creasywuqiong.blogspot.com/2011/03/tree-search-algorithm-cont.html">to be continued</a>) &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; </length;></n;><br />=========<br /><br />reference: &lt;<a href="http://www.amazon.com/Introduction-Algorithms-Third-Thomas-Cormen/dp/0262033844/ref=sr_1_2?ie=UTF8&amp;qid=1298923887&amp;sr=8-2">Introduction to algorithms</a>&gt;</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ the original webpage:&nbsp;<a href="http://sd.csdn.net/a/20101020/280710.html">c
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/19/some-useful-link-for-programming/">Some Useful Link for Programming Format</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-19T00:00:00-06:00" pubdate data-updated="true">Nov 19<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<a href="http://www.embeded.cn/online/hightc.htm">高质量C++/C编程指南</a><br /><br /><a href="http://code.google.com/p/google-styleguide/">Google code: google style code</a> (including C/C++, Javascript, and Python)<br /><br /><a href="http://1codechs.codeplex.com/releases/view/54868">Microsoft: All-In-One Code Framework</a></div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/9/">&larr; Older</a>
@@ -469,6 +469,10 @@ the original webpage:&nbsp;<a href="http://sd.csdn.net/a/20101020/280710.html">c
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/07/17/3-dot-0-league-for-the-third-time/">3.0 League for the Third Time</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/23/half-of-summer-season-has-gone/">Half of Summer Season Has Gone</a>
       </li>
     
@@ -482,10 +486,6 @@ the original webpage:&nbsp;<a href="http://sd.csdn.net/a/20101020/280710.html">c
     
       <li class="post">
         <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/04/05/survive-on-busy-two-weeks/">Survive on Busy Two weeks</a>
       </li>
     
   </ul>

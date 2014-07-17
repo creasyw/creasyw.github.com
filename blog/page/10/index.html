@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="我看UNIX与Windows的本质区别文化，我首先想到的是文化。Unix和Windows从诞生之初的文化差异本质上划分了两者的界限。直观看来，一个装逼文化，一个傻逼文化。Unix诞生在贝尔实验室的MULTICS项目之后。据说当时这个项目设计得十分复杂，功能设计也几乎是上天入地无所不能。 &hellip;">
+  <meta name="description" content="谷歌笔试：1.n支队伍比赛，分别编号为0，1，2。。。。n-1，已知它们之间的实力对比关系，存储在一个二维数组w[n][n] 中，w[i][j]的值代表编号为i，j的队伍中更强的一支 所以w[i][j]=i 或者j，现在给出它们的出场顺序，并存储在数组order[n]中，比如order[n &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/29/backup-interview-summary/">Backup: Interview Summary</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-29T00:00:00-05:00" pubdate data-updated="true">Oct 29<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+谷歌笔试：<br />1.<br />n支队伍比赛，分别编号为0，1，2。。。。n-1，已知它们之间的实力对比关系，存储在一个二维数组w[n][n] 中，w[i][j]<br />的值代表编号为i，j的队伍中更强的一支 所以w[i][j]=i 或者j，现在给出它们的出场顺序，并存储在数组order[n]中，<br />比如order[n] = {4,3,5,8,1&#8230;&#8230;}，那么第一轮比赛就是 4对3， 5对8。。。。。。<br />胜者晋级，败者淘汰，同一轮淘汰的所有队伍排名不再细分，即可以随便排，<br />下一轮由上一轮的胜者按照顺序，再依次两两比，比如可能是4对5,直至出现第一名<br />编程实现，给出二维数组w，一维数组order 和 用于输出比赛名次的数组result[n]，求出result<p><br />2.题目说的比较花哨，根据我的理解，本质上就是有n个长为m+1的字符串，如果某个字符串的最后m个字符与某个字符串的前m个字符匹配，则两个字符串可以联接，问这n个字符串最多可以连成一个多长的字符串，如果出现循环，则返回错误<p>百度面试：<p>3.<br />用天平（只能比较，不能称重）从一堆小球中找出其中唯一一个较轻的，使用x次天平 最多可以从y个小球中找出较轻的那个，求y与x的关系式<br />4.有一个很大很大的输入流，大到没有存储器可以将其存储下来，而且只输入一次，如何从这个输入流中随机取得m个记录<br />5.大量的URL字符串，如何从中去除重复的，优化时间空间复杂度<p>网易有道笔试：<br />6. 求一个二叉树中任意两个节点间的最大距离，两个节点的距离的定义是<br />这两个节点间边的个数，比如某个孩子节点和父节点间的距离是1，和相邻兄弟节点间的距离是2，优化时间空间复杂度<br />7.求一个有向连通图的割点，割点的定义是，如果除去此节点和与其相关的边，有向图不再连通，描述算法<p>discussion can be found @:<br /><a href="http://topic.csdn.net/u/20100930/13/9f10c56c-9545-488e-9b53-edffc9b6761d.html">http://topic.csdn.net/u/20100930/13/9f10c56c-9545-488e-9b53-edffc9b6761d.html</a><p>==========<p>GOOGLE今天晚上的笔试题，刚参加回来.<p>第一题比较简单，检测同一个平面上的两个矩形是否重合<p>第二题是，给定一个随机函数，对一个数组进行随机排列，保证所有可能的排列出现的概率相等，也就是n!分之一<p><br />第三题就是约瑟夫问题的最优解法~Knuth具体数学上有，不过我忘记了，自己没推导出来，就写了个模拟<p>discussion can be found @:<br /><a href="http://topic.csdn.net/u/20101018/23/75b6dc53-610f-401e-b8ae-5aebee5cabe8.html">http://topic.csdn.net/u/20101018/23/75b6dc53-610f-401e-b8ae-5aebee5cabe8.html</a><p>==========<p>雅虎：<br />1.对于一个整数矩阵，存在一种运算，对矩阵中任意元素加一时，需要其相邻（上下左右）某一个元素也加一，现给出一正数矩阵，判断其是否能够由一个全零矩阵经过上述运算得到。<p>2.一个整数数组，长度为n，将其分为m份，使各份的和相等，求m的最大值<br />比如{3，2，4，3，6} 可以分成{3，2，4，3，6} m=1;<br />{3,6}{2,4,3} m=2<br />{3,3}{2,4}{6} m=3 所以m的最大值为3<p>搜狐：<p>3.四对括号可以有多少种匹配排列方式？比如两对括号可以有两种：（）（）和（（））<p>创新工场：<p>4.求一个数组的最长递减子序列 比如{9，4，3，2，5，4，3，2}的最长递减子序列为{9，5，4，3，2}<p>微软：<br />5.一个数组是由一个递减数列左移若干位形成的，比如{4，3，2，1，6，5}是由{6，5，4，3，2，1}左移两位形成的，在这种数组中查找某一个数。<p>discussion can be found @:<br /><a href="http://topic.csdn.net/u/20101021/14/7fdbcd52-3ee6-42ce-b48e-8fb56c4418da.html">http://topic.csdn.net/u/20101021/14/7fdbcd52-3ee6-42ce-b48e-8fb56c4418da.html</a><p>==========<p>雅虎：<br />1.对于一个整数矩阵，存在一种运算，对矩阵中任意元素加一时，需要其相邻（上下左右）某一个元素也加一，现给出一正数矩阵，判断其是否能够由一个全零矩阵经过上述运算得到。<p>2.一个整数数组，长度为n，将其分为m份，使各份的和相等，求m的最大值<br />比如{3，2，4，3，6} 可以分成{3，2，4，3，6} m=1;<br />{3,6}{2,4,3} m=2<br />{3,3}{2,4}{6} m=3 所以m的最大值为3<p>搜狐：<p>3.四对括号可以有多少种匹配排列方式？比如两对括号可以有两种：（）（）和（（））<p>创新工场：<p>4.求一个数组的最长递减子序列 比如{9，4，3，2，5，4，3，2}的最长递减子序列为{9，5，4，3，2}<p>微软：<br />5.一个数组是由一个递减数列左移若干位形成的，比如{4，3，2，1，6，5}是由{6，5，4，3，2，1}左移两位形成的，在这种数组中查找某一个数。<p>discussion can be found @:<br /><a href="http://topic.csdn.net/u/20101021/14/7fdbcd52-3ee6-42ce-b48e-8fb56c4418da.html">http://topic.csdn.net/u/20101021/14/7fdbcd52-3ee6-42ce-b48e-8fb56c4418da.html</a></div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1589,43 +1626,6 @@ It is weird that the official website of <a href="http://www.eclipse.org/cdt/" t
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/10/05/void-pointers/">Void Pointers</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-05T00:00:00-05:00" pubdate data-updated="true">Oct 5<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-from comp.lang.c (<a href="http://groups.google.com/group/comp.lang.c/browse_thread/thread/8f42cce6ecd8d85a?hl=en">click</a>)<br />======<br /><br />1st paste:<br /><br />steve wrote:<br />&gt; Hey guys,<br />&gt; I have a delemna which I can&#8217;t figure out.<br />&gt; This is regarding &#8220;void pointers&#8221; and I confess, I really don&#8217;t<br />&gt; understand them nearly enough to even understand what the problem is.<br /><br />A void pointer is an address of a region of memory (which may or may not<br />be occupied).&nbsp; It is an error to attempt to use a void value in an<br />expression, hence why compilers will often warn you if you dereference a<br />void pointer.<br />(Note to the regulars: I&#8217;m probably not being perfectly accurate here,<br />but I don&#8217;t think c.l.c pedantry is what steve needs)<br />(Note to steve: the correct spelling is dilemma)<br /><br />&gt;&nbsp;&nbsp; void * params[5];<br /><br />This creates an array of 5 pointers to void.&nbsp; It does not create an<br />array of &#8220;void&#8221; (as you seem to think).<br />&gt;&nbsp;&nbsp; int int_param_values[5] = {1,2,3,4,5};<br /><br />&gt;&nbsp;&nbsp; char **str_param_values;<br /><br />&gt;&nbsp;&nbsp; str_param_values = malloc(5 * sizeof(char *));<br />&gt;&nbsp;&nbsp; str_param_values[0] = malloc(10 * sizeof(char));<br />&gt;&nbsp;&nbsp; strcpy(str_param_values[0], &#8220;hello&#8221;);<br /><br />&gt;&nbsp;&nbsp; double dbl_param_values[5] = {1.1, 2.2, 3.3};<br /><br />This creates an array of int, an array of char *, and an array of<br />double, and initialises them in various ways.<br />Note two things: firstly, it would probably make more sense for<br />str_param_values to be an array of 5 char *, and allocated on the stack,<br />with<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *str_param_values[5];<br />There is no obvious need for it to be on the heap.<br />Secondly, you have not tested the return value of malloc() in either of<br />these calls; I realise this is only example code (incidentally, you will<br />get more informative answers if you post actual code; then we know what<br />you&#8217;re trying to achieve!) but nonetheless it bears pointing out.<br /><br />&gt; I can then assign my data values, to the array,<br />&gt; like so:<br />&gt;&nbsp;&nbsp; params[indx] = (void*)int_param_values[ndx];<br /><br />This is casting an int to a void *.&nbsp; This is generally incorrect as an<br />int is not a pointer type.&nbsp; It just so happens that you are, IIRC,<br />allowed to do this by a special provision to allow the use of integer<br />expressions as pointers.&nbsp; In this case this is clearly not what you are<br />doing as, for instance, params[0] is now (void *)1; this is now a<br />pointer to the memory with address 1, which probably isn&#8217;t even mapped<br />in your program&#8217;s address space (if you&#8217;re on a memory managed<br />architecture.&nbsp; On, say, an embedded system you might want to do this).<br /><br />&gt;&nbsp;&nbsp; params[indx] = (void*)str_param_values[ndx];<br /><br />This is casting a char * to a void *.&nbsp; This is allowed because both are<br />pointer types.&nbsp; params[indx] now points to the first character of<br />str_param_values[ndx].<br /><br />&gt; These two methods compile just fine and work as expected.<br />&gt; However, this statement will not compile:<br />&gt;&nbsp;&nbsp; params[indx] = (void*)dbl_param_values[ndx];<br /><br />This is casting a double to a void *.&nbsp; This is not allowed; a double is<br />not the same size as, nor anything like, a void *.&nbsp; Unlike an int it<br />cannot even reasonably be interpreted as an address; what location in<br />memory would (void *)0.5 point to?&nbsp; It&#8217;s just silly really!<br /><br />&gt; and generates this compiler error:<br /><br />&gt; &#8220;&#8230;cast from &#8216;double&#8217; to &#8216;pointer to void&#8217; is illegal&#8221;<br /><br />Quite right too.<br /><br />&gt; When it&#8217;s all said and done, the idea is to pass the data referred to<br />&gt; in the array as function parameters,<br />&gt; like so:<br /><br />&gt;&nbsp;&nbsp; MyFunction(params[0], params[1], etc.);<br /><br />There are two appropriate methods I can think of.&nbsp; One is to use<br />varargs; if the function&#8217;s first argument gives it some way of deducing<br />the types of the remaining arguments, it can do so.&nbsp; This is for<br />instance how the *printf() family of functions work.<br /><br />The other is to use void *, but populate it not with the data themselves<br />but with pointers to them; for instance your doubles would become<br />something like:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; params[indx] = (void *)&amp;dbl_param_values[ndx];<br />where we assign the /address/ of the double to the pointer; we are now<br />casting a double * to a void *, which makes much more sense as both are<br />pointer types.<br /><br />One question I do have: given your function prototype as you have it,<br />where the only arguments are the params[] elements, how does the<br />function know to what the pointers refer (i.e., whether you have used an<br />int, a double, a char *, or whatever).<br />If, of course, it is simply, say, printing their addresses, it need not<br />know; but if it is using their values, it will have to be told, since<br />not only does it not know their true types, it doesn&#8217;t even know their<br />sizes, and a pointer without size information is not much use.<br /><br />Note also that you cannot make an array of void and store the values<br />(ints, doubles etc.) in that, because void has no storage size.<br /><br />Perhaps the real solution to your problems, however, is to use a struct<br />or union.<br /><br />I can&#8217;t really give any more specific advice without some information as<br />to what you&#8217;re trying to achieve.<br /><br />-Edward<br />==========<br /><br />2nd paste:<br /><br />Hey Ed,<br />thanks for your indepth reply.<br />Very helpful.<br /><br />&gt; (Note to steve: the correct spelling is dilemma)<br /><br />Sorry for that.<br />I&#8217;m one of those people prone to typos and misspelling.<br />I should have run spell check, I usually do.<br /><br /><snip><br />&gt; &gt;&nbsp;&nbsp; void * params[5];<br /><br />&gt; This creates an array of 5 pointers to void.&nbsp; It does not create an<br />&gt; array of &#8220;void&#8221; (as you seem to think).&gt;&nbsp;&nbsp; int int_param_values[5] = {1,2,3,4,5};<br /></snip><br /><br />No, I get that.<br />My understanding was that it was creating an &#8220;array of 5 pointers to<br />void&#8221;.<br />Which I then intended to populate with the addresses of the variables.<br /><br /><snip><br />&gt; Note two things: firstly, it would probably make more sense for<br />&gt; str_param_values to be an array of 5 char *, and allocated on the stack,<br />&gt; with<br />&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *str_param_values[5];<br /></snip><br /><br />Actually, I did try that.<br />It did not produce the result I was hoping for.<br /><br /><snip><br /><br />&gt; This is casting a double to a void *.&nbsp; This is not allowed; a double is<br />&gt; not the same size as, nor anything like, a void *.&nbsp; Unlike an int it<br />&gt; cannot even reasonably be interpreted as an address; what location in<br />&gt; memory would (void *)0.5 point to?&nbsp; It&#8217;s just silly really!<br /><br />Clearly I&#8217;m wrong here, but, I was making the &#8216;assumption&#8217; that a<br />&#8220;pointer to void&#8221; was just that,<br />a pointer to the address of a variable of an undertermined type.<br />Regardless of the size of the variable.<br />On a given system, are not addresses the same size ?<br /><br />What I&#8217;m after here, is a &#8220;generic&#8221; mechanism for holding addresses of<br />mixed variable types.<br />i.e.: an array of addresses.<br />Be they of type int, or char, or double, etc.<br /><br />What I&#8217;m (really) after here is to construct a &#8216;generic mechanism&#8217; for<br />calling functions within DLLs at RunTime.<br />These DLLs, their Functions and Parameters passed are not known at<br />compile time.<br /><br />Research indicated that void pointers was the way to do this.<br /><br />Suggestions ?<br /><br />Steve&nbsp;</snip><br />==========<br /><br />3rd paste:<br /><br />steve wrote:<br />&gt;&gt; Note two things: firstly, it would probably make more sense for<br />&gt;&gt; str_param_values to be an array of 5 char *, and allocated on the stack,<br />&gt;&gt; with<br />&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *str_param_values[5];<br />&gt; <br /><br />&gt; Actually, I did try that.<br />&gt; It did not produce the result I was hoping for.<br /><br />Curious.&nbsp; It certainly should have.<br /><br />&gt;&gt; This is casting a double to a void *.&nbsp; This is not allowed; a double is<br />&gt;&gt; not the same size as, nor anything like, a void *.&nbsp; Unlike an int it<br />&gt;&gt; cannot even reasonably be interpreted as an address; what location in<br />&gt;&gt; memory would (void *)0.5 point to?&nbsp; It&#8217;s just silly really!<br /><br />&gt; Clearly I&#8217;m wrong here, but, I was making the &#8216;assumption&#8217; that a<br />&gt; &#8220;pointer to void&#8221; was just that,<br />&gt; a pointer to the address of a variable of an undertermined type.<br />&gt; Regardless of the size of the variable.<br />&gt; On a given system, are not addresses the same size ?<br /><br />Your assumption is valid; the problem is that you weren&#8217;t putting a<br />pointer to the double into the void *, you were trying to put the double<br />itself into the void *.&nbsp; As mentioned elsewhere in the thread, the &#8216;&amp;&#8217;<br />operator is what you&#8217;re looking for.<br /><br />&gt; What I&#8217;m after here, is a &#8220;generic&#8221; mechanism for holding addresses of<br />&gt; mixed variable types.<br />&gt; i.e.: an array of addresses.<br />&gt; Be they of type int, or char, or double, etc.<br /><br />&gt; What I&#8217;m (really) after here is to construct a &#8216;generic mechanism&#8217; for<br />&gt; calling functions within DLLs at RunTime.<br />&gt; These DLLs, their Functions and Parameters passed are not known at<br />&gt; compile time.<br /><br />&gt; Research indicated that void pointers was the way to do this.<br /><br />Firstly, I can&#8217;t think of a good reason why you would want to do this.<br />It sounds as though you&#8217;ve come up with some idea for a &#8216;generic<br />mechanism&#8217; without actually having any use cases in mind.<br />Besides, linking against ill-defined interfaces is a bad idea.&nbsp; If<br />you&#8217;re trying to define functionality at runtime, an embedded scripting<br />language is the way to go.<br />But if you /really/ want this, void pointers will do it - but you have<br />to remember that what you assign to the void pointer has to, itself, be<br />a pointer too (hence why your double to void * cast wasn&#8217;t valid).&nbsp; Also<br />remember that if you pass a pointer, the callee can modify the<br />referenced object.&nbsp; This may not be what you want.<br />What it /really/ sounds like is that you want function overloading<br />and/or dynamic types - in other words, you&#8217;re trying to make C more like<br />C++ or Java.&nbsp; From my perspective that seems like a silly thing to do:<br />why would you want C++ in the first place - and if you do, you know<br />where to find it ;)<br /><br /><br />-Edward<br />==========<br /><br />&nbsp;BTW, the <a href="http://dev-null.chu.cam.ac.uk/">website</a> of Edward is worth viewing.</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/11/">&larr; Older</a>
@@ -1643,6 +1643,10 @@ from comp.lang.c (<a href="http://groups.google.com/group/comp.lang.c/browse_thr
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/07/17/3-dot-0-league-for-the-third-time/">3.0 League for the Third Time</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/23/half-of-summer-season-has-gone/">Half of Summer Season Has Gone</a>
       </li>
     
@@ -1656,10 +1660,6 @@ from comp.lang.c (<a href="http://groups.google.com/group/comp.lang.c/browse_thr
     
       <li class="post">
         <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/04/05/survive-on-busy-two-weeks/">Survive on Busy Two weeks</a>
       </li>
     
   </ul>

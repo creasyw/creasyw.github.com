@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-07-04T10:03:35-05:00</updated>
+  <updated>2014-07-17T11:15:23-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[3.0 League for the Third Time]]></title>
+    <link href="http://creasyw.github.io/blog/2014/07/17/3-dot-0-league-for-the-third-time/"/>
+    <updated>2014-07-17T10:47:00-05:00</updated>
+    <id>http://creasyw.github.io/blog/2014/07/17/3-dot-0-league-for-the-third-time</id>
+    <content type="html"><![CDATA[<p>There are two dimensions for a court. I just kept forgetting it! It is always worthwhile to explore both left/right and mid/back of the court. As an amateur like me, the most struggling part might be forced to constantly adjust the tempo. I should keep pushing in this kind of manner more often.</p>
+
+<p>It is almost always a wiser choice to stick to the “percentage shot” for both forehand and backhand. I had too many unforced errors hitting down the line. However, on the other hand, when I stand in the middle of the court, I should be more comfortable to change the direction. For most of the opponents, they would struggle more in their backhands. So I could try more inside-out.</p>
+
+<p>I have a better volley technique, but am still awful in both timing and positioning. I can serve with more power, and a little bit more consistent. The next step will be taking more control in direction. Besides, I need to prepare earlier/higher and hit with looser wrist for the ground stroke. I also need push the momentum forward when I hit the ball. It’s almost one year since I learned this activity, but I still cannot master its most basic part…</p>
+
+<p>Well, anyhow =D</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Half of Summer Season Has Gone]]></title>
@@ -612,16 +627,6 @@ I still don’t know why it search into the directory of 2.6 given there is anot
 <p>cheers,</p>
 
 <p>[UPDATE: after changed the loading sequence of bash in <code>/etc/paths/</code> the first step seems unnecessary… actually, that was something I should do as soon as I used homebrew to port packages. <a href="http://bit.ly/IUVl9a">http://bit.ly/IUVl9a</a>]</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[C++ rants (continued)]]></title>
-    <link href="http://creasyw.github.io/blog/2013/06/05/c-rants-continued/"/>
-    <updated>2013-06-05T00:00:00-05:00</updated>
-    <id>http://creasyw.github.io/blog/2013/06/05/c-rants-continued</id>
-    <content type="html"><![CDATA[<div class='post'>
-(<a href="http://www.realworldtech.com/forum/?threadid=104299&amp;curpostid=104196">link</a>)<br /><br />&gt;Care to write an explicit example of a deep problem? (Except memory management - you already mentioned garbage collection.)<br /><br />Concurrency, for example.<br /><br />My point being, that C++ adds absolutely nothing interesting.<br /><br />&gt;All right. Then why do you think C should have support for structures (struct {&#8230;})?<br /><br />That&#8217;s just singularly stupid.<br /><br />C is a good language. It&#8217;s complete enough (and yes, the ability to handle structured data is very much required for any serious language) to be supremely useful, while at the same time being quite simple.<br /><br />A language without structured data types would not be a powerful language the way C is. You do need data structures, and you need pointers (to both data and code) to be at all interesting.<br /><br />But where do you draw the line?<br /><br />I know that you as a C++ proponent you probably won&#8217;t really &#8220;get&#8221; this simple argument, but try:<br /><br />- read the K&amp;R book on C (the ANSI edition), and be enlightened.<br /><br />Notice how the language is basically described by one rather thin book. Readably.<br /><br />So what C does so well is to do that whole &#8220;make it as simple as you can, but no simpler&#8221;. And that is what makes it great. The language is powerful, yet fairly minimal.<br /><br />There really aren&#8217;t many features you could remove from the C language without crippling it. Sure, there&#8217;s<br />three different looping constructs, and you could make trivial (syntactic) changes to the language, but that&#8217;s<br />really not the point. The language is simple, but without being too simple.<br /><br />Now, that&#8217;s not what you always want. I understand very well why people want less system-oriented languages with more built-in functionality. As mentioned, support for both garbage collection and concurrency are quite real problems, and they are both things you can do in C, but that you cannot do well with library interfaces, which is how you normally would extend on C.<br /><br />And garbage collection and concurrency are way more than just syntactic extensions. You can still do them very badly, of course, so it&#8217;s not a trivial path to go down, and I&#8217;m not saying hat a language magically becomes &#8220;good&#8221; just from supporting one or the other.<br /><br />But again: C does what it does very well, and with a clarity of thought and design that is entirely and utterly lacking from C++.<br /><br />And yes, I happen to think that clarity of thought and design is a good thing. It&#8217;s why I liked UNIX, even though I was initially introduced to other things (VMS - ugh).<br /><br />C++ is a mess. There&#8217;s no design. It&#8217;s just &#8220;add crud on top of C&#8221;. And the crud isn&#8217;t even meaningful, much less does it have a design. It&#8217;s totally and utterly random.<br /><br />It started out random, now it&#8217;s randomness that gets added to by a committee.<br /><br />&gt;For example, namespaces and function overloading are *not*<br />&gt;useless. They *do* solve a real problem that C is incapable<br />&gt;of solving.<br /><br />You&#8217;re full of it.<br /><br />&gt;For example, if you want in your source code to define a<br />&gt;function called &#8220;connect&#8221; and you also want include<br />&gt;&#8221;sys/socket.h&#8221;, you cannot do that in C.<br /><br />So to prove how it&#8217;s not just a syntactic feature, you start talking about syntax?<br /><br />What drugs are you on?<br /><br />The name overloading is a total syntactic feature. In C, the way you fix your problem is by a totally trivial syntactic change: you call your function &#8220;my_connect()&#8221;.<br /><br />Wow. It&#8217;s like magic. I added three characters, and made your whole reason for the crap that is C++ go away.<br /><br />The thing is, the above is a really good example of why C++ is horrible, and why C is so simple.<br /><br />Yes, the C solution is really simple. It&#8217;s so simple that it looks downright stupid. But it&#8217;s actually so simple that it is smart because quite frankly, it&#8217;s a lot easier to get confused in C++ code, when the same function name means totally different due to overloading.<br /><br />Of course, you&#8217;re not &#8220;supposed&#8221; to overload things in confusing ways, but the thing is, just do what C does: just make your function names unique. It&#8217;s not that hard, and by avoiding the overloading mess, you make it a lot easier to search for (hey look! &#8220;grep -w my_connect&#8221; just works!), and you avoid ambiguity.<br /><br />(Same exact thing goes for your other example: just add a module prefix or have some other trivial naming rules for your functional split-up, and be happy)<br /><br />Linus<br /><div><br /></div></div>
 ]]></content>
   </entry>
   

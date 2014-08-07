@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-07-31T09:18:55-05:00</updated>
+  <updated>2014-08-07T12:06:13-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -305,27 +305,33 @@ cannot yank that text).  &lt;DEL&gt; and C-d do deletion in the simplest
 case, with no argument.  When given an argument, they kill instead.
 – This is valid for both vim and emacs.</p>
 
+<p>Multiple windows:
+- C-x 0  delete this window
+- C-x 1  delete all other windows
+- C-x 2  vertically split window
+- C-x 3  split window side by side</p>
+
 <p>Scoll down the page
-C-v (page down)
-C-u 8 C-v (scoll down 8 lines)
-C-l (move the current line to the middle of the window)
-C-u 0 C-l (move the current line to the head of the window)</p>
+- C-v (page down)
+- C-u 8 C-v (scoll down 8 lines)
+- C-l (move the current line to the middle of the window)
+- C-u 0 C-l (move the current line to the head of the window)</p>
 
 <p>Getting help
-C-h c &lt;Command sequence&gt;   (a very brief description of the command.)
-C-h k &lt;Command sequence&gt;   (displays the documentation of the function, as well as its name)</p>
+- C-h c &lt;Command sequence&gt;   (a very brief description of the command.)
+- C-h k &lt;Command sequence&gt;   (displays the documentation of the function, as well as its name)</p>
 
 <p>Auto-completion
-M-/
-<a href="http://company-mode.github.io/">Company</a> is good complementory plug-in</p>
+- M-/
+- <a href="http://company-mode.github.io/">Company</a> is good complementory plug-in</p>
 
 <p>Shell History (also Useful for Haskell REPL)
-M-p (or) C-&lt;UP&gt;: Fetch the next earlier old shell command.
-M-n (or) C-&lt;DOWN&gt;: Fetch the next later old shell command.
-M-r: Begin an incremental regexp search of old shell commands.
-C-c C-x: Fetch the next subsequent command from the history.
-C-c . : Fetch one argument from an old shell command.
-C-c C-l: Display the buffer’s history of shell commands in another window (comint-dynamic-list-input-ring).</p>
+- M-p (or) C-&lt;UP&gt;: Fetch the next earlier old shell command.
+- M-n (or) C-&lt;DOWN&gt;: Fetch the next later old shell command.
+- M-r: Begin an incremental regexp search of old shell commands.
+- C-c C-x: Fetch the next subsequent command from the history.
+- C-c . : Fetch one argument from an old shell command.
+- C-c C-l: Display the buffer’s history of shell commands in another window (comint-dynamic-list-input-ring).</p>
 
 <h3 id="missing-features">Missing Features:</h3>
 

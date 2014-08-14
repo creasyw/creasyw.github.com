@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="没有想到，这一年能发生这么多的事情。效率从年初开始，越来越高。然后是暑假实习，认识了很多有趣的人，开始打网球。去了波多黎各和维京群岛，看到一生迄今为止最蓝的海。回来后继续打网球，开始瘦身，失散了三十年的六块腹肌和人鱼线都找到了，可年末却把豆豆丢了。痛彻心扉的最后两个月，不太清楚自己是怎么度过的。 &hellip;">
+  <meta name="description" content="I was hoping to find something like Python Progression Path or sort of “best practice” for Emacs, because the difference between Vim and Emacs was &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,139 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/02/emacs-progression-path/">Emacs Progression Path</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-02T16:37:00-06:00" pubdate data-updated="true">Jan 2<span>nd</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I was hoping to find something like <a href="http://stackoverflow.com/questions/2573135/python-progression-path-from-apprentice-to-guru">Python Progression Path</a> or sort of “best practice” for Emacs, because the difference between Vim and Emacs was much larger than I thought. But what I found were either teaching about basic operations such as saving and quiting the editor for people who had access to comupter for the 1st time, or talking about tricks of using Emacs Lisp for the high-end hard-core players… It seemed like I was stuck in the middle, and would stay there for a very long time…</p>
+
+<p>I will sort the contents here as incremental records simulating my Emacs learning process, as well as keeping track of nontrivial materials and thoughts.</p>
+
+<h3 id="resources">Resources:</h3>
+
+<ul>
+  <li><a href="http://sachachua.com/blog/2013/05/how-to-learn-emacs-a-hand-drawn-one-pager-for-beginners/">Tow</a> <a href="http://sachachua.com/p/26006">pics</a> served as the very beginning of entering the world of Emacs.</li>
+  <li>Cheat Sheet (<a href="http://refcards.com/docs/gildeas/gnu-emacs/emacs-refcard-a4.pdf">compact version</a>, and <a href="http://cs.iupui.edu/~kweimer/EmacsCheatSheet.pdf">a more user friendly verion</a>).</li>
+  <li>C-h t. Tutorial of Emacs within the editor. It should be the first doc to read.</li>
+  <li>My previous <a href="http://wqiong.com/blog/2013/07/01/setup-emacs-in-mac-os/">post</a> to setup Emacs in Mac OS.</li>
+  <li>Steve Yegge’s suggestion for <a href="https://sites.google.com/site/steveyegge2/effective-emacs">improving productivity with Emacs</a></li>
+  <li><a href="http://batsov.com/prelude/">Prelude</a> – very easy to setup, and add/disable modules.</li>
+  <li><a href="https://github.com/xiaohanyu/oh-my-emacs">Oh-my-emacs</a> is another option to start with, but I met quite a few incompatible issues for the mac os. <a href="https://github.com/eschulte/emacs24-starter-kit">Emacs24 Starter Kit</a> is also well-known but relatively inactive recently.</li>
+  <li>GNU <a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/index.html">Emacs Manual</a> and <a href="http://www.gnu.org/software/emacs/manual/html_node/elisp/">Emacs LISP Manual</a></li>
+  <li><a href="http://batsov.com/articles/2012/02/19/package-management-in-emacs-the-good-the-bad-and-the-ugly/">Guidelines</a> for package management in Emacs.</li>
+  <li><a href="http://www.emacswiki.org/emacs/">Emacs Wiki</a></li>
+  <li><a href="http://www.masteringemacs.org/">Mastering Emacs</a></li>
+</ul>
+
+<p>–Well, it is really a road that will never end…</p>
+
+<h3 id="packages">Packages:</h3>
+
+<ul>
+  <li><a href="https://github.com/magit/magit">Magit</a>. “Magit is the most popular interface to git. If you are new to git and do not need support for other vcs this is likely the package you should try first” – quoted from <a href="http://www.emacswiki.org/emacs/Git">EmacsWiki</a>. The detail explanation can be found from <a href="http://www.masteringemacs.org/articles/2013/12/06/introduction-magit-emacs-mode-git/">Mastering Emacs</a>.</li>
+  <li><a href="http://company-mode.github.io/">Company</a> for auto-completion.</li>
+</ul>
+
+<h3 id="random-thoughts">Random Thoughts</h3>
+<ul>
+  <li>One of the most fundamental change from Vim to Emacs is that Vim is the most powerful editor in this planet while Emacs is kind of <a href="http://c2.com/cgi/wiki?EmacsAsOperatingSystem">“operating system” with a lousy editor</a>. It might be a rant to the right place, but anyway, the other side of the story is that emacs can be regarded as an OS which means that it might be much more powerful when the configuration is right. I should be able to do things that are used to complete via the combination of vim, shell, REPL, and compiler, and I SHOULD NOT launch and exit it very often as what I am doing with vim.</li>
+  <li>Everything looks a little bit more decent within the emacs,
+including the shell.</li>
+</ul>
+
+<h3 id="useful-key-combinings">Useful Key Combinings:</h3>
+
+<p>Kill a line:
+C-a C-k (move the cursor to the begining of the line, thenkill from the cursor to the end of the line)</p>
+
+<p>Kill 2 lines: C-a C-u 2 C-k</p>
+
+<p>Kill a specific region
+C-&lt;SPC&gt; C-w (move around to highlight region, then kill contents within highlight region)</p>
+
+<p>Yank the killed contents C-y</p>
+
+<p>Retrieve yanking history
+M-y (right after the 1st yanking. – this is intersting)</p>
+
+<p>The difference between “killing” and “deleting” is that “killed” text
+can be reinserted (at any position), whereas “deleted” things cannot
+be reinserted in this way (you can, however, undo a deletion–see below).
+Reinsertion of killed text is called “yanking”.  Generally, the
+commands that can remove a lot of text kill the text (they are set up so
+that you can yank the text), while the commands that remove just one
+character, or only remove blank lines and spaces, do deletion (so you
+cannot yank that text).  &lt;DEL&gt; and C-d do deletion in the simplest
+case, with no argument.  When given an argument, they kill instead.
+– This is valid for both vim and emacs.</p>
+
+<p>Multiple windows:
+- C-x 0  delete this window
+- C-x 1  delete all other windows
+- C-x 2  vertically split window
+- C-x 3  split window side by side</p>
+
+<p>Scoll down the page
+- C-v (page down)
+- C-u 8 C-v (scoll down 8 lines)
+- C-l (move the current line to the middle of the window)
+- C-u 0 C-l (move the current line to the head of the window)</p>
+
+<p>Getting help
+- C-h c &lt;Command sequence&gt;   (a very brief description of the command.)
+- C-h k &lt;Command sequence&gt;   (displays the documentation of the function, as well as its name)</p>
+
+<p>Auto-completion
+- M-/
+- <a href="http://company-mode.github.io/">Company</a> is good complementory plug-in</p>
+
+<p>Shell History (also Useful for Haskell REPL)
+- M-p (or) C-&lt;UP&gt;: Fetch the next earlier old shell command.
+- M-n (or) C-&lt;DOWN&gt;: Fetch the next later old shell command.
+- M-r: Begin an incremental regexp search of old shell commands.
+- C-c C-x: Fetch the next subsequent command from the history.
+- C-c . : Fetch one argument from an old shell command.
+- C-c C-l: Display the buffer’s history of shell commands in another window (comint-dynamic-list-input-ring).</p>
+
+<h3 id="missing-features">Missing Features:</h3>
+
+<p>This is a list for what I should expand the functionalities of my Emacs.</p>
+
+<ul>
+  <li>Highlight symbol at the point. There is <a href="http://www.emacswiki.org/emacs/HighlightSymbol">a package</a> for this purpose, but currently it does not work well within Prelude.</li>
+  <li>Interactive input for M-x.</li>
+</ul>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -611,57 +744,6 @@ I still don’t know why it search into the directory of 2.6 given there is anot
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/01/setup-emacs-in-mac-os/">Setup Emacs in Mac OS</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-01T00:00:00-05:00" pubdate data-updated="true">Jul 1<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The setup is much harder than I thought…</p>
-
-<p>1) using homebrew installs the emacs and guile. Then, I also need to add path in the .bash_profile to launch the up-to-date emacs rather than the original version 22.1 shipped with the os.<br />
-<code>export PATH=/usr/local/Cellar/emacs/24.3/bin:$PATH</code></p>
-
-<p>2) Enable the <a href="http://stackoverflow.com/questions/162896/emacs-on-mac-os-x-leopard-key-bindings">Meta key in terminal</a>, or similar position for iterm2.</p>
-
-<p>After these two steps, the following is more straightforward.</p>
-
-<p>3) I accidentally found this “<a href="https://github.com/technomancy/emacs-starter-kit">emacs-starter-kit</a>”, which had 2300+ stared and really saved my day. Just follow the instruction and everything will be fine.</p>
-
-<p>In current state, I feel emacs kind of like vim+tmux. Anyway, learning new knowledge is always a pleasure, especially about this kind of “legacy” stuff.</p>
-
-<p>cheers,</p>
-
-<p>[UPDATE: after changed the loading sequence of bash in <code>/etc/paths/</code> the first step seems unnecessary… actually, that was something I should do as soon as I used homebrew to port packages. <a href="http://bit.ly/IUVl9a">http://bit.ly/IUVl9a</a>]</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -679,6 +761,10 @@ I still don’t know why it search into the directory of 2.6 given there is anot
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/14/third-win-for-this-season/">Third Win for This Season</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/17/3-dot-0-league-for-the-third-time/">3.0 League for the Third Time</a>
       </li>
     
@@ -692,10 +778,6 @@ I still don’t know why it search into the directory of 2.6 given there is anot
     
       <li class="post">
         <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
       </li>
     
   </ul>

@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="将一个容器复制给另一个容器时，类型必须匹配：容器类型和元素类型都必须一致。迭代器first和last如果满足以下两点，则可以形成一个迭代器范围：1、它们指向同一个容器中的元素或超出末端的下一个位置；如果两个迭代器不相等，则对first反复应用自增加运算必须能够到达last，即， &hellip;">
+  <meta name="description" content="Step 0 : At terminal, aaa@ubuntu:~$ sudo gedit /etc/modprobe.d/blacklist.conf. Add “blacklist rt2870usb” without quote at the end of the file, then &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/07/02/install-rt2870-usb-wireless-adapter-in/">Install RT2870 Usb Wireless Adapter in Ubuntu 10</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-02T00:00:00-05:00" pubdate data-updated="true">Jul 2<span>nd</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Step 0 : At terminal, aaa@ubuntu:~$ sudo gedit /etc/modprobe.d/blacklist.conf. Add “blacklist rt2870usb” without quote at the end of the file, then save it.<br /><br />Step 1 : Download the latest rt2870 driver (<a href="http://www.ralinktech.com/support.php?s=2">here</a>) from Ralink.<br /><br />Step 2 : Untar the file and save to your home folder, and name it. (eg. the folder name is rt2870)<br /><br />Step 2.51 : According to the instruction I found in the internet, there should be another three steps done with the dongle: firstly, without plug your wireless usb at this moment, at terminal aaa@ubuntu:~$ type lsusb.<br /><br />Step 2.52 : Then plug in the wireless usb to the computer, type lsusb again, the&nbsp;wireless usb ID (8 digits)&nbsp;will be found. Write it down.<br /><br />Step 2.53 : Check it at aaa@ubuntu:~/rt2870/os/linux$, sudo gedit usb_main_dev.c. If the usb device is not included, add the wireless usb ID. Save the file. For example, the additional two lines are:<br />{USB_DEVICE(0x0B05,0x1761)}, /* Asus */<br />{USB_DEVICE(0x1761,0x0B05)}, /* Asus */<br /><br />Step 3 :&nbsp;In Makefile,&nbsp;set the &#8220;MODE = STA&#8221; in Makefile and chose the TARGET to Linux by set &#8220;TARGET = LINUX&#8221;. Then, change the directory of RT28XX_DIR in line 7 by &#8220;aaa@ubuntu:~$&nbsp;shell pwd&#8221;. Finally, via the command &#8220;aaa@ubuntu:~$&nbsp;shell uname -r&#8221;,&nbsp;define the linux kernel source include file path LINUX_SRC&nbsp;modify to meet your need.<br /><br />Step 4 : At same terminal , sudo gedit config.mk, and change two settings.<br /># Support Wpa_Supplicant<br />HAS_WPA_SUPPLICANT=n → y<br /># Support Native WpaSupplicant for Network Maganger<br />HAS_NATIVE_WPA_SUPPLICANT_SUPPORT=n → y<br /><br />Step 5 : At aaa@ubuntu:~/rt2870$, sudo gedit Makefile, check the folllowing at the top of the file:<br />RT28xx_MODE = STA<br />TARGET = LINUX<br />CHIPSET = 2870<br />If ok, close the file. If not, change the setting as above.<br /><br />Step 6: rt2870 2.2.00 version do not support kernel 2.6.31-14-generic, so you have to do a patch. The download link is <a href="http://launchpadlibrarian.net/35348337/rt2870-2.6.31.patch">here</a>, and the patch is via &#8220;patch -p1 &lt; rt2870-2.6.31.patch&#8221;.If you get a message of unable to patch, then download and install Patch_2.5.9-5_amd64.deb.<br /><br />Step 7 : At aaa@ubuntu:~/rt2870$, do the compilation.<br />sudo make uninstall<br />sudo make clean<br />sudo make<br />sudo make install<br /><br />Step 8 : At aaa@ubuntu:~$ sudo modprobe rt2870sta<br /><br />Step 9 : At aaa@ubuntu”~$ sudo gedit /etc/rc.local, add following two lines prior to exit0.<br />ifconfig ra0 up<br />pkill NetworkManager<br />save it, then at same terminal, sudo gedit /etc/modules, add rt2870sta, then save the file.<br /><br />Step 10 :At aaa@ubuntu:~$ ifconfig or iwconfig, you will see your wireless is up as ra0 or wlan0.<br /><br />Step 11 : Now configure networkmanager, use wep instead of wpa-psk or wpa2-psk. Your wireless will be able to connect to the internet. If there&#8217;s no connection, then do step 12.<br /><br />Step 12 : Update networkmanager. Go to System – Software Sources – Other software, add the following line<br />deb http://ppa.launchpad.net/network-manager/trunk/ubuntu karmic main<br /><br />That&#8217;s the end.</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ austin的雨水总是很迷人。身处一个古香古色的自习室里，又�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/05/20/summer-plan/">Summer Plan</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-05-20T00:00:00-05:00" pubdate data-updated="true">May 20<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-假期开始了，研究的事情还是没有什么着落。有点儿焦虑。但无论如何，日子还是在一分一秒一天一天的过。所以书，还是要看的；代码，也还是要学要写的。给自己列个简单的计划，就算只能完成其中的一部分，也算是没有虚度时光了。<br /><br />需要重新阅读的三本数学书：<br />1. Fourier series and integrals;<br />2. Complex analysis;<br />3. Measure theory, Lebesgue integration, and Hilbert space.<br />(all&nbsp;written&nbsp;by Elias M. Stein and Rami Shakarchi)<br /><br />有关专业：<br />看完 Programming Collective Intelligence<br />结合python的编译器构建一个小型的优化推荐引擎。<br /><br />有关杂书：<br />去年放假在HALF PRICE BOOKS买的一坨小说还基本没怎么碰过，好歹也要看完一两本，以后才能再有信心逛书店不是？</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/14/">&larr; Older</a>
@@ -469,6 +469,10 @@ austin的雨水总是很迷人。身处一个古香古色的自习室里，又�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/14/third-win-for-this-season/">Third Win for This Season</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/17/3-dot-0-league-for-the-third-time/">3.0 League for the Third Time</a>
       </li>
     
@@ -482,10 +486,6 @@ austin的雨水总是很迷人。身处一个古香古色的自习室里，又�
     
       <li class="post">
         <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
       </li>
     
   </ul>

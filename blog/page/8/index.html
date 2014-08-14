@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="// Breadth-First Search // The tricky part is that we have to know the entire info. about // the graph, which indicates in the link-matrix &hellip;">
+  <meta name="description" content="&nbsp;The previous post is here============ struct treeNode{&nbsp;&nbsp;&nbsp; int element;&nbsp;&nbsp;&nbsp; struct treeNode *left;&nbsp;&nbsp;& &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/01/tree-search-algorithm-cont/">Tree Search Algorithm (Cont.)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-01T00:00:00-06:00" pubdate data-updated="true">Mar 1<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+&nbsp;The previous post is <a href="http://creasywuqiong.blogspot.com/2011/02/tree-search-algorithms.html">here</a><br />============ <br />struct treeNode{<br />&nbsp;&nbsp;&nbsp; int element;<br />&nbsp;&nbsp;&nbsp; struct treeNode *left;<br />&nbsp;&nbsp;&nbsp; struct treeNode *right;<br />}:<br />typedef struct treeNode *searchTree;<br /><br /><br />searchTree makeEmpty(searchTree T){<br />&nbsp;&nbsp;&nbsp; if(T!=NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; MakeEmpty(T-&gt;left);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; MakeEmpty(T-&gt;right);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; free(T);<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; return NULL;<br />}<br /><br /><br />searchTree findVal(int val, searchTree T){<br />&nbsp;&nbsp;&nbsp; if(T==NULL)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return NULL;<br />&nbsp;&nbsp;&nbsp; if(val<t->element)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return findVal(val, T-&gt;left);<br />&nbsp;&nbsp;&nbsp; else if(val&gt;T-&gt;element)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return findVal(val, T-&gt;right);<br />&nbsp;&nbsp;&nbsp; else<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return T;<br />}<br /><br /><br />searchTree findMin(searchTree T){<br />&nbsp;&nbsp;&nbsp; if(T!=NULL)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; while(T-&gt;left!=NULL)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = T-&gt;left;<br />&nbsp;&nbsp;&nbsp; return T;<br />}<br /><br /><br />searchTree insertVal(int val, searchTree T){<br />&nbsp;&nbsp;&nbsp; if(T==NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T=(searchTree)malloc(sizeof(struct treeNode));<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(T==NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; printf(&#8220;Error! There is no new memory to allocate.\n&#8221;);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; exit(0);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;element = val;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;left = T-&gt;right = NULL;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; else{<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(val<t->element)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;left = insertVal(val, T-&gt;left);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else if(val&gt;T-&gt;element)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;right = insertVal(val, T-&gt;right);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; printf(&#8220;The element has already in this tree.\n&#8221;);<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; return T;<br />}<br /><br /><br />searchTree deleteVal( int val, searchTree T){<br />&nbsp;&nbsp;&nbsp; searchTree temp;<br />&nbsp;&nbsp;&nbsp; if(T==NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; printf(&#8220;The element is not found.\n&#8221;);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return NULL;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; else if(val<t->element)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;left = deleteVal(val, T-&gt;left);<br />&nbsp;&nbsp;&nbsp; else if(val&gt;T-&gt;element)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;right = deleteVal(val, T-&gt;right);<br />&nbsp;&nbsp;&nbsp; else{&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // here, find the specific element<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(T-&gt;left &amp;&amp; T-&gt;right){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; temp = findMin(T-&gt;right);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;element = tmp-&gt;element;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;right = deleteVal(tmp-&gt;element, T-&gt;right);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else{<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; temp = T;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(T-&gt;left == NULL)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = T-&gt;right;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else if(T-&gt;right==NULL)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = T-&gt;left;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; free(temp);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return T;<br />&nbsp;&nbsp;&nbsp; }<br />}<br /><br />// the functions below returns node which element is closest<br />// and larger in the Tree. We could call it &#8220;next&#8221;<br />// assumption1: the inputs are inquiry val and the root node<br />searchTree nextLarger(int val, searchTree T){<br />&nbsp;&nbsp;&nbsp; searchTree temp;<br />&nbsp;&nbsp;&nbsp; if(T==NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; printf(&#8220;There is no tree.\n&#8221;);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return NULL;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; if(val<t->element){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(T-&gt;left!=NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; temp = T-&gt;left;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; while(val<temp->element &amp;&amp; temp-&gt;left!=NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = temp;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; temp = temp-&gt;left;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // This case indicate &#8220;temp-&gt;left==NULL&#8221; causes stop<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // so temp should be the return value<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(val<temp->element)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = temp;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // otherwise, result might in a new right tree<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // . or the parent node in this layer<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else{<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if (temp-&gt;right!=NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; temp = nextLarger(val, temp-&gt;right);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if (temp!=NULL)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = temp;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return T;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; else{<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; while(val&gt;=T-&gt;element &amp;&amp; T-&gt;right!=NULL)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = T-&gt;right;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(val<t->element){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = nextLarger(val, T);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return T;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return NULL;<br />&nbsp;&nbsp;&nbsp; }<br />}<br /><br /><br />// assumption2: the input value is a given node in the tree.<br />// In this case, we might have to trace back.<br />// As a resutl, the original struct needs a little modification<br />struct treeNode{<br />&nbsp;&nbsp;&nbsp; int element;<br />&nbsp;&nbsp;&nbsp; struct treeNode *left;<br />&nbsp;&nbsp;&nbsp; struct treeNode *right;<br />&nbsp;&nbsp;&nbsp; struct treeNode *parenet;&nbsp;&nbsp;&nbsp; // to trace back<br />}:<br />typedef struct treeNode *searchTree;<br /><br />searchTree nextLarger2(searchTree start){<br />&nbsp;&nbsp;&nbsp; searchTree temp, record;<br />&nbsp;&nbsp;&nbsp; if(start==NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; printf(&#8220;There is not a valid input.\n&#8221;);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return NULL;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; if(start-&gt;right!=NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; start = findMin(start-&gt;right);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return start;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; else if(start-&gt;parent!=NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(start == start-&gt;parent-&gt;left)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return start;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else{<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; while(start-&gt;parent!=NULL &amp;&amp; start!=start-&gt;parent-&gt;left)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; start = start-&gt;parent;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(start==start-&gt;parent-&gt;left)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return start;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return NULL;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; }<br />}</t-></temp-></temp-></t-></t-></t-></t-><br /><t-><t-><t-><t-><temp-><temp-><t-><br /></t-></temp-></temp-></t-></t-></t-></t-><br /><t-><t-><t-><t-><temp-><temp-><t-> // references: &lt;<a href="http://www.amazon.com/Introduction-Algorithms-Third-Thomas-Cormen/dp/0262033844/ref=sr_1_1?ie=UTF8&amp;qid=1299041213&amp;sr=8-1">Introduction to algorithms</a>&gt;, &lt;<a href="http://www.amazon.com/Cracking-Coding-Interview-Fourth-Programming/dp/145157827X/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1299041239&amp;sr=1-1">Coding Interviews</a>&gt; </t-></temp-></temp-></t-></t-></t-></t-><br /><br /><t-><t-><t-><t-><temp-><temp-><t->// I just did some terrible interviews these days. Yes, some, and terrible.<br />// So, I wanna record everything here,&nbsp;</t-></temp-></temp-></t-></t-></t-></t-><br /><t-><t-><t-><t-><temp-><temp-><t->// no matter how stupid and rudimentary it is.<br />// Also as a means to push myself, everyday a step further.<br /></t-></temp-></temp-></t-></t-></t-></t-></div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ the original webpage:&nbsp;<a href="http://sd.csdn.net/a/20101020/280710.html">c
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/19/top-20-programming-lessons-ive-learned/">Top 20 Programming Lessons I&#8217;ve Learned in 20 Years</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-19T00:00:00-06:00" pubdate data-updated="true">Nov 19<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<ol><li><strong>Set a duration of how long you think it should take to solve a problem - </strong>C&#8217;mon, admit it! I&#8217;m just as guilty as the next programmer. I&#8217;ve seen programmers sit in front of a monitor for eight hours at a time trying to solve a particular problem. Set a time table for yourself of 1 hour, 30 minutes, or even 15 minutes. If you can&#8217;t figure out a solution to your problem within your time frame, ask for help or research your problem on the Internet instead of trying to be super-coder.</li><li><strong>A language is a language is a language</strong> - Over time, once you understand how one language works, you&#8217;ll notice similarities between other languages. The language you choose should provide you with a suitable &#8220;comfort&#8221; level, the ability to produce efficient (and clean) code, and, above all, allow the language to suit the project and vice-versa.</li><li><strong>Don&#8217;t over-&#8220;design pattern&#8221; applications</strong> - Sometimes it&#8217;s just easier to write a simple algorithm than it is to incorporate a singleton or facade pattern. For the most part, it even allows for cleaner, understandable code. :-)</li><li><strong>Always backup your code</strong> - I&#8217;ve experienced a complete hard drive failue and lost a lot of code when I was younger and felt horrible because of what had happened. The one time you don&#8217;t back up your data may be the one time where you have a strict deadline with a client and they need it tomorrow. Source code/version control applies here as well.<br /></li><li><strong>You are not the best at programming. Live with it.</strong> - I always thought that I knew so much about programming, but there is always someone out there better than you. Always. Learn from them.</li><li><strong>Learn to learn more</strong> - With number five explained, I&#8217;ve always had a magazine or book in my hand about computers or programming (ask my friends, they&#8217;ll confirm). True, there is a lot of technology out there and keeping up with it is a fulltime job, but if you have a smart way of receiving your news, you&#8217;ll learn about new technology every single day.</li><li><strong>Change is constant</strong> - Your knowledge of technology and/or programming should be similar to how you treat stocks: Diversify. Don&#8217;t get too comfortable with a particular technology. If there&#8217;s not enough support for that language or technology, you might as well start updating your resume now and start your training period. My general rule of thumb that has kept me going? Know at least two or three languages, so if one dies off, you have another one to fall back on while you train for a new technology.</li><li><strong>Support Junior</strong> - Assist and train the junior/entry-level developers on good programming guidelines and techniques. You never know&#8230;you may move up in rank and you&#8217;ll feel more confident having personally trained and prepared them for their next position.</li><li><strong>Simplify the algorithm</strong> - Code like a fiend, but once you&#8217;re done, go back through your code and optimize it. A little code improvement here and there will make support happier in the long run.</li><li><strong>Document your code</strong> - Whether its documenting a Web Service API or documenting a simple class, document as you go. I&#8217;ve been accused of over-commenting my code and that&#8217;s something I&#8217;m proud of. It only takes a second to add an additional comment line for each 3 lines of code. If it&#8217;s a harder technique to grasp, don&#8217;t be afraid to over-comment. This is one problem most architects, backup coders, and support groups don&#8217;t complain about if you&#8217;ve done your job right.</li><li><strong>Test, Test, Test</strong> - I&#8217;m a fan of <a href="http://en.wikipedia.org/wiki/Black_box_testing">Black Box Testing</a>. When your routine is finished, your &#8220;stamp of approval&#8221; period starts. If you have a Quality Assurance department, you may be talking more to them than your project manager regarding errors in your code. If you don&#8217;t test your code thoroughly, you may develop more than code. Possibly a bad reputation.</li><li><strong>Celebrate every success</strong> - I&#8217;ve met a lot of programmers who have conquered headache-style problems with a great programming technique and celebrated with a fellow programmer by doing the &#8220;shake&#8221;, the high-five, or even a &#8220;happy dance.&#8221; Everyone has enlightening periods in their life and even though that one happy coder asked you to come and see his extraordinary piece of code and you&#8217;ve seen that one piece of code over 100 times in your experiences, celebrate the success of a fellow developer for the 101-st time.</li><li><strong>Have Code Reviews Frequently</strong> - On projects and personally. In the company, you will always have code reviews of how well you coded something. Don&#8217;t look at it as people crucifying your coding style. Think of it as constructive criticism. On the personal front, review your code and always ask, &#8220;How could I have done it better?&#8221; This will accelerate your learning and make you a better programmer.</li><li><strong>R</strong><strong>eminisce about your code</strong> - There are two ways to looking at old code: &#8220;I can&#8217;t believe I wrote this code&#8221; and &#8220;I can&#8217;t believe I wrote this code.&#8221; The first statement is often of disgust and wondering how you can improve it. You&#8217;d be surprised at how old code can be resurrected into a possible and better routine, or maybe even an entire product. The second statement is of amazement and achievement. Developers have their one or two project code achievements that they completed and had everyone standing up and taking notice. Again, based on your excellent coding ability, you could take those past routines or projects and update them into a better product or idea.</li><li><strong>Humor is necessary</strong> - In my 20 years of development, I have never met a programmer who hasn&#8217;t had a decent sense of humor. Actually, in this industry, it&#8217;s a requirement.</li><li><strong>Beware the know-it-all, <a href="http://www.dcs-media.com/Archive/business-lesson-1-7G">possessive coder</a>, and the inexperienced coder</strong> - Humble yourself when you meet these types of coders. The know-it-all tries to upstage you instead of working as a team player, the defensive coder created code that he doesn&#8217;t want to share with anyone, and the inexperienced coder constantly asks for assistance every ten minutes where the finished code developed is yours, not theirs.</li><li><strong>No project is ever simple</strong> - I&#8217;ve been asked by friends, family, and associates to just &#8220;whip something up for me.&#8221; To &#8220;whip&#8221; up a program or web site, it takes planning from both parties to complete something that both sides can appreciate. If someone needs a 3-page web site with Microsoft Access from the start, it winds up becoming a 15-page web site with SQL Server, a forum, and a custom CMS (Content Management System).</li><li><strong>Never take anything for granted</strong> - If you take on a simple project, you may think that a certain section will be easy to complete. Don&#8217;t think that even for a moment. Unless you have a class, component, or piece of code<em> already coded</em>&#8230;and has been tested thoroughly&#8230;and is in production from an existing project, don&#8217;t think it will be easy.</li><li><strong>Software is never finished</strong> - A fellow programmer once told me that software is never finished, it&#8217;s &#8220;temporarily completed.&#8221; Sound advice. If the client is still using a program you wrote and has stood the test of time, chances are, you are still updating it, which isn&#8217;t a bad thing. It keeps you working. :-)</li><li><strong>Patience is definitely a virtue</strong> - When clients, friends, or family members use a PC, they get frustrated and proceed to hit a component of the PC or storm off. I keep telling everyone, &#8220;you are controlling the computer not the other way around.&#8221; You need to have a certain level of patience for programming computers. As soon as programmers understand what they did wrong, they look at it from the computers point of view and say, &#8220;Oh, that&#8217;s why it was doing that.&#8221;</li></ol></div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/9/">&larr; Older</a>
@@ -469,6 +469,10 @@ the original webpage:&nbsp;<a href="http://sd.csdn.net/a/20101020/280710.html">c
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/14/third-win-for-this-season/">Third Win for This Season</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/17/3-dot-0-league-for-the-third-time/">3.0 League for the Third Time</a>
       </li>
     
@@ -482,10 +486,6 @@ the original webpage:&nbsp;<a href="http://sd.csdn.net/a/20101020/280710.html">c
     
       <li class="post">
         <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
       </li>
     
   </ul>

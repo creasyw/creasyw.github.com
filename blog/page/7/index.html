@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Formal methods:1. Complete the 3rd homework before next Tuesday;2. Learn the basic syntax and methods about coding in Clojure;3. Check the &hellip;">
+  <meta name="description" content="A comparison between Scheme and Common Lisp&#8211;the author perfer scheme:)To be fair enough, here is a comparison in favor of Common Lisp:)An &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/15/lisp/">Lisp</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-15T00:00:00-05:00" pubdate data-updated="true">Mar 15<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<a href="http://pschombe.wordpress.com/2006/03/11/a-comparison-between-scheme-and-common-lisp/">A comparison between Scheme and Common Lisp</a>&#8211;the author perfer scheme:)<br />To be fair enough, <a href="http://community.schemewiki.org/?scheme-vs-common-lisp">here</a> is a comparison in favor of Common Lisp:)<br />An introductory article about Lisp: <a href="http://abhishek.geek.nz/docs/features-of-common-lisp/">Features of Common Lisp</a>. The <a href="http://gigamonkeys.com/book/">next step</a> will be comprehensive and advanced learning in this language.<br />Besides, via google searching, there are lots of comparison articles/ discussions and excellent introductions for both dialect languages. At last, I made up my mind: CL will be the next language after I conquer Clojure:)<br /><br />ps. <a href="http://code.google.com/apis/language/translate/v2/using_rest.html">here</a> is the Google Translate API. Furthermore, other APIs can be looked up in this <a href="https://code.google.com/apis/explorer/">Explorer</a>.<br /><a href="http://p.ps/">p.ps</a>. best paper awards <a href="http://jeffhuang.com/best_paper_awards.html#sigir">list</a>.<br /><br />Update: A little bit digression, below is the digest of an interesting discussion about genius in<a href="http://news.ycombinator.com/"> Hacker News</a>:<br />Genius is the act of solving a problem in a way no one has solved it before. It has nothing to do with winning a Nobel prize in physics or certain levels of schooling. It&#8217;s about using human insight and initiative to find original solutions that matter.<br />Genius is actually the eventual public recognition of dozens (or hundreds) of failed attempts at solving a problem. Sometimes we fail in public, often we fail in private, but people who are doing creative work are constantly failing.<br />When the lizard brain kicks in and the resistance slows you down, the only correct response is to push back again and again and again with one failure after another. Sooner or later, the lizard will get bored and give up.<br /><br />ps. sth about unix and bash file.<br />The basic bash file introduction could refer to <a href="http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html">here</a>. <br /><a href="http://www.ibm.com/developerworks/aix/library/au-badunixhabits.html">UNIX tips: Learn 10 good UNIX usage habits</a><br /><a href="http://www.ibm.com/developerworks/aix/library/au-unixtips/?S_CMP=cn-a-aix&amp;S_TACT=105AGX52">UNIX tips: Learn 10 more good UNIX usage habits</a><br /><br />pps. sth about Graphviz<br />1) <a href="http://www.linux.com/archive/feed/49655">First step</a> is to install it and know the basic syntax of the command line;<br />2) Then, the <a href="http://graphviz.org/Documentation/neatoguide.pdf">2nd step reading</a> is also referred in the web page above;<br />Besides, &#8221;<a href="http://www.linuxjournal.com/article/7275">How to draw hash table</a>&#8221; and <a href="http://www.karakas-online.de/forum/viewtopic.php?t=2647">some other complicated graphs</a> are both good start points to learn its software and language.</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ see also &lt;<a href="http://www.joelonsoftware.com/articles/fog0000000319.html"
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/01/tree-search-algorithm-cont/">Tree Search Algorithm (Cont.)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-01T00:00:00-06:00" pubdate data-updated="true">Mar 1<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-&nbsp;The previous post is <a href="http://creasywuqiong.blogspot.com/2011/02/tree-search-algorithms.html">here</a><br />============ <br />struct treeNode{<br />&nbsp;&nbsp;&nbsp; int element;<br />&nbsp;&nbsp;&nbsp; struct treeNode *left;<br />&nbsp;&nbsp;&nbsp; struct treeNode *right;<br />}:<br />typedef struct treeNode *searchTree;<br /><br /><br />searchTree makeEmpty(searchTree T){<br />&nbsp;&nbsp;&nbsp; if(T!=NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; MakeEmpty(T-&gt;left);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; MakeEmpty(T-&gt;right);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; free(T);<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; return NULL;<br />}<br /><br /><br />searchTree findVal(int val, searchTree T){<br />&nbsp;&nbsp;&nbsp; if(T==NULL)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return NULL;<br />&nbsp;&nbsp;&nbsp; if(val<t->element)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return findVal(val, T-&gt;left);<br />&nbsp;&nbsp;&nbsp; else if(val&gt;T-&gt;element)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return findVal(val, T-&gt;right);<br />&nbsp;&nbsp;&nbsp; else<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return T;<br />}<br /><br /><br />searchTree findMin(searchTree T){<br />&nbsp;&nbsp;&nbsp; if(T!=NULL)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; while(T-&gt;left!=NULL)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = T-&gt;left;<br />&nbsp;&nbsp;&nbsp; return T;<br />}<br /><br /><br />searchTree insertVal(int val, searchTree T){<br />&nbsp;&nbsp;&nbsp; if(T==NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T=(searchTree)malloc(sizeof(struct treeNode));<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(T==NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; printf(&#8220;Error! There is no new memory to allocate.\n&#8221;);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; exit(0);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;element = val;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;left = T-&gt;right = NULL;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; else{<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(val<t->element)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;left = insertVal(val, T-&gt;left);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else if(val&gt;T-&gt;element)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;right = insertVal(val, T-&gt;right);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; printf(&#8220;The element has already in this tree.\n&#8221;);<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; return T;<br />}<br /><br /><br />searchTree deleteVal( int val, searchTree T){<br />&nbsp;&nbsp;&nbsp; searchTree temp;<br />&nbsp;&nbsp;&nbsp; if(T==NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; printf(&#8220;The element is not found.\n&#8221;);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return NULL;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; else if(val<t->element)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;left = deleteVal(val, T-&gt;left);<br />&nbsp;&nbsp;&nbsp; else if(val&gt;T-&gt;element)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;right = deleteVal(val, T-&gt;right);<br />&nbsp;&nbsp;&nbsp; else{&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // here, find the specific element<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(T-&gt;left &amp;&amp; T-&gt;right){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; temp = findMin(T-&gt;right);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;element = tmp-&gt;element;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T-&gt;right = deleteVal(tmp-&gt;element, T-&gt;right);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else{<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; temp = T;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(T-&gt;left == NULL)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = T-&gt;right;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else if(T-&gt;right==NULL)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = T-&gt;left;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; free(temp);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return T;<br />&nbsp;&nbsp;&nbsp; }<br />}<br /><br />// the functions below returns node which element is closest<br />// and larger in the Tree. We could call it &#8220;next&#8221;<br />// assumption1: the inputs are inquiry val and the root node<br />searchTree nextLarger(int val, searchTree T){<br />&nbsp;&nbsp;&nbsp; searchTree temp;<br />&nbsp;&nbsp;&nbsp; if(T==NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; printf(&#8220;There is no tree.\n&#8221;);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return NULL;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; if(val<t->element){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(T-&gt;left!=NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; temp = T-&gt;left;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; while(val<temp->element &amp;&amp; temp-&gt;left!=NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = temp;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; temp = temp-&gt;left;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // This case indicate &#8220;temp-&gt;left==NULL&#8221; causes stop<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // so temp should be the return value<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(val<temp->element)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = temp;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // otherwise, result might in a new right tree<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // . or the parent node in this layer<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else{<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if (temp-&gt;right!=NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; temp = nextLarger(val, temp-&gt;right);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if (temp!=NULL)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = temp;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return T;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; else{<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; while(val&gt;=T-&gt;element &amp;&amp; T-&gt;right!=NULL)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = T-&gt;right;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(val<t->element){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; T = nextLarger(val, T);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return T;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return NULL;<br />&nbsp;&nbsp;&nbsp; }<br />}<br /><br /><br />// assumption2: the input value is a given node in the tree.<br />// In this case, we might have to trace back.<br />// As a resutl, the original struct needs a little modification<br />struct treeNode{<br />&nbsp;&nbsp;&nbsp; int element;<br />&nbsp;&nbsp;&nbsp; struct treeNode *left;<br />&nbsp;&nbsp;&nbsp; struct treeNode *right;<br />&nbsp;&nbsp;&nbsp; struct treeNode *parenet;&nbsp;&nbsp;&nbsp; // to trace back<br />}:<br />typedef struct treeNode *searchTree;<br /><br />searchTree nextLarger2(searchTree start){<br />&nbsp;&nbsp;&nbsp; searchTree temp, record;<br />&nbsp;&nbsp;&nbsp; if(start==NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; printf(&#8220;There is not a valid input.\n&#8221;);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return NULL;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; if(start-&gt;right!=NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; start = findMin(start-&gt;right);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return start;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; else if(start-&gt;parent!=NULL){<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(start == start-&gt;parent-&gt;left)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return start;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else{<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; while(start-&gt;parent!=NULL &amp;&amp; start!=start-&gt;parent-&gt;left)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; start = start-&gt;parent;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(start==start-&gt;parent-&gt;left)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return start;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return NULL;<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; }<br />}</t-></temp-></temp-></t-></t-></t-></t-><br /><t-><t-><t-><t-><temp-><temp-><t-><br /></t-></temp-></temp-></t-></t-></t-></t-><br /><t-><t-><t-><t-><temp-><temp-><t-> // references: &lt;<a href="http://www.amazon.com/Introduction-Algorithms-Third-Thomas-Cormen/dp/0262033844/ref=sr_1_1?ie=UTF8&amp;qid=1299041213&amp;sr=8-1">Introduction to algorithms</a>&gt;, &lt;<a href="http://www.amazon.com/Cracking-Coding-Interview-Fourth-Programming/dp/145157827X/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1299041239&amp;sr=1-1">Coding Interviews</a>&gt; </t-></temp-></temp-></t-></t-></t-></t-><br /><br /><t-><t-><t-><t-><temp-><temp-><t->// I just did some terrible interviews these days. Yes, some, and terrible.<br />// So, I wanna record everything here,&nbsp;</t-></temp-></temp-></t-></t-></t-></t-><br /><t-><t-><t-><t-><temp-><temp-><t->// no matter how stupid and rudimentary it is.<br />// Also as a means to push myself, everyday a step further.<br /></t-></temp-></temp-></t-></t-></t-></t-></div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/8/">&larr; Older</a>
@@ -469,6 +469,10 @@ see also &lt;<a href="http://www.joelonsoftware.com/articles/fog0000000319.html"
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/14/third-win-for-this-season/">Third Win for This Season</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/17/3-dot-0-league-for-the-third-time/">3.0 League for the Third Time</a>
       </li>
     
@@ -482,10 +486,6 @@ see also &lt;<a href="http://www.joelonsoftware.com/articles/fog0000000319.html"
     
       <li class="post">
         <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/04/12/thought-process-in-a-tennis-match/">Thought Process in a Tennis Match</a>
       </li>
     
   </ul>

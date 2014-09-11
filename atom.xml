@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-09-09T11:34:30-05:00</updated>
+  <updated>2014-09-10T22:57:34-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tennis Progress in September]]></title>
+    <link href="http://creasyw.github.io/blog/2014/09/10/tennis-progress-in-september/"/>
+    <updated>2014-09-10T22:56:00-05:00</updated>
+    <id>http://creasyw.github.io/blog/2014/09/10/tennis-progress-in-september</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Third Season of 3.0 Ends Up with 2nd Place]]></title>
@@ -634,28 +643,6 @@ p.p.s. The inline latex-style formula comes with Kramdown, MathJax and <a href="
     <id>http://creasyw.github.io/blog/2013/08/06/reading-digest-sicp</id>
     <content type="html"><![CDATA[<div class='post'>
 P59. I still don&#8217;t think it is necessary to use &#8220;square&#8221; instead of (* x x) everywhere we perform this operation, but I appreciate the idea of &#8220;abstraction&#8221;. It is really a good idea (and practice) to abstract concepts in different levels and use them accordingly.<br /><br />Most of the examples I read are in a top-down design manner: firstly use the abstract concepts, and then implement it in a lower level. The concerns for specific lower-level modules is similar to the way I did using unit test. But I am a little bit confuse how to perform the unit test in this manner. Especially for the closure using in LISP&#8211;implementing local helper functions right after building major function&#8211; how can I make sure the helper functions are right before I run the program as a whole? If I separate a helper function as an independent one, it seems that quite a little redundant work has to perform when I move it back to the major function.<br /><br />Anyway, SICP just makes me love Racket even more =D<br /><br />cheers,</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Python/Numpy version collisions]]></title>
-    <link href="http://creasyw.github.io/blog/2013/07/23/pythonnumpy-version-collisions/"/>
-    <updated>2013-07-23T00:00:00-05:00</updated>
-    <id>http://creasyw.github.io/blog/2013/07/23/pythonnumpy-version-collisions</id>
-    <content type="html"><![CDATA[<p>Before this accident, I did not even know there were so many places relevant with a single program… I opened the pandora’s box beginning with using <code>brew doctor</code> which told me to move directory /usr/local/bin/ prior to /usr/bin/ so that all the homebrewed packages could be found automatically. After I did this, if I executed matplotlib, I would have this runtime error <code>RuntimeError: module compiled against API version 8 but this version of numpy is 6</code> which was somewhat correct by the way. Because I used superpack installed the latest version of numpy(1.8), scipy(0.13), and matplotlib(1.4), but if I printed out the “numpy.<strong>version</strong>” in a script, it showed 1.6.1.</p>
-
-<p>Then I tried the following solution:  </p>
-
-<ol>
-  <li>delete all of the outdated versions of numpy</li>
-  <li>make sure I explicitly add PYTHONPATH in the bash_profile.</li>
-  <li>I even uninstalled and reinstalled the numpy<br />
-But the problem was still there…</li>
-</ol>
-
-<p>After an exhausted search, I found that numpy-1.6.1 in<br />
-<code>/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/ </code><br />
-I still don’t know why it search into the directory of 2.6 given there is another 2.7 in the same level. Deleting both 2.6 and 2.7 directories (only delete the 2.6 could not work either…) finally solved the problem. ahooooo….</p>
 ]]></content>
   </entry>
   

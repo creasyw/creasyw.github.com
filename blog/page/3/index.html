@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="The setup is much harder than I thought… 1) using homebrew installs the emacs and guile. Then, I also need to add path in the .bash_profile to launch &hellip;">
+  <meta name="description" content="Before this accident, I did not even know there were so many places relevant with a single program… I opened the pandora’s box beginning with using &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,55 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/23/pythonnumpy-version-collisions/">Python/Numpy Version Collisions</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-23T00:00:00-05:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Before this accident, I did not even know there were so many places relevant with a single program… I opened the pandora’s box beginning with using <code>brew doctor</code> which told me to move directory /usr/local/bin/ prior to /usr/bin/ so that all the homebrewed packages could be found automatically. After I did this, if I executed matplotlib, I would have this runtime error <code>RuntimeError: module compiled against API version 8 but this version of numpy is 6</code> which was somewhat correct by the way. Because I used superpack installed the latest version of numpy(1.8), scipy(0.13), and matplotlib(1.4), but if I printed out the “numpy.<strong>version</strong>” in a script, it showed 1.6.1.</p>
+
+<p>Then I tried the following solution:  </p>
+
+<ol>
+  <li>delete all of the outdated versions of numpy</li>
+  <li>make sure I explicitly add PYTHONPATH in the bash_profile.</li>
+  <li>I even uninstalled and reinstalled the numpy<br />
+But the problem was still there…</li>
+</ol>
+
+<p>After an exhausted search, I found that numpy-1.6.1 in<br />
+<code>/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/ </code><br />
+I still don’t know why it search into the directory of 2.6 given there is another 2.7 in the same level. Deleting both 2.6 and 2.7 directories (only delete the 2.6 could not work either…) finally solved the problem. ahooooo….</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -429,43 +478,6 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/12/valve-recruiting-sidenotes/">Valve Recruiting Sidenotes</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-12T00:00:00-05:00" pubdate data-updated="true">Jun 12<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-&nbsp; &nbsp;&nbsp; <br />• Would I want this person to be my boss?<br />• Would I learn a significant amount from him or her? <br />• What if this person went to work for our competition? <br /><br />Across the board, we value highly collaborative people. That means people who are skilled in all the things that are integral to high-bandwidth collaboration—people who can deconstruct problems on the fly, and talk to others as they do so, simultaneously being inventive, iterative, creative, talkative, and reactive. These things actually matter far more than deep domain-specific knowledge or highly developed skills in narrow areas. This is why we’ll often pass on candidates who, narrowly defined, are the “best” at their chosen discipline.<br /><br />We value “T-shaped” people. That is, people who are both generalists (highly skilled at a broad set of valuable things—the top of the T) and also experts (among the best in their field within a narrow discipline—the vertical leg of the T).<br /><br />This recipe is important for success at Valve. We often have to pass on people who are very strong generalists without expertise, or vice versa. An expert who is too narrow has difficulty collaborating. A generalist who doesn’t go deep enough in a single area ends up on the margins, not really contributing as an individual.<br /><br />reference: <a href="http://www.valvesoftware.com/company/Valve_Handbook_LowRes.pdf">Valve handbook</a><br /><br /></div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -483,6 +495,10 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/09/10/tennis-progress-in-september/">Tennis Progress in September</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/08/30/third-season-of-3-dot-0-ends-up-with-2nd-place/">Third Season of 3.0 Ends Up with 2nd Place</a>
       </li>
     
@@ -496,10 +512,6 @@ The most straightforward way is via homebrew.<br /><code>brew update <br />sudo 
     
       <li class="post">
         <a href="/blog/2014/05/15/reading-note-of-sicp-5/">Reading note of SICP (5)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
       </li>
     
   </ul>

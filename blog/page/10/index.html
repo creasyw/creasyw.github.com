@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Rank 1:SIGCOMM: ACM Conf on Comm Architectures, Protocols &amp; AppsINFOCOM: Annual Joint Conf IEEE Comp &amp; Comm SocSPAA: Symp on Parallel Algms &hellip;">
+  <meta name="description" content="log: Natural logarithmSyntax: Y = log(X)Description:The log function operates element-wise on arrays. Its domain includescomplex and negative &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/29/matlab-log/">Matlab Log</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-29T00:00:00-05:00" pubdate data-updated="true">Oct 29<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+log: Natural logarithm<br />Syntax: Y = log(X)<br />Description:<br />The log function operates element-wise on arrays. Its domain includes<br />complex and negative numbers, which may lead to unexpected results if<br />used unintentionally.<br />Y = log(X) returns the natural logarithm of the elements of X. For<br />complex or negative , where , the complex logarithm is returned.<br />log(z) = log(abs(z)) + i*atan2(y,x)<br />Examples<br />The statement abs(log(-1)) is a clever way to generate .<br />ans =<br />3.1416</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1581,51 +1618,6 @@ patpat~<br />lan</div>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/10/12/ways-to-keep-from-duplicating-path/">Ways to Keep From Duplicating Path Variable in Csh</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-12T00:00:00-05:00" pubdate data-updated="true">Oct 12<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<pre class="prettyprint"><code><span class="com">#!/usr/bin/perl</span><span class="pln"><br /></span><span class="com">#</span><span class="pln"><br /></span><span class="com"># ^^ ensure this is pointing to the correct location.</span><span class="pln"><br /></span><span class="com">#</span><span class="pln"><br /></span><span class="com"># Title: &nbsp; &nbsp;SLimPath</span><span class="pln"><br /></span><span class="com"># Author: &nbsp; David "Shoe Lace" Pyke <eselle@users.sourceforge.net></eselle@users.sourceforge.net></span><span class="pln"><br /></span><span class="com"># &nbsp; : &nbsp; Tim Nelson </span><span class="pln"><br /></span><span class="com"># Purpose: To create a slim version of my envirnoment path so as to eliminate</span><span class="pln"><br /></span><span class="com"># &nbsp; &nbsp; &nbsp; duplicate entries and ensure that the "." path was last.</span><span class="pln"><br /></span><span class="com"># Date Created: April 1st 1999</span><span class="pln"><br /></span><span class="com"># Revision History:</span><span class="pln"><br /></span><span class="com"># &nbsp; 01/04/99: initial tests.. didn't wok verywell at all</span><span class="pln"><br /></span><span class="com"># &nbsp; &nbsp; &nbsp; : retreived path throught '$ENV' call</span><span class="pln"><br /></span><span class="com"># &nbsp; 07/04/99: After an email from Tim Nelson <wayland@ne.com.au> got it to</wayland@ne.com.au></span><span class="pln"><br /></span><span class="com"># &nbsp; &nbsp; &nbsp; &nbsp; work.</span><span class="pln"><br /></span><span class="com"># &nbsp; &nbsp; &nbsp; : used 'push' to add to array</span><span class="pln"><br /></span><span class="com"># &nbsp; &nbsp; &nbsp; : used 'join' to create a delimited string from a list/array.</span><span class="pln"><br /></span><span class="com"># &nbsp; 16/02/00: fixed cmd-line options to look/work better</span><span class="pln"><br /></span><span class="com"># &nbsp; 25/02/00: made verbosity level-oriented</span><span class="pln"><br /></span><span class="com">#</span><span class="pln"><br /></span><span class="com">#</span><span class="pln"><br /></span><span class="kwd">use</span><span class="pln"> </span><span class="typ">Getopt</span><span class="pun">::</span><span class="typ">Std</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">sub</span><span class="pln"> printlevel</span><span class="pun">;</span><span class="pln"><br /><br />$initial_str </span><span class="pun">=</span><span class="pln"> </span><span class="str">""</span><span class="pun">;</span><span class="pln"><br />$debug_mode </span><span class="pun">=</span><span class="pln"> </span><span class="str">""</span><span class="pun">;</span><span class="pln"><br />$delim_chr </span><span class="pun">=</span><span class="pln"> </span><span class="str">":"</span><span class="pun">;</span><span class="pln"><br />$opt_v </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"><br /><br />getopts</span><span class="pun">(</span><span class="str">"v:hd:l:e:s:"</span><span class="pun">);</span><span class="pln"><br /><br />OPTS</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br />&nbsp; &nbsp; $opt_h </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n$0 [-v level] [-d level] [-l delim] ( -e varname | -s strname | -h )"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\nWhere:"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n &nbsp; -h &nbsp;This help"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n &nbsp; -d &nbsp;Debug level"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n &nbsp; -l &nbsp;Delimiter (between path vars)"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n &nbsp; -e &nbsp;Specify environment variable (NB: don't include \$ sign)"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n &nbsp; -s &nbsp;String (ie. $0 -s \$PATH:/looser/bin/)"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n &nbsp; -v &nbsp;Verbosity (0 = quiet, 1 = normal, 2 = verbose)"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\n"</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">exit</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="pun">};</span><span class="pln"><br />&nbsp; &nbsp; $opt_d </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; printlevel </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"You selected debug level $opt_d\n"</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; $debug_mode </span><span class="pun">=</span><span class="pln"> $opt_d</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="pun">};</span><span class="pln"><br />&nbsp; &nbsp; $opt_l </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; printlevel </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"You are going to delimit the string with \"$opt_l\"\n"</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; $delim_chr </span><span class="pun">=</span><span class="pln"> $opt_l</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="pun">};</span><span class="pln"><br />&nbsp; &nbsp; $opt_e </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$opt_s</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">die</span><span class="pln"> </span><span class="str">"Cannot specify BOTH env var and string\n"</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; printlevel </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Using Environment variable \"$opt_e\"\n"</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; $initial_str </span><span class="pun">=</span><span class="pln"> $ENV</span><span class="pun">{</span><span class="pln">$opt_e</span><span class="pun">};</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="pun">};</span><span class="pln"><br />&nbsp; &nbsp; $opt_s </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; printlevel </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Using String \"$opt_s\"\n"</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; $initial_str </span><span class="pun">=</span><span class="pln"> $opt_s</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="pun">};</span><span class="pln"><br /></span><span class="pun">}</span><span class="pln"><br /></span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$</span><span class="com">#ARGV != 1) and !$opt_e and !$opt_s){</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="kwd">die</span><span class="pln"> </span><span class="str">"Nothing to work with -- try $0 -h\n"</span><span class="pun">;</span><span class="pln"><br /></span><span class="pun">}</span><span class="pln"><br /><br />$what </span><span class="pun">=</span><span class="pln"> shift </span><span class="lit">@ARGV</span><span class="pun">;</span><span class="pln"><br /></span><span class="com"># Split path using the delimiter</span><span class="pln"><br /></span><span class="lit">@dirs</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> split</span><span class="pun">(</span><span class="str">/$delim_chr/</span><span class="pun">,</span><span class="pln"> $initial_str</span><span class="pun">);</span><span class="pln"><br /><br />$dest</span><span class="pun">;</span><span class="pln"><br /></span><span class="lit">@newpath</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">();</span><span class="pln"><br />LOOP</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">foreach</span><span class="pln"> </span><span class="pun">(</span><span class="lit">@dirs</span><span class="pun">){</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="com"># Ensure the directory exists and is a directory</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(!</span><span class="pln"> </span><span class="pun">-</span><span class="pln">e </span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> printlevel </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"$_ does not exist\n"</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">next</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="com"># If the directory is ., set $dot and go around again</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$_ eq </span><span class="str">'.'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> $dot </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">next</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln"><br /></span><span class="com"># &nbsp; if ($_ ne `realpath $_`){</span><span class="pln"><br /></span><span class="com"># &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printlevel 2, "$_ becomes ".`realpath $_`."\n";</span><span class="pln"><br /></span><span class="com"># &nbsp; }</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="kwd">undef</span><span class="pln"> $dest</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="com">#$_=Stdlib::realpath($_,$dest);</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="com"># Check for duplicates and dot path</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="kwd">foreach</span><span class="pln"> $adir </span><span class="pun">(</span><span class="lit">@newpath</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$_ eq $adir</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> <br />&nbsp; &nbsp; &nbsp; &nbsp; printlevel </span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Duplicate: $_\n"</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">next</span><span class="pln"> LOOP</span><span class="pun">;</span><span class="pln"> <br />&nbsp; &nbsp; </span><span class="pun">}}</span><span class="pln"><br /><br />&nbsp; &nbsp; push </span><span class="lit">@newpath</span><span class="pun">,</span><span class="pln"> $_</span><span class="pun">;</span><span class="pln"><br /></span><span class="pun">}</span><span class="pln"><br /></span><span class="com"># Join creates a string from a list/array delimited by the first expression</span><span class="pln"><br /></span><span class="kwd">print</span><span class="pln"> join</span><span class="pun">(</span><span class="pln">$delim_chr</span><span class="pun">,</span><span class="pln"> </span><span class="lit">@newpath</span><span class="pun">)</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$dot </span><span class="pun">?</span><span class="pln"> $delim_chr</span><span class="pun">.</span><span class="str">".\n"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"\n"</span><span class="pun">);</span><span class="pln"><br /><br />printlevel </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Thank you for using $0\n"</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">exit</span><span class="pun">;</span><span class="pln"><br /></span><span class="kwd">sub</span><span class="pln"> printlevel </span><span class="pun">{</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="kwd">my</span><span class="pun">(</span><span class="pln">$level</span><span class="pun">,</span><span class="pln"> $string</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">@_</span><span class="pun">;</span><span class="pln"><br /><br />&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$opt_v </span><span class="pun">&gt;=</span><span class="pln"> $level</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">print</span><span class="pln"> STDERR $string</span><span class="pun">;</span><span class="pln"><br />&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br /></span><span class="pun">}</span><span class="pln"><br /></span></code></pre></div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'>Anonymous</div>
-<div class='content'>
-1,i love this company,it can link to baned web <br />2,you have to delete the links of my classmates!&gt;.&lt;</div>
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/11/">&larr; Older</a>
@@ -1643,6 +1635,10 @@ patpat~<br />lan</div>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/09/10/tennis-progress-in-september/">Tennis Progress in September</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/08/30/third-season-of-3-dot-0-ends-up-with-2nd-place/">Third Season of 3.0 Ends Up with 2nd Place</a>
       </li>
     
@@ -1656,10 +1652,6 @@ patpat~<br />lan</div>
     
       <li class="post">
         <a href="/blog/2014/05/15/reading-note-of-sicp-5/">Reading note of SICP (5)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
       </li>
     
   </ul>

@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Step 0 : At terminal, aaa@ubuntu:~$ sudo gedit /etc/modprobe.d/blacklist.conf. Add “blacklist rt2870usb” without quote at the end of the file, then &hellip;">
+  <meta name="description" content="When I install the madwifi driver from madwifi.org, the problem appears:In file included from /home/user/madwifi/madwifi-hal-0.10.5.6/ath/../ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/07/02/install-wireshark-madwifi-and-rt2870/">Install Madwifi in UBUNTU 10.04</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-02T00:00:00-05:00" pubdate data-updated="true">Jul 2<span>nd</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+When I install the madwifi driver from madwifi.org, the problem appears:<br /><blockquote><br /><pre><code>In file included from /home/user/madwifi/madwifi-hal-0.10.5.6/ath/../net80211/ieee80211_monitor.h:34,<br />from /home/user/madwifi/madwifi-hal-0.10.5.6/ath/if_ath.c:75:<br />/home/user/madwifi/madwifi-hal-0.10.5.6/ath/../ath/if_athvar.h:107: error: conflicting types for 'irqreturn_t'<br />include/linux/irqreturn.h:16: note: previous declaration of 'irqreturn_t' was here<br />/home/user/madwifi/madwifi-hal-0.10.5.6/ath/if_ath.c: In function 'ath_attach':<br />/home/user/madwifi/madwifi-hal-0.10.5.6/ath/if_ath.c:478: error: 'struct net_device' has no member named 'priv'<br />/home/user/madwifi/madwifi-hal-0.10.5.6/ath/if_ath.c:819: error: 'struct net_device' has no member named 'open'<br />/home/user/madwifi/madwifi-hal-0.10.5.6/ath/if_ath.c:820: error: 'struct net_device' has no member named 'stop'<br />/home/user/madwifi/madwifi-hal-0.10.5.6/ath/if_ath.c:821: error: 'struct net_device' has no member named 'hard_start_xmit'<br />/home/user/madwifi/madwifi-hal-0.10.5.6/ath/if_ath.c:822: error: 'struct net_device' has no member named 'tx_timeout'<br />.....<br />.....<br />.....<br />make[3]: *** [/home/user/madwifi/madwifi-hal-0.10.5.6/ath/if_ath.o] Error 1<br />make[2]: *** [/home/user/madwifi/madwifi-hal-0.10.5.6/ath] Error 2<br />make[1]: *** [_module_/home/user/madwifi/madwifi-hal-0.10.5.6] Error 2<br />make[1]: Leaving directory `/usr/src/linux-headers-2.6.31-14-generic'<br />make: *** [modules] Error 2</code></pre></blockquote>This is due to the fact that there was a change in the kernel headers. The new kernels replaced the old net_device structure with a new one called net_device_ops. It looks like this change exists since kernel 2.6.29 and up.<br /><br />There currently is no stable release of the madwifi drivers for the new kernerls. But the madwifi project&#8217;s latest trunk compiles and works fine (at least for me) and I have not noticed any issues yet. This should work with any Linux distribution with a kernel of 2.6.29 and above. To find out your kernel version run:<br /><blockquote>$uname -r</blockquote>Here is how to get and install it:<br /><br />1. You can either get the latest trunk from the madwifi website at <a href="http://snapshots.madwifi-project.org/madwifi-trunk-current.tar.gz">here</a> or use the one that worked for me (<a href="http://dimitar.me/wp-content/uploads/2009/10/madwifi-trunk-r4099-20090929.tar.gz">click</a>).<br /><br />2. Download and uncompress the files, cd to the directory containing the file. Then gunzip and untar the files:<br /><blockquote>tar -xvzf madwifi-trunk-r4099-20090929.tar.gz</blockquote>3. Cd into the newly created directory and install the drivers. Firstly, make sure you have the kernel headers:<br /><blockquote>sudo apt-get install build-essential</blockquote>Then compile and install:<br /><blockquote>sudo make<br />sudo make install</blockquote>4. Add the ath_pci module to the kernel. You need to add a line to the end of the /etc/modules file. The line should read: ath_pci. You can do this with vi of course, but if you don&#8217;t know the vi editor then it would be much easier to use gedit. So, do:<br /><blockquote>sudo gedit /etc/modules</blockquote>Add ath_pci to the end of the file. Here is how my file looks:<br /><blockquote><pre><code># /etc/modules: kernel modules to load at boot time.<br />#<br /># This file contains the names of kernel modules that should be loaded<br /># at boot time, one per line. Lines beginning with "#" are ignored.<br /><br />lp<br />sbp2<br />ath_pci</code></pre></blockquote>At this point you can reboot and you should have wireless. You could save yourself a reboot by modprobing the kernel with the ath_pci module like this:<br /><blockquote>sudo modprobe ath_pci</blockquote>That&#8217;s done:)</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ austin的雨水总是很迷人。身处一个古香古色的自习室里，又�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/05/23/starbucks/">@ Starbucks</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-05-23T00:00:00-05:00" pubdate data-updated="true">May 23<span>rd</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-昨天舍友对我说，你甭去学校看书了。<br />我问为啥？<br />他说，你这么努力我压力太大了。<br />我只是笑，然后补充一句，这样充实着挺好的。<br />他皱着眉头来回踱着步子，然后抬起头来对我说，你怎么从三四月份的时候开始，好像变了一个人似的，以前你还会偶尔比我起的晚的，现在我起床时候是完全看不见你了。<br /><br />事物是普遍联系的:)我生活中的基本改变都他晓得，但他显然还没有把所有这些联系到一起。<br /><br />初中物理有一个这样的实验。一个U型铁安静的架在桌子上，老师又拿来另外一个相同的U型铁，轻敲其中一个，两个家伙都发出了动听的声音，彼此呼应。我想，这可以作为解释。我印象中的自己，原本就应该是这个样子。安静的思考，安静的读书，安静的把所有份内的事情做好。她让我在浮躁或是压力四溢的时候，也能够记得自己本来的样子。我们很像。尽管她是个晚辈，还是可以彼此倾诉彼此思念，真好。<br /><br />now i am in a starbucks shop. when i entered here, i asked the waiter, i dont wanna buy coffee or tea, but the library wont open till noon, can i stay here? he smiled and replied, sure. so nice a person:)</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/14/">&larr; Older</a>
@@ -469,6 +469,10 @@ austin的雨水总是很迷人。身处一个古香古色的自习室里，又�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/09/10/tennis-progress-in-september/">Tennis Progress in September</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/08/30/third-season-of-3-dot-0-ends-up-with-2nd-place/">Third Season of 3.0 Ends Up with 2nd Place</a>
       </li>
     
@@ -482,10 +486,6 @@ austin的雨水总是很迷人。身处一个古香古色的自习室里，又�
     
       <li class="post">
         <a href="/blog/2014/05/15/reading-note-of-sicp-5/">Reading note of SICP (5)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/14/kinetic-chain-of-reactions/">Kinetic Chain of Reactions</a>
       </li>
     
   </ul>

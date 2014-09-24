@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="#!/usr/bin/perl## ^^ ensure this is pointing to the correct location.## Title: &nbsp; &nbsp;SLimPath# Author: &nbsp; David "Shoe Lace" Pyke # &nbsp &hellip;">
+  <meta name="description" content="prerequisites:1. install Linux: need to select a OS here2. install GNU Radio:&nbsp;&nbsp;&nbsp; &#8211;http://gnuradio.org/trac/wiki3. (optional) &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,51 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/17/how-to-test-usrp-when-you-get-it/">How to Test USRP When You Get It</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-17T00:00:00-05:00" pubdate data-updated="true">Oct 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<span style="font-family: Arial;"><b>prerequisites:</b><br />1. install Linux: need to select a OS <a href="http://gnuradio.org/trac/wiki/GettingStarted">here</a></span><br /><span style="font-family: Arial;">2. install GNU Radio:&nbsp;&nbsp;&nbsp; &#8211;<a href="http://gnuradio.org/trac/wiki">http://gnuradio.org/trac/wiki</a></span><br /><span style="font-family: Arial;">3. (optional) read the hardware documents:&nbsp;&nbsp;&nbsp; &#8211;<a href="http://gnuradio.org/trac/wiki/USRP">http://gnuradio.org/trac/wiki/USRP</a> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; user guide/install guide:&nbsp;&nbsp;&nbsp; &#8211;<a href="http://www.comsec.com/wiki?UsrpInstall">http://www.comsec.com/wiki?UsrpInstall</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; All the datasheets can be downloaded <a href="http://www.wu.ece.ufl.edu/projects/wirelessVideo/project/GNU_Radio_USRP/datasheet.zip"> here</a></span><br /><span style="font-family: Arial;">4. (optional) read driver source code <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the source codes related to USRP:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /usrp<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  firmware: for 8051 in USB controller, mostly writen as .c and .a51<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  FPGA: for FPGA, mostly writen as .v (it seems fpga only has SRAM inside, so it  need to download software for fpga every time)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  host: for PC, mostly writen as .cc<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /gr-usrp<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  driver for dauther board: mostly writen as .py and .cc<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /gnuradio-example/python/usrp<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  example for single usrp board: all writen in .py<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /gnuradio-example/python/multi-usrp<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  example for multi usrp boards: all writen in .py</span><br /><span style="font-family: Arial;"> <br /><b>begin to test:</b><br />1. How to power on and start test:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; step1. before plug in USB cable, open  two terminal.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; step2. to see a real time display of  all log messages: tail -f /var/log/messages (to check the usb driver is  correctly installed)<br />&nbsp;&nbsp;&nbsp; How to stop and power off:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; step1. stop the program.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; step2. disconnect USB connection and  power off</span><br /><span style="font-family: Arial;">2. test a script for usrp first without daughter board, which file I need to  test? <br />&#8211;<a href="http://www.comsec.com/wiki?UsrpInstall">http://www.comsec.com/wiki?UsrpInstall</a><br />gnuradio\gnuradio-examples\python\usrp\usrp_siggen.py &amp; usrp_fft.py<br /><br />3. how to test the transmitter and receiver for daughter board?<br />The antenna should be connect by Tx/Rx SMA but NOT Rx2! there is a switch for  Rx2 and the switch is off in default!<br />The Tx and Rx can NOT be connected directly by cable! need a attenuator about  40-50 dB!!<br />&nbsp;&nbsp;&nbsp; 1) /gnuradio-examples/python/usrp/usrp_siggen.py and usrp_fft.py to observe  signal<br />&nbsp;&nbsp;&nbsp; 2) /gnuradio-examples/python/digital/benchmark_tx.py and benchmark_rx.py to test  data transmission.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The boards need to be at least 3m  apart. &#8211;/home/james/gnuradio/gnuradio-examples/python/digital/README<br />&nbsp;&nbsp;&nbsp; 3) use tx_voice.py and rx_voice.py to test voice transmission. <br />&nbsp;&nbsp;&nbsp; 4) some also said to test /gnuradio-examples/python/usrp/usrp_nbfm_ptt.py to  test full duplex voice call, but I can&#8217;t make it works.<br /><br /><b>test voice:</b><br />1. gnuradio-examples\python\audio\dial_tone.py as tutorial<br />2. gnuradio-examples\python\audio\audio_copy.py<br />&nbsp;&nbsp;&nbsp; gnuradio-examples\python\audio\audio_to_file.py<br />&nbsp;&nbsp;&nbsp; gnuradio-examples\python\audio\audio_play.py<br />3. gnuradio-examples\python\digital_voice\encdec.py to test by one USRP<br />4.  gnuradio-examples\python\digital\tx_voice.py<br />&nbsp;&nbsp;&nbsp; gnuradio-examples\python\digital\rx_voice.py to test by two  USRP<br /><br /><b>test data:</b><br />1.  gnuradio-examples\python\digital\benchmark_tx.py<br />&nbsp;&nbsp;&nbsp; gnuradio-examples\python\digital\benchmark_rx.py to test by  two USRP<br /><br /><b>suggested by others:</b><br />1. <a href="http://www.nabble.com/High-packet-error-and-reception-problems-with-RFX-2400-t3522095.html"> http://www.nabble.com/High-packet-error-and-reception-problems-with-RFX-2400-t3522095.html</a><br />./benchmark_tx.py -f 2412M &#8211;bitrate 500k -v &#8211;tx-amplitude=30000<br />usrp_siggen.py and usrp_oscope.py<br />./benchmark_rx.py -f 2412M &#8211;bitrate 100k -v &#8211;rx-gain=75<br />&#8211;in digital folder<br /><br />2. <a href="http://staff.washington.edu/jon/gr-osx/gr-osx-usrp.html#using"> http://staff.washington.edu/jon/gr-osx/gr-osx-usrp.html#using</a><br />benchmark_usb.py Estimate throughput of USB<br />usrp_siggen.py Signal generator<br />usrp_oscope.py Oscilloscope (screenshot)<br />usrp_fft.py Spectrum analyzer (screenshot)</span></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+:]</div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -423,43 +468,6 @@ strcat<br />save<br />dlmwrite<br />some basic sorting algorthms<br /><br />TODO
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/09/todays-update/">Today&#8217;s Update</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-09T00:00:00-05:00" pubdate data-updated="true">Sep 9<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-今天学到的东西<br />rm<br />scp<br />mkdir<br />mv<br />&#8230;<br />data quota exceeded<br />some basic perl rules<br /><br />待学的东西<br />vim<br />tcpdump<br /><br />实验室工作今儿到此为止。开始写作业了～</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/12/">&larr; Older</a>
@@ -477,6 +485,10 @@ strcat<br />save<br />dlmwrite<br />some basic sorting algorthms<br /><br />TODO
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/09/24/get-a-single-job-done-once-a-time/">Get A Single Job Done Once A Time</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/09/10/tennis-progress-in-september/">Tennis Progress in September</a>
       </li>
     
@@ -490,10 +502,6 @@ strcat<br />save<br />dlmwrite<br />some basic sorting algorthms<br /><br />TODO
     
       <li class="post">
         <a href="/blog/2014/06/23/half-of-summer-season-has-gone/">Half of Summer Season Has Gone</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/15/reading-note-of-sicp-5/">Reading note of SICP (5)</a>
       </li>
     
   </ul>

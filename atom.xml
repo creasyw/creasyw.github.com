@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-09-23T09:25:06-05:00</updated>
+  <updated>2014-09-24T16:59:18-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Get A Single Job Done Once A Time]]></title>
+    <link href="http://creasyw.github.io/blog/2014/09/24/get-a-single-job-done-once-a-time/"/>
+    <updated>2014-09-24T16:43:00-05:00</updated>
+    <id>http://creasyw.github.io/blog/2014/09/24/get-a-single-job-done-once-a-time</id>
+    <content type="html"><![CDATA[<p><strong><a href="https://gettingreal.37signals.com/ch07_Alone_Time.php">Alone Time</a></strong>
+&gt; Set up a rule at work: Make half the day alone time. — A successful alone time period means letting go of communication addiction. During alone time, give up instant messengers, phone calls, and meetings. Avoid any email thread that’s going to require an immediate response. Just shut up and get to work.</p>
+
+<p><strong><a href="http://www.paulgraham.com/makersschedule.html">Maker’s Schedule</a></strong>
+&gt; When we were working on our own startup, back in the 90s, I evolved another trick for partitioning the day. I used to program from dinner till about 3 am every day, because at night no one could interrupt me. Then I’d sleep till about 11 am, and come in and work until dinner on what I called “business stuff.” I never thought of it in these terms, but in effect I had two workdays each day, one on the manager’s schedule and one on the maker’s.</p>
+
+<p><strong><a href="http://www.joelonsoftware.com/articles/fog0000000022.html">Human Task Switches Considered Harmful</a></strong>
+&gt; Programming is the kind of task where you have to keep a lot of things in your head at once. The more things you remember at once, the more productive you are at programming. A programmer coding at full throttle is keeping zillions of things in their head at once: everything from names of variables, data structures, important APIs, the names of utility functions that they wrote and call a lot, even the name of the subdirectory where they store their source code. <em>If you send that programmer to Crete for a three week vacation, they will forget it all.</em> The human brain seems to move it out of short-term RAM and swaps it out onto a backup tape where it takes forever to retrieve.
+&gt; 
+&gt; In fact, the real lesson from all this is that you should <em>never let people work on more than one thing at once</em>. Make sure they know what it is.</p>
+
+<p>It’s not the excuse but the reason that I prefer working in my apartment (or Starbucks) rather than lab, where all kinds of weird situations would come up at any time… Anyway, the takeaway points are: I should pay more attention on my schedule, both for the long term and short term, to maximize the productivity; concentrate on one project (language, research topic) at a given period; extract the most out of it, celebrate, and then dive into another work.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Tennis Progress in September]]></title>
@@ -695,16 +715,6 @@ p.p.s. The inline latex-style formula comes with Kramdown, MathJax and <a href="
     <id>http://creasyw.github.io/blog/2013/08/07/reading-note-of-sicp-2</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />While I am reading, I always try to distinguish which part of thoughts I used to learn from here when I read it for the first time, and which part I learned from Dan&#8217;s course. And, surprisingly enough, I learned almost all basic factors from Dan, though I always felt I learned a lot of things last year when I began to read it.<br /><br />The name of this book is perfect for the content &#8211; Structure and Interpretation of Computer Programs. It does not teach about how to program, nor a specific programming language. Of course it is a legacy book. But it seems to me that I cannot get enough from this book unless I have mastered quite a few programming languages. After Dan taught me everything about basic aspects of programming languages and I played with Ruby and Racket for a long time, even after I leaned all those &#8220;nontrivial&#8221; trivial things about C++, when I read it now, I am able to distinguish which part is the essence and which part is written just for the ease of learning, and I can fully focus on how to put different abstractions into different layers&#8211; in other words, learning the structure and interpretation of computer programs.<br /><br />I read a comment, saying that Chapter 4 and 5 are the essence of the book. Hopefully, I can finish reading it before September, and leave enough time for Design Patterns.</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Reading note of SICP]]></title>
-    <link href="http://creasyw.github.io/blog/2013/08/06/reading-digest-sicp/"/>
-    <updated>2013-08-06T00:00:00-05:00</updated>
-    <id>http://creasyw.github.io/blog/2013/08/06/reading-digest-sicp</id>
-    <content type="html"><![CDATA[<div class='post'>
-P59. I still don&#8217;t think it is necessary to use &#8220;square&#8221; instead of (* x x) everywhere we perform this operation, but I appreciate the idea of &#8220;abstraction&#8221;. It is really a good idea (and practice) to abstract concepts in different levels and use them accordingly.<br /><br />Most of the examples I read are in a top-down design manner: firstly use the abstract concepts, and then implement it in a lower level. The concerns for specific lower-level modules is similar to the way I did using unit test. But I am a little bit confuse how to perform the unit test in this manner. Especially for the closure using in LISP&#8211;implementing local helper functions right after building major function&#8211; how can I make sure the helper functions are right before I run the program as a whole? If I separate a helper function as an independent one, it seems that quite a little redundant work has to perform when I move it back to the major function.<br /><br />Anyway, SICP just makes me love Racket even more =D<br /><br />cheers,</div>
 ]]></content>
   </entry>
   

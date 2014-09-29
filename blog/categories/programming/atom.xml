@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Qiong Wu]]></title>
   <link href="http://creasyw.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-09-28T09:12:39-05:00</updated>
+  <updated>2014-09-29T13:43:01-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -114,7 +114,7 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 
 <p>I will sort the contents here as incremental records simulating my Emacs learning process, as well as keeping track of nontrivial materials and thoughts.</p>
 
-<h3 id="resources">Resources:</h3>
+<h3 id="references">References:</h3>
 
 <ul>
   <li><a href="http://sachachua.com/blog/2013/05/how-to-learn-emacs-a-hand-drawn-one-pager-for-beginners/">Tow</a> <a href="http://sachachua.com/p/26006">pics</a> served as the very beginning of entering the world of Emacs.</li>
@@ -128,6 +128,7 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
   <li><a href="http://batsov.com/articles/2012/02/19/package-management-in-emacs-the-good-the-bad-and-the-ugly/">Guidelines</a> for package management in Emacs.</li>
   <li><a href="http://www.emacswiki.org/emacs/">Emacs Wiki</a></li>
   <li><a href="http://www.masteringemacs.org/">Mastering Emacs</a></li>
+  <li><a href="http://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/">From Vim to Emacs+Evil chaotic migration guide</a></li>
 </ul>
 
 <p>–Well, it is really a road that will never end…</p>

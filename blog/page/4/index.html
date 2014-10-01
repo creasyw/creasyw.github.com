@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="八月份，是个开始的月份，来到了一个小屯子里，没有公交，没有市集，只是明晃晃的阳光，会照的人发晕。当真是个修行的地方。有关这里，想法都有关不要虚度光阴，要快些离开这里。月中，和大瀾、乌龟、聪哥、温总一起去了黄石，西雅图，以及波特兰。这次旅行，如同酿酒发酵一般，越到后来越是留恋。 &hellip;">
+  <meta name="description" content="小葛儿转眼安排好纽约面试就登飞机了。因为GPS的缘故，在机场周围转了好几圈，结果弄的再见都匆匆忙忙。送完她回到寝室——是的，没有了她，这里还是叫寝室合适——空荡荡的，安安静静。一分钟都不想多停留，背着书包就去了实验室。晚上也不想回去，因为想到又是空空的房间就不自在。一个人在这里。忽然一下安静了。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/17/missing-you_17/">Missing You</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-17T00:00:00-05:00" pubdate data-updated="true">Sep 17<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<br />小葛儿转眼安排好纽约面试就登飞机了。因为GPS的缘故，在机场周围转了好几圈，结果弄的再见都匆匆忙忙。送完她回到寝室——是的，没有了她，这里还是叫寝室合适——空荡荡的，安安静静。一分钟都不想多停留，背着书包就去了实验室。<br /><br />晚上也不想回去，因为想到又是空空的房间就不自在。<br /><br />一个人在这里。忽然一下安静了。多出了好多时间来想你，似乎一切记忆瞬间无比清晰，触手可及。你的肩膀软软的，抱在怀里的时候，还要告诉自己小心别把你弄疼了。你哭的时候，撅着嘴，鼻子里些许呜哝呜哝的声音，眼泪扑簌扑簌就落下来了。你笑的时候，眼睛眉毛嘴角都弯弯的，咯咯咯的，清脆悦耳。每到这个样的时候，我都在反问自己，为什么要和你吵架啊，有什么气好生呢。<br /><br />可无论怎么吵架，我都还是爱你的，比每一次吵架前还要爱你，比每一次生气之前还要更想和你在一起。有时候会想，也许我太把你说的每句话当回事儿了，才会又好多的弄巧成拙。但翻回头来，我仍就欠你好多在一起的时光。<br /><br />小葛儿啊。你的一举一动，一颦一笑，我都记在心里呢。欠你的那些时光，我也一定要都好好还你。快回来吧。有你在的地方，我就认为是家了。<br /><br />我想你。<br /></div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/19/memory-management-in-obj-c/">Memory Management in Obj C</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-19T00:00:00-06:00" pubdate data-updated="true">Dec 19<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <br />I just complete my 2nd iOS homework, which took me cumulative 40 hours. The part that impressed (or&#8230; baffled&#8230;) me most is about dealing with memory management. In one scree, I opened the Xcode IDE, and in another screen, I just cross-referenced StackOverflow, Developer Library, and Google searching over and over again. There was no one-stop solution for all of the problems I met. But it only made me feel more enjoyable when I finally found the path to solution:) In case that I might forget the key points all I have collected, I record them here with references.<br /><br />1. <a href="http://stackoverflow.com/questions/3789684/objective-c-checking-if-object-is-undefined-or-nil">Declaration of object</a>. <br /><code>MyObject* myObject;</code><br /><b style="color: red;">WRONG! </b>This means myObject points to a chunk of garbage memory, which would not correctly work at all. Basically, there are two ways to do this correctly:<br /><code>MyObject* myObject=nil;<br />MyObject* myObject=[[MyObject alloc] init];&nbsp;</code><br />The former one makes myObject to point to nothing. Now it at least consistently does nothing, or I could use this pointer points to some useful object later on. But this will also lends to another issue about the life-cycle of a object which I will talk about in detail later. The latter one is to allocate a MyObject object in the memory, initialize it, and then make myObject point to the chunk of memory correctly allocated and initialized. Now, if the MyObject has the interface<br /><code>@interface MyObject:NSObject{<br />&nbsp;&nbsp;&nbsp; NSString* string;<br />}<br /><br />@end<br /><br />@implementation MyObject<br />-(id) init {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(self=[super init]){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...do something ...<br />&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return self;<br />}<br /></code><br />after [super init] is successfully performed, Objective-C guarantees that the ivar string is set to nil, i.e. string points to nothing. But it is not that an NSString is allocated or initialized.<br /><br />2. Basic rules about ownership&nbsp; and memory management:<br /><ul><li>Any object returned by <i><b>alloc</b></i>, <i><b>copy</b></i>, <i><b>copyWithZone</b></i>, or <i><b>new</b></i> has a retain count of 1.</li><li><i><b>retain</b></i> increases the receiving object&#8217;s retain count.</li><li><i><b>release</b></i> decreases the receiving object&#8217;s retain count.</li><li><i><b>autorelease</b></i> tells the current autorelease pool to send the receiving object the release message “later”.</li><li>Any factory method that doesn&#8217;t have “new” or “copy” in the name (e.g., stringWithString:) returns an object that it has autoreleased on your behalf.</li><li>Conversely, if you are not the creator of an object and have not expressed an ownership interest, you must not release it. </li></ul>Or, digested a bit:<br /><ul><li>Any method whose name contains copy, alloc, retain, or new returns an object that you own.</li><li>Any method that doesn&#8217;t, returns an object that you don&#8217;t own.</li><li>To own an object, retain it.</li></ul><br />Reference: <a href="http://stackoverflow.com/questions/318666/object-ownership-in-stringwithstring-and-initwithstring-in-nsstring">StackOverflow,</a> <a href="http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html">Developer Library</a>. <a href="http://www.otierney.net/objective-c.html#retain">An example about <b><i>retain</i></b> and <b><i>release</i></b></a>, and <a href="http://stackoverflow.com/questions/3262575/alloc-init-with-synthesized-property-does-it-cause-retain-count-to-increase">another deeper discussion</a>. <br /><br />3. <i><b>copy</b></i> versus <i><b>retain</b></i><br /><br />There are lots of discussions about the subtle differences between these two operations, though they both intend to take the ownership from the acquired objects. &#8221;<a href="http://vgable.com/blog/2008/11/14/prefer-copy-over-retain/">(Almost) every time you use retain in Objective-C/Cocoa, you really should be using copy. Using retain can introduce some subtle bugs, and copy is faster then you think…</a>&#8221; The problem with using retain to “take ownership” of an object is that someone else has a pointer to the same object, and if they change it, you will be affected.<br /><br />There are some other discussions concerning the same kind of problem in <a href="http://stackoverflow.com/questions/387959/nsstring-property-copy-or-retain/388002#388002">StackOverflow</a> and <a href="http://robnapier.net/blog/implementing-nscopying-439">post in a blog</a>. Besides, I also made to rookie mistakes that took me quite a while to find out and correct.<br /><br />4. <a href="http://stackoverflow.com/questions/3488446/is-a-synthesized-property-already-alloc-init-ed">Has a @synthesize property already init &amp; alloc-ed?</a><br /><br />The answer is NO. It needs to populate the property manually. The exception is if you have an IBOutlet property that you&#8217;ve connected in a nib file; that will get populated automatically when the nib is loaded.<br /><br />For view controllers, the vast majority of properties are IBOutlets and properties that describe what the view will show, and the latter case is usually set by the object that creates the view controller. That will usually be the case for a view controller that shows a detail view for some object.<br /><br />If you do have properties that are completely local to the view controller, a common pattern is to write your own getter and setter (rather than using @synthesize) and create the object in the getter if it doesn&#8217;t exist. This lazy-loading behavior means you can easily free up resources in low-memory conditions, and that you only pay the cost of loading an object when you need it.<br /><code>// simple lazy-loading getter<br />- (MyPropertyClass*) propertyName {<br />&nbsp;&nbsp;&nbsp; if(propertyIvarName == nil) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; propertyIvarName = [[MyPropertyClass alloc] init];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ......&nbsp; // ... other setup here<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; return propertyIvarName;<br />}</code><br /><br />5. Pitfall about the use of getter/setter:<br /><code>@interface MyObject:NSObject{<br />&nbsp;&nbsp;&nbsp; NSString *aString;<br />}<br />@property (nonatomic, copy) NSString *aString;<br />- (void) someMethod; <br />@end<br /><br />@ implementation MyObject {<br />@synthesize aString;<br />- (id) init {<br />&nbsp;&nbsp;&nbsp; ......<br />}<br />- (void) someMethod {<br />&nbsp;&nbsp;&nbsp; ......<br />&nbsp;&nbsp;&nbsp; aString = [NSString stringWithString: @"blah, blah, blah."];<br />&nbsp;&nbsp;&nbsp; aString = [[NSString stringWithString: @"blah, blah, blah."] retain];<br />&nbsp;&nbsp;&nbsp; aString = [[NSString stringWithString: @"blah, blah, blah."] copy]; <br />&nbsp;&nbsp;&nbsp; self.aString = [NSString stringWithString: @"blah, blah, blah."];<br />&nbsp;&nbsp;&nbsp; ......<br />}<br /></code><br />The compiler would not pop up any warning or error about the code above. But the 1st line in the method is extremely dangerous as well as a bug hard to find: the aString does not own the returned object, which will be released at some time after the method is completed. Corresponding to the second factor that I write above, it is obvious that this sentence has no keywords about ownership. Worse still, although the ownership is considered in the <i>@property</i>, this sentence does not call the setter method. The right way to activate the setter is the 4th sentence. Besides, the 2nd and 3rd sentence request the ownership of the new object in another form. They are legal, of course.<br /><br />[ UPDATE:<br /><br />6. <i>viewDidUnload</i> vs. <i>dealloc</i><br /><br />Unless the program needs to break a retain cycle, it should generally only be releasing objects in the <i>dealloc</i> method. <i>viewDidUnload</i> is an <b>exception</b>; it is invoked in low memory situations and should be used to release anything useless. Then, a preferable way to do this is to write another <i>releaseMemory</i> function where takes most or all of the used objects into consideration and sets them into <i>nil</i>, and then to call this function both in <i>viewDidUnload</i> and <i>dealloc</i>.<br /><br />The general principle is just as mentioned above: if you do need to release them anywhere else, then always set the reference to nil after the release. That will protect the app from blowing up later (likely in dealloc).<br /><br />References: <a href="http://stackoverflow.com/questions/2353321/release-in-viewdidunload-and-dealloc-both">StackOverFlow-1</a>, <a href="http://stackoverflow.com/questions/1768076/are-viewdidunload-and-dealloc-always-called-when-tearing-down-a-uiviewcontroller">StackOverFlow-2</a>. <br />]<br /><br />It is glad that I have gone this far. And, I will move on,&nbsp; and dig deeper.<br /><br />cheers.</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -469,6 +469,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/01/tennis-progress-in-october/">Tennis Progress in October</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/09/24/wired-in-and-schedule-sequential-workflow/">Wired In and Schedule Sequential Workflow</a>
       </li>
     
@@ -482,10 +486,6 @@
     
       <li class="post">
         <a href="/blog/2014/07/17/3-dot-0-league-for-the-third-time/">3.0 League for the Third Time</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/23/half-of-summer-season-has-gone/">Half of Summer Season Has Gone</a>
       </li>
     
   </ul>

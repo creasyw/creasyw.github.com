@@ -9,7 +9,7 @@
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="专访詹姆斯・弗兰科：向安迪・沃霍尔转型 凭借《127小时》提名奥斯卡影帝，詹姆斯・弗兰科已经证明了自己是一个好演员，一学期62学分、平均3.5以上的绩点，这位耶鲁大学博士生也证明了自己是个好学生。至于小说家、艺术家、画家、导演等这些身份有待证明，恐怕还需要弗兰科好好思考他那篇关于“跨界媒体融合” &hellip;">
+  <meta name="description" content="a) I love coding, because it is systematic and predictable.b) Given advanced algorithms, sorting always finds its way in the program:)c) It feels &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/19/reflections-after-15-hours-continous/">Reflections After 15 Hours Continuous Coding</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-19T00:00:00-05:00" pubdate data-updated="true">Mar 19<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+a) I love coding, because it is systematic and predictable.<br />b) Given advanced algorithms, sorting always finds its way in the program:)<br />c) It feels nice to concentrate for a long period. And every time as I had a break, it is also enjoyable to have a cup of coffee, or just look outside.<br />d) &#8220;C Bible&#8221; and &#8220;Algorithm&#8221; acquire their well-known fame for reasons. Most of the time, they are even better than internet.<br />e) It is magic that I would never think of taking a cigarette while coding, even when I see the pack. In retrospect, I still cannot understand how or remember exactly when I quit smoking. But, after all, the result is that I quit, and furthermore, have no desire to resume to that habit.</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,43 +452,6 @@ I am still familiar with the highlighted view for differences rather than the &#
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/03/xml-is-dumb-format-for-storing-data/">XML Is a Dumb Format for Storing Data</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-03T00:00:00-06:00" pubdate data-updated="true">Mar 3<span>rd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-originally wrote by&nbsp;<a href="http://www.joelonsoftware.com/articles/fog0000000296.html">Joel Spolsky</a> <br /><br />I&#8217;m not sure why XML got so sexy. It has its advantages; it&#8217;s sure a good idea for data interchange or for all those little files you need to store settings. But for real work it just can&#8217;t do what a solid, multiuser, relational database can do. The next time some uninformed analyst at Gartner or Giga or Forrester tells you &#8220;in the future, everything will be XML,&#8221; ask them how to do &#8220;SELECT author FROM books&#8221; fast with XML. Hint: you can&#8217;t. It has to be slow. XML is not the way to store a lot of data. Now tell me how to insert a new book at the beginning of the table without massive bitblts. Of course, I doubt if there is an analyst in one of those companies who would even understand that sentence, but that&#8217;s life. Now lets look at the books table in XML.<br /><br />&lt;?xml blah blah&gt;<br />&lt;books&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;book&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;UI Design for Programmers&lt;/title&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;author&gt;Joel Spolsky&lt;/author&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/book&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;book&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;The Chop Suey Club&lt;/title&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;author&gt;Bruce Weber&lt;/author&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/book&gt;<br />&lt;/books&gt;<br /><br />Quick question. What is the code to move to the next record?<br /><br />Uh&#8230;<br /><br />At this point a good programmer would say, well, let&#8217;s parse the XML into a tree in memory so that we can operate on it reasonably quickly. The amount of work that has to be done here by the CPU to SELECT author FROM books will bore you absolutely to tears. As every compiler writer knows, lexing and parsing are the slowest part of compiling. Suffice it to say that it involves a lot of string stuff, which we discovered is slow, and a lot of memory allocation stuff, which we discovered is slow, as we lex, parse, and build an abstract syntax tree in memory. That assumes that you have enough memory to load the whole thing at once. With relational databases, the performance of moving from record to record is fixed and is, in fact, one CPU instruction. That&#8217;s very much by design. And thanks to memory mapped files you only have to load the pages of disk that you are actually going to use. With XML, if you preparse, the performance of moving from record to record is fixed but there&#8217;s a huge startup time, and if you don&#8217;t preparse, the performance of moving from record to record varies based on the length of the record before it and is still hundreds of CPU instructions long.<br /><br />What this means to me is that you can&#8217;t use XML if you need performance and have lots of data. If you have a little bit of data, or if what you&#8217;re doing doesn&#8217;t have to be fast, XML is a fine format. And if you really want the best of both worlds, you have to come up with a way to store metadata next to your XML, something like Pascal strings&#8217; byte count, which give you hints about where things are in the file so that you don&#8217;t have to parse and scan for them. But of course then you can&#8217;t use text editors to edit the file because that messes up the metadata, so it&#8217;s not really XML anymore.<br /><br />&#8212;&#8212; <br />By the way, when I published this digest from Joel, I have no idea how to put the HTML code in my blog contents. Here is the <a href="http://www.digipassion.com/2009/02/writing-html-code-inside-post.html">solution</a>, and the full table of escape characters are <a href="http://www.theukwebdesigncompany.com/articles/entity-escape-characters.php">here</a>.</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/8/">&larr; Older</a>
@@ -469,6 +469,10 @@ originally wrote by&nbsp;<a href="http://www.joelonsoftware.com/articles/fog0000
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/01/tennis-progress-in-october/">Tennis Progress in October</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/09/24/wired-in-and-schedule-sequential-workflow/">Wired In and Schedule Sequential Workflow</a>
       </li>
     
@@ -482,10 +486,6 @@ originally wrote by&nbsp;<a href="http://www.joelonsoftware.com/articles/fog0000
     
       <li class="post">
         <a href="/blog/2014/07/17/3-dot-0-league-for-the-third-time/">3.0 League for the Third Time</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/23/half-of-summer-season-has-gone/">Half of Summer Season Has Gone</a>
       </li>
     
   </ul>

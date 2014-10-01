@@ -10,7 +10,7 @@
 
   
   <meta name="description" content="
-今天学到的东西rmscpmkdirmv&#8230;data quota exceededsome basic perl rules待学的东西vimtcpdump实验室工作今儿到此为止。开始写作业了～
+strcatsavedlmwritesome basic sorting algorthmsTODO: ghost and tcpdump.where the CSI is in the sourcecode.
 ">
   
 
@@ -83,6 +83,43 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/14/20100914/">20100914</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-14T00:00:00-05:00" pubdate data-updated="true">Sep 14<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+strcat<br />save<br />dlmwrite<br />some basic sorting algorthms<br /><br />TODO: ghost and tcpdump.<br />where the CSI is in the sourcecode.</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -430,43 +467,6 @@ Hi,I just come to the US and can login this blog freely.shuanging</div>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/07/06/associative-container/">Associative Container</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-06T00:00:00-05:00" pubdate data-updated="true">Jul 6<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-pair类型，以及更为典型的map类型。既具有vector类型可以纵向联系某种特定数据类型的特点，又可以把两种不同数据类型但在应用中意义相关的数据横向联系起来。这种联系可以理解为“映射”，每个key和唯一的另一个数据类型存放地址相关。另一种理解方法，key值可以视为对应于其值value的一个指针或者是迭代器，只是这样的对应始终是一对一的。此外，map类型默认如果所查询的key值不存在，则自动添加到队尾，默认赋值0。这个特点很适合计数使用。<br /><br />但在单纯进行查找操作的时候则需要小心。若要仅仅确定某个key是否存在，可以使用m.count(k)，返回值为0或1。若要确定某个key值的具体位置，则可使用m.find(k)，若k键存在，则返回的是指向它的一个迭代器，若不存在，则返回指向超出队尾位置的迭代器，这个返回值和m.end()的返回值一致。<br /><br />//count number of times each word occurs in the input<br />map<string, int=""> word_count</string,><br />string word;<br />while(cin &gt;&gt; word){<br />&nbsp;&nbsp; &nbsp;++word_count[word]; &nbsp; }<br /><br />//equal funtion with .insert<br />&#8230;&#8230;<br />while(cin &gt;&gt; word){<br />&nbsp;&nbsp; &nbsp;//insert element with key equal to word and value 1<br />&nbsp;&nbsp; &nbsp;//if word already in word_count, insert does nothing<br />&nbsp;&nbsp; &nbsp;pair<map><string, int="">::iterator, bool&gt; ret =</string,></map><br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;word_count.insert(make_pair(word, 1));<br />&nbsp;&nbsp; &nbsp;if (!ret.second) &nbsp; //word already in word_count<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;++ret.first-&gt;second; &nbsp; //increment counter<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;//which is equal to ++((ret.first)-&gt;second);<br />}<br /><br />这里有一点需要注意的，仍然是不同符号连用时优先级的问题。之前在c.lang组里面也遇到了这样的问题，简单的一段程序都会出现匪夷所思的结果。那么，得到的启发就是，在任何情况下，多写几层括号，既可以方便之后的阅读代码，又可以避免因为默认优先级而引起难以察觉的问题。<br /><br />ps. 设计程序的一个良好习惯是首先将程序需要完成的任务明确成条目，然后列出涉及的操作，明确了这些需要提供的操作，有助于建立需要的数据结构和实现这些行为。一般的顺序是，明确输入输出参量以及将其相关联起来的数据的结构&#8211;&gt;明确程序行为-&gt;根据数据结构设计类-&gt;设计主函数-&gt;设计输出函数&#8211;&gt;设计成员函数。<br /><br />pps. 一篇介绍C++的文章(<a href="http://blog.csdn.net/pongba/archive/2007/09/14/1785372.aspx">为什么C++</a>)</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/13/">&larr; Older</a>
@@ -484,6 +484,10 @@ pair类型，以及更为典型的map类型。既具有vector类型可以纵向�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/01/tennis-progress-in-october/">Tennis Progress in October</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/09/24/wired-in-and-schedule-sequential-workflow/">Wired In and Schedule Sequential Workflow</a>
       </li>
     
@@ -497,10 +501,6 @@ pair类型，以及更为典型的map类型。既具有vector类型可以纵向�
     
       <li class="post">
         <a href="/blog/2014/07/17/3-dot-0-league-for-the-third-time/">3.0 League for the Third Time</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/23/half-of-summer-season-has-gone/">Half of Summer Season Has Gone</a>
       </li>
     
   </ul>

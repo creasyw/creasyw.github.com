@@ -4,7 +4,7 @@
   <title><![CDATA[Qiong Wu]]></title>
   <link href="http://creasyw.github.io/atom.xml" rel="self"/>
   <link href="http://creasyw.github.io/"/>
-  <updated>2014-09-29T13:43:01-05:00</updated>
+  <updated>2014-10-01T09:51:48-05:00</updated>
   <id>http://creasyw.github.io/</id>
   <author>
     <name><![CDATA[Qiong Wu]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tennis Progress in October]]></title>
+    <link href="http://creasyw.github.io/blog/2014/10/01/tennis-progress-in-october/"/>
+    <updated>2014-10-01T09:38:00-05:00</updated>
+    <id>http://creasyw.github.io/blog/2014/10/01/tennis-progress-in-october</id>
+    <content type="html"><![CDATA[<p>Oct. 1st. Private Lesson</p>
+
+<ul>
+  <li>The wrist for my forehand stroke is too tight. That is why I lost my power control. The right manner should relax the wrist in a <em>“controlled”</em> way, so as to gain the directional control as well as the power/spin control.</li>
+  <li>It should be cautious to do the inside-out forehand stroke. That is, I have to leave enough time so that my whole body could arrive at the right position and then change my momentum from moving sideway to pushing forward. Or the return ball would sail away. On the contrary, preparing the backhand stroke needs less time, and now I do perform consistent backhand strokes. Hence, using strokes from both hand side no matter whether I am in the due side or ad side.</li>
+  <li>I love the drill of “15 mid-court balls”. It’s a combination of cardio, toning, and quick attacking.</li>
+  <li>The closer to the net, the shorter swing for the strokes.</li>
+</ul>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Wired In and Schedule Sequential Workflow]]></title>
@@ -725,16 +741,6 @@ p.p.s. The inline latex-style formula comes with Kramdown, MathJax and <a href="
     <id>http://creasyw.github.io/blog/2013/08/08/reading-note-of-sicp-3</id>
     <content type="html"><![CDATA[<div class='post'>
 &nbsp;<br />At the end of the 1st chapter, it enumerates the basic reason for the powerful lisp: first-order procedure.<br /><br />The major &#8220;privileges&#8221; of the first-order elements are:<br />1) They may be named by variables.<br />2) They may be passed as arguments to procedures.<br />3) They may be returned as the results of procedures.<br />4) They may be included in data structures.<br />They can be crucial abstraction mechanism permitting to express the general methods of computing as explicit elements in programming language, so that they can be handled just like other computational elements. The expression power is enormous.<br /><br />I have already been used to use the first two kinds of procedures, but the last two actually make the program even more expressive and powerful. Those are also the attractive properties sharing among functional programming languages.</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Reading note of SICP (2)]]></title>
-    <link href="http://creasyw.github.io/blog/2013/08/07/reading-note-of-sicp-2/"/>
-    <updated>2013-08-07T00:00:00-05:00</updated>
-    <id>http://creasyw.github.io/blog/2013/08/07/reading-note-of-sicp-2</id>
-    <content type="html"><![CDATA[<div class='post'>
-<br />While I am reading, I always try to distinguish which part of thoughts I used to learn from here when I read it for the first time, and which part I learned from Dan&#8217;s course. And, surprisingly enough, I learned almost all basic factors from Dan, though I always felt I learned a lot of things last year when I began to read it.<br /><br />The name of this book is perfect for the content &#8211; Structure and Interpretation of Computer Programs. It does not teach about how to program, nor a specific programming language. Of course it is a legacy book. But it seems to me that I cannot get enough from this book unless I have mastered quite a few programming languages. After Dan taught me everything about basic aspects of programming languages and I played with Ruby and Racket for a long time, even after I leaned all those &#8220;nontrivial&#8221; trivial things about C++, when I read it now, I am able to distinguish which part is the essence and which part is written just for the ease of learning, and I can fully focus on how to put different abstractions into different layers&#8211; in other words, learning the structure and interpretation of computer programs.<br /><br />I read a comment, saying that Chapter 4 and 5 are the essence of the book. Hopefully, I can finish reading it before September, and leave enough time for Design Patterns.</div>
 ]]></content>
   </entry>
   

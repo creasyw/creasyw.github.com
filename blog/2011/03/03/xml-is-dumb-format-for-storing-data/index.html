@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>XML is a Dumb Format For Storing Data - Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="originally wrote by&nbsp;Joel Spolsky I&#8217;m not sure why XML got so sexy. It has its advantages; it&#8217;s sure a good idea for data &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/2011/03/03/xml-is-dumb-format-for-storing-data/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <!-- add Mathjex.js by qiong -->
+  <script src="http://kramdown.rubyforge.org/MathJax/MathJax.js" type="text/javascript"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog/archives/">Blog</a></li>
+  <li><a class="github" href="/tags">Tags</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <article>
+  <header>
+    
+      <h1 class="entry-title">XML Is a Dumb Format for Storing Data</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-03T00:00:00-06:00" pubdate data-updated="true">Mar 3<span>rd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+originally wrote by&nbsp;<a href="http://www.joelonsoftware.com/articles/fog0000000296.html">Joel Spolsky</a> <br /><br />I&#8217;m not sure why XML got so sexy. It has its advantages; it&#8217;s sure a good idea for data interchange or for all those little files you need to store settings. But for real work it just can&#8217;t do what a solid, multiuser, relational database can do. The next time some uninformed analyst at Gartner or Giga or Forrester tells you &#8220;in the future, everything will be XML,&#8221; ask them how to do &#8220;SELECT author FROM books&#8221; fast with XML. Hint: you can&#8217;t. It has to be slow. XML is not the way to store a lot of data. Now tell me how to insert a new book at the beginning of the table without massive bitblts. Of course, I doubt if there is an analyst in one of those companies who would even understand that sentence, but that&#8217;s life. Now lets look at the books table in XML.<br /><br />&lt;?xml blah blah&gt;<br />&lt;books&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;book&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;UI Design for Programmers&lt;/title&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;author&gt;Joel Spolsky&lt;/author&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/book&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;book&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;The Chop Suey Club&lt;/title&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;author&gt;Bruce Weber&lt;/author&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/book&gt;<br />&lt;/books&gt;<br /><br />Quick question. What is the code to move to the next record?<br /><br />Uh&#8230;<br /><br />At this point a good programmer would say, well, let&#8217;s parse the XML into a tree in memory so that we can operate on it reasonably quickly. The amount of work that has to be done here by the CPU to SELECT author FROM books will bore you absolutely to tears. As every compiler writer knows, lexing and parsing are the slowest part of compiling. Suffice it to say that it involves a lot of string stuff, which we discovered is slow, and a lot of memory allocation stuff, which we discovered is slow, as we lex, parse, and build an abstract syntax tree in memory. That assumes that you have enough memory to load the whole thing at once. With relational databases, the performance of moving from record to record is fixed and is, in fact, one CPU instruction. That&#8217;s very much by design. And thanks to memory mapped files you only have to load the pages of disk that you are actually going to use. With XML, if you preparse, the performance of moving from record to record is fixed but there&#8217;s a huge startup time, and if you don&#8217;t preparse, the performance of moving from record to record varies based on the length of the record before it and is still hundreds of CPU instructions long.<br /><br />What this means to me is that you can&#8217;t use XML if you need performance and have lots of data. If you have a little bit of data, or if what you&#8217;re doing doesn&#8217;t have to be fast, XML is a fine format. And if you really want the best of both worlds, you have to come up with a way to store metadata next to your XML, something like Pascal strings&#8217; byte count, which give you hints about where things are in the file so that you don&#8217;t have to parse and scan for them. But of course then you can&#8217;t use text editors to edit the file because that messes up the metadata, so it&#8217;s not really XML anymore.<br /><br />&#8212;&#8212; <br />By the way, when I published this digest from Joel, I have no idea how to put the HTML code in my blog contents. Here is the <a href="http://www.digipassion.com/2009/02/writing-html-code-inside-post.html">solution</a>, and the full table of escape characters are <a href="http://www.theukwebdesigncompany.com/articles/entity-escape-characters.php">here</a>.</div>
+</div>
+
+</article>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2014 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

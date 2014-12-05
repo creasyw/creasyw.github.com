@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>backup: interview summary - Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="谷歌笔试：1.n支队伍比赛，分别编号为0，1，2。。。。n-1，已知它们之间的实力对比关系，存储在一个二维数组w[n][n] 中，w[i][j]的值代表编号为i，j的队伍中更强的一支 所以w[i][j]=i 或者j，现在给出它们的出场顺序，并存储在数组order[n]中，比如order[n &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/2010/10/29/backup-interview-summary/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <!-- add Mathjex.js by qiong -->
+  <script src="http://kramdown.rubyforge.org/MathJax/MathJax.js" type="text/javascript"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog/archives/">Blog</a></li>
+  <li><a class="github" href="/tags">Tags</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <article>
+  <header>
+    
+      <h1 class="entry-title">Backup: Interview Summary</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-29T00:00:00-05:00" pubdate data-updated="true">Oct 29<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+谷歌笔试：<br />1.<br />n支队伍比赛，分别编号为0，1，2。。。。n-1，已知它们之间的实力对比关系，存储在一个二维数组w[n][n] 中，w[i][j]<br />的值代表编号为i，j的队伍中更强的一支 所以w[i][j]=i 或者j，现在给出它们的出场顺序，并存储在数组order[n]中，<br />比如order[n] = {4,3,5,8,1&#8230;&#8230;}，那么第一轮比赛就是 4对3， 5对8。。。。。。<br />胜者晋级，败者淘汰，同一轮淘汰的所有队伍排名不再细分，即可以随便排，<br />下一轮由上一轮的胜者按照顺序，再依次两两比，比如可能是4对5,直至出现第一名<br />编程实现，给出二维数组w，一维数组order 和 用于输出比赛名次的数组result[n]，求出result<p><br />2.题目说的比较花哨，根据我的理解，本质上就是有n个长为m+1的字符串，如果某个字符串的最后m个字符与某个字符串的前m个字符匹配，则两个字符串可以联接，问这n个字符串最多可以连成一个多长的字符串，如果出现循环，则返回错误<p>百度面试：<p>3.<br />用天平（只能比较，不能称重）从一堆小球中找出其中唯一一个较轻的，使用x次天平 最多可以从y个小球中找出较轻的那个，求y与x的关系式<br />4.有一个很大很大的输入流，大到没有存储器可以将其存储下来，而且只输入一次，如何从这个输入流中随机取得m个记录<br />5.大量的URL字符串，如何从中去除重复的，优化时间空间复杂度<p>网易有道笔试：<br />6. 求一个二叉树中任意两个节点间的最大距离，两个节点的距离的定义是<br />这两个节点间边的个数，比如某个孩子节点和父节点间的距离是1，和相邻兄弟节点间的距离是2，优化时间空间复杂度<br />7.求一个有向连通图的割点，割点的定义是，如果除去此节点和与其相关的边，有向图不再连通，描述算法<p>discussion can be found @:<br /><a href="http://topic.csdn.net/u/20100930/13/9f10c56c-9545-488e-9b53-edffc9b6761d.html">http://topic.csdn.net/u/20100930/13/9f10c56c-9545-488e-9b53-edffc9b6761d.html</a><p>==========<p>GOOGLE今天晚上的笔试题，刚参加回来.<p>第一题比较简单，检测同一个平面上的两个矩形是否重合<p>第二题是，给定一个随机函数，对一个数组进行随机排列，保证所有可能的排列出现的概率相等，也就是n!分之一<p><br />第三题就是约瑟夫问题的最优解法~Knuth具体数学上有，不过我忘记了，自己没推导出来，就写了个模拟<p>discussion can be found @:<br /><a href="http://topic.csdn.net/u/20101018/23/75b6dc53-610f-401e-b8ae-5aebee5cabe8.html">http://topic.csdn.net/u/20101018/23/75b6dc53-610f-401e-b8ae-5aebee5cabe8.html</a><p>==========<p>雅虎：<br />1.对于一个整数矩阵，存在一种运算，对矩阵中任意元素加一时，需要其相邻（上下左右）某一个元素也加一，现给出一正数矩阵，判断其是否能够由一个全零矩阵经过上述运算得到。<p>2.一个整数数组，长度为n，将其分为m份，使各份的和相等，求m的最大值<br />比如{3，2，4，3，6} 可以分成{3，2，4，3，6} m=1;<br />{3,6}{2,4,3} m=2<br />{3,3}{2,4}{6} m=3 所以m的最大值为3<p>搜狐：<p>3.四对括号可以有多少种匹配排列方式？比如两对括号可以有两种：（）（）和（（））<p>创新工场：<p>4.求一个数组的最长递减子序列 比如{9，4，3，2，5，4，3，2}的最长递减子序列为{9，5，4，3，2}<p>微软：<br />5.一个数组是由一个递减数列左移若干位形成的，比如{4，3，2，1，6，5}是由{6，5，4，3，2，1}左移两位形成的，在这种数组中查找某一个数。<p>discussion can be found @:<br /><a href="http://topic.csdn.net/u/20101021/14/7fdbcd52-3ee6-42ce-b48e-8fb56c4418da.html">http://topic.csdn.net/u/20101021/14/7fdbcd52-3ee6-42ce-b48e-8fb56c4418da.html</a><p>==========<p>雅虎：<br />1.对于一个整数矩阵，存在一种运算，对矩阵中任意元素加一时，需要其相邻（上下左右）某一个元素也加一，现给出一正数矩阵，判断其是否能够由一个全零矩阵经过上述运算得到。<p>2.一个整数数组，长度为n，将其分为m份，使各份的和相等，求m的最大值<br />比如{3，2，4，3，6} 可以分成{3，2，4，3，6} m=1;<br />{3,6}{2,4,3} m=2<br />{3,3}{2,4}{6} m=3 所以m的最大值为3<p>搜狐：<p>3.四对括号可以有多少种匹配排列方式？比如两对括号可以有两种：（）（）和（（））<p>创新工场：<p>4.求一个数组的最长递减子序列 比如{9，4，3，2，5，4，3，2}的最长递减子序列为{9，5，4，3，2}<p>微软：<br />5.一个数组是由一个递减数列左移若干位形成的，比如{4，3，2，1，6，5}是由{6，5，4，3，2，1}左移两位形成的，在这种数组中查找某一个数。<p>discussion can be found @:<br /><a href="http://topic.csdn.net/u/20101021/14/7fdbcd52-3ee6-42ce-b48e-8fb56c4418da.html">http://topic.csdn.net/u/20101021/14/7fdbcd52-3ee6-42ce-b48e-8fb56c4418da.html</a></div>
+</div>
+
+</article>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2014 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

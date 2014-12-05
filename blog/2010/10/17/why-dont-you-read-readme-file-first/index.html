@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Why dont you read the readme file first?! - Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="it&#8217;s fucking awful to find everything in readme file, while I spent nearly 10 hours wander around in the internet&#8230;&#8230;==========/ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/2010/10/17/why-dont-you-read-readme-file-first/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <!-- add Mathjex.js by qiong -->
+  <script src="http://kramdown.rubyforge.org/MathJax/MathJax.js" type="text/javascript"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog/archives/">Blog</a></li>
+  <li><a class="github" href="/tags">Tags</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <article>
+  <header>
+    
+      <h1 class="entry-title">Why Dont You Read the Readme File First?!</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-17T00:00:00-05:00" pubdate data-updated="true">Oct 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+it&#8217;s fucking awful to find everything in readme file, while I spent nearly 10 hours wander around in the internet&#8230;&#8230;<br /><br />==========<br /><br />/gnuradio3.2.2/gnuradio-examples/python/digital/README<br /><br />Quick overview of what&#8217;s here:<br /><br />* benchmark_tx.py: generates packets of the size you<br />specify and sends them across the air using the USRP.&nbsp; Known to work<br />well using the USRP with the RFX transceiver daughterboards.<br />You can specify the bitrate to use with the -r <bitrate> command line<br />parameter.&nbsp; The default is 500k.&nbsp; Some machines will do 1M or more.<br />You can select the modulation to use with the -m <modulation> command<br />line argument.&nbsp; The legal values for <modulation> are gmsk, dbpsk and dqpsk.<br /><br />* benchmark_rx.py: the receiver half of benchmark_tx.py.<br />Command line arguments are pretty much the same as rx.&nbsp; Works well<br />with a USRP and RFX transceiver daughterboards.&nbsp; Will also work<br />with TVRX daugherboard, but you&#8217;ll need to fiddle with the gain.&nbsp; See<br />below.&nbsp; Prints a summary of each packet received and keeps a running<br />total of packets received, and how many of them were error free.<br />There are two levels of error reporting going on.&nbsp; If the access code<br />(PN code) and header of a packet were properly detected, then you&#8217;ll<br />get an output line.&nbsp; If the CRC32 of the payload was correct you get<br />&#8220;ok = True&#8221;, else &#8220;ok = False&#8221;.&nbsp; The &#8220;pktno&#8221; is extracted from the<br />received packet.&nbsp; If there are skipped numbers, you&#8217;re missing some<br />packets.&nbsp; Be sure you&#8217;ve got a suitable antenna connected to the TX/RX<br />port on each board.&nbsp; For the RFX-400, &#8220;70 cm&#8221; / 420 MHz antennas for ham<br />handi-talkies work great.&nbsp; These are available at ham radio supplies,<br />etc.&nbsp; The boards need to be at least 3m apart.&nbsp; You can also try<br />experimenting with the rx gain (-g <gain> command line option).<br /><br />Generally speaking, I start the rx first on one machine, and then fire<br />up the tx on the other machine.&nbsp; The tx also supports a discontinous<br />transmission mode where it sends bursts of 5 packets and then waits 1<br />second.&nbsp; This is useful for ensuring that all the receiver control<br />loops lock up fast enough.<br /><br />* tunnel.py: This program provides a framework for building your own<br />MACs.&nbsp; It creates a &#8220;TAP&#8221; interface in the kernel, typically gr0,<br />and sends and receives ethernet frames through it.&nbsp; See<br />/usr/src/linux/Documentation/networking/tuntap.txt and/or Google for<br />&#8220;universal tun tap&#8221;.&nbsp; The Linux 2.6 kernel includes the tun module, you<br />don&#8217;t have to build it.&nbsp; You may have to &#8220;modprobe tun&#8221; if it&#8217;s not<br />loaded by default.&nbsp; If /dev/net/tun doesn&#8217;t exist, try &#8220;modprobe tun&#8221;.<br /><br />To run this program you&#8217;ll need to be root or running with the<br />appropriate capability to open the tun interface.&nbsp; You&#8217;ll need to fire<br />up two copies on different machines.&nbsp; Once each is running you&#8217;ll need<br />to ifconfig the gr0 interface to set the IP address.<br /><br />This will allow two machines to talk, but anything beyond the two<br />machines depends on your networking setup.&nbsp; Left as an exercise&#8230;<br /><br />On machine A:<br /><br />&nbsp; $ su<br />&nbsp; # ./tunnel.py &#8211;freq 423.0M &#8211;bitrate 500k<br />&nbsp; # # in another window on A, also as root&#8230;<br />&nbsp; # ifconfig gr0 192.168.200.1<br /><br /><br />On machine B:<br /><br />&nbsp; $ su<br />&nbsp; # ./tunnel.py &#8211;freq 423.0M &#8211;bitrate 500k<br />&nbsp; # # in another window on B, also as root&#8230;<br />&nbsp; # ifconfig gr0 192.168.200.2<br /><br />Now, on machine A you shold be able to ping machine B:<br /><br />&nbsp; $ ping 192.168.200.2<br /><br />and you should see some output for each packet in the<br />tunnel.py window if you used the -v option.<br /><br />Likewise, on machine B:<br /><br />&nbsp; $ ping 192.168.200.1<br /><br />This now uses a carrier sense MAC, so you should be able to ssh<br />between the machines, web browse, etc.<br /><br />* run_length.py: This program takes a single argument &#8216;-f FILE&#8217; and<br />outputs the number of runs of similar bits within the file. It is<br />useful as a diagnostic tool when experimenting with line coding or<br />whitening algorithms.</gain></modulation></modulation></bitrate></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+patpat~<br />lan</div>
+</div>
+</div>
+</div>
+
+</article>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2014 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

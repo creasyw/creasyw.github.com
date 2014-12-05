@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Network Simulator - Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="最近一直在鼓捣网络仿真软件，逐渐发现些开源的好处，大家都在整理资料，都在去努力完善一个项目。当这样的行为发生在某一群向着相同目标进发的专业人士身上，似乎惺惺相惜的感觉就更加强烈。当然，我还只能算作业余，逐渐把自己用到的链接添加在这里，应该比仅仅下载到本地的作用会更大。Useful &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/2010/06/25/network-simulator/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <!-- add Mathjex.js by qiong -->
+  <script src="http://kramdown.rubyforge.org/MathJax/MathJax.js" type="text/javascript"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog/archives/">Blog</a></li>
+  <li><a class="github" href="/tags">Tags</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <article>
+  <header>
+    
+      <h1 class="entry-title">Network Simulator</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-25T00:00:00-05:00" pubdate data-updated="true">Jun 25<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+最近一直在鼓捣网络仿真软件，逐渐发现些开源的好处，大家都在整理资料，都在去努力完善一个项目。当这样的行为发生在某一群向着相同目标进发的专业人士身上，似乎惺惺相惜的感觉就更加强烈。当然，我还只能算作业余，逐渐把自己用到的链接添加在这里，应该比仅仅下载到本地的作用会更大。<br /><br />Useful references (order from more basic to more complex):<br /><br /><a href="http://www-sop.inria.fr/maestro/personnel/Eitan.Altman/COURS-NS/n3.pdf">NS Simulator for Beginners, lecture notes</a> This is a very good point to begin with.<br /><a href="http://wcc.iiita.ac.in/ns/nstutorial.pdf">Sandeep Gupta NS tutorial</a>&nbsp; Very simple and straightforward slides.<br /><a href="http://nile.wpi.edu/NS/">NS by Examples</a> Practical breakpoints to get involved. The comments are also useful if the current version of ns-2 cannot debug the original code.<br /><a href="http://www.isi.edu/nsnam/ns/tutorial/index.html">Marc Greis&#8217; Tutorial</a>&nbsp; This is the classic and most important tutorial. It has been fully recommend to MASTER the step-by-step exercises it describes, especially if you are going to change the NS2 code. The Ping Agent that he describes is very important to do it yourself, instead of simply downloading the c++ files and compiling it. Furthermore, refer to this post on the ns2 mailing list to know the additional steps required on the ping agent on the newest versions of NS2. (<a href="http://mailman.isi.edu/pipermail/ns-users/2006-January/053697.html">click</a>)<br /><a href="http://nsnam.isi.edu/nsnam/index.php/Main_Page">New NS wiki</a> There are lots of information which order in a more structured way.<br /><a href="http://www-sop.inria.fr/mistral/personnel/Eitan.Altman/ns.htm">NS Simulator Courses for Beginner</a> Although it has BEGINNER in the caption, the destination is to check the scripts. We can also refer to the /ns/tcl/ex and /ns/tcl/test directories of ns2 source tree.<br /><a href="http://www.isi.edu/nsnam/ns/ns-documentation.html">NS Manual</a> is used to peek the reference documentation.<br /><a href="http://140.116.72.80/%7Esmallko/ns2/NS_From%20China.rar">NS中文手册</a><br /><a href="http://masimum.dif.um.es/nsrt-howto/pdf/nsrt-howto.pdf">Implementing a New Manet Unicast Routing Protocol in NS2</a><br /><a href="http://icapeople.epfl.ch/aad/teaching/ns/ns-2-for-the-impatient.pdf">ns2 for the Impatient</a><br /><a href="http://info.iet.unipi.it/%7Ecng/ns2measure/manual-060529.pdf">ns2measure manual</a><br /><br /><br />Personal web pages: <br /><a href="http://140.116.72.80/%7Esmallko/ns2/ns2.htm">柯志亨教授的主页</a> has many useful references and video guidance.<br /><a href="http://tagus.inesc-id.pt/%7Epestrela/ns2/">Pedro Vale Estrela&#8217;s NS2 Page</a><br /><a href="http://personal.ee.surrey.ac.uk/Personal/L.Wood/ns/">Lloyd Wood&#8217;s NS2 Page</a></div>
+</div>
+
+</article>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2014 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

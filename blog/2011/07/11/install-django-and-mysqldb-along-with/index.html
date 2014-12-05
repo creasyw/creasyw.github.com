@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hello - Qiong Wu</title>
+  <title>Install Django and MySQLdb along with Python - Qiong Wu</title>
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Hello My name is Qiong. First and foremost, I am a programmer. I’m passionate about programming and spend a considerable amount of time doing it: &hellip;">
+  <meta name="description" content="Most of the steps are straightforward. The only twisted place is the combination of mysql-python and the mysql itself. During my installation, there &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://creasyw.github.io/">
+  <link rel="canonical" href="http://creasyw.github.io/blog/2011/07/11/install-django-and-mysqldb-along-with/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,22 +79,14 @@
 </nav>
   <div id="main">
     <div id="content">
-      <article class="text">
-  
-    <header>
-      <h1 class="page-title">Hello</h1>
-    </header>
-  
-  <p>My name is Qiong. First and foremost, I am a programmer. I’m passionate about programming and spend a considerable amount of time doing it: conducting research simulations in Python, C++, and MATLAB, constructing math/logic prototypes with LISP (mainly Racket), regarding Ruby as Lego and playing with it, solving math puzzles in Haskell, and hacking new programming languages and frameworks.</p>
-
-<p>I am a Ph.D student, coffee enthusiast, experienced soccer center-back, and rookie tennis player. I’m working with Prof. <a href="http://wweb.uta.edu/faculty/liang/">Qilian Liang</a> at the <a href="http://www.uta.edu/">University of Texas, Arlington</a>. I did my undergraduate studying in the EE department at <a href="http://en.hit.edu.cn/">Harbin Institute of Technology</a>, and had the master’s degree of Computer Engineering from the <a href="http://www.utexas.edu/">University of Texas, Austin</a>. My research interests include compressive sensing, wireless comm., statistical signal processing, and data mining.</p>
-
-<p>I am a geek. When I get into a hobby, I <a href="http://wqiong.com/blog/categories/tennis/">focus on it completely</a>; I learn all the rules and vocabulary so that I can have an in-depth conversation with an expert. Besides, I am a fan of <a href="http://www.acmilan.com/">AC Milan</a>, <a href="http://www.texassports.com/index.aspx?path=football">Longhorn Football</a>, and <a href="http://novakdjokovic.com/en/">Novak Djokovic</a>; love to play the <a href="http://www.footballmanager.com/lang/en_GB">Football Managers</a>, and to browse <a href="http://www.reddit.com/">Reddit</a> and <a href="https://news.ycombinator.com/news">Hacker News</a>.</p>
-
-<p>Feel free to drop me a line and I am happy to correspond by email.</p>
-
-  <footer>
+      <article>
+  <header>
     
+      <h1 class="entry-title">Install Django and MySQLdb Along With Python</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -106,8 +98,17 @@
   
 
 
+<time datetime="2011-07-11T00:00:00-05:00" pubdate data-updated="true">Jul 11<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
 
-  </footer>
+
+<div class="entry-content"><div class='post'>
+Most of the steps are straightforward. The only twisted place is the combination of mysql-python and the mysql itself. During my installation, there are two errors coming out:<br /><br />1) &#8220;EnvironmentError: mysql_config not found&#8221; happened at the 1st place when I install mysql-python using the python install. The solution is to edit the file &#8220;setup_posix.py&#8221;:<br /># mysql_config.path = &#8220;mysql_config&#8221;<br />mysql_config.path = &#8220;/usr/local/YOUR_LATEST_MYSQL_DIRECTORY/bin/mysql_config&#8221;<br />&#8211;Then, everything in the installation should be fine. <br /><br /><br />2) As I check the status of installation, I found some confusing info. popping up.<br />&gt;&gt;&gt; import MySQLdb<br />Traceback (most recent call last):<br />&nbsp; File &#8220;build/bdist.macosx-10.6-universal/egg/MySQLdb/__init__.py&#8221;, line 19, in <module><br />&nbsp; File &#8220;build/bdist.macosx-10.6-universal/egg/_mysql.py&#8221;, line 7, in <module><br />&nbsp; File &#8220;build/bdist.macosx-10.6-universal/egg/_mysql.py&#8221;, line 6, in __bootstrap__<br />ImportError: dlopen(/Users/creasywuqiong/.python-eggs/MySQL_python-1.2.3-py2.6-macosx-10.6-universal.egg-tmp/_mysql.so, 2): Library not loaded: libmysqlclient.18.dylib<br />&nbsp; Referenced from: /Users/creasywuqiong/.python-eggs/MySQL_python-1.2.3-py2.6-macosx-10.6-universal.egg-tmp/_mysql.so<br />&nbsp; Reason: image not found<br />&gt;&gt;&gt;</module></module><br />The solution is to add some symbolic links:<br />sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib<br />sudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql<br /><br />Everything is fine:)<br />cheers~<br /><br />References:<br /><a href="http://ageekstory.blogspot.com/2011/04/installing-massive-coupon-on-mac-os-10.html">1)</a> <a href="http://stackoverflow.com/questions/4730787/python-import-mysqldb-error-mac-10-6">2)</a> <a href="http://www.mechanicalgirl.com/view/installing-django-with-mysql-on-mac-os-x/">3)</a></div>
+</div>
+
 </article>
 
     </div>

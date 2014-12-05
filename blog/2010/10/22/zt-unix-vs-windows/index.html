@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>(ZT) unix vs. windows - Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="我看UNIX与Windows的本质区别文化，我首先想到的是文化。Unix和Windows从诞生之初的文化差异本质上划分了两者的界限。直观看来，一个装逼文化，一个傻逼文化。Unix诞生在贝尔实验室的MULTICS项目之后。据说当时这个项目设计得十分复杂，功能设计也几乎是上天入地无所不能。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/2010/10/22/zt-unix-vs-windows/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <!-- add Mathjex.js by qiong -->
+  <script src="http://kramdown.rubyforge.org/MathJax/MathJax.js" type="text/javascript"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog/archives/">Blog</a></li>
+  <li><a class="github" href="/tags">Tags</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <article>
+  <header>
+    
+      <h1 class="entry-title">(ZT) Unix vs. Windows</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-22T00:00:00-05:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+我看UNIX与Windows的本质区别<br /><br />文化，我首先想到的是文化。Unix和Windows从诞生之初的文化差异本质上划分了两者的界限。直观看来，一个装逼文化，一个傻逼文化。<br /><br />Unix诞生在贝尔实验室的MULTICS项目之后。据说当时这个项目设计得十分复杂，功能设计也几乎是上天入地无所不能。虽说当时贝尔实验室是很牛，可以牛到不用装逼也能露逼一下的地步。但历史告诉我们这种项目最后绝对会死得很惨。当然，项目最终结果还是没有违背历史规律。当时一位MULTICS参与者Ken Thompson事后痛定思痛，准备重新自己开发一个多任务操作系统，摒弃了MULTICS过于复杂的系统设计，力求新系统的简洁紧凑。传闻时值Ken Thompson老婆带上孩子回娘家过日子去了，一时间Ken Thompson晚上无以为乐，只好天天以堆码为业。不到一个月，Ken Thompson用汇编把这套操作系统编写出来了，这就是后来流芳百世的UNIX。当然，当时的Ken Thompson根本没有意会到他这个业余时间的作品会改变整个计算机发展史。因此这个操作系统设计用户群只针对他预想的计算机科学家、黑客，再不济怎么也得算上个计算机科学技术本科生。Unix只面对政府、研究机构、大学等专业性很强的机构，简洁、高效、安全是Unix的文化哲学。同时结合到当时的硬件条件限制，也不难理解UNIX诞生之初就根深蒂固的文化：<br /><br />1、计算机庞大的占地面积、高额的购买维护费用使得普通用户根本无力支撑起一台计算机的各种资源消耗，当时更多的是计算机专家在通过终端在控制整个计算机运作逻辑。没有GUI、没有多媒体，字符界面，这对于这批靠计算机完成科学任务的黑客来说已经完全够用了。<br /><br />2、同时遵循简洁统一的输入输出接口，相比于GUI的事件驱动模型来说，更适合使用脚本将各种程序粘合起来，完成复杂多样的计算任务。<br /><br />有人说起过UNIX正巧在当年GUI史前诞生，时运不济，所以只出了个字符怪胎，要是再踌躇几年，等到GUI日臻成熟，那诞生出的UNIX恐怕就是如今Windows的翻版了。对此我还是不太认可，UNIX的存在是计算机荒洪时代遗留的文化，即使现在丰富多彩的GUI也照样没有改变UNIX的基础设计恐怕就是一个极好的证据。目前大多数的服务器依然保持着当年UNIX诞生之初的风貌，依然CLI、依然Shell，因为我们需要把更多的资源让给使用服务器的客户，人类对计算机性能的榨取永远是贪婪的。这让我想起了几年前Windows渐入佳境PC，游戏刚大行其道，桌面游戏编写还不是那么方便时候，有人预言等几年之后，按照摩尔定律，编写星际争霸之类的游戏便不需要多牛逼的算法，甚至能用写脚本语言都能完成。这几年算是大致差不多算过来了吧，星际是有牛人用JavaScript完成了，不过现时最牛逼的游戏(如魔兽世界)还是会用很牛逼的算法，还是需要使用C/C++，还是需要精通图形学，还是需要熟悉图形硬件。所以不管硬件如何发展，UNIX文化中的简洁高效这些准则还是依然存在，因为我们会把最佳的性能留给我们服务器的客户，然后可以把敲打字符，玩弄指法的时间留给自己，在老板面前装逼一下。<br /><br />Windows(以及其前任DOS)诞生在公司，公司不像学院，不会像UNIX一样如果能装逼就尽量装逼一下，公司直接面对客户，产品唯一使命就是取悦用户，只能把用户伺候好了，公司才能维系发展。所以Windows诞生之初就一直肩负比尔&#8221;让每一个家庭都有一台电脑&#8221;的使命，不装逼，不玩酷，一切功能照顾用户，就是用户是傻逼你也得当亲爹一样伺候。故而Windows一直就假定使用它的用户你就是一个傻逼，哪怕是删除文件这个小问题上，Windows也会想小娘们儿一样谨谨慎慎战战兢兢地一再向人确认&quot;确实要删除****吗？&quot;&quot;确实要删除只读文件****吗?&quot;。当然，最终能够让大妈大叔阿公阿婆阿猫阿狗都能使用上计算机的Windows绝对占领了终端用户桌面，比尔也因此一夜暴富，摇身一变成为世界首富&amp;慈善家。不得不承认，如果没有Windows，&quot;让每一个家庭都有一台电脑&quot;的崇高理想恐怕又得推迟几年才能够得以实现了。自然，微软技术是肯定不差的，而不是像一些Linux小菜鸟口中所言&quot;微软技术很烂&quot;，相反微软技术是很牛的，牛到曾经豪言可以立马灭掉Google，试看如今还有谁可以发出这样傻逼的豪言。但是微软牛，不代表Windows就可以干过MULTICS，上天入地翻江倒海无所不能。Windows 在安全性、性能以及开源项目上与UNIX相比确实还是有一定差距，但这并不妨碍windows成为桌面第一大操作系统。<br /><br />UNIX的黑客们，眼见着曾经引以为豪的计算机技术壁垒瞬间被Windows GUI冲击到荡然无存了，心中肯定是有落差的。不过这段技术演变技术普及已经成为了历史发展趋势。一个少数人才能驾驭的技术，哪怕就是敲一个ls这样简单的命令，你也可以把它吹破牛皮，扯虎皮拉大旗捧为艺术珍品，搞得善男甚广善女甚众。一旦技术被迫普及后，曾经视作的艺术瞬间就被廉价的工业化大生产所替代，现在满大街的廉价代码工就是计算机程序设计工业化后的结果。前段时间众人大骂Java程序员把自己的价位又拉低了。殊不知，拉低自己价位的非Java也，乃工业化大生产趋势。今不出Java，明儿准会出来个Bava，Cava，照样把你收拾成码农。时至如今，UNIX黑客们还在装逼，用CLI命令行跑出花花绿绿的文字，时不时感叹下曾经的软件英雄时代一去不复返，时不时像祥林嫂一般唠叨&quot;当年哥可是写汇编的，没想到如今沦落到如此地步，人心不古，世风日下啊~&quot;，时不时还顾影自怜，想装逼下，可惜时光不再。<br /><br />妈逼的给老子回去写代码！这个月还想不想领工资了！？<br /><br /><br />结语：<br /><br />不管是UNIX的装逼文化，还是Windows的傻逼文化，最终在计算机产业工业化的历史滚滚长流中归于平庸，归于廉价。曾经的那批牛逼的、不牛逼的、风骚的、不风骚的UNIX文化精英们，如今早已是廉颇老矣，尚可喝粥。曾经被意淫为&quot;计算机科学与艺术&quot;如今也早已沦落为&quot;软件码工&quot;。软件英雄时代早已不再，编码也成为三百六十行中的一行，一种用以谋生的手段，一种混饭吃的活路。关键问题早已不在程序，不在编码：<br /><br /><b>编程只是一个工具，关键在于你拿这个工具来实现别人的事业，还是自己的事业。</b></div>
+</div>
+
+</article>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2014 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

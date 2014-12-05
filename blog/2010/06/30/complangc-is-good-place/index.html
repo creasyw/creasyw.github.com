@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>comp.lang.c is a good place:) - Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="Q: I&#8217;m trying to define a few simple little function-like macros such as #define square(x) x * xbut they&#8217;re not always working.&#8212;&# &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/2010/06/30/complangc-is-good-place/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <!-- add Mathjex.js by qiong -->
+  <script src="http://kramdown.rubyforge.org/MathJax/MathJax.js" type="text/javascript"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog/archives/">Blog</a></li>
+  <li><a class="github" href="/tags">Tags</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <article>
+  <header>
+    
+      <h1 class="entry-title">comp.lang.c Is a Good Place:)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-30T00:00:00-05:00" pubdate data-updated="true">Jun 30<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+Q: I&#8217;m trying to define a few simple little function-like macros such as<br /><span class="Apple-tab-span" style="white-space: pre;">      </span>#define square(x) x * x<br />but they&#8217;re not always working.<br />&#8212;&#8212;&#8212;-<br />A: <b>There are three important rules to remember when defining function-like macros</b>:<br />The macro expansion must always be parenthesized to protect any lower-precedence operators from the surrounding expression. Given the (incorrect) square() macro above, the invocation<br /><span class="Apple-tab-span" style="white-space: pre;">&nbsp;</span><span class="Apple-style-span" style="white-space: pre;">      </span>1 / square(n)<br />would expand to<br /><span class="Apple-tab-span" style="white-space: pre;">&nbsp;</span><span class="Apple-style-span" style="white-space: pre;">      </span>1 / n * n<br />(which evaluates as (1 / n) * n), while what you want is<br /><span class="Apple-tab-span" style="white-space: pre;">       </span>1 / (n * n)<br />(In this case, the problem is one of associativity rather than precedence, but the effect is the same.)<br />Within the macro definition, all occurrences of the parameters must be parenthesized to protect any low-precedence operators in the actual arguments from the rest of the macro expansion. Again given the square() macro above, the invocation<br /><span class="Apple-tab-span" style="white-space: pre;">&nbsp;</span><span class="Apple-style-span" style="white-space: pre;">      </span>square(n + 1)<br /><span class="Apple-tab-span" style="white-space: pre;"></span><br />would expand to<br /><span class="Apple-tab-span" style="white-space: pre;">&nbsp;</span><span class="Apple-style-span" style="white-space: pre;">      </span>n + 1 * n + 1<br /><span class="Apple-tab-span" style="white-space: pre;"></span><br />But what you want is<br /><span class="Apple-tab-span" style="white-space: pre;">&nbsp;</span><span class="Apple-style-span" style="white-space: pre;">      </span>(n + 1) * (n + 1)<br /><span class="Apple-tab-span" style="white-space: pre;"></span><br />If a parameter appears several times in the expansion, the macro may not work properly if the actual argument is an expression with side effects. Yet again given the square() macro above, the invocation<br /><span class="Apple-tab-span" style="white-space: pre;">&nbsp;</span><span class="Apple-style-span" style="white-space: pre;">      </span>square(i++)<br />would expand to<br /><span class="Apple-tab-span" style="white-space: pre;">&nbsp;</span><span class="Apple-style-span" style="white-space: pre;">      </span>i++ * i++<br />which is undefined (see question 3.2).<br />The proper definition of a square macro, to comply with rules 1 and 2 above, is<br /><span class="Apple-tab-span" style="white-space: pre;">&nbsp;</span><span class="Apple-style-span" style="white-space: pre;">      </span>#define square(x) ((x) * (x))<br /><span class="Apple-tab-span" style="white-space: pre;"></span><br />Complying with rule 3 is harder. Sometimes, careful exploitation of the short-circuiting behavior of the &amp;&amp;, ||, or ?: operators (see question 3.6) can arrange that a parameter which appears several times is guaranteed to be evaluated exactly once. Sometimes, the macro is just documented as being unsafe, and callers must remember not to use it on arguments with side effects. Other times, it may be advisable not to compose a function-like macro if it can&#8217;t be made safe.<br />(As a stylistic convention, macros are often defined with capitalized or all-upper-case names, to make it obvious that they are macros. It may be acceptable to define a function-like macro with an all-lower-case name, if it truly simulates a function, but only if it complies with all three rules above. Since the squaring macro we&#8217;ve been discussing does not, it should be defined as something like<br /><span class="Apple-tab-span" style="white-space: pre;">&nbsp;</span><span class="Apple-style-span" style="white-space: pre;">      </span>#define Square(x) ((x) * (x))<span class="Apple-tab-span" style="white-space: pre;"> </span>/* UNSAFE */<br />if it is to be used at all.)<br /><br />References: K&amp;R1 Sec. 4.11 p. 87<br />K&amp;R2 Sec. 4.11.2 p. 90<br />H&amp;S Secs. 3.3.6,3.3.7 pp. 49-50<br />CT&amp;P Sec. 6.2 pp. 78-80<br /><a href="http://groups.google.com/group/comp.lang.c/browse_thread/thread/57175d098e52a10d?hl=en">original question</a></div>
+</div>
+
+</article>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2014 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

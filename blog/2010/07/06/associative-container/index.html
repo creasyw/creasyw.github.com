@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Associative container - Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="pair类型，以及更为典型的map类型。既具有vector类型可以纵向联系某种特定数据类型的特点，又可以把两种不同数据类型但在应用中意义相关的数据横向联系起来。这种联系可以理解为“映射”，每个key和唯一的另一个数据类型存放地址相关。另一种理解方法， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/2010/07/06/associative-container/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <!-- add Mathjex.js by qiong -->
+  <script src="http://kramdown.rubyforge.org/MathJax/MathJax.js" type="text/javascript"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog/archives/">Blog</a></li>
+  <li><a class="github" href="/tags">Tags</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <article>
+  <header>
+    
+      <h1 class="entry-title">Associative Container</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-06T00:00:00-05:00" pubdate data-updated="true">Jul 6<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+pair类型，以及更为典型的map类型。既具有vector类型可以纵向联系某种特定数据类型的特点，又可以把两种不同数据类型但在应用中意义相关的数据横向联系起来。这种联系可以理解为“映射”，每个key和唯一的另一个数据类型存放地址相关。另一种理解方法，key值可以视为对应于其值value的一个指针或者是迭代器，只是这样的对应始终是一对一的。此外，map类型默认如果所查询的key值不存在，则自动添加到队尾，默认赋值0。这个特点很适合计数使用。<br /><br />但在单纯进行查找操作的时候则需要小心。若要仅仅确定某个key是否存在，可以使用m.count(k)，返回值为0或1。若要确定某个key值的具体位置，则可使用m.find(k)，若k键存在，则返回的是指向它的一个迭代器，若不存在，则返回指向超出队尾位置的迭代器，这个返回值和m.end()的返回值一致。<br /><br />//count number of times each word occurs in the input<br />map<string, int=""> word_count</string,><br />string word;<br />while(cin &gt;&gt; word){<br />&nbsp;&nbsp; &nbsp;++word_count[word]; &nbsp; }<br /><br />//equal funtion with .insert<br />&#8230;&#8230;<br />while(cin &gt;&gt; word){<br />&nbsp;&nbsp; &nbsp;//insert element with key equal to word and value 1<br />&nbsp;&nbsp; &nbsp;//if word already in word_count, insert does nothing<br />&nbsp;&nbsp; &nbsp;pair<map><string, int="">::iterator, bool&gt; ret =</string,></map><br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;word_count.insert(make_pair(word, 1));<br />&nbsp;&nbsp; &nbsp;if (!ret.second) &nbsp; //word already in word_count<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;++ret.first-&gt;second; &nbsp; //increment counter<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;//which is equal to ++((ret.first)-&gt;second);<br />}<br /><br />这里有一点需要注意的，仍然是不同符号连用时优先级的问题。之前在c.lang组里面也遇到了这样的问题，简单的一段程序都会出现匪夷所思的结果。那么，得到的启发就是，在任何情况下，多写几层括号，既可以方便之后的阅读代码，又可以避免因为默认优先级而引起难以察觉的问题。<br /><br />ps. 设计程序的一个良好习惯是首先将程序需要完成的任务明确成条目，然后列出涉及的操作，明确了这些需要提供的操作，有助于建立需要的数据结构和实现这些行为。一般的顺序是，明确输入输出参量以及将其相关联起来的数据的结构&#8211;&gt;明确程序行为-&gt;根据数据结构设计类-&gt;设计主函数-&gt;设计输出函数&#8211;&gt;设计成员函数。<br /><br />pps. 一篇介绍C++的文章(<a href="http://blog.csdn.net/pongba/archive/2007/09/14/1785372.aspx">为什么C++</a>)</div>
+</div>
+
+</article>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2014 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

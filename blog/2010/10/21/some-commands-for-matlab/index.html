@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hello - Qiong Wu</title>
+  <title>some commands for matlab - Qiong Wu</title>
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Hello My name is Qiong. First and foremost, I am a programmer. I’m passionate about programming and spend a considerable amount of time doing it: &hellip;">
+  <meta name="description" content="matrix functions&nbsp;INV&nbsp;&nbsp;&nbsp; Matrix inverse.&nbsp;&nbsp;&nbsp; INV(X) is the inverse of the square matrix X.&nbsp;&nbsp;&nbsp; A &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://creasyw.github.io/">
+  <link rel="canonical" href="http://creasyw.github.io/blog/2010/10/21/some-commands-for-matlab/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,22 +79,14 @@
 </nav>
   <div id="main">
     <div id="content">
-      <article class="text">
-  
-    <header>
-      <h1 class="page-title">Hello</h1>
-    </header>
-  
-  <p>My name is Qiong. First and foremost, I am a programmer. I’m passionate about programming and spend a considerable amount of time doing it: conducting research simulations in Python, C++, and MATLAB, constructing math/logic prototypes with LISP (mainly Racket), regarding Ruby as Lego and playing with it, solving math puzzles in Haskell, and hacking new programming languages and frameworks.</p>
-
-<p>I am a Ph.D student, coffee enthusiast, experienced soccer center-back, and rookie tennis player. I’m working with Prof. <a href="http://wweb.uta.edu/faculty/liang/">Qilian Liang</a> at the <a href="http://www.uta.edu/">University of Texas, Arlington</a>. I did my undergraduate studying in the EE department at <a href="http://en.hit.edu.cn/">Harbin Institute of Technology</a>, and had the master’s degree of Computer Engineering from the <a href="http://www.utexas.edu/">University of Texas, Austin</a>. My research interests include compressive sensing, wireless comm., statistical signal processing, and data mining.</p>
-
-<p>I am a geek. When I get into a hobby, I <a href="http://wqiong.com/blog/categories/tennis/">focus on it completely</a>; I learn all the rules and vocabulary so that I can have an in-depth conversation with an expert. Besides, I am a fan of <a href="http://www.acmilan.com/">AC Milan</a>, <a href="http://www.texassports.com/index.aspx?path=football">Longhorn Football</a>, and <a href="http://novakdjokovic.com/en/">Novak Djokovic</a>; love to play the <a href="http://www.footballmanager.com/lang/en_GB">Football Managers</a>, and to browse <a href="http://www.reddit.com/">Reddit</a> and <a href="https://news.ycombinator.com/news">Hacker News</a>.</p>
-
-<p>Feel free to drop me a line and I am happy to correspond by email.</p>
-
-  <footer>
+      <article>
+  <header>
     
+      <h1 class="entry-title">Some Commands for Matlab</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -106,8 +98,17 @@
   
 
 
+<time datetime="2010-10-21T00:00:00-05:00" pubdate data-updated="true">Oct 21<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
 
-  </footer>
+
+<div class="entry-content"><div class='post'>
+matrix functions<br /><br /><b>&nbsp;INV</b>&nbsp;&nbsp;&nbsp; Matrix inverse.<br />&nbsp;&nbsp;&nbsp; INV(X) is the inverse of the square matrix X.<br />&nbsp;&nbsp;&nbsp; A warning message is printed if X is badly scaled or<br />&nbsp;&nbsp;&nbsp; nearly singular.<br /><br /><b>&nbsp;.&#8217; Transpose.</b><br />&nbsp;&nbsp;&nbsp; X.&#8217; is the non-conjugate transpose.<br />&nbsp;&nbsp;&nbsp; B = TRANSPOSE(A) is called for the syntax A.&#8217; when A is an object.<br /><br /><b>&nbsp;SQUEEZE</b> Remove singleton dimensions.<br />&nbsp;&nbsp;&nbsp; B = SQUEEZE(A) returns an array B with the same elements as<br />&nbsp;&nbsp;&nbsp; A but with all the singleton dimensions removed.&nbsp; A singleton<br />&nbsp;&nbsp;&nbsp; is a dimension such that size(A,dim)==1.&nbsp; 2-D arrays are<br />&nbsp;&nbsp;&nbsp; unaffected by squeeze so that row vectors remain rows.<br />&nbsp;&nbsp;&nbsp; For example,&nbsp;&nbsp; squeeze(rand(2,1,3))&nbsp;&nbsp;&nbsp; is 2-by-3.<br /><br />Especially, for a 3-dimension matrix, for the command &#8220;matri = original_matrix(1,:,:)&#8221;, the resulting matrix matri is still a 3-D matrix whose 1st dimension is just 1.<br /><br />==========<br /><br />for plotting, this example will explain the most frequently used commands:<br /><br />x = -pi:.1:pi;<br />y = sin(x);<br />plot(x,y);<br />set(gca,&#8217;XTick&#8217;,-pi:pi/2:pi);<br />set(gca,&#8217;XTickLabel&#8217;,{&#8216;-pi&#8217;,&#8217;-pi/2&#8217;,&#8217;0&#8217;,&#8217;pi/2&#8217;,&#8217;pi&#8217;});<br />xlabel(&#8216;-\pi \leq \Theta \leq \pi&#8217;);<br />ylabel(&#8216;sin(\Theta)&#8217;);<br />title(&#8216;Plot of sin(\Theta)&#8217;);<br />AXIS([XMIN XMAX YMIN YMAX])<br />XLIM([XMIN XMAX])<br />YLIM([YMIN YMAX])</div>
+</div>
+
 </article>
 
     </div>

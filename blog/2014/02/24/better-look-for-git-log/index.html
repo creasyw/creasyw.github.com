@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hello - Qiong Wu</title>
+  <title>Better look for git log - Qiong Wu</title>
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Hello My name is Qiong. First and foremost, I am a programmer. I’m passionate about programming and spend a considerable amount of time doing it: &hellip;">
+  <meta name="description" content="The first time that I read it is from coolshell.cn, and then today from reddit. Just put here as a backup. 1
+git config --global alias.lg &quot;log &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://creasyw.github.io/">
+  <link rel="canonical" href="http://creasyw.github.io/blog/2014/02/24/better-look-for-git-log/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,22 +80,14 @@
 </nav>
   <div id="main">
     <div id="content">
-      <article class="text">
-  
-    <header>
-      <h1 class="page-title">Hello</h1>
-    </header>
-  
-  <p>My name is Qiong. First and foremost, I am a programmer. I’m passionate about programming and spend a considerable amount of time doing it: conducting research simulations in Python, C++, and MATLAB, constructing math/logic prototypes with LISP (mainly Racket), regarding Ruby as Lego and playing with it, solving math puzzles in Haskell, and hacking new programming languages and frameworks.</p>
-
-<p>I am a Ph.D student, coffee enthusiast, experienced soccer center-back, and rookie tennis player. I’m working with Prof. <a href="http://wweb.uta.edu/faculty/liang/">Qilian Liang</a> at the <a href="http://www.uta.edu/">University of Texas, Arlington</a>. I did my undergraduate studying in the EE department at <a href="http://en.hit.edu.cn/">Harbin Institute of Technology</a>, and had the master’s degree of Computer Engineering from the <a href="http://www.utexas.edu/">University of Texas, Austin</a>. My research interests include compressive sensing, wireless comm., statistical signal processing, and data mining.</p>
-
-<p>I am a geek. When I get into a hobby, I <a href="http://wqiong.com/blog/categories/tennis/">focus on it completely</a>; I learn all the rules and vocabulary so that I can have an in-depth conversation with an expert. Besides, I am a fan of <a href="http://www.acmilan.com/">AC Milan</a>, <a href="http://www.texassports.com/index.aspx?path=football">Longhorn Football</a>, and <a href="http://novakdjokovic.com/en/">Novak Djokovic</a>; love to play the <a href="http://www.footballmanager.com/lang/en_GB">Football Managers</a>, and to browse <a href="http://www.reddit.com/">Reddit</a> and <a href="https://news.ycombinator.com/news">Hacker News</a>.</p>
-
-<p>Feel free to drop me a line and I am happy to correspond by email.</p>
-
-  <footer>
+      <article>
+  <header>
     
+      <h1 class="entry-title">Better Look for Git Log</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -106,8 +99,24 @@
   
 
 
+<time datetime="2014-02-24T13:30:00-06:00" pubdate data-updated="true">Feb 24<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
 
-  </footer>
+
+<div class="entry-content"><p>The first time that I read it is from coolshell.cn, and then today from <a href="http://www.reddit.com/r/programming/comments/1yqiq8/git_log_is_so_2005/">reddit</a>. Just put here as a backup.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line">git config --global alias.lg <span class="s2">&quot;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&quot;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>The afterwards effect is something like:</p>
+
+<p><img class="center" src="/img/post/git_lg.png" /></p>
+</div>
+
 </article>
 
     </div>

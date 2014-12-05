@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: My Life | Qiong Wu]]></title>
+  <link href="http://creasyw.github.io/blog/categories/my-life/atom.xml" rel="self"/>
+  <link href="http://creasyw.github.io/"/>
+  <updated>2014-11-28T22:29:58-06:00</updated>
+  <id>http://creasyw.github.io/</id>
+  <author>
+    <name><![CDATA[Qiong Wu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Wired In and Schedule Sequential Workflow]]></title>
+    <link href="http://creasyw.github.io/blog/2014/09/24/wired-in-and-schedule-sequential-workflow/"/>
+    <updated>2014-09-24T16:43:00-05:00</updated>
+    <id>http://creasyw.github.io/blog/2014/09/24/wired-in-and-schedule-sequential-workflow</id>
+    <content type="html"><![CDATA[<p><strong><a href="https://gettingreal.37signals.com/ch07_Alone_Time.php">Alone Time</a></strong></p>
+
+<blockquote>
+  <p>Set up a rule at work: Make half the day alone time. — A successful alone time period means letting go of communication addiction. During alone time, give up instant messengers, phone calls, and meetings. Avoid any email thread that’s going to require an immediate response. Just shut up and get to work.</p>
+</blockquote>
+
+<p><strong><a href="http://www.paulgraham.com/makersschedule.html">Maker’s Schedule</a></strong></p>
+
+<blockquote>
+  <p>When we were working on our own startup, back in the 90s, I evolved another trick for partitioning the day. I used to program from dinner till about 3 am every day, because at night no one could interrupt me. Then I’d sleep till about 11 am, and come in and work until dinner on what I called “business stuff.” I never thought of it in these terms, but <strong>in effect I had two workdays each day</strong>, one on the manager’s schedule and one on the maker’s.</p>
+</blockquote>
+
+<p><strong><a href="http://www.joelonsoftware.com/articles/fog0000000022.html">Human Task Switches Considered Harmful</a></strong></p>
+
+<blockquote>
+  <p>Programming is the kind of task where you have to keep a lot of things in your head at once. The more things you remember at once, the more productive you are at programming. A programmer coding at full throttle is keeping zillions of things in their head at once: everything from names of variables, data structures, important APIs, the names of utility functions that they wrote and call a lot, even the name of the subdirectory where they store their source code. <strong>If you send that programmer to Crete for a three week vacation, they will forget it all.</strong> The human brain seems to move it out of short-term RAM and swaps it out onto a backup tape where it takes forever to retrieve.</p>
+
+  <p>In fact, the real lesson from all this is that you should <strong>never let people work on more than one thing at once</strong>. Make sure they know what it is.</p>
+</blockquote>
+
+<p>It’s not the excuse but the reason that I prefer working in my apartment (or Starbucks) rather than lab, where all kinds of weird situations would come up at any time… Anyway, the takeaway points are: I should pay more attention on my schedule, both for the long term and short term, to maximize the productivity; concentrate on one project (language, research topic) at a given period; extract the most out of it, celebrate, and then dive into another work.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Half of Summer Season Has Gone]]></title>
+    <link href="http://creasyw.github.io/blog/2014/06/23/half-of-summer-season-has-gone/"/>
+    <updated>2014-06-23T14:01:00-05:00</updated>
+    <id>http://creasyw.github.io/blog/2014/06/23/half-of-summer-season-has-gone</id>
+    <content type="html"><![CDATA[<h3 id="tennis-and-exercises">Tennis and Exercises</h3>
+
+<p>Until now, I’ve played three matches in this round of 3.0 league, lost twice (6-3, 6-3; and another was 7-5 for two hours and left unfinished), and won once (6-4, 1-6, 10-5). My improvements are quite obvious, but still not big enough for me to turn previous loses towards the same opponents to landslide victories. To the maximum extent, I would not lose a set 4 points straight, but stuck in “deuce…add-in…deuce..add-out…” loops.</p>
+
+<p>These are some aspects I should pay attention to</p>
+
+<ul>
+  <li>Do NOT make decisions before hitting the balls. They should depend on how good my response is, as well as the position and momentum of my opponent.</li>
+  <li>During the point building, keep percentage shots as long as I can.</li>
+  <li>And DISTINGUISH it from capitalizing.</li>
+  <li>Do NOT be afraid of volley, and do NOT rush it.</li>
+  <li>For current level, attacking the back-hand side is almost always a good choice.</li>
+</ul>
+
+<p>In general, I don’t have any blank left for any tech. aspect, but almost everything needs to be further improved: adding more top spin for both forehand and backhand ground stroke, being more consistent of back spin in half-volley, splitting timely and positioning myself more appropriate as approaching to the net, and better serving.</p>
+
+<h3 id="trip">Trip</h3>
+
+<p>It was great to see the awesome grand canyon, as well as the horseshoe bend and the antelope valley, and it sucked as I recalled the trip of yellowstone every minute in every day. I thought I had got over of the devastation after seven months. But this trip just proved that I was wrong in a hard way.</p>
+
+<p>I will not rush myself to the conclusion of “feeling well” again, and will not do another trip in the near future.</p>
+
+<h3 id="programming-and-online-courses">Programming and Online Courses</h3>
+
+<p>“Know how to solve every problem that has been solved.” – Richard Feynman</p>
+
+<p>There are many things that I need to prepare before the graduate and really job-hunting. Actually, there are more things in my mind than I could complete. So I should choose wisely.</p>
+
+<p>Currently, I am enrolled in the course “Principle of Computing” offered by Rice University in Coursera. It’s easy in general, but interesting to re-think those small games mathematically with the “programming” point of view. Besides, I also continue reading SICP and solving the problems in each chapter. I also go on reading books for Haskell, and watching a course about artificial intelligent in edX. Combining with what I have learned in machine learning and algorithm, I should have a better grasp about what to do and how to do in this field of study. On the other hand, I’ve also dropped off several courses for too much overlapping with what I have already known, or for tedious pedagogy and far-fetched implementations.</p>
+
+<p>I have extensively used Emacs for this summer. Sometimes, I even appreciate its methodology more than I do for Vim, though I would still prefer Vim for 90% of occasions. After tried and failed several times to customize it from scratch, I started beginning with Prelude, and then piling other stuff on it. Despite in favor of most its adds-on, I disable the Viper mode. The logic behind is that if I want to use a Vim, I will use the Vim. Before I fully appreciate its advantages and disadvantages, I would like to keep Emacs as it is. Currently, I use Haskell and Racket in it. It does do a better job than Vim for Haskell, and DrRacket for Racket. Besides, I have tried twice of adopting R in current work, but still cannot find a scenario exclusively using it. It’s not really good at modeling (LISP or Haskell), visualization (matplotlib in Python, JavaScript, or Mathematica), computational efficiency (C++, or Haskell), or just for fun (LISP, ML, or Ruby). Given it is THE favorite language of some of my very smart friends, I will give it another try whenever possible.</p>
+
+<h3 id="miscellaneous">Miscellaneous</h3>
+
+<p>Doing some experiments on myself is fun and worthwhile. For example, I have tried several days to go to bed earlier than I usually do. My feeling is more or less the same as what said in <a href="http://dealbook.nytimes.com/2014/06/27/sleep-as-a-competitive-advantage/?_php=true&amp;_type=blogs&amp;_php=true&amp;_type=blogs&amp;_r=1&amp;">“Sleep as a Competitive Advantage”</a>, and I will stick to it.</p>
+
+<p>Because I need to toss the tennis ball better, I use my left hand as often as I can, such as drawing diagrams or doing all kinds of doodle/calculations. It’s too soon to tell if I have any progress. I am also trying different ways to brew coffee. Pour-over versus press pot seems like another version of Emacs versus Vim.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Survive on Busy Two weeks]]></title>
+    <link href="http://creasyw.github.io/blog/2014/04/05/survive-on-busy-two-weeks/"/>
+    <updated>2014-04-05T09:47:00-05:00</updated>
+    <id>http://creasyw.github.io/blog/2014/04/05/survive-on-busy-two-weeks</id>
+    <content type="html"><![CDATA[<p>I am glad that I could survive on three-hours sleep per day for almost two weeks. Of course, there were quite a few downsides: I felt very weak after the first several days, and the feeling lasted till the end; I lost 1 and dropped the other 2 times of tennis matches in this period; my Github longest streak of contribution stopped at 200 days, which is the date right before my comprehensive defense…</p>
+
+<p>The things that I completed in return include:</p>
+
+<ul>
+  <li>A 96-pages thesis for the comprehensive defense</li>
+  <li>A collection of decent slides built by Beamer/Latex for defense</li>
+  <li>Passed it =D</li>
+  <li>A part of one NSF proposal</li>
+  <li>One research paper submitted to Globecom’14</li>
+  <li>Mid-term II of Game Theory</li>
+  <li>One reviewing paper from EuraSip</li>
+  <li>The least amount of homework and projects in Coursera that keep me within the schedule</li>
+</ul>
+
+<p>Furthermore, there are lots of lessons to take away from this process. Concerning the defense about research, I find myself still need to adjust the strategy handling problems. In research, it is not about getting thing done, but about how to propose the right question (relevant with the basic/advanced theorems of the related fields) and to make at least some sense out of it.</p>
+
+<p>For the research, I should not pile up most of the work to the last week of the due date, especially when I could anticipate this busy schedule months before. In Jan. and Feb., I did waste plenty of time to try out different algorithms handling the problem, but none of them had the “sky-high” performances, so I just kept trying. Eventually, when the time run out, I chose the “sub-optimal” solution and wrote the paper in a hurry. This should not be the right way. Sometimes, when the theoretical merits are fascinating, I might need to only derive the theorems and formulas with some naive simulations. When the trial and error process has to perform, I should set a “early termination” threshold and record every “best effort” in different scenarios. It will help me leisurely handle the due date, and maybe produce more work/papers.</p>
+
+<p>I hope I won’t have this kind of busy schedule again, in the sense that I have a better planning and complete each work as soon as I can.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My 2013 and new year resolution]]></title>
+    <link href="http://creasyw.github.io/blog/2013/12/31/my-2013-and-new-year-resolution/"/>
+    <updated>2013-12-31T10:13:00-06:00</updated>
+    <id>http://creasyw.github.io/blog/2013/12/31/my-2013-and-new-year-resolution</id>
+    <content type="html"><![CDATA[<p>没有想到，这一年能发生这么多的事情。效率从年初开始，越来越高。然后是暑假实习，认识了很多有趣的人，开始打网球。去了波多黎各和维京群岛，看到一生迄今为止最蓝的海。回来后继续打网球，开始瘦身，失散了三十年的六块腹肌和人鱼线都找到了，可年末却把豆豆丢了。痛彻心扉的最后两个月，不太清楚自己是怎么度过的。</p>
+
+<h3 id="statistics">Statistics:</h3>
+
+<p>过去的一年，在学校里修了两门课，GPA还是4.0。发表了三篇文章，还有三篇在等消息，两篇在写，为IEEE Trans. of Signal Processing 和ICC2014 审了两篇论文。此外，在Coursera上完成了6门课，其中收获最大的有Dan Grossman 的Programming Language 以及Tim Roughgarden 的Algorithm Analysis I &amp; II。比较可惜的是Andrew Ng 的 Machine Learning，课程和作业都过半了，但因为自己的论文进度太紧，这门课最终还是没能完成。希望它来年还能再开。</p>
+
+<p>根据豆瓣上的统计，这一年我看完19本书，听了27盘专辑，看了50部电影。其中看过最好看的书是现在还没有读完的巨著SICP…好看的电影包括Argo, The Social Network, Now You See Me, and Star Trek Into Darkness；听歌因为大量使用Douban FM 和Pandora，已经无法具体记录了。另外，完成了2325小时的编程。从九月到年底，用nike running 跑了110 miles，越跑越快，从九月份的7’36”/mi 到十二月的6’47”/mi。体重从78公斤降低到现在的68公斤，腹部和手臂的肌肉都清晰可见了。还有很多东西没有量化，比如网球的一发成功率，主动得分，以及非受迫性失误，等等。</p>
+
+<h3 id="programming">Programming:</h3>
+
+<p>在Coursera上的几门课程对我帮助很大，从熟悉新的编程语言，到高屋建瓴的指导如何实践。这一年新学的语言包括ML, Scala, Ruby, and Haskell，其中前三个都是课程里涉及的。编程时间的积累已经过半，到了5750小时。从简历上，我可以堆出一大坨熟练使用的语言。而对自己而言，进步最大的有两方面。其一，现在可以用很短的时间，甚至是一个下午，去学习一门新的编程语言，其实只用熟悉常用的语法就好，其中的范式和思想都是共通的。其二，对于算法和数据结构的掌握，让我能在更短的时间里将一个具体问题转变成模型。</p>
+
+<p>这一年也花了大量的时间写C++代码，实习里用到了，自己的项目也用到了。但写来写去，依然不喜欢这个语言——繁琐，庞大高效，想做所有的事情却鲜有亮点。用Jobs描述微软的词语来形容C++也是合适的，no taste。使用它，仅仅是因为所处状况暂时没有其他选择而已。在2014年里，计划将实验室的项目逐渐向Haskell过渡，当必须使用OOP的时候，用Scala。至于继续提高的方向，暂时还没想到什么新的语言特别值得学习(maybe Lua, R, or Javascript)，但需要花时间把Compiler看完，然后读完三本2013积攒下来的书：SICP, The Scheme Programming Language，和Real World Haskell。若是此外还有空余，可以旁听一下iOS的课程，重温一下已经放下两年的Obj-C。</p>
+
+<p>因为Haskell的缘故，这几个月越来越多的使用Emacs。发觉一个有关它的笑话大体是对的，Emacs的启动时间都足够用Vim写完一个脚本了。当然，依此类推，启动Eclipse都足够写完一个项目了。。。现在我主要还是是把Emacs当Vim来用，除了C-c C-l来加载Haskell的Compiler，我只不过是在使用Vim里对应的快捷键组合来写程序。我也知道，有关Emacs最吸引人的.el 脚本，我还没有过多涉及。希望在接下来的一年里，我能像使用Vim一样熟练的使用Emacs，有一套自己的加载脚本，多一个得心应手的开发工具。</p>
+
+<h3 id="sth-else">Sth. else</h3>
+<ul>
+  <li>每周锻炼3-4次</li>
+  <li>晋级 Tennis Recreation League 3.5</li>
+  <li>累积2500+小时的编程</li>
+  <li>毕业</li>
+</ul>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My August and a new beginning]]></title>
+    <link href="http://creasyw.github.io/blog/2012/09/14/my-august-and-new-beginning/"/>
+    <updated>2012-09-14T00:00:00-05:00</updated>
+    <id>http://creasyw.github.io/blog/2012/09/14/my-august-and-new-beginning</id>
+    <content type="html"><![CDATA[<div class="post">
+<br />八月份，是个开始的月份，来到了一个小屯子里，没有公交，没有市集，只是明晃晃的阳光，会照的人发晕。当真是个修行的地方。有关这里，想法都有关不要虚度光阴，要快些离开这里。<br /><br />月中，和大瀾、乌龟、聪哥、温总一起去了黄石，西雅图，以及波特兰。这次旅行，如同酿酒发酵一般，越到后来越是留恋。<br /><br />刚到Bozman的时候，大瀾看着大山都激动的手舞足蹈。然后进入黄石以后，各种臭泉以及异常干燥的气候弄的大家都越发烦躁起来。大瀾背着手，像居委会大妈一样视察颜色异常的泉水；也会二劲儿大发，摘下花来给每个人带上，拍个大头贴。大乌龟在走trail时候，被路上唯一的一个钉子扎破了后背。甩着舌头奔跑的牦牛，成群在树林里休息的大鹿，elk or moose。在大峡谷的晚上，八月间，大家竟然都被冻醒了，我迷迷糊糊间，看着大瀾给我盖被子，感动了好久。<br /><br />三日后的大提顿满是惊喜。前一天晚上大瀾肚子疼的没吃好晚饭，扶她回房间后，我连吃饭的心思都没有了，更不要说后一天的提顿之旅。第二天早晨，大家也是有懒床的，有睡回笼觉的。只有唯一想去的温总，一肚子郁闷说不出口。而且刚启程，就发现没带门票，又折回。我开着车都能想到留守的聪哥似笑非笑的的得意样子。最终正午才进入大提顿，就遇见了满眼惊喜。厚厚的草甸，飘满小花的湖泊。大瀾拄着两人多长的树枝照相。在Jackson Lake租船的时候，旁边的小孩儿们兴奋的举着水瓶，炫耀捉住的水蛭。大瀾在船上，看不出任何身体异样，兴奋的拍水，尝试各种怪异的划船方法，几次都殃及到了坐在后面的我。但不管怎样，我俩划起船来，左右开工，还喊着号子，小船乘风破浪的指那儿打哪儿，相比而言，乌龟和温总的另一艘船大多就是在原地打转了。上岸之后，我们还在岸边的饭馆儿吃了进黄石以来最丰盛的一顿饭。在Jenny Lake，看着一湖清水，我和温总都脱到只剩内裤，跳进去玩水，结果上岸时候悲剧了，小石子们就像是锥子一样，走向岸边每一步都钻心的疼。。。大瀾在岸边，一边叹息着想游泳啊想游泳，一边带着乌龟和温总的俩单反，不断练习摄影技术。傍晚看日落，所有的山峰都一览无余，感慨自然壮丽。然后在把车开到山间处，再看一遍日落，再感慨一遍。晚上回程，看到了过马路的小狐狸，也许是被车灯照迷糊了，久久不离去，真想把它抱回来养。<br /><br />晚上回到酒店，又出门，和大瀾并排躺在码头上，我第一次清楚看到了银河，像棉絮一样一团一团的，还看到了流星。拉着大瀾的手，看着奇妙的景色，时间就静止了。<br /><br />到西雅图的第一天晚上，还有更多的惊喜。从倾斜的街道看到大海，身旁小酒馆门庭若市。城市真好。也是在这个时候，我们发现Yelp的预算对我们不适用。$的我们可以吃成$$$，$$的我们能吃成$$$$的。几个难民坐在日式料理最靠窗的桌子，烤肉、寿司、炒饭、拌面...，我们狼吞虎咽的样子，就是这家店最好的活体广告了。酒馆、小肥羊、牛逼的图书馆、大麻公园、面海公寓、满是鲜花的阳台，这就是我对西雅图的印象。<br /><br />去波特兰是因为Grimm。精致的block，友好的大瀾校友，以及玫瑰花园。我们在市区停留只有半日。然后就是一个小时的公车，从二十几街坐到了245街。。作为这座庄园里唯一一队乘坐公车前来的客人，我们受到了主人的热情接待，安排我们住宿在一个墙上画着这个庄园某位109岁员工的房间里。庄园的晚饭不错，温总一时兴起喝了六七杯或者十来杯红酒，结果把大乌龟给喝醉了，嚷嚷着要脱衣服去游泳，又把聪哥紧张的如同被非礼了一样。。晚饭后我们还视察了庄园的绿化状况，并亲切会见了酒馆里的各种奇怪大叔大妈。<br /><br />转眼相聚就要分离，回家的回家，旅行的继续上路，确实舍不得另外三位。昨天在豆瓣上读到马克吐温的一句话，“好友、好书，不轻易判断是非，这就是理想生活”。一路上颠簸，没读什么书，这生活却以足以让我留恋了。<br /><br />在这里，开始学习工作快满一月了。老板人不错，几次问他有关研究的问题，他都很耐心的回答，给的方法也足够有操作性。今天一个师兄作报告被骂，也从另一个侧面证明老板足够聪明，不能唬弄。组里大家关系也很融洽，实验室、图书馆，资源也算充裕。新车也用的顺手。还是开始时的那个想法，不要浪费时间，早些离开这里。</div>
+]]></content>
+  </entry>
+  
+</feed>

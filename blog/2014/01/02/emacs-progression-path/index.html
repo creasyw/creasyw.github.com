@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Emacs Progression Path - Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="I was hoping to find something like Python Progression Path or sort of “best practice” for Emacs, because the difference between Vim and Emacs was &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/2014/01/02/emacs-progression-path/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <!-- add Mathjex.js by qiong -->
+  <script src="http://kramdown.rubyforge.org/MathJax/MathJax.js" type="text/javascript"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog/archives/">Blog</a></li>
+  <li><a class="github" href="/tags">Tags</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <article>
+  <header>
+    
+      <h1 class="entry-title">Emacs Progression Path</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-02T16:37:00-06:00" pubdate data-updated="true">Jan 2<span>nd</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I was hoping to find something like <a href="http://stackoverflow.com/questions/2573135/python-progression-path-from-apprentice-to-guru">Python Progression Path</a> or sort of “best practice” for Emacs, because the difference between Vim and Emacs was much larger than I thought. But what I found were either teaching about basic operations such as saving and quiting the editor for people who had access to comupter for the 1st time, or talking about tricks of using Emacs Lisp for the high-end hard-core players… It seemed like I was stuck in the middle, and would stay there for a very long time…</p>
+
+<p>I will sort the contents here as incremental records simulating my Emacs learning process, as well as keeping track of nontrivial materials and thoughts.</p>
+
+<h3 id="references">References:</h3>
+
+<ul>
+  <li><a href="http://sachachua.com/blog/2013/05/how-to-learn-emacs-a-hand-drawn-one-pager-for-beginners/">Tow</a> <a href="http://sachachua.com/p/26006">pics</a> served as the very beginning of entering the world of Emacs.</li>
+  <li>Cheat Sheet (<a href="http://refcards.com/docs/gildeas/gnu-emacs/emacs-refcard-a4.pdf">compact version</a>, and <a href="http://cs.iupui.edu/~kweimer/EmacsCheatSheet.pdf">a more user friendly verion</a>).</li>
+  <li>C-h t. Tutorial of Emacs within the editor. It should be the first doc to read.</li>
+  <li>My previous <a href="http://wqiong.com/blog/2013/07/01/setup-emacs-in-mac-os/">post</a> to setup Emacs in Mac OS.</li>
+  <li>Steve Yegge’s suggestion for <a href="https://sites.google.com/site/steveyegge2/effective-emacs">improving productivity with Emacs</a></li>
+  <li><a href="http://batsov.com/prelude/">Prelude</a> – very easy to setup, and add/disable modules.</li>
+  <li><a href="https://github.com/xiaohanyu/oh-my-emacs">Oh-my-emacs</a> is another option to start with, but I met quite a few incompatible issues for the mac os. <a href="https://github.com/eschulte/emacs24-starter-kit">Emacs24 Starter Kit</a> is also well-known but relatively inactive recently.</li>
+  <li>GNU <a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/index.html">Emacs Manual</a> and <a href="http://www.gnu.org/software/emacs/manual/html_node/elisp/">Emacs LISP Manual</a></li>
+  <li><a href="http://batsov.com/articles/2012/02/19/package-management-in-emacs-the-good-the-bad-and-the-ugly/">Guidelines</a> for package management in Emacs.</li>
+  <li><a href="http://www.emacswiki.org/emacs/">Emacs Wiki</a></li>
+  <li><a href="http://www.masteringemacs.org/">Mastering Emacs</a></li>
+  <li><a href="http://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/">From Vim to Emacs+Evil chaotic migration guide</a></li>
+</ul>
+
+<p>–Well, it is really a road that will never end…</p>
+
+<h3 id="packages">Packages:</h3>
+
+<ul>
+  <li><a href="https://github.com/magit/magit">Magit</a>. “Magit is the most popular interface to git. If you are new to git and do not need support for other vcs this is likely the package you should try first” – quoted from <a href="http://www.emacswiki.org/emacs/Git">EmacsWiki</a>. The detail explanation can be found from <a href="http://www.masteringemacs.org/articles/2013/12/06/introduction-magit-emacs-mode-git/">Mastering Emacs</a>.</li>
+  <li><a href="http://company-mode.github.io/">Company</a> for auto-completion.</li>
+</ul>
+
+<h3 id="random-thoughts">Random Thoughts</h3>
+<ul>
+  <li>One of the most fundamental change from Vim to Emacs is that Vim is the most powerful editor in this planet while Emacs is kind of <a href="http://c2.com/cgi/wiki?EmacsAsOperatingSystem">“operating system” with a lousy editor</a>. It might be a rant to the right place, but anyway, the other side of the story is that emacs can be regarded as an OS which means that it might be much more powerful when the configuration is right. I should be able to do things that are used to complete via the combination of vim, shell, REPL, and compiler, and I SHOULD NOT launch and exit it very often as what I am doing with vim.</li>
+  <li>Everything looks a little bit more decent within the emacs,
+including the shell.</li>
+</ul>
+
+<h3 id="useful-key-combinings">Useful Key Combinings:</h3>
+
+<p>Kill a line:
+C-a C-k (move the cursor to the begining of the line, thenkill from the cursor to the end of the line)</p>
+
+<p>Kill 2 lines: C-a C-u 2 C-k</p>
+
+<p>Kill a specific region
+C-&lt;SPC&gt; C-w (move around to highlight region, then kill contents within highlight region)</p>
+
+<p>Yank the killed contents C-y</p>
+
+<p>Retrieve yanking history
+M-y (right after the 1st yanking. – this is intersting)</p>
+
+<p>The difference between “killing” and “deleting” is that “killed” text
+can be reinserted (at any position), whereas “deleted” things cannot
+be reinserted in this way (you can, however, undo a deletion–see below).
+Reinsertion of killed text is called “yanking”.  Generally, the
+commands that can remove a lot of text kill the text (they are set up so
+that you can yank the text), while the commands that remove just one
+character, or only remove blank lines and spaces, do deletion (so you
+cannot yank that text).  &lt;DEL&gt; and C-d do deletion in the simplest
+case, with no argument.  When given an argument, they kill instead.
+– This is valid for both vim and emacs.</p>
+
+<p>Multiple windows:
+- C-x 0  delete this window
+- C-x 1  delete all other windows
+- C-x 2  vertically split window
+- C-x 3  split window side by side</p>
+
+<p>Scoll down the page
+- C-v (page down)
+- C-u 8 C-v (scoll down 8 lines)
+- C-l (move the current line to the middle of the window)
+- C-u 0 C-l (move the current line to the head of the window)</p>
+
+<p>Getting help
+- C-h c &lt;Command sequence&gt;   (a very brief description of the command.)
+- C-h k &lt;Command sequence&gt;   (displays the documentation of the function, as well as its name)</p>
+
+<p>Auto-completion
+- M-/
+- <a href="http://company-mode.github.io/">Company</a> is good complementory plug-in</p>
+
+<p>Shell History (also Useful for Haskell REPL)
+- M-p (or) C-&lt;UP&gt;: Fetch the next earlier old shell command.
+- M-n (or) C-&lt;DOWN&gt;: Fetch the next later old shell command.
+- M-r: Begin an incremental regexp search of old shell commands.
+- C-c C-x: Fetch the next subsequent command from the history.
+- C-c . : Fetch one argument from an old shell command.
+- C-c C-l: Display the buffer’s history of shell commands in another window (comint-dynamic-list-input-ring).</p>
+
+<h3 id="missing-features">Missing Features:</h3>
+
+<p>This is a list for what I should expand the functionalities of my Emacs.</p>
+
+<ul>
+  <li>Highlight symbol at the point. There is <a href="http://www.emacswiki.org/emacs/HighlightSymbol">a package</a> for this purpose, but currently it does not work well within Prelude.</li>
+  <li>Interactive input for M-x.</li>
+</ul>
+</div>
+
+</article>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2014 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hello - Qiong Wu</title>
+  <title>Set up Racket for Vim and mac Terminal - Qiong Wu</title>
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Hello My name is Qiong. First and foremost, I am a programmer. I’m passionate about programming and spend a considerable amount of time doing it: &hellip;">
+  <meta name="description" content="&nbsp; &nbsp; Racket is fairly great:), though the setting up procedure is kind of twisted. There is a .dmg installation file in the official &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://creasyw.github.io/">
+  <link rel="canonical" href="http://creasyw.github.io/blog/2013/02/19/set-up-racket-for-vim-and-mac-terminal/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,22 +79,14 @@
 </nav>
   <div id="main">
     <div id="content">
-      <article class="text">
-  
-    <header>
-      <h1 class="page-title">Hello</h1>
-    </header>
-  
-  <p>My name is Qiong. First and foremost, I am a programmer. I’m passionate about programming and spend a considerable amount of time doing it: conducting research simulations in Python, C++, and MATLAB, constructing math/logic prototypes with LISP (mainly Racket), regarding Ruby as Lego and playing with it, solving math puzzles in Haskell, and hacking new programming languages and frameworks.</p>
-
-<p>I am a Ph.D student, coffee enthusiast, experienced soccer center-back, and rookie tennis player. I’m working with Prof. <a href="http://wweb.uta.edu/faculty/liang/">Qilian Liang</a> at the <a href="http://www.uta.edu/">University of Texas, Arlington</a>. I did my undergraduate studying in the EE department at <a href="http://en.hit.edu.cn/">Harbin Institute of Technology</a>, and had the master’s degree of Computer Engineering from the <a href="http://www.utexas.edu/">University of Texas, Austin</a>. My research interests include compressive sensing, wireless comm., statistical signal processing, and data mining.</p>
-
-<p>I am a geek. When I get into a hobby, I <a href="http://wqiong.com/blog/categories/tennis/">focus on it completely</a>; I learn all the rules and vocabulary so that I can have an in-depth conversation with an expert. Besides, I am a fan of <a href="http://www.acmilan.com/">AC Milan</a>, <a href="http://www.texassports.com/index.aspx?path=football">Longhorn Football</a>, and <a href="http://novakdjokovic.com/en/">Novak Djokovic</a>; love to play the <a href="http://www.footballmanager.com/lang/en_GB">Football Managers</a>, and to browse <a href="http://www.reddit.com/">Reddit</a> and <a href="https://news.ycombinator.com/news">Hacker News</a>.</p>
-
-<p>Feel free to drop me a line and I am happy to correspond by email.</p>
-
-  <footer>
+      <article>
+  <header>
     
+      <h1 class="entry-title">Set Up Racket for Vim and Mac Terminal</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -106,8 +98,17 @@
   
 
 
+<time datetime="2013-02-19T00:00:00-06:00" pubdate data-updated="true">Feb 19<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
 
-  </footer>
+
+<div class="entry-content"><div class='post'>
+&nbsp; &nbsp; <br />Racket is fairly great:), though the setting up procedure is kind of twisted. There is a .dmg installation file in the official website, which makes it quite straightforward to install in the Application folder. And, of course, the DrRacket app is awesome when I accidentally put mouse in one of the variables in the code, and then all its dependencies reveal via arrows.<br /><br />But I am still used to writing code in vim and testing it in a parallel split window of iterm. I googled the solution, but cannot find a comprehensive one. So, I just list my solution here, which come from either stackoverflow or other persons&#8217; blogs.<br /><br />1) vim syntax and highlight are <a href="https://github.com/wlangstroth/vim-racket">out there</a> ready for use.<br /><br />2) Adding one command line to ~/.vimrc<br /><code>&nbsp;au BufRead,BufNewFile *.rkt set filetype=racket</code><br />3) Adding the path of executable racket to ~/.bach_profile.<br /><code> export PATH=$PATH:/Applications/Racket\ v5.3.3/bin/</code><br />4) If using the existing file, one should delete the first line of code &#8220;#lang racket&#8221; if existed.<br /><br />5) Optional. Installing rlwrap to make the repl more user friendly.<br /><br />That is much of it.<br /><br /><br />cheers,</div>
+</div>
+
 </article>
 
     </div>

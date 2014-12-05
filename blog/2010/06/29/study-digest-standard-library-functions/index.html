@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hello - Qiong Wu</title>
+  <title>Study digest: standard library functions - Qiong Wu</title>
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Hello My name is Qiong. First and foremost, I am a programmer. I’m passionate about programming and spend a considerable amount of time doing it: &hellip;">
+  <meta name="description" content="C vs. C++ 其中一个显式区别，就是后者增添了标准库类型，vector、string、bitset。以vector为例，实际上可将其看成是一个可变长度的数组，迭代器类比于增强版本的指针。而标准库函数最大的好处在于其成员函数，可以轻松地完成一些在C语言中需要特定代码段完成的功能。并且， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://creasyw.github.io/">
+  <link rel="canonical" href="http://creasyw.github.io/blog/2010/06/29/study-digest-standard-library-functions/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,22 +79,14 @@
 </nav>
   <div id="main">
     <div id="content">
-      <article class="text">
-  
-    <header>
-      <h1 class="page-title">Hello</h1>
-    </header>
-  
-  <p>My name is Qiong. First and foremost, I am a programmer. I’m passionate about programming and spend a considerable amount of time doing it: conducting research simulations in Python, C++, and MATLAB, constructing math/logic prototypes with LISP (mainly Racket), regarding Ruby as Lego and playing with it, solving math puzzles in Haskell, and hacking new programming languages and frameworks.</p>
-
-<p>I am a Ph.D student, coffee enthusiast, experienced soccer center-back, and rookie tennis player. I’m working with Prof. <a href="http://wweb.uta.edu/faculty/liang/">Qilian Liang</a> at the <a href="http://www.uta.edu/">University of Texas, Arlington</a>. I did my undergraduate studying in the EE department at <a href="http://en.hit.edu.cn/">Harbin Institute of Technology</a>, and had the master’s degree of Computer Engineering from the <a href="http://www.utexas.edu/">University of Texas, Austin</a>. My research interests include compressive sensing, wireless comm., statistical signal processing, and data mining.</p>
-
-<p>I am a geek. When I get into a hobby, I <a href="http://wqiong.com/blog/categories/tennis/">focus on it completely</a>; I learn all the rules and vocabulary so that I can have an in-depth conversation with an expert. Besides, I am a fan of <a href="http://www.acmilan.com/">AC Milan</a>, <a href="http://www.texassports.com/index.aspx?path=football">Longhorn Football</a>, and <a href="http://novakdjokovic.com/en/">Novak Djokovic</a>; love to play the <a href="http://www.footballmanager.com/lang/en_GB">Football Managers</a>, and to browse <a href="http://www.reddit.com/">Reddit</a> and <a href="https://news.ycombinator.com/news">Hacker News</a>.</p>
-
-<p>Feel free to drop me a line and I am happy to correspond by email.</p>
-
-  <footer>
+      <article>
+  <header>
     
+      <h1 class="entry-title">Study Digest: Standard Library Functions</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -106,8 +98,17 @@
   
 
 
+<time datetime="2010-06-29T00:00:00-05:00" pubdate data-updated="true">Jun 29<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
 
-  </footer>
+
+<div class="entry-content"><div class='post'>
+C vs. C++ 其中一个显式区别，就是后者增添了标准库类型，vector、string、bitset。<br /><br />以vector为例，实际上可将其看成是一个可变长度的数组，迭代器类比于增强版本的指针。而标准库函数最大的好处在于其成员函数，可以轻松地完成一些在C语言中需要特定代码段完成的功能。并且，就安全性而言，vector的迭代器也不必处处小心诸如指针初始化、或者指针越界之类的隐藏错误。<br /><br />而标准库函数中的string，比C语言中处理字符的char*，在实际应用中限制也更少。主要问题仍然是，C语言将字符串作为数组处理，则合并、拷贝时，必须考虑到起始点以及总长度的问题，这也就造成了代码块的可移植性受到了很大的限制。而C++不存在这样的问题，因为其语言的标准库处理所有的内存管理问题。只要在开始阶段定义了string型变量，则接下来的操作和一般的变量赋值加减的操作无异了。此外，C风格字符串一个更严重的缺陷在于默认null结尾字符的存在，strlen的返回值必须加一才是整个数组的真正长度，这样的细微之处很可能在数组操作时成为一个隐患。<br /><br />标准库提供的bitset操作，更直接，更容易阅读和书写、正确使用的可能性更高。而且，bitset对象的大小不受unsighed数的位数限制。通常来说，bitset优于整型数据的低级直接位操作。<br /><br />综上，C语言风格的内置数组和C++标准库函数相比，更易于出错，更难于理解难于调试，。所以除非是在极端要求代码执行速度的情况，否则使用C++的标准库函数更好。</div>
+</div>
+
 </article>
 
     </div>

@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Install Click in Ubuntu 10.04 - Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="GIT is the best way to acquire the code, so it is necessary to install this software first. Besides, there are several packages needed to patch &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/2010/07/05/install-click-in-ubuntu-1004/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <!-- add Mathjex.js by qiong -->
+  <script src="http://kramdown.rubyforge.org/MathJax/MathJax.js" type="text/javascript"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog/archives/">Blog</a></li>
+  <li><a class="github" href="/tags">Tags</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <article>
+  <header>
+    
+      <h1 class="entry-title">Install Click in Ubuntu 10.04</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-05T00:00:00-05:00" pubdate data-updated="true">Jul 5<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+GIT is the best way to acquire the code, so it is necessary to install this software first. Besides, there are several packages needed to patch before the click installs. And it is also tricky for the final step of installation.<br /><br />**************<br /><br /># git clone git://git.kernel.org/pub/scm/git/git.git<br /><br /># apt-get install git-core<br /><br /># git clone git://read.cs.ucla.edu/git/click<br /><br /># apt-get install autoconf<br /><br /># apt-get install libgtk2.0-dev<br /><br /># apt-get install libtool<br /><br />To update to the latest version checked in to the public repository, change into your working copy directory DIR and run:<br /><br /># git pull<br /><br />To fetch the Click packages:<br /><br /># git clone git://read.cs.ucla.edu/git/click-packages DIR<br /><br />Installation of Click:<br /><br /># cd CLICKDIR<br /># ./configure &#8211;prefix=$HOME &#8211;enable-analysis &#8211;enable-test<br /># make install<br /><br />The –prefix=$HOME configuration switch causes Click to install into your home directory. To run the Click driver and read its manual pages, you&#8217;ll need to add $HOME/bin and $HOME/man&nbsp; to your PATH and MANPATH environment variables, respectively. Alternatively, if you have root privilege on your machine, you can install Click in /usr/local, /usr/local/click, or wherever you&#8217;d like.<br /><br />The –enable-analysis and –enable-test configuration switches turn on support for two necessary sub-packages, including trace analysis and regression test elements.<br /><br />If you get a bus error when running Click on a Solaris or other non-x86 machine, try running your conﬁguration through click-align: “click-align config.click | click”. <br /><br />Furthermore, make sure your system has the necessary libraries and packages<br />installed.&nbsp; On a Debian or Ubuntu system, this will include automake,<br />autoconf, libtool, libgtk2.0-dev (or libgtk2-dev), and graphviz.&nbsp; Then:<br /><br /># cd CLICKDIR/apps/clicky<br /># autoreconf -i<br /># ./configure [&#8211;prefix=PREFIX] &#8211;with-click=CLICKPREFIX<br /># make install<br /><br />That&#8217;s done:)<br /><br />But on the other hand, there are some warning coming out, although they seem to be all right till now.<br /><br />FIRST &amp; SECOND appear in the Click Configuration step.<br /><br />Your Linux kernel header files cause errors when included by a C++ program,<br />so I won&#8217;t try to compile the linuxmodule driver.<br /><br />There are two common reasons for this error:<br />1. You have not applied the Linux kernel patch that comes with this distribution.&nbsp; Apply the right patch and try again.&nbsp; See the INSTALL file for more information.<br />2. Your Linux configuration enables some functionality that is not yet covered by our patches.&nbsp; Turn off this functionality and try again, or fix the error and tell us how you did it.&nbsp; See the config.log file for more detailed information on the error.<br /><br />==============<br /><br />WARNING: `makeinfo&#8217; is missing on your system.&nbsp; You should only need it if you modified a `.texi&#8217; or `.texinfo&#8217; file, or any other file indirectly affecting the aspect of the manual.&nbsp; The spurious call might also be the consequence of using a buggy `make&#8217; (AIX, DU, IRIX).&nbsp; You might want to install the `Texinfo&#8217; package or the `GNU make&#8217; package.&nbsp; Grab either from any GNU archive site.<br /><br />=============<br /><br />The THIRD comes out when I build the Click install.<br /><br />click-elem2man: warning: category &#8216;devices&#8217; begins with a lowercase letter (used in UMLSwitch)<br />click-elem2man: warning: category &#8216;devices&#8217; begins with a lowercase letter (used in UMLSwitch)<br />../missing makeinfo ./click.texi<br />WARNING: `makeinfo&#8217; is missing on your system.&nbsp; You should only need it if<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; you modified a `.texi&#8217; or `.texinfo&#8217; file, or any other file<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; indirectly affecting the aspect of the manual.&nbsp; The spurious<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call might also be the consequence of using a buggy `make&#8217; (AIX,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DU, IRIX).&nbsp; You might want to install the `Texinfo&#8217; package or<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the `GNU make&#8217; package.&nbsp; Grab either from any GNU archive site.<br />make[1]: [click.info] Error 1 (ignored)<br />&#8230;&#8230;<br />install-info: warning: don&#8217;t call programs like install-info with an absolute path,<br />install-info: warning: /usr/sbin/install-info provided by dpkg is deprecated and will go away soon;<br />install-info: warning: its replacement lives in /usr/bin/.<br />This is not dpkg install-info anymore, but GNU install-info<br />See the man page for ginstall-info for command line arguments<br />install-info: No such file or directory for /root/share/info/click.info<br />make[1]: [install-info] Error 1 (ignored)<br /><br />=============<br /><br />The FINAL one appears when I build the clicky.<br /><br />xcallbacks.c: In function ‘on_cut1_activate’:<br />xcallbacks.c:11: warning: unused parameter ‘menuitem’<br />xcallbacks.c:12: warning: unused parameter ‘user_data’<br />xcallbacks.c: In function ‘on_copy1_activate’:<br />xcallbacks.c:19: warning: unused parameter ‘menuitem’<br />xcallbacks.c:20: warning: unused parameter ‘user_data’<br />xcallbacks.c: In function ‘on_paste1_activate’:<br />xcallbacks.c:27: warning: unused parameter ‘menuitem’<br />xcallbacks.c:28: warning: unused parameter ‘user_data’<br />xcallbacks.c: In function ‘on_clear1_activate’:<br />xcallbacks.c:35: warning: unused parameter ‘menuitem’<br />xcallbacks.c:36: warning: unused parameter ‘user_data’<br />xcallbacks.c: In function ‘on_properties1_activate’:<br />xcallbacks.c:43: warning: unused parameter ‘menuitem’<br />xcallbacks.c:44: warning: unused parameter ‘user_data’<br />xcallbacks.c: In function ‘on_preferences1_activate’:<br />xcallbacks.c:51: warning: unused parameter ‘menuitem’<br />xcallbacks.c:52: warning: unused parameter ‘user_data’<br />xcallbacks.c: In function ‘on_about1_activate’:<br />xcallbacks.c:59: warning: unused parameter ‘menuitem’<br />xcallbacks.c:60: warning: unused parameter ‘user_data’</div>
+</div>
+
+</article>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2014 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

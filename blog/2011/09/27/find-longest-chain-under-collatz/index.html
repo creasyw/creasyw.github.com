@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Find the longest chain under 1M with Collatz Conjecture condition - Qiong Wu</title>
+  <meta name="author" content="Qiong Wu">
+
+  
+  <meta name="description" content="It is the #14 problem in Project Euler.In general, the Collatz conjecture has two main properties:1. no infinite trajectory occurs;2. no cycle &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://creasyw.github.io/blog/2011/09/27/find-longest-chain-under-collatz/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <!-- add Mathjex.js by qiong -->
+  <script src="http://kramdown.rubyforge.org/MathJax/MathJax.js" type="text/javascript"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="./atom.xml" rel="alternate" title="Qiong Wu" type="application/atom+xml">
+  
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  
+  
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Qiong Wu</a></h1>
+  <!--
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+  -->
+</hgroup>
+</header>
+  <nav role="navigation"><!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="./atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:creasyw.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+-->
+
+<ul class="main-navigation">
+  <!--<li><a class="yellow" href="/">Hello</a></li>-->
+  <li><a class="github" href="/blog/archives/">Blog</a></li>
+  <li><a class="github" href="/tags">Tags</a></li>
+  <li><a class="github" href="http://www.github.com/creasyw">Github</a></li>
+  <li><a class="github" href="https://twitter.com/creasywuqiong">Twitter</a></li>
+  <li><a class="github" href="/rss">RSS</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <article>
+  <header>
+    
+      <h1 class="entry-title">Find the Longest Chain Under 1M With Collatz Conjecture Condition</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-27T00:00:00-05:00" pubdate data-updated="true">Sep 27<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+It is the #14 problem in <a href="http://projecteuler.net/">Project Euler</a>.<br />In general, the Collatz conjecture has two main properties:<br />1. no infinite trajectory occurs;<br />2. no cycle occurs.<br /><br />The basic algorithm is quite straightforward. It just follows the instruction of Collatz Conjecture, which are n = n/2 if n is even, and n = 3*n+1 if n is odd. To accelerate the calculation, I also implemented a hash map, which could be retrieve theoretically in constant time O(1), and use the iteration number as the key in this map and the overall steps towards 1 as the value of that key. Under this situation, whenever a new node is found, it will be added into the map, and continue the computation until it reaches some key which has already stored in the map. That is, the route is undetermined before the calculation, but every number only needs to calculate once.<br /><br />The first problem I met is exactly the problem &#8221;<a href="http://stackoverflow.com/questions/6825146/why-am-i-getting-an-outofmemoryerror-in-java/7561025#7561025">Why am I getting an OutOfMemoryError trouble in Java?</a>&#8221; described in the StackOverflow. When the program reaches 113383, all of the heap space will be consumed. As I looked up in the internet, all solutions point to how to increase the heap space for Java. While, as I narrowed down the bug to the innermost loop and print out every relevant variable, the bug finally turned out to be the overflow of integer data type. Just change it into long would solve this problem.<br /><br />The second problem had the same symptom but with a much bigger number. When I print out every variable this time, nothing seemed wrong. But if we check the memory usage in run-time, all of the memory had been consumed by the hash map as some number will have extremely long chain towards 1, part of which are far beyond the range of 1000000. The scale is over 1.5 million items in hash map to achieve 725343. The solution is that the program only record number under 1 million, which are within the searching range and also most likely to be hit.<br /><br /><br />Solution discussions: <a href="http://stackoverflow.com/questions/2643260/project-euler-question-14-collatz-problem">[1]</a> (discussion in StackOverflow), <a href="http://lanzkron.wordpress.com/2010/01/18/yet-another-meaningless-javascript-benchmark/">[2]</a> (in JavaScript), <a href="http://lanzkron.wordpress.com/2010/06/02/optimizing-collatz-for-klutzes/">[3]</a> (optimization), <a href="http://blog.functionalfun.net/2008/07/project-euler-problem-14-hailstone.html">[4]</a> (in C++), <a href="http://sandrotosi.blogspot.com/2010/03/project-euler-problem-14.html">[5]</a> (in Python). By the way, <a href="http://stackoverflow.com/questions/235047/why-do-i-get-an-outofmemoryerror-when-inserting-50-000-objects-into-hashmap">here</a> is the discussion about looking up memory usage during run time in Java&#8211;it helps me find the 2nd bug. Finally, my solution is in <a href="https://github.com/creasyw/learning/blob/master/puzzles/Q011To015.java">one of my Github repositories</a>.</div>
+</div>
+
+</article>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="https://github.com/creasyw">Qiong Wu</a> &copy;2009-2014 &mdash;
+  <span class="credit">Thanks to <a href="http://ayyang.com">Alex Yang</a>, <a href="http://octopress.org/">Octopress</a> and <a href="https://github.com/">Github</a>.</span><br>
+  send me an email 
+<script type="text/javascript">
+var emailriddlerarray=[99,114,101,97,115,121,119,117,113,105,111,110,103,64,103,109,97,105,108,46,99,111,109]
+var encryptedemail_id82='' //variable to contain encrypted email 
+for (var i=0; i<emailriddlerarray.length; i++)
+ encryptedemail_id82+=String.fromCharCode(emailriddlerarray[i])
+ document.write('<a href="mailto:'+encryptedemail_id82+'"><img src="/img/email.png" alt="Qiong" /></a>')
+</script>
+</p>
+</footer>
+</body>
+</html>

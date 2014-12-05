@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hello - Qiong Wu</title>
+  <title>Digest: container - Qiong Wu</title>
   <meta name="author" content="Qiong Wu">
 
   
-  <meta name="description" content="Hello My name is Qiong. First and foremost, I am a programmer. I’m passionate about programming and spend a considerable amount of time doing it: &hellip;">
+  <meta name="description" content="将一个容器复制给另一个容器时，类型必须匹配：容器类型和元素类型都必须一致。迭代器first和last如果满足以下两点，则可以形成一个迭代器范围：1、它们指向同一个容器中的元素或超出末端的下一个位置；如果两个迭代器不相等，则对first反复应用自增加运算必须能够到达last，即， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://creasyw.github.io/">
+  <link rel="canonical" href="http://creasyw.github.io/blog/2010/07/01/20100701-digest-container/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,22 +79,14 @@
 </nav>
   <div id="main">
     <div id="content">
-      <article class="text">
-  
-    <header>
-      <h1 class="page-title">Hello</h1>
-    </header>
-  
-  <p>My name is Qiong. First and foremost, I am a programmer. I’m passionate about programming and spend a considerable amount of time doing it: conducting research simulations in Python, C++, and MATLAB, constructing math/logic prototypes with LISP (mainly Racket), regarding Ruby as Lego and playing with it, solving math puzzles in Haskell, and hacking new programming languages and frameworks.</p>
-
-<p>I am a Ph.D student, coffee enthusiast, experienced soccer center-back, and rookie tennis player. I’m working with Prof. <a href="http://wweb.uta.edu/faculty/liang/">Qilian Liang</a> at the <a href="http://www.uta.edu/">University of Texas, Arlington</a>. I did my undergraduate studying in the EE department at <a href="http://en.hit.edu.cn/">Harbin Institute of Technology</a>, and had the master’s degree of Computer Engineering from the <a href="http://www.utexas.edu/">University of Texas, Austin</a>. My research interests include compressive sensing, wireless comm., statistical signal processing, and data mining.</p>
-
-<p>I am a geek. When I get into a hobby, I <a href="http://wqiong.com/blog/categories/tennis/">focus on it completely</a>; I learn all the rules and vocabulary so that I can have an in-depth conversation with an expert. Besides, I am a fan of <a href="http://www.acmilan.com/">AC Milan</a>, <a href="http://www.texassports.com/index.aspx?path=football">Longhorn Football</a>, and <a href="http://novakdjokovic.com/en/">Novak Djokovic</a>; love to play the <a href="http://www.footballmanager.com/lang/en_GB">Football Managers</a>, and to browse <a href="http://www.reddit.com/">Reddit</a> and <a href="https://news.ycombinator.com/news">Hacker News</a>.</p>
-
-<p>Feel free to drop me a line and I am happy to correspond by email.</p>
-
-  <footer>
+      <article>
+  <header>
     
+      <h1 class="entry-title">Digest: Container</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -106,8 +98,17 @@
   
 
 
+<time datetime="2010-07-01T00:00:00-05:00" pubdate data-updated="true">Jul 1<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
 
-  </footer>
+
+<div class="entry-content"><div class='post'>
+将一个容器复制给另一个容器时，类型必须匹配：容器类型和元素类型都必须一致。<br /><br />迭代器first和last如果满足以下两点，则可以形成一个迭代器范围：1、它们指向同一个容器中的元素或超出末端的下一个位置；如果两个迭代器不相等，则对first反复应用自增加运算必须能够到达last，即，务必在使用前检查last绝对不能位于first之前。<br /><br />使用迭代器时，通常可以编写程序使得要求迭代器有效的代码范围较短。然后，在该范围内，严格检查每一条语句，判断是否有元素增加或者删除，从而相应的调整迭代器的值。此外，任何insert、push、assign操作都会导致原迭代器失效。当编写循环将元素插入到vector或deque容器中时，程序必须确保迭代器在每次循环后都得到更新。<br />vector&#8221;int&#8221;<int>::iterator first = v.begin(); //cache begin iterator<br />//safer: recalaulate end on each trip whenever the loop adds/erases elements<br />while (first != v.end()) { &nbsp;//do some processing in block&#8230;<br />&nbsp;&nbsp; &nbsp; //insert new value, meanwhile update the first iterator<br />&nbsp;&nbsp; &nbsp; first = v.insert(first, 42);<br />&nbsp;&nbsp; &nbsp; ++first; &nbsp; &nbsp;//advance first just past the element added just now<br />&nbsp;&nbsp; &nbsp; } &nbsp; &nbsp;//example ends<br />&nbsp;&nbsp; <br />在调用front或back函数之前，或者在对begin或end返回的迭代器进行解引用运算之前，必须保证容器非空。例如，进行 if(!ilist.empty()){&#8230;}的检查，否则，上述四个语句的操作都是没有定义的。</int><br /><br /><int></int>如果程序要求随机访问元素，则应使用vector或deque容器；如果程序必须在容器中间位置插入或者删除元素，则应采用list容器。如果无法确定某种应用应当采取哪种容器，则编写代码时应尝试只使用vector和list容器都提供的操作：使用迭代器，而不是下表，并且避免随机访问元素。这样编写代码，在必要的时候，可以很方便将程序从使用vector修改为使用list容器。</div>
+</div>
+
 </article>
 
     </div>
